@@ -1,0 +1,14 @@
+{
+  "model": "<your-model-name>",
+  "messages": [
+    {
+      "role": "system",
+      "content": "<paste the full contents of core/roles/reviewer-boss.md here>"
+    },
+    {
+      "role": "user",
+      "content": "## C5 Review Handoff (core + extended)\n\n<paste the full review handoff here>\n\n## C6 Reviewer Verdicts\n\n### Strict\n\n<paste verdict>\n\n### Pragmatic\n\n<paste verdict>\n\n### Adversarial\n\n<paste verdict>\n\n### Maintainability\n\n<paste verdict>"
+    }
+  ],
+  "temperature": 0.2
+}

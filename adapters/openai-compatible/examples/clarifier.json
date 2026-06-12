@@ -1,0 +1,14 @@
+{
+  "model": "<your-model-name>",
+  "messages": [
+    {
+      "role": "system",
+      "content": "<paste the full contents of core/roles/clarifier.md here>"
+    },
+    {
+      "role": "user",
+      "content": "## C2 Build Packet\n\n<paste the build packet here>\n\n## C0 Work Item\n\n<paste the original work item here>"
+    }
+  ],
+  "temperature": 0.2
+}

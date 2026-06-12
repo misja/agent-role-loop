@@ -1,0 +1,14 @@
+{
+  "model": "<your-model-name>",
+  "messages": [
+    {
+      "role": "system",
+      "content": "<paste the full contents of core/roles/reviewer-strict.md here>"
+    },
+    {
+      "role": "user",
+      "content": "## C5 Review Handoff (core part only)\n\n<paste ONLY the core part of the review handoff here: diff summary, changed files or components, acceptance criteria coverage, contracts touched>"
+    }
+  ],
+  "temperature": 0.2
+}

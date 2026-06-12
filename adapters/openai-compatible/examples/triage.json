@@ -1,0 +1,14 @@
+{
+  "model": "<your-model-name>",
+  "messages": [
+    {
+      "role": "system",
+      "content": "<paste the full contents of core/roles/triage.md here>"
+    },
+    {
+      "role": "user",
+      "content": "## C0 Work Item\n\n<paste the work item here; see core/contracts/work-item.md>"
+    }
+  ],
+  "temperature": 0.2
+}

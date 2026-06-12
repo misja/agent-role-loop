@@ -1,0 +1,14 @@
+{
+  "model": "<your-model-name>",
+  "messages": [
+    {
+      "role": "system",
+      "content": "<paste the full contents of core/roles/builder.md here>"
+    },
+    {
+      "role": "user",
+      "content": "## C2 Build Packet\n\n<paste the approved build packet here>\n\n## C4 Gate Decision\n\n<paste the human gate decision here>"
+    }
+  ],
+  "temperature": 0.2
+}
