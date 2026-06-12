@@ -1,0 +1,51 @@
+# Builds the Sphinx teaching site and deploys it to GitHub Pages.
+#
+# Portability (D11): the build step is exactly the local command,
+# `make -C docs html`. Only the deploy job is GitHub-specific; a later
+# move to Codeberg Pages replaces the deploy job and touches nothing
+# in the build. Toolchain per D12: uv with the "docs" dependency group.
+
+name: docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: astral-sh/setup-uv@v8
+
+      - name: Install docs dependencies
+        run: uv sync --group docs
+
+      - name: Build site (same command as local)
+        run: make -C docs html
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs/_build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
