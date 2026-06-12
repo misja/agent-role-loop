@@ -27,7 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: astral-sh/setup-uv@v8
+      # setup-uv publishes no floating major tag (no plain v8), so pin the full version
+      - uses: astral-sh/setup-uv@v8.2.0
 
       - name: Install docs dependencies
         run: uv sync --group docs
