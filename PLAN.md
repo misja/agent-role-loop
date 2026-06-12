@@ -1,6 +1,6 @@
 # Build Packet: agent-role-loop
 
-> **Status:** v2 - Gate Decision: PROCEED (Misja, 2026-06-12); build gestart
+> **Status:** v2.1 - Gate Decision: PROCEED (Misja, 2026-06-12); build gestart; amendement D12 toegevoegd via gate-interventie (zie Amendments)
 > **Planner:** Claude (webinterface-sessie, juni 2026)
 > **Builder:** Claude Code, in een lege repository
 > **Bronnen:** Watkins, "Context isolation in coding agent loops" (depot.dev, mei 2026); bijbehorende gist met rolprompts; Anthropic, "How we built our multi-agent research system" (2025)
@@ -54,6 +54,7 @@ Er bestaat alleen de externe gist met zes rolprompts (planner, clarifier, human-
 | D9 | Nederlandse teksten gebruiken spatie-koppelteken-spatie ( - ), nooit em- of en-dash | Huisstijlconventie |
 | D10 | Licentie: **CC BY-NC-SA 4.0** voor de gehele repository | Beslissing Misja. Kanttekening: CC-licenties zijn formeel niet bedoeld voor software, maar deze repo bestaat vrijwel volledig uit proza (prompts, contracten, lesmateriaal); de enkele JSON-payloads en configbestanden vallen er pragmatisch onder |
 | D11 | Hosting op GitHub, publicatie via GitHub Pages; deploy-mechaniek bewust simpel en draagbaar houden | Mogelijke latere migratie naar Codeberg (Codeberg Pages werkt met een statische branch i.p.v. Actions); de Sphinx-build zelf blijft daarom platformonafhankelijk, alleen de deploy-stap is GitHub-specifiek |
+| D12 | Python-tooling is uv met pyproject.toml; docs-dependencies (sphinx, myst-parser, furo) in dependency-group `docs`; uv.lock gecommit; Makefile gebruikt `uv run sphinx-build`; CI gebruikt astral-sh/setup-uv met `uv sync --group docs`. Geen kale pip, geen requirements.txt, geen handmatig beheerde venv | Reproduceerbare omgevingen, ook voor studenten die de repo clonen. Amendement van Misja via gate-interventie, 2026-06-12 (zie Amendments) |
 
 ### Repostructuur
 
@@ -252,3 +253,18 @@ Human decisions made:
 
 Open questions still deferred: <none>
 ```
+
+---
+
+## Amendments
+
+### A-2026-06-12: D12 - Python-toolchain (uv)
+
+- **Aanleiding:** tijdens de build van Change 5 wilde de builder `pip install` draaien; het packet specificeerde de Python-toolchain niet. Misja greep in als Human Gate (STOP) en herstelde de omissie met ontwerpbeslissing D12.
+- **Inhoud:** zie D12 in de beslissingentabel. Kern: uv + pyproject.toml met dependency-group `docs`, uv.lock gecommit, `uv run sphinx-build` in de Makefile, astral-sh/setup-uv + `uv sync --group docs` in CI.
+- **Geraakt werk:** README.md-quickstart (commit van Change 1) omgezet naar uv; Change 5 en Change 7 worden conform D12 uitgevoerd. `core/` en de adapters waren niet geraakt.
+- **Leeswijzer bij AC1:** het buildcommando loopt voortaan via de uv-omgeving (`make -C docs html`, dat intern `uv run sphinx-build` aanroept); het acceptatiecriterium zelf (build slaagt zonder errors en zonder broken-reference-warnings) is ongewijzigd.
+
+## Deviations / lessons learned
+
+- Het C2-contract (Build Packet) miste een veld voor **environment en toolchain** (taalversies, package manager, lockfile-beleid). Daardoor kon de builder bij Change 5 alleen op eigen aannames terugvallen en was een gate-interventie nodig. Kandidaat voor een volgende contractversie: een verplicht veld "Environment / toolchain" (met `<none>` voor puur-prozawerk) in C2, plus een checklistregel bij de Clarifier.

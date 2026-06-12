@@ -39,12 +39,13 @@ Compared to the original source material, this version generalizes three things:
 
 **Use the loop against a local or hosted OpenAI-compatible API:** see `adapters/openai-compatible/README.md` for per-role payload examples.
 
-**Build the teaching site:**
+**Build the teaching site** (requires [uv](https://docs.astral.sh/uv/); dependencies live in the `docs` dependency group of `pyproject.toml` and are pinned in `uv.lock`):
 
 ```sh
-pip install sphinx myst-parser furo
 make -C docs html
 ```
+
+The Makefile runs `uv run sphinx-build` under the hood, so the environment is created and synced on first use.
 
 The site is published automatically to GitHub Pages on every push to `main` (see `.github/workflows/docs.yml`). One-time repository setup: under *Settings -> Pages*, set the source to **GitHub Actions**.
 
