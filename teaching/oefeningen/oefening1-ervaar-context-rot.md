@@ -51,7 +51,7 @@ Rond af met een eindcontrole: loop alle vijftien requirements langs en noteer pe
 
 Gooi je code uit deel A weg (bewaar het logboek!) en begin opnieuw, nu volgens de procedure in `adapters/manual/README.md`. Jij bent de orkestrator. Concreet:
 
-1. Schrijf één werkitem (C0) per portie; de porties zijn je werkitems, de requirements van de portie zijn de acceptatiecriteria. Gebruik het format uit `core/contracts/work-item.md`.
+1. Schrijf één werkitem (C0) per portie; de porties zijn je werkitems, de requirements van de portie zijn de acceptatiecriteria. Gebruik het format uit {core}`contracts/work-item.md`.
 2. Kopieer `adapters/manual/handoff-log-template.md` naar een overdrachtslogboek per werkitem.
 3. Doorloop per werkitem de pipeline: triage, planner, verheldering, **poort (dat ben jij, op papier)**, bouwer, vier beoordelaars in aparte verse vensters, hoofdbeoordelaar. Eén vers chatvenster per rol; alleen het artefact gaat mee.
 4. De wijzigings-requirements (9, 12, 15) zijn in deze opzet gewoon nieuwe werkitems die op bestaande code landen; merk op hoe anders dat voelt dan in deel A.

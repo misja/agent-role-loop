@@ -5,7 +5,14 @@ project = "Agent Role Loop"
 author = "Misja Hoebe"
 copyright = "2026, Misja Hoebe - CC BY-NC-SA 4.0"
 
-extensions = ["myst_parser"]
+extensions = ["myst_parser", "sphinx.ext.extlinks"]
+
+# Migratiescharnier: bestandsverwijzingen vanuit teaching/ naar core/ worden
+# klikbare links naar de Engelse bronbestanden in de repository. core/ blijft
+# bewust buiten de build (vendor-neutraal). Een verhuizing van de hosting of een
+# latere overstap naar interne links is een wijziging van deze ene regel.
+CORE_BASE_URL = "https://github.com/misja/agent-role-loop/blob/main/core/"
+extlinks = {"core": (CORE_BASE_URL + "%s", "core/%s")}
 
 source_suffix = {".md": "markdown"}
 master_doc = "index"
