@@ -4,4 +4,11 @@
 
 **Kwaliteitslaag:** Conventioneel - een contract is een vastgelegde conventie.
 
-> **Status:** routekaart. Deze module wordt uitgewerkt in een eigen planfase met een gate; les, oefening en materiaal volgen daar.
+Deze module bestaat uit de les en de bijbehorende oefening.
+
+```{toctree}
+:maxdepth: 1
+
+les
+oefening
+```

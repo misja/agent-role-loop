@@ -13,8 +13,9 @@ De les hoort bij [oefening 1](oefening.md), die **vooraf** (deel A) en **erna** 
 Na deze les kan de student:
 
 1. **Uitleggen wat context rot is** - beschrijven hoe kwaliteit van AI-output verloopt naarmate één gesprek opdracht, verkenning, logs, mislukte pogingen en oude aannames opstapelt, en de symptomen herkennen (vergeten instructies, scope-verschuiving, zelfverzekerde brij).
-2. **Het verband leggen met separation of concerns en interfaces** - beargumenteren dat de rollenloop hetzelfde ontwerpprincipe op een werkproces toepast dat we in software op modules toepassen: stabiele contracten als interface, rolprompts als verwisselbare implementatie, en informatie verbergen over de grens heen.
-3. **Beargumenteren wanneer een multi-agent-aanpak proportioneel is** - voor een gegeven werkitem onderbouwen of de volledige loop, een licht pad of helemaal geen loop passend is, met de S/M/L-heuristiek en de kosten (tijd, tokens, aandacht) als argumenten.
+2. **Beargumenteren wanneer een multi-agent-aanpak proportioneel is** - voor een gegeven werkitem onderbouwen of de volledige loop, een licht pad of helemaal geen loop passend is, met de S/M/L-heuristiek en de kosten (tijd, tokens, aandacht) als argumenten.
+
+Het conceptuele verband met scheiding van verantwoordelijkheden en interfaces komt bewust pas in module 2: eerst ervaren dat de loop helpt, dan begrijpen waarom.
 
 ## Opbouw (probleem, dan principe, dan tooling)
 
@@ -26,12 +27,11 @@ De volgorde is een bewuste ontwerpbeslissing van dit materiaal: wie eerst toolin
 - Inventarisatie op het bord, clusteren naar de drie symptoomgroepen: vergeten instructies, scope-verschuiving, zelfverzekerde brij.
 - Kernvraag aan de groep: *waarom* gebeurt dit? Werk toe naar: alles staat in één context, en alles weegt mee, ook wat allang niet meer waar of relevant is.
 
-### Deel B - Het principe
+### Deel B - De loop als antwoord
 
 - Context rot benoemen en definiëren; de term komt uit de bronartikelen hieronder.
-- De brug naar bekende stof: dit is een interface-probleem. Scheiding van verantwoordelijkheden, contracten als stabiele interface, implementatie verwisselbaar. Wat we in code allang doen, passen we nu toe op het werkproces zelf.
-- De rollenloop introduceren als één mogelijke uitwerking: triage, planner, verheldering, menselijke poort, bouwer, vier beoordelaars, hoofdbeoordelaar - met de contracten C0 t/m C7 als de enige dingen die rolgrenzen passeren.
-- Expliciet stilstaan bij de twee asymmetrieën: beoordelaars draaien parallel en geïsoleerd (onafhankelijke blikken zijn de waarde), en de poort is principieel menselijk (oordeelsvermogen automatiseer je niet weg).
+- De rollenloop introduceren als één mogelijke uitwerking: triage, planner, verheldering, menselijke poort, bouwer, vier beoordelaars, hoofdbeoordelaar - met de contracten C0 t/m C7 als de enige dingen die rolgrenzen passeren. Hier blijft het bij wát de loop is en hoe je hem draait; waaróm die opzet werkt, is de stof van module 2.
+- Expliciet stilstaan bij de twee asymmetrieën: beoordelaars draaien parallel en geïsoleerd, en de poort is principieel menselijk.
 - Proportionaliteit: de loop loont voor S/M/L-werk en is overkill of ontoereikend daarbuiten; triage is daarom zelf een rol.
 
 ### Deel C - De tooling (doorkijk naar oefening 1, deel B)
