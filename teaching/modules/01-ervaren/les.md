@@ -6,7 +6,7 @@
 
 Eerste les van de eenheid over werken met AI-agents in software engineering. Vereist voorkennis: studenten kunnen zelfstandig een middelgrote programmeeropdracht uitvoeren en hebben enige ervaring met een chatgebaseerde AI-assistent. Geen voorkennis over multi-agent-werkwijzen nodig; die bouwen we hier juist op.
 
-De les hoort bij [oefening 1](../oefeningen/oefening1-ervaar-context-rot.md), die **vooraf** (deel A) en **erna** (deel B) gemaakt wordt.
+De les hoort bij [oefening 1](oefening.md), die **vooraf** (deel A) en **erna** (deel B) gemaakt wordt.
 
 ## Leerdoelen
 

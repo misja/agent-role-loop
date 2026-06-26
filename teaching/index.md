@@ -13,13 +13,23 @@ kwaliteit-als-gedeelde-verantwoordelijkheid
 
 ```{toctree}
 :maxdepth: 2
-:caption: Inhoud
+:caption: Leerlijn
+
+modules/01-ervaren/index
+modules/02-begrijpen/index
+modules/03-machine/index
+modules/04-oordelen/index
+modules/05-poort/index
+modules/06-ontwerpen/index
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Naslag
 
 begrippen
-lessen/les1-context-rot
-oefeningen/oefening1-ervaar-context-rot
 ```
 
 ## Status van dit materiaal
 
-Dit is de eerste didactische eenheid: les 1 (outline) en oefening 1 (volledig uitgewerkt). Daarboven ligt een raamwerken-laag, met "Kwaliteit als gedeelde verantwoordelijkheid" als eerste raamwerk: de grondslag waaraan latere kwaliteitslessen zich ophangen. Cases en toetsing volgen in een latere fase; de mappen `cases/` en `_toetsing/` zijn daarvoor de placeholders.
+De leerlijn is opgezet als zes modules, van *ervaren* naar *ontwerpen en verantwoorden*. Module 1 (Ervaren) is gevuld met les 1 (outline) en oefening 1 (volledig uitgewerkt); de modules 2 tot en met 6 staan nu als routekaart-stub, elk met titel, leerdoel en kwaliteitslaag. Samen vormen die stubs de samenvatting van de leerlijn. Elke vervolgmodule wordt in een eigen planfase met een gate uitgewerkt. Daarboven ligt een raamwerken-laag, met "Kwaliteit als gedeelde verantwoordelijkheid" als eerste raamwerk: de grondslag die zich over de modules verdeelt. Toetsing volgt in een latere fase; de map `_toetsing/` is daarvoor de placeholder.
