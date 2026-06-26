@@ -30,6 +30,13 @@ modules/06-ontwerpen/index
 begrippen
 ```
 
+```{toctree}
+:maxdepth: 1
+:caption: Conventies
+
+schrijfwijzer
+```
+
 ## Status van dit materiaal
 
 De leerlijn is opgezet als zes modules, van *ervaren* naar *ontwerpen en verantwoorden*. De modules 1 tot en met 3 (Ervaren, Begrijpen, De machine vertrouwen en wantrouwen) zijn gevuld met een les en een oefening; de modules 4 tot en met 6 staan nu als routekaart-stub, elk met titel, leerdoel en kwaliteitslaag. Samen vormen die stubs de samenvatting van het resterende deel van de leerlijn. Elke vervolgmodule wordt in een eigen planfase met een gate uitgewerkt. Daarboven ligt een raamwerken-laag, met "Kwaliteit als gedeelde verantwoordelijkheid" als eerste raamwerk: de grondslag die zich over de modules verdeelt. Toetsing volgt in een latere fase; de map `_toetsing/` is daarvoor de placeholder.
