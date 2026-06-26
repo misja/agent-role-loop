@@ -1,6 +1,6 @@
 # Worked example: een groene boekenplank met een gat
 
-Dit kleine repootje hoort bij module 3 (De machine vertrouwen en wantrouwen).
+Dit voorbeeld hoort bij module 3 (De machine vertrouwen en wantrouwen).
 Het is een minimale boekenplank met een testsuite die groen is en 100%
 regeldekking haalt. En toch zit er een echt defect in.
 

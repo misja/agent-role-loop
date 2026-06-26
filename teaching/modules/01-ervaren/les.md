@@ -4,7 +4,7 @@
 
 ## Plaats in de leerlijn
 
-Eerste les van de eenheid over werken met AI-agents in software engineering. Vereist voorkennis: studenten kunnen zelfstandig een middelgrote programmeeropdracht uitvoeren en hebben enige ervaring met een chatgebaseerde AI-assistent. Geen voorkennis over multi-agent-werkwijzen nodig; die bouwen we hier juist op.
+Eerste les van de eenheid over werken met AI-agents in software engineering. Vereist voorkennis: studenten kunnen zelfstandig een middelgrote programmeeropdracht uitvoeren en hebben enige ervaring met een chatgebaseerde AI-assistent. Geen voorkennis over multi-agent-werkwijzen nodig; die bouwen we hier op.
 
 De les hoort bij [oefening 1](oefening.md), die **vooraf** (deel A) en **erna** (deel B) gemaakt wordt.
 
@@ -30,9 +30,9 @@ De volgorde is een bewuste ontwerpbeslissing van dit materiaal: wie eerst toolin
 ### Deel B - De loop als antwoord
 
 - Context rot benoemen en definiëren; de term komt uit de bronartikelen hieronder.
-- De rollenloop introduceren als één mogelijke uitwerking: triage, planner, verheldering, menselijke poort, bouwer, vier beoordelaars, hoofdbeoordelaar - met de contracten C0 t/m C7 als de enige dingen die rolgrenzen passeren. Hier blijft het bij wát de loop is en hoe je hem draait; waaróm die opzet werkt, is de stof van module 2.
+- De rollenloop introduceren als één mogelijke uitwerking: triage, planner, verhelderaar, menselijke poort, bouwer, vier beoordelaars, hoofdbeoordelaar - met de contracten C0 t/m C7 als de enige dingen die rolgrenzen passeren. Hier blijft het bij wát de loop is en hoe je hem draait; waaróm die opzet werkt, is de stof van module 2.
 - Expliciet stilstaan bij de twee asymmetrieën: beoordelaars draaien parallel en geïsoleerd, en de poort is principieel menselijk.
-- Proportionaliteit: de loop loont voor S/M/L-werk en is overkill of ontoereikend daarbuiten; triage is daarom zelf een rol.
+- Proportionaliteit: de loop loont voor S/M/L-werk en is te zwaar of ontoereikend daarbuiten; triage is daarom zelf een rol.
 
 ### Deel C - De tooling (doorkijk naar oefening 1, deel B)
 

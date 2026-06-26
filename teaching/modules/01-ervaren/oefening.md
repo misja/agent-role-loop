@@ -8,7 +8,7 @@ Je gaat twee keer dezelfde middelgrote opdracht doen met een AI-assistent. De ee
 
 ## De opdracht (voor beide delen dezelfde)
 
-Bouw een command-line-tool `boekenplank` voor een kleine bibliotheek, in een taal naar keuze. De requirements krijg je in drie porties; geef ze in deze volgorde aan je assistent en niet allemaal tegelijk. Dat is geen pesterij: zo komen requirements in de echte wereld ook binnen, en het is precies de situatie waarin context rot toeslaat.
+Bouw een command-line-tool `boekenplank` voor een kleine bibliotheek, in een taal naar keuze. De requirements krijg je in drie porties; geef ze in deze volgorde aan je assistent en niet allemaal tegelijk. Dat is bewust: zo komen requirements in de echte wereld ook binnen, en het is precies de situatie waarin context rot toeslaat.
 
 **Portie 1 (begin van het gesprek):**
 
@@ -36,7 +36,7 @@ Bouw een command-line-tool `boekenplank` voor een kleine bibliotheek, in een taa
 
 ## Deel A - Eén lange chat
 
-Werk de drie porties af in **één doorlopend gesprek** met je assistent. Plak code, foutmeldingen en testuitvoer gewoon in datzelfde gesprek; vraag om aanpassingen in datzelfde gesprek; alles in één venster. Niet vals spelen door tussendoor een vers gesprek te beginnen.
+Werk de drie porties af in **één doorlopend gesprek** met je assistent. Plak code, foutmeldingen en testuitvoer in datzelfde gesprek; vraag om aanpassingen in datzelfde gesprek; alles in één venster. Begin tussendoor geen vers gesprek.
 
 Houd naast je werk het logboek bij. Noteer elke keer dat je iets van dit lijstje ziet, met het requirement-nummer erbij:
 
@@ -53,8 +53,8 @@ Gooi je code uit deel A weg (bewaar het logboek!) en begin opnieuw, nu volgens d
 
 1. Schrijf één werkitem (C0) per portie; de porties zijn je werkitems, de requirements van de portie zijn de acceptatiecriteria. Gebruik het format uit {core}`contracts/work-item.md`.
 2. Kopieer `adapters/manual/handoff-log-template.md` naar een overdrachtslogboek per werkitem.
-3. Doorloop per werkitem de pipeline: triage, planner, verheldering, **poort (dat ben jij, op papier)**, bouwer, vier beoordelaars in aparte verse vensters, hoofdbeoordelaar. Eén vers chatvenster per rol; alleen het artefact gaat mee.
-4. De wijzigings-requirements (9, 12, 15) zijn in deze opzet gewoon nieuwe werkitems die op bestaande code landen; merk op hoe anders dat voelt dan in deel A.
+3. Doorloop per werkitem de pipeline: triage, planner, verhelderaar, **poort (dat ben jij, op papier)**, bouwer, vier beoordelaars in aparte verse vensters, hoofdbeoordelaar. Eén vers chatvenster per rol; alleen het artefact gaat mee.
+4. De wijzigings-requirements (9, 12, 15) zijn in deze opzet nieuwe werkitems die op bestaande code landen; merk op hoe anders dat voelt dan in deel A.
 
 Tip over kosten: met een gratis of beperkt abonnement is de volledige loop voor elke portie misschien te duur. Het is acceptabel om de loop volledig te draaien voor portie 2 en voor portie 1 en 3 het lichte pad te nemen (triage zegt `LIGHT`); noteer die keuze dan in je logboek. Dat is geen concessie maar proportionaliteit, en precies waar triage voor bestaat.
 
@@ -74,7 +74,7 @@ Beantwoord schriftelijk, met voorbeelden uit je beide logboeken:
 
 ## Variant zonder AI - rollenspel
 
-Dezelfde oefening werkt zonder AI, met een groep van zes of zeven studenten. De opdracht blijft identiek, maar de rollen worden door mensen gespeeld: één triage, één planner, één verheldering, één poort, één bouwer, en één of twee beoordelaars die na de bouw elk afzonderlijk (zonder overleg!) een C6 schrijven; de docent of een zevende student is hoofdbeoordelaar.
+Dezelfde oefening werkt zonder AI, met een groep van zes of zeven studenten. De opdracht blijft identiek, maar de rollen worden door mensen gespeeld: één triage, één planner, één verhelderaar, één poort, één bouwer, en één of twee beoordelaars die na de bouw elk afzonderlijk (zonder overleg!) een C6 schrijven; de docent of een zevende student is hoofdbeoordelaar.
 
 Spelregels:
 

@@ -43,7 +43,7 @@ Dit is precies de raamwerk-vraag: toetst deze test wel het juiste, of alleen dá
 
 ### De brug naar het oordeel
 
-Het gat dat de machine laat liggen, is geen tekortkoming van de tooling maar de grens ervan. Juist daar wordt de menselijke en de geautomatiseerde beoordeling onmisbaar: de adversariële beoordelaar die naar het niet-afgevangen geval zoekt, doet wat een coverage-cijfer niet kan. Die beoordeling is de stof van module 4. Deze les stopt bij de constatering dat de poort groen is en er tóch geoordeeld moet worden; het oordeel zelf doen we nog niet.
+Het gat dat de machine laat liggen, is geen tekortkoming van de tooling maar de grens ervan. Daar wordt de menselijke en de geautomatiseerde beoordeling onmisbaar: de adversariële beoordelaar die naar het niet-afgevangen geval zoekt, doet wat een coverage-cijfer niet kan. Die beoordeling is de stof van module 4. Deze les stopt bij de constatering dat de poort groen is en er tóch geoordeeld moet worden; het oordeel zelf doen we nog niet.
 
 ## Werkvormen en toetsing
 

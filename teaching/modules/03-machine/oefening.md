@@ -3,7 +3,7 @@
 Een machine kan je vertellen dat alle tests slagen en dat elke regel code is gedekt. Deze oefening laat zien dat dat allebei waar kan zijn terwijl de code het verkeerde doet. Je begint met een aangeleverd voorbeeld dat we samen ontleden, en past het daarna toe op je eigen boekenplank.
 
 **Duur:** circa 60 minuten.
-**Nodig:** het repootje `teaching/cases/module3-boekenplank/` uit de repository, met `pytest` en `pytest-cov`. Voor het tweede deel je eigen boekenplank uit oefening 1, deel B.
+**Nodig:** het materiaal in `teaching/cases/module3-boekenplank/` uit de repository, met `pytest` en `pytest-cov`. Voor het tweede deel je eigen boekenplank uit oefening 1, deel B.
 **Inleveren:** je ontleding van het defect, je eigen poortopstelling en groen-maar-fout-geval, en de beantwoorde verantwoordingsvragen.
 
 ## Worked example: een groene boekenplank met een gat
@@ -34,7 +34,7 @@ Neem je eigen boekenplank uit oefening 1, deel B (je AI-gebouwde versie). Zet er
 2. Breng de dekking zo hoog als je redelijk kunt. Noteer het cijfer.
 3. Zoek of construeer in je eigen code een geval dat **groen en gedekt** is en tóch fout, of waarvan je niet zeker bent dat de test het juiste toetst. Beschrijf het gat in dezelfde termen als het worked example: welke regel draait, en wat de assertie wel en niet controleert.
 
-Heb je je boekenplank uit oefening 1 niet meer, gebruik dan het aangeleverde repootje: voeg requirement 7 (`zoek` in titel en auteur, hoofdletterongevoelig) toe, schrijf er een test bij die groen is en 100% blijft, en beredeneer of die test het juiste toetst.
+Heb je je boekenplank uit oefening 1 niet meer, gebruik dan het aangeleverde voorbeeld: voeg requirement 7 (`zoek` in titel en auteur, hoofdletterongevoelig) toe, schrijf er een test bij die groen is en 100% blijft, en beredeneer of die test het juiste toetst.
 
 ## Verantwoordingsvragen
 

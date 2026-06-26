@@ -1,6 +1,6 @@
 # Begrippenlijst
 
-De rolprompts en contracten in `core/` zijn Engelstalig (ze presteren consistenter in het Engels en zijn internationaal herbruikbaar); de lessen en oefeningen zijn Nederlandstalig. Deze lijst overbrugt de twee talen. De Engelse term is leidend in de artefacten; gebruik in je verslagen gerust de Nederlandse. Waar het lesmateriaal naar een specifiek bestand in `core/` verwijst, is dat een klikbare link naar het Engelse bronbestand in de repository, buiten deze site; een verwijzing naar een map (zoals `core/`) blijft als code staan.
+De rolprompts en contracten in `core/` zijn Engelstalig (ze presteren consistenter in het Engels en zijn internationaal herbruikbaar); de lessen en oefeningen zijn Nederlandstalig. Deze lijst overbrugt de twee talen. De Engelse term is leidend in de artefacten; gebruik in je verslagen de Nederlandse. Waar het lesmateriaal naar een specifiek bestand in `core/` verwijst, is dat een klikbare link naar het Engelse bronbestand in de repository, buiten deze site; een verwijzing naar een map (zoals `core/`) blijft als code staan.
 
 | Engels | Nederlands | Toelichting |
 |---|---|---|

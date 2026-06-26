@@ -27,8 +27,11 @@ constraint. Wie materiaal beoordeelt, toetst eraan.
   consistent en professioneel"), holle bezwerende slotzinnen die niets toevoegen,
   en overmatig gebruik van "juist", "immers" en "simpelweg". Dit is een
   richtlijn, geen mechanische toets: schrijf zoals een vakdocent schrijft, niet
-  zoals een model. Eén tell is wel hard en toetsbaar, zie interpunctie: geen em-
-  of en-dash.
+  zoals een model. De toets bij de tegenstellingsconstructie en bij woorden als
+  "juist", "immers" en "simpelweg" is steeds dezelfde: draagt ze hier een echte
+  tegenstelling of een scharnier in de redenering, dan blijft ze; vult ze alleen
+  het ritme op, dan gaat ze weg. Eén tell is wel hard en toetsbaar, zie
+  interpunctie: geen em- of en-dash.
 
 ## Vaktermen: Nederlands of Engels
 
@@ -54,6 +57,8 @@ constraint. Wie materiaal beoordeelt, toetst eraan.
 | een repootje, scriptje, testje | een repository, script, test | geen verkleinwoorden voor vakinhoud |
 | dependency'tje | dependency | idem |
 | de straat (jargon) | de ontwikkelstraat | geen interne verkorting in lesmateriaal |
+| overkill | te zwaar, buitensporig | geen Engels jargon waar Nederlands volstaat |
+| gewoon, even (als vulwoord) | weglaten | spreektalig vulwoord dat niets toevoegt |
 
 Vul deze tabel aan zodra nieuwe gevallen opduiken. De tabel is normatief: wat
 hier staat, is de afspraak.
