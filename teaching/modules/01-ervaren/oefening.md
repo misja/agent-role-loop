@@ -69,7 +69,7 @@ Beantwoord schriftelijk, met voorbeelden uit je beide logboeken:
 3. Welk contract-artefact uit deel B heeft je het meeste opgeleverd, en welke vond je op het eerste gezicht overdreven? Zou je die laatste bij een groter werkitem nog steeds overdreven vinden?
 4. Bij de poort (C4) moest je zelf beslissen in plaats van doorklikken. Heb je daar iets tegengehouden of aangepast? Zo nee, waar zou de poort wél waarde hebben gehad in deel A?
 5. De beoordelaars zagen elkaars oordeel niet. Vergelijk de vier C6-oordelen: wat vond er maar één, en had je dat ook gevonden als ze één gezamenlijk gesprek hadden gedeeld?
-6. Leg het verband met software-ontwerp: wat is in de loop de interface, wat is de implementatie, en wat wordt er verborgen? Geef een voorbeeld uit je eigen overdrachtslogboek waar dat verbergen concreet hielp.
+6. Geef een voorbeeld uit je overdrachtslogboek waar het concreet hielp dat een rol de context van een andere rol niet zag. (In module 2 ontleed je dit tot het ontwerpverband: interface, implementatie en wat er verborgen wordt.)
 7. Voor welke taken zou jij deze loop voortaan inzetten, en voor welke uitdrukkelijk niet? Onderbouw met de S/M/L-heuristiek én met je eigen tijdsbesteding in deel A en B.
 
 ## Variant zonder AI - rollenspel
