@@ -18,8 +18,10 @@ source_suffix = {".md": "markdown"}
 master_doc = "index"
 language = "nl"
 
-# _toetsing is in deze fase een lege placeholder en bouwt niet mee.
-exclude_patterns = ["_build", "_toetsing"]
+# _toetsing is in deze fase een lege placeholder en bouwt niet mee. cases bevat
+# code-artefacten (worked examples) die geen site-document zijn: code blijft net
+# als core/ buiten de build, en de lessen verwijzen ernaar als inline pad.
+exclude_patterns = ["_build", "_toetsing", "cases"]
 
 myst_enable_extensions = [
     "colon_fence",
