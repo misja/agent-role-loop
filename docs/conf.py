@@ -18,10 +18,12 @@ source_suffix = {".md": "markdown"}
 master_doc = "index"
 language = "nl"
 
-# _toetsing is in deze fase een lege placeholder en bouwt niet mee. cases bevat
-# code-artefacten (worked examples) die geen site-document zijn: code blijft net
-# als core/ buiten de build, en de lessen verwijzen ernaar als inline pad.
-exclude_patterns = ["_build", "_toetsing", "cases"]
+# Buiten de build: _toetsing is een lege placeholder; cases bevat code-artefacten
+# (worked examples) die net als core/ geen site-document zijn en waarnaar de lessen
+# als inline pad verwijzen; het werkitem-template is pure projectinfrastructuur.
+# conventies.md bouwt wel mee maar staat bewust niet in de navigatie-toctree: het
+# is als orphan gemarkeerd (front matter), dus rendert en is aanlinkbaar.
+exclude_patterns = ["_build", "_toetsing", "cases", "_werkitem-template.md"]
 
 myst_enable_extensions = [
     "colon_fence",
