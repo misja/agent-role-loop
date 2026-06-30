@@ -61,9 +61,11 @@ Verantwoordelijke: de beoordelaars, en voor de onomkeerbare keuzes de mens bij d
 
 ### De drie samen
 
-De drie soorten vormen geen rangorde van belang, maar een opbouw. De geautomatiseerde laag is noodzakelijk maar niet voldoende. De conventionele laag neemt routinebeslissingen weg zodat de aandacht naar het moeilijke kan. De oordeelsmatige laag is waar het vakmanschap begint; die laag kan de andere twee niet overslaan, maar wordt er ook nooit door vervangen.
+De drie soorten vormen geen rangorde van belang, maar een opbouw waarin de lagen elkaar voeden. De geautomatiseerde laag is noodzakelijk maar niet voldoende, en ze staat niet op zichzelf: wat een poort afdwingt, is grotendeels in de conventionele laag besloten. Een coverage-drempel, een set linterregels, de strengheid van een type checker zijn conventionele keuzes die de machine daarna deterministisch handhaaft. Zo parametriseert de conventionele laag de geautomatiseerde; zonder die keuzes is een poort willekeurig of afwezig.
 
-Hierin ligt het antwoord op een hardnekkig misverstand: dat hoge coverage of een groene SonarQube-gate samenvalt met kwaliteit. De drie lagen laten zien dat geautomatiseerde poorten tegelijk noodzakelijk en ontoereikend zijn, en dat juist in het verschil tussen die twee het oordeelsvermogen nodig wordt. Een groen vinkje is een voorwaarde om te mogen beoordelen, niet het bewijs dat de beoordeling al heeft plaatsgevonden.
+Datzelfde verklaart hoe de conventionele laag routinebeslissingen wegneemt: een afspraak doorloopt een levensloop omlaag door de lagen. Wat eerst een oordeel is, bijvoorbeeld de keuze dat alle code getypeerd wordt, wordt een vastgelegde conventie en ten slotte een poort die haar afdwingt. Elke stap haalt last weg: een vastgelegde conventie hoeft niet per taak heronderhandeld te worden, en een geautomatiseerde poort handhaaft haar zonder dat iemand eraan denkt. Zo houdt de oordeelsmatige laag, waar het vakmanschap begint, aandacht over voor het moeilijke; die laag kan de andere twee niet overslaan, maar wordt er ook nooit door vervangen.
+
+Hierin ligt het antwoord op een hardnekkig misverstand: dat hoge coverage of een groene SonarQube-gate samenvalt met kwaliteit. De drie lagen laten zien dat geautomatiseerde poorten tegelijk noodzakelijk en ontoereikend zijn, en dat juist in het verschil tussen die twee het oordeelsvermogen nodig wordt. Een groen vinkje is een voorwaarde om te mogen beoordelen, niet het bewijs dat de beoordeling al heeft plaatsgevonden, en het betekent pas iets nadat in de conventionele laag besloten is wat de poort eist.
 
 ## Hoe lessen zich hieraan ophangen
 
