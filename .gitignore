@@ -18,6 +18,3 @@ venv/
 
 # pytest-cov artifact
 .coverage
-
-# Work items blijven lokaal en untracked (elk een C0 in bewerking, geen site-content)
-WORKITEM-*.md

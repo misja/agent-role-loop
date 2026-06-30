@@ -1,5 +1,7 @@
 # Build Packet: agent-role-loop
 
+> **Historisch document.** Dit is het bevroren Build Packet van de initiële bouw (Changes 1-7). Het lopende stapelbeheer leeft op het projectbord (https://github.com/users/misja/projects/1), niet hier. Wijzig dit document niet als backlog.
+
 > **Status:** v2.1 - Gate Decision: PROCEED (Misja, 2026-06-12); build gestart; amendement D12 toegevoegd via gate-interventie (zie Amendments)
 > **Planner:** Claude (webinterface-sessie, juni 2026)
 > **Builder:** Claude Code, in een lege repository
