@@ -37,6 +37,10 @@ Hier ligt de kern van de module. Een agent levert moeiteloos groene tests bij co
 
 Dit is precies de raamwerk-vraag: toetst deze test wel het juiste, of alleen dát er iets is uitgevoerd? Coverage kan die vraag per definitie niet beantwoorden. Een groen vinkje is een voorwaarde om te mogen beoordelen, niet het bewijs dat de beoordeling heeft plaatsgevonden.
 
+Dat is het eerste gezicht van groen-maar-fout: de lat staat verkeerd. Er is een tweede, dat nog scherper is: er is geen lat. Dezelfde suite haalt "100% dekking", maar geen regel dwingt dat af - er is geen drempel ingesteld en geen linter of type-checker geconfigureerd. Die 100% is toevallig, niet vereist: schrap je de helft van de tests, dan zakt de dekking en faalt er tóch niets. De poort rapporteert een getal, maar eist er niets mee.
+
+Zo werkt de conventionele laag onder de geautomatiseerde, precies zoals het raamwerk stelt: soort 2 parametriseert soort 1. Een poort dwingt alleen af wat een conventie heeft besloten. Waar niemand een norm koos, is de poort groen en leeg, want het vinkje betekent niets als niemand besloot wat het moet eisen.
+
 ### De brug naar het oordeel
 
 Het gat dat de machine laat liggen, is geen tekortkoming van de tooling maar de grens ervan. Daar wordt de menselijke en de geautomatiseerde beoordeling onmisbaar: de adversariële beoordelaar die naar het niet-afgevangen geval zoekt, doet wat een coverage-cijfer niet kan. Die beoordeling is de stof van module 4. Deze les stopt bij de constatering dat de poort groen is en er tóch geoordeeld moet worden; het oordeel zelf doen we nog niet.
@@ -55,7 +59,7 @@ Het gat dat de machine laat liggen, is geen tekortkoming van de tooling maar de 
 
 ### Wat heb je geleerd
 
-De geautomatiseerde poorten (coverage, linters, type-checkers, scans, CI) zijn een toegangsvoorwaarde tot de review, niet de review zelf: ze staan ervóór. Elke poort meet iets echts en heeft een grens. En groen is noodzakelijk maar niet voldoende: een test kan volledig dekken en toch het verkeerde toetsen, want coverage toont dát een regel draaide, niet dat het juiste is gecontroleerd.
+De geautomatiseerde poorten (coverage, linters, type-checkers, scans, CI) zijn een toegangsvoorwaarde tot de review, niet de review zelf: ze staan ervóór. Elke poort meet iets echts en heeft een grens. En groen is noodzakelijk maar niet voldoende, op twee manieren: een test kan volledig dekken en toch het verkeerde toetsen (de lat staat verkeerd), en een poort kan groen zijn zonder iets te eisen omdat niemand een norm koos (er is geen lat). Wie de norm kiest, is een mens, niet de machine.
 
 ### Zelfcheck
 
@@ -63,7 +67,8 @@ Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
 
 1. Waarom staan de geautomatiseerde poorten vóór de beoordeling en niet erin? (zie "De machine als poortwachter")
 2. Wat toont coverage wel en wat niet? Geef een geval waarin 100% dekking samengaat met een fout. (zie "Groen maar fout")
-3. Waar wordt het menselijke oordeel onmisbaar, en waarom kan de machine dat niet leveren? (zie "De brug naar het oordeel")
+3. Een suite is groen met 100% dekking, maar er staat geen drempel ingesteld. Waarom bewijst die groene poort dan nog niets, en wie moet dat beslissen? (zie "Groen maar fout")
+4. Waar wordt het menselijke oordeel onmisbaar, en waarom kan de machine dat niet leveren? (zie "De brug naar het oordeel")
 
 ### Volgende stap
 

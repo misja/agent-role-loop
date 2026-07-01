@@ -26,6 +26,18 @@ Die assertie slaagt, want het boek *is* uitgeleend, alleen nu aan Bob. De tweede
 
 Merk op hoe precies dit de raamwerk-vraag is: toetst deze test wel het juiste? Coverage kan die vraag niet beantwoorden. Een sterkere assertie zou de tweede uitlening hebben afgewezen, of hebben gecontroleerd dat boek 1 nog steeds aan Misja is uitgeleend. Dat is geen extra regel dekking; het is een ander oordeel over wat de test moet bewijzen.
 
+## Het tweede gezicht: een poort die niets eist
+
+De worked example liet zien dat een groene poort het verkeerde kan toetsen. Er is een tweede geval, en dat is scherper. Draai de poort nog eens:
+
+```
+pytest --cov=boekenplank
+```
+
+De dekking is 100%, maar niets dwingt dat af: er staat geen `--cov-fail-under`-drempel, en er draait geen linter of type-checker. Haal een paar tests weg en draai opnieuw - de dekking zakt, en tóch faalt er niets. De poort rapporteert een getal, maar eist er niets mee.
+
+Je kunt de poort laten bijten met een drempel, bijvoorbeeld `pytest --cov=boekenplank --cov-fail-under=90`. Doe dat, en kijk wat er verandert. Maar daar begint de eigenlijke vraag, en de vlag lost hem niet op: **waarom 90, en niet 80 of 100?** De 100% van dit artefact is toevallig gehaald, geen bewijs, en er is geen objectief juist getal. Zodra je een drempel kiest, kies jij een norm, en die moet je kunnen verantwoorden: wat betekent dit getal, wat laat het door en wat houdt het tegen? De machine kan die keuze niet voor je maken. Dat is het punt van dit tweede gezicht: niet "zet de vlag en klaar", maar het besef dat iemand moet besluiten wat de poort eist. Voel het ongemak dat die norm van jou komt en niet van de machine.
+
 ## Jouw opdracht: doe het op je eigen boekenplank
 
 Neem je eigen boekenplank uit oefening 1, deel B (je AI-gebouwde versie). Zet er de geautomatiseerde poorten omheen en zoek je eigen gat:
@@ -42,5 +54,6 @@ Beantwoord schriftelijk, met voorbeelden uit je werk:
 
 1. **Beargumenteer** waarom de geautomatiseerde poorten vóór de beoordeling horen en niet erin. Wat zou er misgaan als je beoordelingsaandacht zou besteden aan wat de poort al vaststelt?
 2. **Verantwoord** aan je eigen groen-maar-fout-geval waarom 100% coverage niet samenvalt met correctheid. Welke vraag beantwoordt coverage wel, en welke niet?
-3. Je had bij oefening 1 deel B een agent code laten schrijven. **Weeg af** hoe betrouwbaar een door een agent geleverde groene testsuite is, en wat je daarom zelf moet blijven controleren.
-4. Het gat dat de machine liet liggen, is in module 4 het werk van de beoordelaars. **Beargumenteer** welke van je poorten je niet zou durven weglaten en welke je bij een klein, omkeerbaar werkitem wél proportioneel zou kunnen overslaan.
+3. **Verantwoord** welke coverage-drempel je op het aangeleverde artefact zou zetten, en waarom dat getal en geen ander. Leg uit waarom de 100% hier toevallig is en geen bewijs, en waarom het kiezen van de norm een menselijk oordeel is dat de machine niet kan maken.
+4. Je had bij oefening 1 deel B een agent code laten schrijven. **Weeg af** hoe betrouwbaar een door een agent geleverde groene testsuite is, en wat je daarom zelf moet blijven controleren.
+5. Het gat dat de machine liet liggen, is in module 4 het werk van de beoordelaars. **Beargumenteer** welke van je poorten je niet zou durven weglaten en welke je bij een klein, omkeerbaar werkitem wél proportioneel zou kunnen overslaan.
