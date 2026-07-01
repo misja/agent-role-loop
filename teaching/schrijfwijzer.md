@@ -73,6 +73,25 @@ hier staat, is de afspraak.
 - Verwijs naar de rollen en contracten met hun vastgelegde naam, niet met
   wisselende omschrijvingen.
 
+## Integriteit van het materiaal
+
+Materiaal groeit, en met elke toevoeging ontstaan afhankelijkheden tussen plekken.
+Bewaak de samenhang, en doe dat bij voorkeur door een afhankelijkheid op te heffen
+in plaats van haar te onthouden.
+
+- **Codeer geen afleidbare staat hard.** Wat uit het materiaal zelf af te lezen is,
+  zoals welke modules al een les hebben of welke laag een module behandelt, schrijf
+  je niet als een opsomming in proza die veroudert zodra er iets bijkomt. Formuleer
+  het zo dat het waar blijft, of laat de structuur het dragen (de toctree, de module
+  zelf).
+- **Eén bron van waarheid.** Een feit staat op één plek; andere plekken verwijzen
+  ernaar en herhalen het niet. Twee plekken die half hetzelfde beweren, drijven uit
+  elkaar.
+- **Hef de afhankelijkheid op, of beleg haar.** Dwingt een wijziging op de ene plek
+  een wijziging op de andere af, maak die band dan overbodig (afleidbaar of
+  generiek). Kan dat niet, leg dan een regel of controle vast die op het juiste
+  moment afgaat, zodat de samenhang niet aan geheugen hangt.
+
 ## Structuur en signalering van tekstsoorten
 
 Materiaal is opgebouwd in herkenbare, expliciet benoemde onderdelen. De lezer
