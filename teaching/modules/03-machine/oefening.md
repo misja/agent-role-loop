@@ -6,7 +6,7 @@ Een machine kan je vertellen dat alle tests slagen en dat elke regel code is ged
 **Nodig:** het materiaal in `teaching/cases/module3-boekenplank/` uit de repository, met `pytest` en `pytest-cov`. Voor het tweede deel je eigen boekenplank uit oefening 1, deel B.
 **Inleveren:** je ontleding van het defect, je eigen poortopstelling en groen-maar-fout-geval, en de beantwoorde verantwoordingsvragen.
 
-## Worked example: een groene boekenplank met een gat
+## Worked example: een groene boekenplank met een blinde vlek
 
 In `teaching/cases/module3-boekenplank/` staat een minimale boekenplank met een testsuite. Draai eerst de poort:
 
@@ -40,11 +40,11 @@ Je kunt de poort laten bijten met een drempel, bijvoorbeeld `pytest --cov=boeken
 
 ## Jouw opdracht: doe het op je eigen boekenplank
 
-Neem je eigen boekenplank uit oefening 1, deel B (je AI-gebouwde versie). Zet er de geautomatiseerde poorten omheen en zoek je eigen gat:
+Neem je eigen boekenplank uit oefening 1, deel B (je AI-gebouwde versie). Zet er de geautomatiseerde poorten omheen en zoek je eigen blinde vlek:
 
 1. Zet ten minste een testsuite met coverage op. Laat een linter en, als je stack die heeft, een type-checker meedraaien. Noteer welke poorten je hebt en wat elke poort wel en niet vaststelt.
 2. Breng de dekking zo hoog als je redelijk kunt. Noteer het cijfer.
-3. Zoek of construeer in je eigen code een geval dat **groen en gedekt** is en tóch fout, of waarvan je niet zeker bent dat de test het juiste toetst. Beschrijf het gat in dezelfde termen als het worked example: welke regel draait, en wat de assertie wel en niet controleert.
+3. Zoek of construeer in je eigen code een geval dat **groen en gedekt** is en tóch fout, of waarvan je niet zeker bent dat de test het juiste toetst. Beschrijf die blinde vlek in dezelfde termen als het worked example: welke regel draait, en wat de assertie wel en niet controleert.
 
 Heb je je boekenplank uit oefening 1 niet meer, gebruik dan het aangeleverde voorbeeld: voeg requirement 7 (`zoek` in titel en auteur, hoofdletterongevoelig) toe, schrijf er een test bij die groen is en 100% blijft, en beredeneer of die test het juiste toetst.
 
@@ -56,4 +56,4 @@ Beantwoord schriftelijk, met voorbeelden uit je werk:
 2. **Verantwoord** aan je eigen groen-maar-fout-geval waarom 100% coverage niet samenvalt met correctheid. Welke vraag beantwoordt coverage wel, en welke niet?
 3. **Verantwoord** welke coverage-drempel je op het aangeleverde artefact zou zetten, en waarom dat getal en geen ander. Leg uit waarom de 100% hier toevallig is en geen bewijs, en waarom het kiezen van de norm een menselijk oordeel is dat de machine niet kan maken.
 4. Je had bij oefening 1 deel B een agent code laten schrijven. **Weeg af** hoe betrouwbaar een door een agent geleverde groene testsuite is, en wat je daarom zelf moet blijven controleren.
-5. Het gat dat de machine liet liggen, is in module 4 het werk van de beoordelaars. **Beargumenteer** welke van je poorten je niet zou durven weglaten en welke je bij een klein, omkeerbaar werkitem wél proportioneel zou kunnen overslaan.
+5. Wat de machine liet liggen, is in module 4 het werk van de beoordelaars. **Beargumenteer** welke van je poorten je niet zou durven weglaten en welke je bij een klein, omkeerbaar werkitem wél proportioneel zou kunnen overslaan.

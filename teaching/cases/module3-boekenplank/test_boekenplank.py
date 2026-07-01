@@ -3,7 +3,7 @@
 Deze suite is groen en haalt 100% regeldekking. Toch laat ze een echt defect
 ongemoeid. Eén test in het bijzonder lijkt requirement 6 te toetsen, maar de
 assertie is te zwak: ze controleert dat het boek uitgeleend is, niet dat de
-tweede uitlening geweigerd werd. Het opsporen van dat gat is de opdracht.
+tweede uitlening geweigerd werd. Het opsporen van die blinde vlek is de opdracht.
 """
 
 import pytest

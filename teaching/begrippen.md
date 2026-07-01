@@ -17,6 +17,7 @@ De rolprompts en contracten in `core/` zijn Engelstalig (ze presteren consistent
 | build packet (C2) | build packet | Het bouwplan: doelen, aanpak, acceptatiecriteria, changes en verificatie. We houden de Engelse term aan |
 | clarifier | verhelderaar | Rol die ambiguïteit uit het plan haalt vóór er gebouwd wordt |
 | human gate | menselijke poort | Beslismoment tussen plannen en bouwen dat alleen een mens mag nemen |
+| quality gate, gate | poort (kwaliteitspoort) | In teaching-materiaal de Nederlandse term poort. "gate" alleen intern (board, werkitem-taal) en als productnaam (SonarQube quality gate) |
 | builder | bouwer | Rol die het goedgekeurde plan uitvoert en bewijs verzamelt |
 | reviewer | beoordelaar | Rol die het resultaat vanuit één perspectief beoordeelt; er zijn er vier, parallel en geïsoleerd |
 | reviewer boss | hoofdbeoordelaar | Rol die de vier oordelen samenvoegt tot één eindoordeel |

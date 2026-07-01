@@ -59,6 +59,7 @@ constraint. Wie materiaal beoordeelt, toetst eraan.
 | de straat (jargon) | de ontwikkelstraat | geen interne verkorting in lesmateriaal |
 | overkill | te zwaar, buitensporig | geen Engels jargon waar Nederlands volstaat |
 | gewoon, even (als vulwoord) | weglaten | spreektalig vulwoord dat niets toevoegt |
+| gat (in poort-context) | blinde vlek / leemte / hiaat / ontbrekende dekking | botst met gate/poort; kies per geval de best passende term |
 
 Vul deze tabel aan zodra nieuwe gevallen opduiken. De tabel is normatief: wat
 hier staat, is de afspraak.

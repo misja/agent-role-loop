@@ -4,4 +4,4 @@
 
 **Kwaliteitslaag:** Synthese van de drie lagen.
 
-> **Status:** routekaart. Deze module wordt uitgewerkt in een eigen planfase met een gate; les, oefening en materiaal volgen daar.
+> **Status:** routekaart. Deze module wordt in een eigen planfase uitgewerkt; les, oefening en materiaal volgen daar.

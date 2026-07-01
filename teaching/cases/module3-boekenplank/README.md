@@ -1,4 +1,4 @@
-# Worked example: een groene boekenplank met een gat
+# Worked example: een groene boekenplank die niets bewijst
 
 Dit voorbeeld hoort bij module 3 (De machine vertrouwen en wantrouwen).
 Het is een minimale boekenplank met een testsuite die groen is en 100%
