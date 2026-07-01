@@ -4,6 +4,12 @@
 > Dit is nog geen build packet. Doelgroep: <bijv. derdejaars HBO-ICT Software
 > Engineering>.
 
+> **Vóór de planfase:** raadpleeg het [projectbord](https://github.com/users/misja/projects/1),
+> gefilterd op het `module:`-label van dit werkitem, op geparkeerde ripples
+> (`type:ripple`) en bewaakte aandachtspunten (`type:aandachtspunt`) die deze
+> module erft. Neem wat van toepassing is mee in de acceptance criteria of de
+> afbakening, zodat de planfase niet aan geheugen hangt.
+
 ## Aanleiding
 
 <Waarom dit werk bestaat: het waargenomen probleem of de motiverende aanleiding.
