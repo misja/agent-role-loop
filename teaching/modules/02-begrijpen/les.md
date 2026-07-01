@@ -10,11 +10,7 @@ De les hoort bij [oefening 2](oefening.md), waarin je dit begrip toepast op je e
 
 ## Leeruitkomsten
 
-Na deze les kan de student:
-
-1. **Beargumenteren dat de rollenloop scheiding van verantwoordelijkheden op een werkproces is** - uitleggen dat elke rol één zorg draagt, net zoals je een softwaresysteem in onderdelen met elk één verantwoordelijkheid opdeelt, en verantwoorden waarom dat de kwaliteit ten goede komt.
-2. **In een concrete overdracht de interface, de implementatie en het verborgene aanwijzen** - in een gegeven handoff benoemen wat het contract (de interface) vastlegt, wat de rolprompt (de implementatie) daarachter doet, en welke context bewust verborgen blijft, en verantwoorden hoe dat verbergen context rot tegengaat.
-3. **Verantwoorden dat een contract een vastgelegde conventie is** - uitleggen waar contracten passen in de conventionele kwaliteitslaag van het kwaliteitsraamwerk, en afwegen wat een afspraak die je niet per taak heronderhandelt oplevert en wat ze kost.
+De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
 
 ## Opbouw
 
@@ -45,3 +41,21 @@ Hiermee raakt de loop aan softwarekwaliteit. In het raamwerk [Kwaliteit als gede
 
 - De repository zelf: {core}`principles.md` (vooral het tweede principe, expliciete overdrachten) en {core}`loop.md` zijn de normatieve teksten onder deze les.
 - Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "2. Conventioneel en vastgelegd".
+
+## Afronding
+
+### Wat heb je geleerd
+
+De rollenloop is scheiding van verantwoordelijkheden op een werkproces: elke rol draagt één zorg. Het contract tussen twee rollen is de interface (wat een overdracht moet bevatten), de rolprompt de implementatie (hoe de rol tot dat resultaat komt), en wat niet in het contract staat blijft bewust verborgen. Een contract is daarmee een vastgelegde conventie: één keer afgesproken, niet per taak heronderhandeld.
+
+### Zelfcheck
+
+Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+
+1. Leg uit dat de rollenloop scheiding van verantwoordelijkheden is. Welke zorg draagt de bouwer, en welke de poort? (zie "Scheiding van verantwoordelijkheden, nu op een werkproces")
+2. Wijs in een overdracht de interface, de implementatie en het verborgene aan. Waarom gaat dat verbergen context rot tegen? (zie "Contracten als interface, rolprompts als implementatie")
+3. Waarom is een contract een vastgelegde conventie, en wat levert zo'n afspraak op? (zie "Een contract is een vastgelegde conventie")
+
+### Volgende stap
+
+Je begrijpt nu de conventionele laag: afspraken die mensen vastleggen. Module 3 (De machine vertrouwen en wantrouwen) gaat naar de geautomatiseerde laag: machines die objectief vaststellen of aan een afspraak is voldaan, met coverage, linters en CI. De overgang maakt de kernvraag scherp: als de machine groen zegt, is het dan ook goed?

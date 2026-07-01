@@ -8,12 +8,9 @@ Eerste les van de eenheid over werken met AI-agents in software engineering. Ver
 
 De les hoort bij [oefening 1](oefening.md), die **vooraf** (deel A) en **erna** (deel B) gemaakt wordt.
 
-## Leerdoelen
+## Leeruitkomsten
 
-Na deze les kan de student:
-
-1. **Uitleggen wat context rot is** - beschrijven hoe kwaliteit van AI-output verloopt naarmate één gesprek opdracht, verkenning, logs, mislukte pogingen en oude aannames opstapelt, en de symptomen herkennen (vergeten instructies, scope-verschuiving, zelfverzekerde brij).
-2. **Beargumenteren wanneer een multi-agent-aanpak proportioneel is** - voor een gegeven werkitem onderbouwen of de volledige loop, een licht pad of helemaal geen loop passend is, met de S/M/L-heuristiek en de kosten (tijd, tokens, aandacht) als argumenten.
+De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
 
 Het conceptuele verband met scheiding van verantwoordelijkheden en interfaces komt bewust pas in module 2: eerst ervaren dat de loop helpt, dan begrijpen waarom.
 
@@ -50,3 +47,21 @@ De volgorde is een bewuste ontwerpbeslissing van dit materiaal: wie eerst toolin
 - Andrew "Watts" Watkins, [Context isolation in coding agent loops](https://depot.dev/blog/context-isolation-in-coding-agent-loops) (depot.dev, mei 2026) - de oorspronkelijke beschrijving van de loop en de term context rot zoals hier gebruikt.
 - Anthropic, [How we built our multi-agent research system](https://www.anthropic.com/engineering/built-multi-agent-research-system) (2025) - waarom parallellisatie alleen bij echt onafhankelijke deeltaken loont.
 - De repository zelf: {core}`principles.md` en {core}`loop.md` zijn de normatieve teksten waar deze les didactisch op leunt.
+
+## Afronding
+
+### Wat heb je geleerd
+
+Je hebt context rot aan den lijve ervaren: in één lange chat stapelt alles op en verrot de kwaliteit, terwijl de rollenloop dat tegenhoudt door elke rol een verse, afgebakende context te geven. En je hebt geoefend met proportionaliteit: niet elke taak verdient de volledige loop.
+
+### Zelfcheck
+
+Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+
+1. Wat is context rot, en aan welke drie symptomen herken je het? (zie deel A en oefening 1, deel A)
+2. Waarom verrot de kwaliteit juist in één lang, ongestructureerd gesprek? (zie deel A, de kernvraag)
+3. Wanneer is de volledige loop proportioneel en wanneer niet? Noem een taak waarvoor je hem niet zou inzetten. (zie deel B, proportionaliteit)
+
+### Volgende stap
+
+In deze module heb je gevóéld dat structuur helpt, maar nog niet waaróm. Module 2 (Begrijpen) legt dat uit: de loop als scheiding van verantwoordelijkheden, met contracten als interface. Daarmee stap je van het probleem (nog geen kwaliteitslaag) naar de eerste laag van het kwaliteitsraamwerk: de conventionele laag, waarin een contract een vastgelegde conventie is.

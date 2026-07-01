@@ -10,11 +10,7 @@ De les hoort bij [oefening 3](oefening.md), waarin je aan een groene boekenplank
 
 ## Leeruitkomsten
 
-Na deze les kan de student:
-
-1. **Beargumenteren dat de geautomatiseerde poorten een toegangsvoorwaarde tot de review zijn, niet de review zelf** - de plek van coverage, linters, type-checkers, scans en de CI-pijplijn in de loop benoemen (vóór de overdracht naar de beoordelaars) en verantwoorden waarom beoordelingsaandacht besteden aan wat een machine al objectief vaststelt verspilling is.
-2. **De soorten geautomatiseerde poorten onderscheiden en per soort afwegen wat hij wel en niet vaststelt** - uitleggen wat coverage, een linter, een type-checker en een securityscan elk meten, en verantwoorden waar de grens van elke poort ligt.
-3. **Verantwoorden waarom groen noodzakelijk maar niet voldoende is** - aan een geval waarin alle poorten groen zijn terwijl de code het verkeerde doet, uitleggen dat coverage toont dát een regel is uitgevoerd en niet dat het juiste is getoetst, en benoemen waar daardoor het menselijke oordeel onmisbaar wordt.
+De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
 
 ## Opbouw
 
@@ -54,3 +50,21 @@ Het gat dat de machine laat liggen, is geen tekortkoming van de tooling maar de 
 
 - Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "1. Geautomatiseerd en deterministisch" en "De drie samen".
 - De repository zelf: {core}`contracts/review-handoff.md` (de bouwer levert pas aan de beoordelaars nadat de poorten groen zijn) en {core}`roles/builder.md` (de bouwer is verantwoordelijk voor verifieerbaar werk).
+
+## Afronding
+
+### Wat heb je geleerd
+
+De geautomatiseerde poorten (coverage, linters, type-checkers, scans, CI) zijn een toegangsvoorwaarde tot de review, niet de review zelf: ze staan ervóór. Elke poort meet iets echts en heeft een grens. En groen is noodzakelijk maar niet voldoende: een test kan volledig dekken en toch het verkeerde toetsen, want coverage toont dát een regel draaide, niet dat het juiste is gecontroleerd.
+
+### Zelfcheck
+
+Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+
+1. Waarom staan de geautomatiseerde poorten vóór de beoordeling en niet erin? (zie "De machine als poortwachter")
+2. Wat toont coverage wel en wat niet? Geef een geval waarin 100% dekking samengaat met een fout. (zie "Groen maar fout")
+3. Waar wordt het menselijke oordeel onmisbaar, en waarom kan de machine dat niet leveren? (zie "De brug naar het oordeel")
+
+### Volgende stap
+
+De machine heeft de poort vrijgegeven, maar iemand moet nog steeds oordelen over wat de machine niet kan vaststellen. Module 4 (Oordelen) is die stap: je neemt zelf de rol van beoordelaar. Daarmee ga je van de geautomatiseerde laag naar de oordeelsmatige laag, het hart van het kwaliteitsraamwerk.
