@@ -20,7 +20,7 @@ Compared to the original source material, this version generalizes three things:
 
 1. **Triage first** - not every task deserves the full loop. Typos do not need a council.
 2. **Parameterized verification** - test-first (red/green/refactor) is the default, but validation workflows and manual checks with expected results are first-class alternatives for data, infra, and prototype work.
-3. **Work items, not tickets** - input is plain Markdown, independent of any issue tracker.
+3. **Work items are tracker-agnostic** - the input is plain Markdown, so it works with any issue tracker, or none at all. Keep it as files, as issue bodies on a board, or in any other medium.
 
 ## Repository layout
 

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The input of the loop: a description of work to be done, in plain Markdown, independent of any issue tracker. A work item gives Triage enough to judge proportionality and gives the Planner enough to ground a plan. It states the desired outcome, not the implementation.
+The input of the loop: a description of work to be done, in plain Markdown. The content is tracker-agnostic: it stays readable and usable on its own, whether kept as a file, an issue body, or in another medium, so the loop never depends on a particular tracker. A work item gives Triage enough to judge proportionality and gives the Planner enough to ground a plan. It states the desired outcome, not the implementation.
 
 ## Schema
 
