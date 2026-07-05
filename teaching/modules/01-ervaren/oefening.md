@@ -70,7 +70,7 @@ Beantwoord schriftelijk, met voorbeelden uit je beide logboeken:
 4. Bij de poort (C4) moest je zelf beslissen in plaats van doorklikken. Heb je daar iets tegengehouden of aangepast? Zo nee, waar zou de poort wél waarde hebben gehad in deel A?
 5. De beoordelaars zagen elkaars oordeel niet. Vergelijk de vier C6-oordelen: wat vond er maar één, en had je dat ook gevonden als ze één gezamenlijk gesprek hadden gedeeld?
 6. Geef een voorbeeld uit je overdrachtslogboek waar het concreet hielp dat een rol de context van een andere rol niet zag. (In module 2 ontleed je dit tot het ontwerpverband: interface, implementatie en wat er verborgen wordt.)
-7. Voor welke taken zou jij deze loop voortaan inzetten, en voor welke uitdrukkelijk niet? Onderbouw met de S/M/L-heuristiek én met je eigen tijdsbesteding in deel A en B.
+7. Voor welke taken zou jij deze loop voortaan inzetten, en voor welke uitdrukkelijk niet? Onderbouw met je eigen tijdsbesteding in deel A en B; de formele proportionaliteitsafweging met de S/M/L-heuristiek komt in module 5.
 
 ## Variant zonder AI - rollenspel
 
