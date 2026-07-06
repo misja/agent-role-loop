@@ -26,6 +26,8 @@ In code deel je een systeem op in onderdelen die elk één ding doen: scheiding 
 
 Tussen twee rollen gaat precies één ding heen: een contract. Dat contract is de interface. Het legt vast wat een overdracht moet bevatten, niet hoe de rol tot dat resultaat kwam. De rolprompt erachter is de implementatie: je kunt hem herschrijven, vervangen door een ander model of laten uitvoeren door een mens, zonder dat de rest van de loop het merkt, zolang het contract blijft staan.
 
+Datzelfde geldt voor het medium waarin een contract leeft: een bestand op schijf, een issue-body op een projectbord of een kaartje op een muur zijn inwisselbare dragers, zolang de inhoud het contract draagt. De contracten van dit project leven inmiddels als issue-bodies op een projectbord, zonder dat de loop het merkt.
+
 En wat niet in het contract staat, blijft verborgen. De bouwer ziet het verkenningsverslag van de planner niet; een beoordelaar ziet het oordeel van een andere beoordelaar niet. Dat verbergen is geen slordigheid maar precies de tegenmaatregel tegen de context rot die je in module 1 voelde: niemand sleept de hele geschiedenis mee, dus niets weegt mee dat allang niet meer klopt.
 
 ### Een contract is een vastgelegde conventie
