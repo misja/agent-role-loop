@@ -60,4 +60,4 @@ Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
 
 ### Volgende stap
 
-Je begrijpt nu de conventionele laag: afspraken die mensen vastleggen. Module 3 (De machine vertrouwen en wantrouwen) gaat naar de geautomatiseerde laag: machines die objectief vaststellen of aan een afspraak is voldaan, met coverage, linters en CI. De overgang maakt de kernvraag scherp: als de machine groen zegt, is het dan ook goed?
+Je begrijpt nu de conventionele laag: afspraken die mensen vastleggen. Module 3 (De machine vertrouwen en wantrouwen) gaat naar de geautomatiseerde laag: machines die objectief vaststellen of aan een afspraak is voldaan, met coverage, linters en CI. Dat is de levensloop van een norm zoals het kwaliteitsraamwerk die beschrijft: wat mensen vastleggen, dwingen machines af. De overgang maakt de kernvraag scherp: als de machine groen zegt, is het dan ook goed?

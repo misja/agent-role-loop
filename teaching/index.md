@@ -46,4 +46,4 @@ schrijfwijzer
 
 ## Status van dit materiaal
 
-De leerlijn is opgezet als zes modules, van *ervaren* naar *ontwerpen en verantwoorden*, en wordt module voor module uitgewerkt. In de leerlijn hieronder hebben de uitgewerkte modules een les en een oefening; de overige zijn nog een routekaart-stub met titel, leerdoel en kwaliteitslaag. Elke vervolgmodule wordt in een eigen planfase uitgewerkt. Daarboven ligt een raamwerken-laag, met "Kwaliteit als gedeelde verantwoordelijkheid" als eerste raamwerk: de grondslag die zich over de modules verdeelt. Toetsing volgt in een latere fase; de map `_toetsing/` is daarvoor de placeholder.
+De leerlijn bestaat uit zes modules, van *ervaren* naar *ontwerpen en verantwoorden*, elk met een les en een oefening. De lessen zijn outlines met leeruitkomsten; de volledige lesuitwerking (slides, timing, docentennotities) is vervolgwerk. Daarboven ligt een raamwerken-laag, met "Kwaliteit als gedeelde verantwoordelijkheid" als eerste raamwerk: de grondslag die zich over de modules verdeelt. Toetsing volgt in een latere fase; de map `_toetsing/` is daarvoor de placeholder.

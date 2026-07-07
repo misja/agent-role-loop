@@ -64,4 +64,4 @@ Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
 
 ### Volgende stap
 
-In deze module heb je gevóéld dat structuur helpt, maar nog niet waaróm. Module 2 (Begrijpen) legt dat uit: de loop als scheiding van verantwoordelijkheden, met contracten als interface. Daarmee stap je van het probleem (nog geen kwaliteitslaag) naar de eerste laag van het kwaliteitsraamwerk: de conventionele laag, waarin een contract een vastgelegde conventie is.
+In deze module heb je gevóéld dat structuur helpt, maar nog niet waaróm. Module 2 (Begrijpen) legt dat uit: de loop als scheiding van verantwoordelijkheden, met contracten als interface. Daarmee stap je van het probleem (nog geen kwaliteitslaag) naar de conventionele laag van het kwaliteitsraamwerk, waarin een contract een vastgelegde conventie is.
