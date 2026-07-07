@@ -1,4 +1,4 @@
-# Oefening 1 - Ervaar context rot
+# Ervaar context rot
 
 Je gaat twee keer dezelfde middelgrote opdracht doen met een AI-assistent. De eerste keer in één lange chat, zonder structuur. De tweede keer met de rollenloop, waarbij jij de orkestrator bent. Het verschil is de leerstof.
 

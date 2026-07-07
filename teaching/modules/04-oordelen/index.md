@@ -1,4 +1,4 @@
-# Module 4: Oordelen
+# 4. Oordelen
 
 **Leerdoel:** Je neemt de rol van beoordelaar in, ervaart dat kwaliteitsperspectieven botsen en velt een onderbouwd oordeel over een door AI gebouwde uitbreiding van de boekenplank.
 

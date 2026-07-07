@@ -1,4 +1,4 @@
-# Oefening 2 - Verantwoord de loop als ontwerp
+# Verantwoord de loop als ontwerp
 
 In oefening 1 heb je de rollenloop gedraaid en een overdrachtslogboek bijgehouden. Daar kijk je nu naar terug, niet om te beoordelen *of* het lukte, maar om te verantwoorden *waarom* de structuur werkte. Je eigen logboek is het materiaal.
 

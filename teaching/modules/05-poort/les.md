@@ -1,4 +1,4 @@
-# Les 5 - De menselijke poort: go of no-go op het onomkeerbare
+# Go of no-go op het onomkeerbare
 
 > **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
 

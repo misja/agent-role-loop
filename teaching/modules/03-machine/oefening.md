@@ -1,4 +1,4 @@
-# Oefening 3 - Groen, volledig gedekt, en toch fout
+# Groen, volledig gedekt, en toch fout
 
 Een machine kan je vertellen dat alle tests slagen en dat elke regel code is gedekt. Deze oefening laat zien dat dat allebei waar kan zijn terwijl de code het verkeerde doet. Je begint met een aangeleverd voorbeeld dat we samen ontleden, en past het daarna toe op je eigen boekenplank.
 

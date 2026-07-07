@@ -1,4 +1,4 @@
-# Les 3 - De machine vertrouwen en wantrouwen
+# Groen is noodzakelijk maar niet voldoende
 
 > **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
 

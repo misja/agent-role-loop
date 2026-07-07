@@ -1,4 +1,4 @@
-# Schrijfwijzer voor het onderwijsmateriaal
+# Schrijfwijzer
 
 Deze schrijfwijzer legt de conventies vast voor al het teaching-materiaal in deze
 repository: lessen, oefeningen, raamwerken en cases. Het doel is professioneel,
@@ -97,6 +97,12 @@ in plaats van haar te onthouden.
 Materiaal is opgebouwd in herkenbare, expliciet benoemde onderdelen. De lezer
 moet altijd weten of hij uitleg leest, een opdracht uitvoert of reflecteert.
 
+- Een kop benoemt wat de pagina of sectie inhoudelijk is, en herhaalt geen
+  context die de navigatie (toctree, module-index) al geeft. Genre-aanduidingen
+  ("les", "oefening", "lesmateriaal") alleen waar ze onderscheidend zijn, niet
+  waar de plek in de structuur ze al impliceert. Toets elke kop op de plek waar
+  hij zonder context verschijnt (zijbalk, zoekresultaat): daar moet hij zichzelf
+  dragen.
 - Maak per onderdeel expliciet wat het is. Gebruik heldere kopjes die de
   tekstsoort benoemen, bijvoorbeeld "Inleiding", "Wat je gaat doen", "Opdracht",
   "Stappen", "Reflectie".

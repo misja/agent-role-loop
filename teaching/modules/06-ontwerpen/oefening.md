@@ -1,4 +1,4 @@
-# Oefening 6 - Ontwerp, regisseer en verantwoord (mini-project)
+# Ontwerp, regisseer en verantwoord (mini-project)
 
 In de eerdere oefeningen kreeg je de opdracht, het artefact of de beslissing aangereikt. Nu is alles van jou: je ontwerpt een interface-uitbreiding op je boekenplank, stelt de randvoorwaarden vast, kiest je werkwijze en tooling, laat de AI bouwen binnen die kaders, en beoordeelt en verantwoordt het geheel. Het resultaat is een dossier waarin elke keuze verantwoord is.
 

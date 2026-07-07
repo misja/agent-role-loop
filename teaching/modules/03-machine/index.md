@@ -1,4 +1,4 @@
-# Module 3: De machine vertrouwen en wantrouwen
+# 3. De machine vertrouwen en wantrouwen
 
 **Leerdoel:** Je zet coverage, CI, linters en scans in als toegangsvoorwaarde tot review en doorziet waarom groen noodzakelijk maar niet voldoende is.
 

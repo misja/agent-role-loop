@@ -131,4 +131,4 @@ myst_enable_extensions = [
 ]
 
 html_theme = "furo"
-html_title = "Agent Role Loop - lesmateriaal"
+html_title = "Kwaliteit bewaken als AI bouwt"

@@ -1,4 +1,4 @@
-# Oefening 4 - Beoordeel een AI-gebouwde uitbreiding vanuit vier perspectieven
+# Beoordeel een AI-gebouwde uitbreiding vanuit vier perspectieven
 
 In module 3 zocht je de plek waar een groene poort niets bewees. Nu oordeel je zelf. Je beoordeelt een door AI gebouwde reserveringen-uitbreiding van de boekenplank die werkt en groen is, maar ontwerpkeuzes maakt waarover je het oneens kunt zijn. Je neemt de vier beoordelaarsrollen in en prioriteert tot één eindoordeel.
 

@@ -1,4 +1,4 @@
-# Oefening 5 - Sta aan de poort: go of no-go op het onomkeerbare
+# Sta aan de poort
 
 In module 4 oordeelde je over de kwaliteit van een change. Nu sta je aan de poort. Een door AI gebouwde `verwijderen`-operatie staat klaar om door te gaan. De code werkt, de tests slagen. Jij beslist: mag dit zo door?
 

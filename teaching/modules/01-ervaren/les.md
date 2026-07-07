@@ -1,4 +1,4 @@
-# Les 1 - Context rot
+# Context rot
 
 > **Status:** outline met leerdoelen. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
 

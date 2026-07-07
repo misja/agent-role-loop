@@ -1,4 +1,4 @@
-# Les 6 - Ontwerpen en verantwoorden: de synthese
+# De synthese: het kader in eigen hand
 
 > **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
 

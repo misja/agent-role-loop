@@ -1,4 +1,4 @@
-# Module 2: Begrijpen
+# 2. Begrijpen
 
 **Leerdoel:** Je begrijpt de rollenloop als scheiding van verantwoordelijkheden op een werkproces, met contracten als interface tussen rollen.
 

@@ -1,4 +1,4 @@
-# Agent Role Loop - lesmateriaal
+# Kwaliteit bewaken als AI bouwt
 
 Lesmateriaal voor HBO-ICT-studenten Software Engineering over het werken met AI-agents zonder dat de context verrot: rollen scheiden, overdrachten expliciet maken, en gereedschap proportioneel inzetten.
 

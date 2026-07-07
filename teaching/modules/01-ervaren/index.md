@@ -1,4 +1,4 @@
-# Module 1: Ervaren
+# 1. Ervaren
 
 **Leerdoel:** Je ervaart context rot aan den lijve en voelt waarom ongestructureerd met een AI-agent werken de kwaliteit laat verrotten.
 

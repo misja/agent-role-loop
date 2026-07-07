@@ -1,4 +1,4 @@
-# Module 6: Ontwerpen en verantwoorden
+# 6. Ontwerpen en verantwoorden
 
 **Leerdoel:** Je ontwerpt zelf de volgende uitbreiding van de casus, stelt de randvoorwaarden van je project vast, regisseert en bewaakt de AI, en verantwoordt elke keuze tegen het kwaliteitskader.
 

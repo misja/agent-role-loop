@@ -1,4 +1,4 @@
-# Les 4 - Oordelen: kwaliteit als afweging tussen botsende perspectieven
+# Kwaliteit als afweging tussen botsende perspectieven
 
 > **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
 

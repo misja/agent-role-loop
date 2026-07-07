@@ -1,4 +1,4 @@
-# Les 2 - Begrijpen: de loop als scheiding van verantwoordelijkheden
+# De loop als scheiding van verantwoordelijkheden
 
 > **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
 

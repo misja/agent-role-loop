@@ -1,4 +1,4 @@
-# Module 5: De menselijke poort
+# 5. De menselijke poort
 
 **Leerdoel:** Je neemt de rol van menselijke poort in: je velt een go/no-go over een onomkeerbare operatie, verantwoordt waarom zo'n beslissing bij de mens blijft, en weegt proportionaliteit en triage.
 
