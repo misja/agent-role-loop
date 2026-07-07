@@ -2,7 +2,7 @@
 
 Lesmateriaal voor HBO-ICT-studenten Software Engineering over het werken met AI-agents zonder dat de context verrot: rollen scheiden, overdrachten expliciet maken, en gereedschap proportioneel inzetten.
 
-De volgorde is bewust: eerst ervaar je het probleem (context rot), dan krijg je het principe (scheiding van rollen met contracten als interface), en pas daarna de tooling. De loop zelf, de contracten en de rolprompts staan in het Engels in de repository onder `core/`; de [begrippenlijst](begrippen.md) overbrugt de twee talen.
+De volgorde is bewust: eerst ervaar je het probleem (context rot), dan krijg je het principe (scheiding van rollen met contracten als interface), en pas daarna de tooling. De loop zelf, de contracten en de rolprompts staan in het Engels onder `core/` en zijn op deze site opgenomen als [referentiesectie](referentie/index.md); de [begrippenlijst](begrippen.md) overbrugt de twee talen.
 
 ```{toctree}
 :maxdepth: 1
@@ -28,6 +28,13 @@ modules/06-ontwerpen/index
 :caption: Naslag
 
 begrippen
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Referentie - rollen en contracten (Engels)
+
+referentie/index
 ```
 
 ```{toctree}

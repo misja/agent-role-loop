@@ -1,6 +1,9 @@
 # Sphinx build output
 docs/_build/
 
+# Gegenereerde referentie-staging (sync van core/ door docs/conf.py)
+teaching/referentie/
+
 # Python
 __pycache__/
 *.pyc
