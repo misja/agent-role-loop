@@ -11,7 +11,12 @@ project = "Agent Role Loop"
 author = "Misja Hoebe"
 copyright = "2026, Misja Hoebe - CC BY-NC-SA 4.0"
 
-extensions = ["myst_parser"]
+extensions = ["myst_parser", "sphinxcontrib.mermaid"]
+
+# Mermaid rendert client-side (gate-keuze #21): geen node of headless browser in
+# de build, D11/D12 blijven intact. De versie is expliciet gepind zodat het
+# gedrag bij de lezer deterministisch is; het script komt van een CDN.
+mermaid_version = "11.12.1"
 
 # --- Referentiesectie: core/ gepubliceerd als onderdeel van de site. ---
 # core/ zelf blijft vendor-neutraal en onaangeraakt. Bij elke build wordt het
