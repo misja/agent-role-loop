@@ -31,20 +31,15 @@ flowchart TD
     P -- C2 --> V[Verhelderaar]
     V -- C3 --> G[Menselijke poort]
     G -- C4 --> B[Bouwer]
-    B -- C5 --> R1
-    B -- C5 --> R2
-    B -- C5 --> R3
-    B -- C5 --> R4
-    subgraph S["Beoordelaars, parallel en geïsoleerd"]
+    B -- C5 --> S
+    subgraph S[Beoordelaars]
+        direction LR
         R1[Strikt]
         R2[Pragmatisch]
         R3[Adversarieel]
         R4[Onderhoudbaarheid]
     end
-    R1 -- C6 --> H[Hoofdbeoordelaar]
-    R2 -- C6 --> H
-    R3 -- C6 --> H
-    R4 -- C6 --> H
+    S -- "C6 (4x)" --> H[Hoofdbeoordelaar]
     H -- C7 --> E[Eindoordeel]
 ```
 
