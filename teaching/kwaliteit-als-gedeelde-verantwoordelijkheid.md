@@ -65,6 +65,13 @@ De drie soorten vormen geen rangorde van belang, maar een opbouw waarin de lagen
 
 Datzelfde verklaart hoe de conventionele laag routinebeslissingen wegneemt: een afspraak doorloopt een levensloop omlaag door de lagen. Wat eerst een oordeel is, bijvoorbeeld de keuze dat alle code getypeerd wordt, wordt een vastgelegde conventie en ten slotte een poort die haar afdwingt. Elke stap haalt last weg: een vastgelegde conventie hoeft niet per taak heronderhandeld te worden, en een geautomatiseerde poort handhaaft haar zonder dat iemand eraan denkt. Zo houdt de oordeelsmatige laag, waar het vakmanschap begint, aandacht over voor het moeilijke; die laag kan de andere twee niet overslaan, maar wordt er ook nooit door vervangen.
 
+```{mermaid}
+:caption: De levensloop van een norm, omlaag door de drie lagen.
+
+flowchart LR
+    O["Oordeel<br>iemand beslist wat hier goed is"] --> C["Conventie<br>vastgelegd, niet per taak heronderhandeld"] --> A["Automatisering<br>de poort dwingt af, zonder dat iemand eraan denkt"]
+```
+
 Hierin ligt het antwoord op een hardnekkig misverstand: dat hoge coverage of een groene SonarQube-gate samenvalt met kwaliteit. De drie lagen laten zien dat geautomatiseerde poorten tegelijk noodzakelijk en ontoereikend zijn, en dat juist in het verschil tussen die twee het oordeelsvermogen nodig wordt. Een groen vinkje is een voorwaarde om te mogen beoordelen, niet het bewijs dat de beoordeling al heeft plaatsgevonden, en het betekent pas iets nadat in de conventionele laag besloten is wat de poort eist.
 
 ## Hoe lessen zich hieraan ophangen

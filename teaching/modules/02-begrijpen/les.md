@@ -22,6 +22,32 @@ Korte terugblik op module 1: in deel A liep één lange chat vol en verrotte de 
 
 In code deel je een systeem op in onderdelen die elk één ding doen: scheiding van verantwoordelijkheden. De rollenloop doet hetzelfde, maar dan met een werkproces in plaats van met code. Triage weegt proportionaliteit, de planner plant, de bouwer bouwt, elke beoordelaar kijkt vanuit één invalshoek, de poort velt het menselijke oordeel. Geen enkele rol draagt alles; elke rol draagt één zorg. Dat is dezelfde gedachte, op een ander niveau toegepast.
 
+```{mermaid}
+:caption: De rollenloop. Elke rol draagt één zorg; tussen twee rollen gaat precies één contract heen (C0 tot en met C7). De beoordelaars werken parallel en zien elkaars oordeel niet.
+
+flowchart TD
+    W["Werkitem (C0)"] --> T[Triage]
+    T -- C1 --> P[Planner]
+    P -- C2 --> V[Verhelderaar]
+    V -- C3 --> G[Menselijke poort]
+    G -- C4 --> B[Bouwer]
+    B -- C5 --> R1
+    B -- C5 --> R2
+    B -- C5 --> R3
+    B -- C5 --> R4
+    subgraph S["Beoordelaars, parallel en geïsoleerd"]
+        R1[Strikt]
+        R2[Pragmatisch]
+        R3[Adversarieel]
+        R4[Onderhoudbaarheid]
+    end
+    R1 -- C6 --> H[Hoofdbeoordelaar]
+    R2 -- C6 --> H
+    R3 -- C6 --> H
+    R4 -- C6 --> H
+    H -- C7 --> E[Eindoordeel]
+```
+
 ### Contracten als interface, rolprompts als implementatie
 
 Tussen twee rollen gaat precies één ding heen: een contract. Dat contract is de interface. Het legt vast wat een overdracht moet bevatten, niet hoe de rol tot dat resultaat kwam. De rolprompt erachter is de implementatie: je kunt hem herschrijven, vervangen door een ander model of laten uitvoeren door een mens, zonder dat de rest van de loop het merkt, zolang het contract blijft staan.
