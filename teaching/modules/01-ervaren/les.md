@@ -1,7 +1,5 @@
 # Context rot
 
-> **Status:** outline met leerdoelen. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
-
 ## Plaats in de leerlijn
 
 Eerste les van de eenheid over werken met AI-agents in software engineering. Vereist voorkennis: studenten kunnen zelfstandig een middelgrote programmeeropdracht uitvoeren en hebben enige ervaring met een chatgebaseerde AI-assistent. Geen voorkennis over multi-agent-werkwijzen nodig; die bouwen we hier op.
@@ -40,7 +38,7 @@ De volgorde is een bewuste ontwerpbeslissing van dit materiaal: wie eerst toolin
 ## Werkvormen en toetsing
 
 - Werkvormen: logboekbespreking in tweetallen, plenaire clustering, instructie, demonstratie.
-- Toetsing: in deze fase alleen formatief, via de reflectievragen van oefening 1. Summatieve toetsing is een placeholder (`_toetsing/`).
+- Toetsing: formatief, via de reflectievragen van oefening 1.
 
 ## Bronnen
 

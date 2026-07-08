@@ -1,7 +1,5 @@
 # Go of no-go op het onomkeerbare
 
-> **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
-
 ## Plaats in de leerlijn
 
 Vijfde module. In module 4 heb je geoordeeld: de vier perspectieven gewogen en geprioriteerd. Dit is de stap voordat werk doorgaat: de menselijke poort. Vereiste voorkennis: module 4 afgerond, en het kwaliteitsraamwerk.
@@ -35,7 +33,7 @@ Deze module gaat over de poort-beslissing: go of no-go op het onomkeerbare, en w
 ## Werkvormen en toetsing
 
 - Werkvormen: korte instructie, gezamenlijke go/no-go op de verwijder-operatie (worked example), daarna zelf een poort-beslissing vellen in oefening 5.
-- Toetsing: in deze fase formatief, via de poort-beslissing en de verantwoordingsvragen van oefening 5.
+- Toetsing: formatief, via de poort-beslissing en de verantwoordingsvragen van oefening 5.
 
 ## Bronnen
 

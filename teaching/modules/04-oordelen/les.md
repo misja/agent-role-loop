@@ -1,7 +1,5 @@
 # Kwaliteit als afweging tussen botsende perspectieven
 
-> **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
-
 ## Plaats in de leerlijn
 
 Vierde module. In module 3 zag je dat een groene poort niets bewijst en dat er een mens moet oordelen. Deze module gaat over dat oordeel: je neemt zelf de rol van beoordelaar in. Vereiste voorkennis: module 3 afgerond, en het kwaliteitsraamwerk, soort 3.
@@ -40,7 +38,7 @@ Deze module gaat over het oordeel: de perspectieven wegen en prioriteren. Nog ni
 ## Werkvormen en toetsing
 
 - Werkvormen: korte instructie, gezamenlijke ontleding van twee perspectieven op de uitbreiding (worked example), daarna zelf de overige perspectieven en de synthese in oefening 4.
-- Toetsing: in deze fase formatief, via de oordelen en de verantwoordingsvragen van oefening 4.
+- Toetsing: formatief, via de oordelen en de verantwoordingsvragen van oefening 4.
 
 ## Bronnen
 

@@ -1,7 +1,5 @@
 # De loop als scheiding van verantwoordelijkheden
 
-> **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
-
 ## Plaats in de leerlijn
 
 Tweede module van de leerlijn. In module 1 heb je context rot aan den lijve ervaren en heb je de rollenloop één keer gedraaid (oefening 1, deel B). Je weet nu hoe het voelt en *dát* structuur helpt. Deze les gaat over het waarom: waarom werkt die structuur, en welk ontwerpprincipe dat je al kent zit eronder? Vereiste voorkennis: module 1 afgerond, inclusief het overdrachtslogboek uit oefening 1.
@@ -58,7 +56,7 @@ Hiermee raakt de loop aan softwarekwaliteit. In het raamwerk [Kwaliteit als gede
 ## Werkvormen en toetsing
 
 - Werkvormen: korte instructie, gezamenlijke analyse van één voorbeeldoverdracht, daarna zelf toepassen in oefening 2.
-- Toetsing: in deze fase formatief, via de verantwoordingsvragen van oefening 2.
+- Toetsing: formatief, via de verantwoordingsvragen van oefening 2.
 
 ## Bronnen
 

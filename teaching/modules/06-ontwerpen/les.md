@@ -1,7 +1,5 @@
 # De synthese: het kader in eigen hand
 
-> **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
-
 ## Plaats in de leerlijn
 
 Laatste module. Tot nu toe kreeg je het kader aangereikt: je ervoer het probleem (module 1), begreep de loop (module 2), zette de machinepoorten in (module 3), oordeelde (module 4) en stond aan de poort (module 5). Nu draait het om: jij ontwerpt, en het kader is van jou. Vereiste voorkennis: modules 1 tot en met 5 afgerond.
@@ -41,7 +39,7 @@ De beoordeling rust daarbij op je verantwoording, niet op het artefact. Twee stu
 ## Werkvormen en toetsing
 
 - Werkvormen: korte instructie, daarna het mini-project van oefening 6 met tussentijdse besprekingen van de dossiers.
-- Toetsing: in deze fase formatief, via het dossier en de verantwoordingsvragen van oefening 6. Summatieve toetsing is een placeholder (`_toetsing/`).
+- Toetsing: formatief, via het dossier en de verantwoordingsvragen van oefening 6.
 
 ## Bronnen
 

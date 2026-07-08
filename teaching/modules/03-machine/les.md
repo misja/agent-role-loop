@@ -1,7 +1,5 @@
 # Groen is noodzakelijk maar niet voldoende
 
-> **Status:** outline met leeruitkomsten. De volledige lesuitwerking (slides, timing per werkvorm, docentennotities) is vervolgwerk.
-
 ## Plaats in de leerlijn
 
 Derde module van de leerlijn. In module 2 heb je de loop begrepen als scheiding van verantwoordelijkheden, met contracten als interface. Een van die contracten is de overdracht van de bouwer naar de beoordelaars. Deze les gaat over wat er vóór die overdracht moet kloppen: de geautomatiseerde poorten die een machine objectief vaststelt. Vereiste voorkennis: module 2 afgerond, en het kwaliteitsraamwerk, soort 1.
@@ -48,7 +46,7 @@ Wat de machine laat liggen, is geen tekortkoming van de tooling maar de grens er
 ## Werkvormen en toetsing
 
 - Werkvormen: korte instructie, gezamenlijke ontleding van de groene boekenplank (worked example), daarna zelf toepassen op de eigen boekenplank in oefening 3.
-- Toetsing: in deze fase formatief, via de verantwoordingsvragen van oefening 3.
+- Toetsing: formatief, via de verantwoordingsvragen van oefening 3.
 
 ## Bronnen
 
