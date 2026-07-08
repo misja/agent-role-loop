@@ -126,8 +126,9 @@ language = "nl"
 # Buiten de build: _toetsing is een lege placeholder; cases bevat code-artefacten
 # (worked examples) die geen site-document zijn en waarnaar de lessen als inline
 # pad verwijzen; het werkitem-template is pure projectinfrastructuur.
-# conventies.md bouwt wel mee maar staat bewust niet in de navigatie-toctree: het
-# is als orphan gemarkeerd (front matter), dus rendert en is aanlinkbaar.
+# conventies.md en schrijfwijzer.md bouwen wel mee maar staan bewust niet in de
+# navigatie-toctree: het zijn docent- en projectdocumenten, als orphan gemarkeerd
+# (front matter), dus ze renderen en zijn aanlinkbaar.
 exclude_patterns = ["_build", "_toetsing", "cases", "_werkitem-template.md"]
 
 myst_enable_extensions = [

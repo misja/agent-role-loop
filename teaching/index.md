@@ -37,13 +37,6 @@ begrippen
 referentie/index
 ```
 
-```{toctree}
-:maxdepth: 1
-:caption: Conventies
-
-schrijfwijzer
-```
-
 ## Opzet van dit materiaal
 
 De leerlijn bestaat uit zes modules, van *ervaren* naar *ontwerpen en verantwoorden*, elk met een les en een oefening. Daarboven ligt een raamwerken-laag, met "Kwaliteit als gedeelde verantwoordelijkheid" als eerste raamwerk: de grondslag die zich over de modules verdeelt.

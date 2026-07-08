@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Schrijfwijzer
 
 Deze schrijfwijzer legt de conventies vast voor al het teaching-materiaal in deze
