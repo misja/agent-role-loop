@@ -42,8 +42,8 @@ De volgorde is een bewuste ontwerpbeslissing van dit materiaal: wie eerst toolin
 
 ## Bronnen
 
-- Andrew "Watts" Watkins, [Context isolation in coding agent loops](https://depot.dev/blog/context-isolation-in-coding-agent-loops) (depot.dev, mei 2026) - de oorspronkelijke beschrijving van de loop en de term context rot zoals hier gebruikt.
-- Anthropic, [How we built our multi-agent research system](https://www.anthropic.com/engineering/built-multi-agent-research-system) (2025) - waarom parallellisatie alleen bij echt onafhankelijke deeltaken loont.
+- De oorspronkelijke beschrijving van de loop en de term context rot zoals hier gebruikt {cite}`watkins2026context`.
+- Waarom parallellisatie alleen bij echt onafhankelijke deeltaken loont {cite}`anthropic2025multiagent`.
 - De repository zelf: {core}`principles.md` en {core}`loop.md` zijn de normatieve teksten waar deze les didactisch op leunt.
 
 ## Afronding

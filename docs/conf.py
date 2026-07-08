@@ -11,7 +11,13 @@ project = "Agent Role Loop"
 author = "Misja Hoebe"
 copyright = "2026, Misja Hoebe - CC BY-NC-SA 4.0"
 
-extensions = ["myst_parser", "sphinxcontrib.mermaid"]
+extensions = ["myst_parser", "sphinxcontrib.mermaid", "sphinxcontrib.bibtex"]
+
+# Verwijzingen: een BibTeX-bestand, numeriek geciteerd als [n] in volgorde van
+# citeren (IEEE-achtig). De annotaties met bronkritiek blijven in de Bronnen- en
+# Verder-lezen-secties; de bibliografiepagina draagt de formele verwijzingen.
+bibtex_bibfiles = ["references.bib"]
+bibtex_default_style = "unsrt"
 
 # Mermaid rendert client-side (gate-keuze #21): geen node of headless browser in
 # de build, D11/D12 blijven intact. De versie is expliciet gepind zodat het

@@ -34,6 +34,7 @@ modules/06-ontwerpen/index
 :caption: Naslag
 
 begrippen
+literatuur
 ```
 
 ```{toctree}
