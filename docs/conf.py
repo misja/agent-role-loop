@@ -137,4 +137,5 @@ myst_enable_extensions = [
 ]
 
 html_theme = "furo"
-html_title = "Kwaliteit bewaken als AI bouwt"
+# Kort in de browsertab; de subtitel staat op de landingspagina (zie #24).
+html_title = "De ontwikkelstraat"
