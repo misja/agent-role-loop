@@ -53,6 +53,46 @@ En wat niet in het contract staat, blijft verborgen. De bouwer ziet het verkenni
 
 Hiermee raakt de loop aan softwarekwaliteit. In het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md) is de tweede soort kwaliteitsmechanisme de conventionele: afspraken die je vastlegt en niet per taak opnieuw maakt. Een contract is precies zo'n vastgelegde conventie. Het bepaalt één keer wat een overdracht moet bevatten, zodat niemand dat per keer hoeft te heronderhandelen. Standaarden bestaan om denkruimte vrij te maken, en een contract doet dat voor de overdracht tussen rollen.
 
+### Een echt werkitem als voorbeeld
+
+Zo ziet een ingevuld werkitem ({core}`contracts/work-item.md`) eruit. Dit is een echt exemplaar uit de bouw van dit lesmateriaal: het werkitem dat de diagram-ondersteuning van deze site inschakelde. Het stroomdiagram hierboven rendert dankzij dit werkitem.
+
+```md
+# Schakel Mermaid-ondersteuning in
+
+## Aanleiding
+
+De schrijfwijzer wijst Mermaid aan als voorkeursvorm voor diagrammen, met een
+expliciete technische voorwaarde: de ondersteuning vereist een extensie
+(sphinxcontrib-mermaid) als dependency in pyproject.toml en een configuratie in
+conf.py, en Mermaid mag pas in materiaal gebruikt worden nadat die ondersteuning
+is ingeschakeld en de build er schoon mee is. Die voorwaarde bestond tot nu toe
+alleen als kanttekening; dit werkitem materialiseert haar, omdat het
+visualisatie-werkitem erop wacht.
+
+## Gewenste uitkomst
+
+Mermaid-diagrammen renderen in de site: sphinxcontrib-mermaid als dependency in
+de docs-groep van pyproject.toml, extensie geconfigureerd in docs/conf.py, en
+een rendercheck (een proefdiagram bouwt en toont correct, daarna weer verwijderd
+of als eerste echt diagram benut).
+
+## Acceptance criteria
+
+1. sphinxcontrib-mermaid in de docs-dependency-groep; het lock-bestand is
+   bijgewerkt.
+2. Extensie in conf.py; de kale, portabele build blijft de volledige site
+   produceren, ook in CI.
+3. Docs-build schoon met een renderend Mermaid-diagram als bewijs.
+4. Voldoet aan de conventies in teaching/conventies.md.
+
+## Size guess
+
+S
+```
+
+Merk op wat het contract afdwingt: een aanleiding (waarom bestaat dit werk), een gewenste uitkomst als waarneembaar resultaat, en toetsbare acceptatiecriteria. Wie dit werkitem oppakt, hoeft niets te heronderhandelen.
+
 ## Werkvormen en toetsing
 
 - Werkvormen: korte instructie, gezamenlijke analyse van één voorbeeldoverdracht, daarna zelf toepassen in oefening 2.

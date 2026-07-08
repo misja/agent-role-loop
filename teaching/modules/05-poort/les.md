@@ -16,6 +16,38 @@ De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
 
 In de loop is er één beslismoment dat aan geen enkele andere rol wordt overgelaten: de menselijke poort ({core}`roles/human-gate.md`). De machine stelt vast dat de code werkt; de beoordelaars wegen de kwaliteit; maar of een change ook echt door mag, blijft een mens. De poort vraagt niet "is de code goed", maar "is dit nog steeds het juiste, en zijn de gevolgen aanvaardbaar".
 
+### Een echte poort-respons
+
+Een poort-respons is opgebouwd, geen stempel. Dit is een echte, uit de ontwikkeling van dit lesmateriaal: de menselijke poort beslist hier over het plan voor module 4, de module die je net achter de rug hebt. Let op de opbouw: per beslissing een oordeel, waar nodig een voorwaarde, en een bewaking voor de bouw.
+
+```md
+PROCEED, met een aanscherping op 2 en een aandachtspunt bij 3.
+
+1 (reserveringen/wachtlijst): akkoord, de vier-weg-tabel draagt het.
+
+2 (aangeleverd AI-gebouwd artefact): akkoord, maar het beslissende argument is
+didactische controle, niet "proportioneel want CLI". Bij eigen code hangt de
+leerervaring af van de toevallige kwaliteit van het studentwerk; een aangeleverd
+artefact garandeert dat elke student dezelfde rijke, oordeelswaardige situatie
+heeft. Accepteer wel bewust de prijs: het is een te onderhouden artefact. Bouw
+het met dezelfde discipline als module 3, zo klein en inert mogelijk.
+
+Aanscherping op 2: de ingebouwde spanningen moeten verdedigbare keuzes zijn die
+botsen, geen verstopte bugs. Als het "vind de vier fouten" wordt, is het een
+verstopte lat. De oordeelslaag gaat er juist over dat redelijke mensen het
+oneens zijn over code die niet simpelweg fout is. De wachtlijst die pragmatisch
+prima is maar onderhoudbaarheid-verstrengeling geeft, is geen fout maar een
+legitieme keuze. Dat moet de aard van de spanningen zijn.
+
+3 (fading en verdictvorm): akkoord. Bewaak dat de eindsynthese het prioriteren
+expliciet vraagt (correctheid eerst, dan onderhoudbaarheid, dan afwerking), niet
+blijft hangen bij vier losse oordelen. Het prioriteren is de oordeelsvaardigheid.
+
+4 (grens met module 5): akkoord.
+```
+
+Merk op dat geen van de vier beslissingen een doorgeefluik is: de poort geeft door mét argument, stelt voorwaarden aan wat nog gebouwd moet worden, en houdt vast wat de bouwer zou kunnen laten verwateren. Zo ging de oefening die jij in module 4 maakte, zelf langs deze poort.
+
 ### Onomkeerbaarheid verandert de vraag
 
 Bij een omkeerbare wijziging is een fout te herstellen; bij een onomkeerbare niet. `verwijderen` wist een boek en zijn wachtlijst definitief, ook als er nog reserveringen openstaan. De machine bevestigt dat de operatie doet wat er staat, en toch is dat niet de vraag die telt. De poort weegt de kosten van een verkeerde go die je niet meer terugdraait: is het aanvaardbaar dat de reservering van een lener zonder waarschuwing verdwijnt, of moet er eerst iets (een bevestiging, een archief, een soft-delete)?
