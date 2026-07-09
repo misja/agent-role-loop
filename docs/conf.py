@@ -142,6 +142,12 @@ myst_enable_extensions = [
     "deflist",
 ]
 
+# Een kale ```mermaid-fence (GitHub-native) wordt in de site gerenderd als de
+# {mermaid}-directive. Zo gebruikt core/loop.md een diagram-syntax die zowel op
+# GitHub als in de gesynchroniseerde site-kopie rendert, zonder core/ Sphinx-
+# specifiek te maken. Bestaande {mermaid}-directives in teaching/ blijven werken.
+myst_fence_as_directive = ["mermaid"]
+
 html_theme = "furo"
 # Kort in de browsertab; de subtitel staat op de landingspagina (zie #24).
 html_title = "De ontwikkelstraat"

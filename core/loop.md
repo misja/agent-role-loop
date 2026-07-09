@@ -4,34 +4,29 @@ This document defines the pipeline: its stages, the contracts that flow between 
 
 ## Pipeline
 
-```text
-Work item (C0)
-   |
-   v
-Triage ............... C1 Triage Decision
-   |        \
-   | FULL_LOOP \ LIGHT                REJECT -> back to requester, with advice
-   v            \
-Planner ........... C2 Build Packet    \
-   |                                    \
-   v                                     \
-Clarifier ......... C3 Clarifier Result  |
-   |   (FAIL -> back to Planner)         |
-   v                                     |
-Human Gate ........ C4 Gate Decision     |
-   |   (REVISE -> back to Planner,       |
-   |    STOP -> end)                     |
-   v                                     v
-Builder ........... C5 Review Handoff (core + extended)
-   |
-   v
-Reviewers (parallel, isolated) ... C6 Reviewer Verdict (one each)
-   |
-   v
-Reviewer Boss ..... C7 Final Verdict
-   |
-   v
-SHIP / SHIP WITH NITS / BLOCK (-> Builder next action)
+```mermaid
+flowchart TD
+    W["Work item (C0)"] --> T{Triage}
+    T -->|"C1 REJECT"| Req["Back to requester, with advice"]
+    T -->|"C1 LIGHT"| B["Builder"]
+    T -->|"C1 FULL_LOOP"| P["Planner"]
+    P -->|"C2 Build Packet"| C{Clarifier}
+    C -->|"C3 FAIL"| P
+    C -->|"C3 PASS"| G{"Human Gate (human)"}
+    G -->|"C4 REVISE"| P
+    G -->|"C4 STOP"| E1["End"]
+    G -->|"C4 PROCEED"| B
+    B -->|"C5 Review Handoff"| RV
+    subgraph RV["Reviewers (parallel, isolated)"]
+        direction LR
+        R1["strict"]
+        R2["pragmatic"]
+        R3["adversarial"]
+        R4["maintainability"]
+    end
+    RV -->|"C6 Reviewer Verdict (x4)"| RB{Reviewer Boss}
+    RB -->|"C7 BLOCK"| B
+    RB -->|"C7 SHIP / SHIP WITH NITS"| E2["End; nits become follow-up work items"]
 ```
 
 ## Stages
