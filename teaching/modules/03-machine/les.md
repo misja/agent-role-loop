@@ -52,6 +52,7 @@ Wat de machine laat liggen, is geen tekortkoming van de tooling maar de grens er
 
 - Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "1. Geautomatiseerd en deterministisch" en "De drie samen".
 - De repository zelf: {core}`contracts/review-handoff.md` (de bouwer levert pas aan de beoordelaars nadat de poorten groen zijn) en {core}`roles/builder.md` (de bouwer is verantwoordelijk voor verifieerbaar werk).
+- Humble en Farley, Continuous Delivery {cite}`humble2010continuous`. De canonieke bron voor de deployment pipeline als kwaliteitspoort: geautomatiseerde controles als toegangsvoorwaarde voordat werk verder mag, precies de rol die de geautomatiseerde laag hier speelt.
 
 ## Afronding
 

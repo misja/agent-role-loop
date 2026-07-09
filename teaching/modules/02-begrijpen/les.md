@@ -102,6 +102,8 @@ Merk op wat het contract afdwingt: een aanleiding (waarom bestaat dit werk), een
 
 - De repository zelf: {core}`principles.md` (vooral het tweede principe, expliciete overdrachten) en {core}`loop.md` zijn de normatieve teksten onder deze les.
 - Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "2. Conventioneel en vastgelegd".
+- Parnas, On the Criteria To Be Used in Decomposing Systems into Modules {cite}`parnas1972criteria`. De canonieke bron voor informatie verbergen: een module toont een interface en verbergt haar implementatiebeslissingen. De loop past dat toe op een werkproces, waar de bouwer het contract krijgt en niet het denkproces van de planner.
+- Brooks, The Mythical Man-Month {cite}`brooks1975mythical`. Waarom communicatie-overhead met teamgrootte groeit en scheiding van verantwoordelijkheden dat beheersbaar houdt, het menselijke patroon onder de rolscheiding van de loop.
 
 ## Afronding
 

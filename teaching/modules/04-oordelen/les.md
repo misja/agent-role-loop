@@ -44,6 +44,7 @@ Deze module gaat over het oordeel: de perspectieven wegen en prioriteren. Nog ni
 
 - Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "Kwaliteit spreekt zichzelf tegen" en de derde soort.
 - De repository zelf: de vier beoordelaarsrollen onder `core/roles/` en {core}`roles/reviewer-boss.md`, en de contracten {core}`contracts/reviewer-verdict.md` (C6) en {core}`contracts/final-verdict.md` (C7).
+- Fagan, Design and code inspections {cite}`fagan1976design`. De klassieke onderbouwing van formele, onafhankelijke review: gestructureerde inspectie door meerdere ogen vangt fouten die één blik mist, de reden dat de loop vier beoordelaars parallel en geïsoleerd laat oordelen.
 
 ## Afronding
 
