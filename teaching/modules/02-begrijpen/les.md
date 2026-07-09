@@ -20,7 +20,7 @@ Korte terugblik op module 1: in deel A liep één lange chat vol en verrotte de 
 
 In code deel je een systeem op in onderdelen die elk één ding doen: scheiding van verantwoordelijkheden. De rollenloop doet hetzelfde, maar dan met een werkproces in plaats van met code. Triage weegt proportionaliteit, de planner plant, de bouwer bouwt, elke beoordelaar kijkt vanuit één invalshoek, de poort velt het menselijke oordeel. Geen enkele rol draagt alles; elke rol draagt één zorg. Dat is dezelfde gedachte, op een ander niveau toegepast.
 
-```{mermaid}
+```mermaid
 :caption: De rollenloop. Elke rol draagt één zorg; tussen twee rollen gaat precies één contract heen (C0 tot en met C7). De beoordelaars werken parallel en zien elkaars oordeel niet.
 
 flowchart TD

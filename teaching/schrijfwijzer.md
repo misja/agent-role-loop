@@ -140,6 +140,8 @@ uitputtend; wat het begrip aantoonbaar verheldert, is toegestaan.
   (de GitHub-native vorm), niet als de ` ```{mermaid} `-directive: de kale fence
   rendert zowel op GitHub als in de site, dankzij `myst_fence_as_directive` in
   `conf.py`. Zo werkt één diagram-bron op beide plekken, ook in `core/`.
+  Directive-opties als `:caption:` (als eerste regels in de fence) werken binnen
+  de kale fence gewoon door in de site.
 - **Afbeeldingen** waar een visueel voorbeeld iets toont wat tekst niet
   efficiënt kan (een screenshot van een interface, een schematische weergave).
   Voorwaarden: voorzie elke afbeelding van een alt-tekst; plaats het bestand op

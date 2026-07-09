@@ -65,7 +65,7 @@ De drie soorten vormen geen rangorde van belang, maar een opbouw waarin de lagen
 
 Datzelfde verklaart hoe de conventionele laag routinebeslissingen wegneemt: een afspraak doorloopt een levensloop omlaag door de lagen. Wat eerst een oordeel is, bijvoorbeeld de keuze dat alle code getypeerd wordt, wordt een vastgelegde conventie en ten slotte een poort die haar afdwingt. Elke stap haalt last weg: een vastgelegde conventie hoeft niet per taak heronderhandeld te worden, en een geautomatiseerde poort handhaaft haar zonder dat iemand eraan denkt. Zo houdt de oordeelsmatige laag, waar het vakmanschap begint, aandacht over voor het moeilijke; die laag kan de andere twee niet overslaan, maar wordt er ook nooit door vervangen.
 
-```{mermaid}
+```mermaid
 :caption: De levensloop van een norm, omlaag door de drie lagen.
 
 flowchart LR
