@@ -136,8 +136,10 @@ uitputtend; wat het begrip aantoonbaar verheldert, is toegestaan.
 - **Mermaid-diagrammen** voor stroomschema's, processen, toestandsovergangen en
   andere structuren die zich slecht in proza laten vangen. De voorkeur gaat uit
   naar Mermaid boven een gevonden afbeelding, omdat een diagram eigen werk is,
-  versievast en aanpasbaar. Mermaid vereist een extensie in de build; zie de
-  technische voorwaarde hieronder.
+  versievast en aanpasbaar. Schrijf een diagram als een kale ` ```mermaid `-fence
+  (de GitHub-native vorm), niet als de ` ```{mermaid} `-directive: de kale fence
+  rendert zowel op GitHub als in de site, dankzij `myst_fence_as_directive` in
+  `conf.py`. Zo werkt één diagram-bron op beide plekken, ook in `core/`.
 - **Afbeeldingen** waar een visueel voorbeeld iets toont wat tekst niet
   efficiënt kan (een screenshot van een interface, een schematische weergave).
   Voorwaarden: voorzie elke afbeelding van een alt-tekst; plaats het bestand op
@@ -151,11 +153,11 @@ uitputtend; wat het begrip aantoonbaar verheldert, is toegestaan.
 - **Tabellen** voor vergelijkingen en overzichten waar de structuur tweedimensionaal
   is. Niet voor wat een opsomming ook aankan.
 
-> **Technische voorwaarde Mermaid.** Mermaid-ondersteuning vereist een extensie
-> (`sphinxcontrib-mermaid`) als dependency in `pyproject.toml` en een
-> configuratie in `conf.py`. Dit is een aparte technische wijziging, los van deze
-> schrijfwijzer. Gebruik Mermaid pas in materiaal nadat die ondersteuning is
-> ingeschakeld en de build er schoon mee is.
+> **Technische basis Mermaid.** De ondersteuning staat aan: `sphinxcontrib-mermaid`
+> is een dependency in `pyproject.toml` en geconfigureerd in `conf.py`, en
+> `myst_fence_as_directive = ["mermaid"]` laat de kale ` ```mermaid `-fence als
+> diagram renderen. Je kunt Mermaid dus direct gebruiken; controleer alleen dat
+> de build er schoon mee blijft.
 
 ## Opmaak en interpunctie
 
