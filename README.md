@@ -2,9 +2,9 @@
 
 A portable, tool- and model-agnostic multi-agent workflow for engineering work, plus teaching material (in Dutch) that uses the same workflow to teach software engineering students about context isolation, interfaces, and proportional use of tooling.
 
-The core idea:
+A developer hands a change and its test results to a colleague, who checks whether the tests cover the reported problem. This workflow applies that separation of responsibilities to work with agents. The [teaching introduction](teaching/index.md) develops the example for students familiar with software engineering and web chat.
 
-> Break a job into roles, give each role its own clean context, and pass only structured handoffs between them.
+A program can call a language model through an API, supply its task context, execute permitted tool requests, and return their results to the model. A system that uses this cycle to choose and carry out steps towards a task is called an agent here. It can carry out different roles in separate sessions.
 
 The loop:
 
@@ -14,7 +14,9 @@ Work item -> Triage -> Planner -> Clarifier -> Human Gate -> Builder -> Reviewer
 
 ## Why this exists
 
-Agents (and people) get worse when one context accumulates the ticket, repo scans, logs, failed attempts, review comments, and stale assumptions all at once. This repository captures a counter-pattern: separate roles with explicit, compact handoff contracts between them. The contracts are the stable interface; the role prompts are the implementation and may evolve.
+A builder's conversation may contain early assumptions, failed attempts, and decisions that no longer apply. Giving a reviewer that entire history can carry those assumptions into the review. The loop gives each role its own context and passes structured handoffs containing the requirements, results, and evidence needed for the next task. Missing requirements can still lead to an inadequate review.
+
+This applies separation of concerns and information hiding to the work process. Handoff contracts form the stable interfaces; role prompts implement the responsibilities. Automated checks test predefined conditions, while agent reviewers assess the change and its evidence. Their findings need scrutiny too. A responsible human judges the goal, scope, and acceptable risk at the gate before building and decides whether the resulting change may be merged.
 
 Compared to the original source material, this version generalizes three things:
 
