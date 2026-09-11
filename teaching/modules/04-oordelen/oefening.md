@@ -24,6 +24,11 @@ Merk op: allebei de perspectieven wegen keuzes, geen fouten. De pragmatische beo
 
 ## Jouw opdracht: de andere twee perspectieven en de synthese
 
+Deze oefening gebruikt alle vier perspectieven en de arbitragevorm van C7 om
+het afwegen te oefenen. Noteer de eerste twee uitwerkingen als gegeven
+beoordelingen; dit is geen proef met vier onafhankelijke agents. Bij projectwerk
+volg je de rolselectie en samenvoeging uit {core}`loop.md`.
+
 1. Schrijf een oordeel (C6, volg {core}`contracts/reviewer-verdict.md`) vanuit de **strikte** beoordelaar: welke ambiguïteiten in de opdracht moeten worden gepind voordat dit af is?
 2. Schrijf een oordeel (C6) vanuit de **pragmatische** beoordelaar: wat is goed genoeg voor nu, en welke van de bezwaren hierboven zou je bewust laten liggen?
 3. Schrijf het eindoordeel (C7, volg {core}`contracts/final-verdict.md`) als **hoofdbeoordelaar**. Los de spanning niet op door één perspectief te laten winnen, maar prioriteer expliciet: correctheid en veiligheid eerst, dan onderhoudbaarheid, dan afwerking. Verantwoord welke bevindingen must-fix zijn en welke kunnen wachten, en waarom.

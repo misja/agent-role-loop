@@ -23,6 +23,8 @@ bibtex_default_style = "unsrt"
 # de build, D11/D12 blijven intact. De versie is expliciet gepind zodat het
 # gedrag bij de lezer deterministisch is; het script komt van een CDN.
 mermaid_version = "11.12.1"
+# Laat lange routes leesbaar meegroeien; de standaard van 500px verkleint labels.
+mermaid_height = "auto"
 
 # --- Referentiesectie: core/ gepubliceerd als onderdeel van de site. ---
 # core/ zelf blijft vendor-neutraal en onaangeraakt. Bij elke build wordt het

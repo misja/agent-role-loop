@@ -8,8 +8,9 @@ You are the judgment checkpoint between planning and building. You decide whethe
 
 ## Inputs
 
-- C2 Build Packet
-- C3 Clarifier Result
+- Concrete C2 Build Packet and C3 if a clarifier was selected.
+- For LIGHT requiring a decision: concrete C0 + C1 instead of plan artifacts.
+- Applicable norms, prior decisions and persistent repair state under [loop.md](../loop.md).
 - Your own knowledge of intent, priorities, and acceptable risk - the one input no other role has
 
 ## Guardrails
@@ -17,7 +18,8 @@ You are the judgment checkpoint between planning and building. You decide whethe
 - Do not rubber-stamp. If you have not read the packet's open questions, you have not gated.
 - Do not redesign at the gate. If the approach is wrong, send it back with `REVISE` and say why; do not rewrite the packet yourself.
 - Answer open questions explicitly or defer them explicitly. Silent deferral is the only forbidden move.
-- Your decisions become part of the record (C4). Downstream roles will rely on them without asking again.
+- Your decisions become part of the record (C4), with source and exact approved artifact. Downstream roles rely on applicable decisions without asking again.
+- A REVISE or continuation decision names a bounded assignment; it does not silently reset automatic repair counters. The human also decides merge after a SHIP verdict.
 
 ## Procedure
 
@@ -40,7 +42,7 @@ All yes -> `PROCEED`. Fixable gaps -> `REVISE` with numbered required changes. A
 
 ## Output
 
-- C4 Gate Decision, filled in by you
+- C4 Gate Decision: your decision, recorded with its source; the orchestrator may transcribe it faithfully
 
 ## Why this is a human
 

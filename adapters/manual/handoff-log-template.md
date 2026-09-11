@@ -1,50 +1,57 @@
 # Handoff log: <work item title>
 
-> Orchestrator: <your name> | Started: <date> | Status: in progress / shipped / stopped
+> Orchestrator: <name> | Started: <date> | Status: <in progress / ready for human merge / stopped>
 >
-> One log per work item. You are the orchestrator: every artifact that crosses a role boundary lands here, in order. If it is not in this log, it did not happen.
+> Store artifacts here or link to their exact tracker versions. Preserve prior
+> versions and decisions. Omit sections the selected route does not use.
 
 ## C0 - Work Item
 
-<!-- paste the work item; see core/contracts/work-item.md -->
+<!-- core/contracts/work-item.md -->
 
 ## C1 - Triage Decision
 
-<!-- from the triage window; FULL_LOOP continues below, LIGHT skips to C5, REJECT ends here -->
+<!-- Orchestrator or optional triage role: LIGHT / PLANNED / REJECT.
+     Include pinned process/norm versions, risk, role selection and every AC assignment. -->
 
-## C2 - Build Packet
+## Repair state
 
-<!-- from the planner window; on FAIL/REVISE rounds, keep each version: C2 v1, C2 v2, ... -->
+- Design automatic repairs used: 0 / 1
+- Delivery automatic repairs used: 0 / 1
+- Human continuation/replan decisions and source: <none>
 
-## C3 - Clarifier Result
+<!-- Counters persist across sessions. Record affected criteria and evidence validity. -->
 
-<!-- from the clarifier window; one per packet version -->
+## C2 - Build Packet (PLANNED)
 
-## C4 - Gate Decision
+<!-- Keep versioned packets and update C1 if criteria change. -->
 
-<!-- written by YOU, by hand, after the human-gate checklist; not by a model -->
+## C3 - Clarifier Result (if selected)
+
+<!-- Initial or repair mode; use the contract's repair attachment on recheck. -->
+
+## C4 - Human Gate Decision (when required)
+
+<!-- Record the actual human decision and its source, not an agent's approval.
+     May refer to concrete C2 or LIGHT C0 + C1. -->
 
 ## C5 - Review Handoff
 
-<!-- from the builder; mark the core part and the extended part clearly,
-     because the reviewers get only the core part -->
+<!-- Mark core and extended sections. Core includes reviewed commit, norms,
+     human decisions, criterion assignment and objective verification evidence. -->
 
-## C6 - Reviewer Verdicts
+## C6 - Selected Reviewer Verdicts
 
-### Strict
+<!-- One per selected independent reviewer; first reviews cannot see one another.
+     For repair: updated core, repair diff, prior blockers and unaffected coverage
+     labeled previously established. -->
 
-### Pragmatic
+## C7 - Final Verdict (multiple reviewers only)
 
-### Adversarial
+<!-- Mechanical synthesis of compatible verdicts by orchestrator, or arbitration
+     by boss for conflicts. Wait for all selected C6s. Never discard blockers. -->
 
-### Maintainability
+## Outcome and human merge decision
 
-<!-- four separate windows; do not let one reviewer see another's verdict -->
-
-## C7 - Final Verdict
-
-<!-- from the reviewer-boss window; on BLOCK, the next builder round continues below -->
-
-## Outcome
-
-<!-- shipped / stopped, date, and any follow-up work items spawned -->
+<!-- SHIP / SHIP WITH NITS means ready for human decision, not merged.
+     Record actual decision, date, source and follow-up work items. -->

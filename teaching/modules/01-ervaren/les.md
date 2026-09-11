@@ -25,7 +25,7 @@ De volgorde is een bewuste ontwerpbeslissing van dit materiaal: wie eerst toolin
 ### Deel B - De loop als antwoord
 
 - Context rot benoemen en definiëren; de term komt uit de bronartikelen hieronder.
-- De rollenloop introduceren als één mogelijke uitwerking: triage, planner, verhelderaar, menselijke poort, bouwer, vier beoordelaars, hoofdbeoordelaar - met de contracten C0 t/m C7 als de enige dingen die rolgrenzen passeren. Hier blijft het bij wát de loop is en hoe je hem draait; waaróm die opzet werkt, is de stof van module 2.
+- De rollenloop introduceren als één mogelijke uitwerking. De triage kiest de benodigde verantwoordelijkheden volgens {core}`loop.md`. In de oefening worden planning, verheldering, de menselijke poort en vier beoordelaarsperspectieven zichtbaar gemaakt; een hoofdbeoordelaar behandelt eventuele tegenspraak. De contracten C0 t/m C7 beschrijven de overdrachten, waarvan alleen de toepasselijke worden gebruikt. Hier blijft het bij wát de loop is en hoe je hem draait; waaróm die opzet werkt, is de stof van module 2.
 - Expliciet stilstaan bij de twee asymmetrieën: beoordelaars draaien parallel en geïsoleerd, en de poort is principieel menselijk.
 - Proportionaliteit: de loop loont voor S/M/L-werk en is te zwaar of ontoereikend daarbuiten; triage is daarom zelf een rol.
 

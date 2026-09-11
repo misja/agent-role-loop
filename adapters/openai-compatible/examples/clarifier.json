@@ -7,7 +7,7 @@
     },
     {
       "role": "user",
-      "content": "## C2 Build Packet\n\n<paste the build packet here>\n\n## C0 Work Item\n\n<paste the original work item here>"
+      "content": "<paste inputs named in core/roles/clarifier.md, including C0, C1, C2 and readable pinned norms; for repair add the explicit C3 repair attachment>"
     }
   ],
   "temperature": 0.2

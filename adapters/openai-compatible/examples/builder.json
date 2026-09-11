@@ -7,7 +7,7 @@
     },
     {
       "role": "user",
-      "content": "## C2 Build Packet\n\n<paste the approved build packet here>\n\n## C4 Gate Decision\n\n<paste the human gate decision here>"
+      "content": "<paste route-specific inputs named in core/roles/builder.md: LIGHT C0 + C1, or PLANNED C2 + C4, plus C1, pinned norms and decisions; for repair include concrete blockers and current artifact>"
     }
   ],
   "temperature": 0.2

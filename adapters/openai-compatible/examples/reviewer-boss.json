@@ -7,7 +7,7 @@
     },
     {
       "role": "user",
-      "content": "## C5 Review Handoff (core + extended)\n\n<paste the full review handoff here>\n\n## C6 Reviewer Verdicts\n\n### Strict\n\n<paste verdict>\n\n### Pragmatic\n\n<paste verdict>\n\n### Adversarial\n\n<paste verdict>\n\n### Maintainability\n\n<paste verdict>"
+      "content": "<paste full C5 and every selected C6 with the unresolved conflict identified; invoke only for arbitration>"
     }
   ],
   "temperature": 0.2

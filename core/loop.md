@@ -1,77 +1,78 @@
 # The Role Loop
 
-This document defines the pipeline: its stages, the contracts that flow between them, and the decision points. The rationale lives in [principles.md](principles.md). Contracts are defined in [contracts/](contracts/), role prompts in [roles/](roles/).
+This is the single routing norm. [Principles](principles.md), [contracts](contracts/), role prompts and adapters implement it without adding routes. Core is independent of a tracker or provider.
 
 ## Pipeline
 
+The diagram shows the main route. Role selection, exceptions and the persisted
+repair limits are specified in the sections below.
+
 ```mermaid
 flowchart TD
-    W["Work item (C0)"] --> T{Triage}
-    T -->|"C1 REJECT"| Req["Back to requester, with advice"]
-    T -->|"C1 LIGHT"| B["Builder"]
-    T -->|"C1 FULL_LOOP"| P["Planner"]
-    P -->|"C2 Build Packet"| C{Clarifier}
-    C -->|"C3 FAIL"| P
-    C -->|"C3 PASS"| G{"Human Gate (human)"}
-    G -->|"C4 REVISE"| P
-    G -->|"C4 STOP"| E1["End"]
-    G -->|"C4 PROCEED"| B
-    B -->|"C5 Review Handoff"| RV
-    subgraph RV["Reviewers (parallel, isolated)"]
-        direction LR
-        R1["strict"]
-        R2["pragmatic"]
-        R3["adversarial"]
-        R4["maintainability"]
-    end
-    RV -->|"C6 Reviewer Verdict (x4)"| RB{Reviewer Boss}
-    RB -->|"C7 BLOCK"| B
-    RB -->|"C7 SHIP / SHIP WITH NITS"| E2["End; nits become follow-up work items"]
+    W["C0 work item"] --> T{"C1 triage"}
+    T -->|REJECT| X["Clarify or split"]
+    T -->|PLANNED| P["C2 plan; C3 if selected"]
+    P --> G["C4 human decision"]
+    T -->|LIGHT| B["Build; C5 handoff"]
+    G -->|PROCEED| B
+    G -->|REVISE or STOP| H["Human-directed next step"]
+    B --> V["Selected independent reviewers: C6"]
+    V --> F["One C6 final; multiple C6s use C7"]
+    F -->|SHIP / WITH NITS| M["Human merge decision"]
+    F -->|BLOCK| R["Bounded repair and recheck; otherwise human"]
 ```
 
-## Stages
+For LIGHT, obtain C4 first if there is a new goal, contract or norm choice,
+or irreversible effects. C3 FAIL uses the design repair rule. Before a final
+verdict, wait for all selected reviews. For multiple reviews, the orchestrator
+synthesizes compatible judgments; the boss arbitrates substantive disagreement.
+Unresolved goal or risk choices go to the human.
 
-| Stage | Role file | Input | Output | Performed by |
-|---|---|---|---|---|
-| Triage | [roles/triage.md](roles/triage.md) | C0 | C1 | agent |
-| Planning | [roles/planner.md](roles/planner.md) | C0, C1 | C2 | agent |
-| Clarification | [roles/clarifier.md](roles/clarifier.md) | C0, C2 | C3 | agent |
-| Human Gate | [roles/human-gate.md](roles/human-gate.md) | C2, C3 | C4 | **human** |
-| Building | [roles/builder.md](roles/builder.md) | C2, C4 | C5 | agent |
-| Review | [roles/reviewer-*.md](roles/) | C5 (core) | C6 (x4) | agents, parallel |
-| Final verdict | [roles/reviewer-boss.md](roles/reviewer-boss.md) | C5 (full), C6 (all) | C7 | agent |
 
-Four reviewer personas review the same core handoff from different postures: [strict](roles/reviewer-strict.md), [pragmatic](roles/reviewer-pragmatic.md), [adversarial](roles/reviewer-adversarial.md), and [maintainability](roles/reviewer-maintainability.md).
+## Responsibilities and proportionality
 
-## Decision points
+The orchestrator writes C1; a separate triage agent is optional. C1 pins the process and project norm commits and readable sources, assesses size and risk, names responsibilities and executors, and assigns every acceptance criterion to a qualified reviewer. Safety, contract and shared-dependency criteria need suitable expertise. If C0 has no criteria, use PLANNED so the planner derives them for human confirmation. C2 additions require updated assignments before review.
 
-The loop has four places where the path branches:
+These are starting configurations, not fixed agent counts:
 
-1. **Triage (C1):** `FULL_LOOP` enters the pipeline at the Planner. `LIGHT` skips straight to the Builder with a minimal packet. `REJECT` returns the work item to the requester with advice (too small for any process, or too large and in need of splitting).
-2. **Clarifier (C3):** `PASS` moves to the gate. `FAIL` returns the packet to the Planner with numbered requested edits. This cycle may repeat; if it repeats more than twice, that is a signal for the human to step in.
-3. **Human Gate (C4):** `PROCEED` releases the Builder. `REVISE` sends specific changes back to the Planner. `STOP` ends the run until a human decision or external dependency is resolved. Only a human fills in C4.
-4. **Final verdict (C7):** `SHIP` and `SHIP WITH NITS` end the loop (nits become follow-up work items). `BLOCK` returns to the Builder with a prioritized must-fix list; the Builder produces a new C5 and review repeats.
+| Work | Route and responsibilities | Human decision |
+|---|---|---|
+| Small unambiguous correction | LIGHT: builder from C0 + C1, one independent reviewer | Additional C4 before irreversible effects or new goal, contract or norm choices; human merge |
+| Bounded change | PLANNED: planner researches and designs, builder, one suitable independent reviewer | C4 on concrete C2 before building |
+| Substantial change with connected parts | PLANNED: planner, clarifier, builder, two independent reviewers with relevant different perspectives | C4 after plan review; XL must first be split |
 
-## Concurrency
+C1 explains concrete uncertainty justifying clarification, extra reviewers or a separate factual inventory. A separate inventory is an identified source of C2, not a mandatory new contract. Every role weighs effort against value; the pragmatic persona is available when that additional perspective helps. Four generic reviewer perspectives remain available: strict, pragmatic, adversarial and maintainability.
 
-Reviewers run in parallel and isolated from one another: each receives the same core review handoff (C5) and none sees another reviewer's verdict before completing its own. Independent perspectives are the value; sharing context would collapse them into one.
+LIGHT skips C2, C3 and routine C4, never independent delivery review. Do not create empty plan contracts. Its C1 supplies the concrete scope, criteria and verification steps needed with C0. REJECT returns advice for an unclear or oversized item; XS may use LIGHT. S/M/L should fit a reviewable packet; XL is split first.
 
-Building is sequential. Changes within a packet usually depend on each other, and two builders editing one codebase create merge conflicts instead of speed. Parallelize only what is genuinely independent.
+## Contracts and decisions
 
-## Scope: what fits the loop
+| Stage | Inputs | Output |
+|---|---|---|
+| Triage | C0, applicable norms | C1 |
+| Planning (PLANNED) | C0, C1, repository facts | C2 |
+| Clarification (when selected) | C0, C1, C2, applicable norms | C3 |
+| Human gate (when required) | concrete C2 and C3 if selected; or C0 + C1 for LIGHT | C4 |
+| Building | C0 + C1 for LIGHT; C1 + C2 + C4 for PLANNED; applicable decisions and norms | C5 |
+| Independent review | C5 core and assigned criteria; repair appendix only in repair mode | C6 per selected reviewer |
+| Synthesis / arbitration (multiple reviewers only) | all selected C6s; full C5 for arbitration | C7 |
 
-The loop is sized for **S, M, and L** work items:
+C3 PASS proceeds to C4; FAIL invokes the design repair rule below. C4 is a human decision: PROCEED releases the approved work, REVISE specifies changes, STOP pauses or ends it. Record the human source and exact artifact approved; do not invent approval or ask again for an already applicable decision. A changed goal, scope or risk choice needs a new human decision.
 
-- **XS** (typos, comment fixes, config one-liners): the loop is overkill. Triage routes these to `LIGHT` or `REJECT` ("just do it").
-- **S/M/L** (a bug fix, a feature slice, a refactor with clear boundaries): the sweet spot. One work item becomes one packet with one to a handful of reviewable changes.
-- **XL** (multi-week features, architecture migrations): a fixed loop is not enough on its own. Triage rejects these with the advice to split them into S/M/L work items first; the splitting itself can be a planning task.
+With one reviewer C6 is final. With multiple compatible reviews the orchestrator produces a traceable C7, without new findings or voting away blockers. Missing verdicts mean wait. Unresolved substantive disagreement goes to the Reviewer Boss with all C6s and full C5. Unresolved goal or risk choices go to the human. SHIP and SHIP WITH NITS mean ready for the human merge decision, never automatic merge; track deferred nits as follow-up work.
 
-## Verification is parameterized
+## Isolation and bounded repair
 
-The Build Packet (C2) declares a verification model per change:
+Initial reviewers start independently with C5 core, applicable norms and assigned criteria. They see neither the author's transcript nor each other's verdicts. C5 core includes relevant human decisions (including authorized deviations), objective evidence and its limits, and the exact reviewable commit. Context isolation must not hide the basis for judgment.
 
-- `test-first` - red/green/refactor; the default for behavior changes in tested codebases.
-- `validation-workflow` - a scripted or stepwise check with defined expected outcomes; suited to data work, infra, and configuration.
-- `manual-with-expected-results` - concrete manual steps, each with the result that counts as success; suited to prototypes and documentation.
+At most one automatic repair round is allowed for design and one for delivery per work item, including re-review. Persist both counters (0 or 1 consumed), artifact references and findings with the work item before starting repair; a new session does not reset them. The author receives criterion-linked blockers and repairs the existing artifact; retaining the author's context is allowed. A C4 REVISE is an explicit human direction: record its bounded scope and any authorized continuation, never infer a fresh automatic allowance.
 
-A packet that picks anything other than `test-first` must say why. The Builder's evidence obligations (red proof, green proof) translate to whichever model was chosen: a failing check before, a passing check after.
+Re-review starts in a fresh reviewer context explicitly marked repair mode. For design it receives updated C2, the repair diff, prior C3 blockers and previously established unaffected coverage. For delivery it receives updated C5 core, the repair diff, prior blockers and previously established unaffected coverage, as specified in C6. Check fixes and their dependencies; label reused evidence as previously established, not newly examined. Initial-review isolation does not prohibit this explicit repair appendix.
+
+After the allowance is consumed, continuing requires the human to choose a new bounded assignment, splitting or stopping. Scope or shared-dependency changes that invalidate evidence require explicit replanning and, where necessary, full re-review; they do not silently reset counters. A round or budget limit never clears a blocker. If a project sets a budget, record the limit and response in advance; unavailable usage is reported as unavailable.
+
+## Verification and versioning
+
+C2 (or C1 for LIGHT) specifies verification steps and expected outcomes: `test-first` for behavior changes in tested codebases by default, `validation-workflow` for scripted checks, or `manual-with-expected-results` for concrete manual checks. Motivate alternatives to test-first. Record observed before/after results where applicable and identify what was not established; do not manufacture failing proof for a documentation or other change where it is inapplicable.
+
+Existing work items retain their starting route/norm version. New runs use LIGHT, PLANNED or REJECT; PLANNED replaces the former FULL_LOOP value. Upgrade core and adapters as one coherent package, never a single new contract inside an old installation. A norm change requires the applicable human decision and recorded source.

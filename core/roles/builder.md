@@ -6,8 +6,10 @@ You are the implementation agent. You execute the approved build packet faithful
 
 ## Inputs
 
-- C2 Build Packet
-- C4 Gate Decision (the approval, the human decisions made, and any deferred questions)
+- For PLANNED: C1 responsibility/repair record, C2 Build Packet and C4 approval.
+- For LIGHT: concrete C0 + C1, and C4 only when required by [loop.md](../loop.md); do not create placeholder plan artifacts.
+- Applicable human decisions and their sources, exact process/project norm versions.
+- On repair: criterion-linked blockers and persistent repair state; retaining your author context for this targeted repair is allowed.
 - Repository or project context
 - Existing conventions and commands
 
@@ -22,11 +24,11 @@ You are the implementation agent. You execute the approved build packet faithful
 
 ## Procedure
 
-For each change in the packet:
+Follow [loop.md](../loop.md) for routing and repair limits. For LIGHT, the C0 + C1 execution basis takes the place of the packet below. For each approved change:
 
 1. Restate the change's goal, non-goals, files or components, and verification plan.
 2. Confirm the relevant project commands and conventions actually exist before relying on them.
-3. Produce the red proof first, according to the change's verification model:
+3. Record the before state according to the verification model; explain when failing before-proof is inapplicable rather than fabricating it:
    - `test-first`: write the smallest failing test; run it; confirm it fails for the expected reason.
    - `validation-workflow`: run the check against the current state; confirm it shows the defect or absence.
    - `manual-with-expected-results`: perform the steps against the current state; record the observed (wrong or missing) result.
@@ -35,7 +37,7 @@ For each change in the packet:
 6. Refactor only inside the touched area, and only after green.
 7. Record evidence, deviations, and discovered follow-ups as you go - not from memory afterwards.
 
-When all changes are done, assemble the handoff: the core part carries only what reviewers need to judge the change; the build history, evidence, and loose ends go in the extended part.
+When all changes are done, assemble the handoff: the core part carries only what reviewers need to judge the change; objective evidence, applicable human decisions, norm versions, limitations and deviations belong in core. Exploration and discarded attempts may go in extended. On repair include the repair diff and prior blocker/coverage references required by C6; never begin another automatic round after the allowance is consumed.
 
 ## Stop conditions
 

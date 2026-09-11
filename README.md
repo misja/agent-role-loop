@@ -6,17 +6,18 @@ A developer hands a change and its test results to a colleague, who checks wheth
 
 A program can call a language model through an API, supply its task context, execute permitted tool requests, and return their results to the model. A system that uses this cycle to choose and carry out steps towards a task is called an agent here. It can carry out different roles in separate sessions.
 
-The loop:
-
-```text
-Work item -> Triage -> Planner -> Clarifier -> Human Gate -> Builder -> Reviewers (parallel) -> Reviewer Boss
-```
+The [loop definition](core/loop.md) selects responsibilities according to the
+work. A small correction can go from triage to building and one independent
+review. Planned work includes a human decision on the concrete plan; uncertain
+or interdependent work can need clarification and additional reviewers. C1
+records who checks each acceptance criterion. The four reviewer personas are
+available perspectives, not a mandatory team for every task.
 
 ## Why this exists
 
-A builder's conversation may contain early assumptions, failed attempts, and decisions that no longer apply. Giving a reviewer that entire history can carry those assumptions into the review. The loop gives each role its own context and passes structured handoffs containing the requirements, results, and evidence needed for the next task. Missing requirements can still lead to an inadequate review.
+A builder's conversation may contain early assumptions, failed attempts, and decisions that no longer apply. Giving a reviewer that entire history can carry those assumptions into the review. Independent roles receive separate contexts and structured handoffs containing the requirements, applicable decisions, results, and evidence needed for the next task. An author may retain context for targeted repair; the independent recheck receives the explicit repair attachment. Missing requirements can still lead to an inadequate review.
 
-This applies separation of concerns and information hiding to the work process. Handoff contracts form the stable interfaces; role prompts implement the responsibilities. Automated checks test predefined conditions, while agent reviewers assess the change and its evidence. Their findings need scrutiny too. A responsible human judges the goal, scope, and acceptable risk at the gate before building and decides whether the resulting change may be merged.
+This applies separation of concerns and information hiding to the work process. Handoff contracts form the stable interfaces; role prompts implement the responsibilities. Automated checks test predefined conditions, while agent reviewers assess the change and its evidence. Their findings need scrutiny too. A responsible human judges the concrete plan before planned work is built, and any new goal, contract, norm or irreversible choice before acting on it. The human also decides whether the resulting change may be merged.
 
 Compared to the original source material, this version generalizes three things:
 
@@ -35,7 +36,7 @@ Compared to the original source material, this version generalizes three things:
 
 ## Quickstart
 
-**Use the loop on your own project (manual, any chat tool):** follow `adapters/manual/README.md`. You play the orchestrator: one fresh chat window per role, copy only the contract artifacts between them.
+**Use the loop on your own project (manual, any chat tool):** follow `adapters/manual/README.md`. You play the orchestrator: start independent roles in separate conversations and carry the contract artifacts between them. Keep the author conversation available for targeted repair.
 
 **Use the loop with a coding agent:** see `adapters/claude-code/README.md` for installable role definitions and an orchestrator command.
 
@@ -53,7 +54,7 @@ The site is published automatically to GitHub Pages on every push to `main` (see
 
 ## Scope and limits
 
-The loop's sweet spot is small, medium, and large tasks. It is overkill for trivial fixes (that is what the Triage role is for) and not sufficient on its own for extra-large feature work, which needs to be split first. See `core/loop.md`.
+Use LIGHT for small unambiguous corrections and PLANNED when a concrete plan is needed. Review remains independent on both routes. Split extra-large work first. Install core and adapters as one version; existing work keeps its recorded process basis. See [core/loop.md](core/loop.md).
 
 ## Credits
 

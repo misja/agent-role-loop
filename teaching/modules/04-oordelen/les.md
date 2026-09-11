@@ -4,7 +4,7 @@
 
 Vierde module. In module 3 zag je dat een groene poort niets bewijst en dat er een mens moet oordelen. Deze module gaat over dat oordeel: je neemt zelf de rol van beoordelaar in. Vereiste voorkennis: module 3 afgerond, en het kwaliteitsraamwerk, soort 3.
 
-De les hoort bij [oefening 4](oefening.md), waarin je een door AI gebouwde reserveringen-uitbreiding beoordeelt vanuit de vier perspectieven.
+De les hoort bij [oefening 4](oefening.md), waarin je een door AI gebouwde reserveringen-uitbreiding beoordeelt vanuit de vier perspectieven. Deze bezetting is een oefenkeuze. Bij projectwerk bepaalt de triage welke perspectieven nodig zijn; alleen bij tegenspraak volgt een afzonderlijke hoofdbeoordelaar. De route staat in {core}`loop.md`.
 
 ## Leeruitkomsten
 
@@ -44,7 +44,7 @@ Deze module gaat over het oordeel: de perspectieven wegen en prioriteren. Nog ni
 
 - Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "Kwaliteit spreekt zichzelf tegen" en de derde soort.
 - De repository zelf: de vier beoordelaarsrollen onder `core/roles/` en {core}`roles/reviewer-boss.md`, en de contracten {core}`contracts/reviewer-verdict.md` (C6) en {core}`contracts/final-verdict.md` (C7).
-- Fagan, Design and code inspections {cite}`fagan1976design`. De klassieke onderbouwing van formele, onafhankelijke review: gestructureerde inspectie door meerdere ogen vangt fouten die één blik mist, de reden dat de loop vier beoordelaars parallel en geïsoleerd laat oordelen.
+- Fagan, Design and code inspections {cite}`fagan1976design`. De klassieke onderbouwing van formele, onafhankelijke review: gestructureerde inspectie door meerdere ogen vangt fouten die één blik mist, een achtergrond bij het oefenen met onafhankelijke beoordelingen. Het aantal van vier in deze oefening is een didactische keuze; het artikel bepaalt geen optimale bezetting voor LLM-agents.
 
 ## Afronding
 

@@ -7,7 +7,7 @@
     },
     {
       "role": "user",
-      "content": "## C0 Work Item\n\n<paste the work item here; see core/contracts/work-item.md>"
+      "content": "<paste C0, applicable process/norm versions and relevant sources; this call is optional when the orchestrator writes C1>"
     }
   ],
   "temperature": 0.2
