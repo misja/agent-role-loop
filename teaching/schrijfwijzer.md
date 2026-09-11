@@ -37,6 +37,38 @@ constraint. Wie materiaal beoordeelt, toetst eraan.
   het ritme op, dan gaat ze weg. Eén tell is wel hard en toetsbaar, zie
   interpunctie: geen em- of en-dash.
 
+## Uitleg en de reikwijdte van claims
+
+Gebruik het [doelgroepbeeld](doelgroep.md) om te bepalen welke tussenstappen de
+lezer nodig heeft. Begin bij een herkenbare situatie en leg uit wat er gebeurt
+voordat je het nieuwe principe benoemt. Bekende engineeringkennis kan de uitleg
+dragen; nieuwe LLM-kennis moet eerst worden opgebouwd. Verwijs naar eerdere
+uitleg wanneer die er al is.
+
+Schrijf alinea’s waarin de ene zin de volgende voorbereidt. Een ontbrekende
+redeneerstap vraagt uitleg van het verband, niet nog een samenvatting van de
+conclusie. Benoem concrete handelingen en gevolgen. Een korte tekst met veel
+vakwoorden kan meer van de lezer vragen dan een langere tekst met één uitgewerkt
+voorbeeld. Omgekeerd voegt herhaling zonder nieuw inzicht niets toe.
+
+Stem claims af op hun bewijs. Maak onderscheid tussen een waarneming, een
+voorbeeld, een ontwerpkeuze en een verwachte werking. Benoem de voorwaarden of
+het mechanisme wanneer je stelt dat een maatregel helpt. Voeg niet alleen
+“mogelijk” of “kan” toe aan een verder onverklaarde garantie. Vermijd retorische
+stelligheid, lege slotzinnen en tegenstellingen die alleen het ritme verzorgen.
+Een functionele tegenstelling mag blijven als zij een werkelijk verschil uitlegt.
+
+| Te herzien passage | Gerichte verbetering | Waarom? |
+|---|---|---|
+| “Geef de agent een eigen context.” bij de eerste kennismaking | Leg eerst uit hoe een programma een model aanroept en welke informatie het daarbij meegeeft. Laat daarna zien wat bij een afzonderlijke beoordeling wordt meegenomen. | De instructie veronderstelt anders kennis van agents en context. De precieze uitleg hangt af van wat al behandeld is. |
+| “Contextisolatie maakt de beoordeling betrouwbaar.” | “De beoordelaar krijgt de eisen en de wijziging, zonder het maakgesprek met eerdere aannames. Dat beperkt de voorgeschiedenis die de beoordeling kan sturen. Een ontbrekende eis kan nog steeds worden gemist.” | Het mechanisme en de beperking worden zichtbaar; het voorbeeld belooft geen gegarandeerde betrouwbaarheid. |
+| “De vier perspectieven spreken elkaar tegen.” | “De beoordelaars kunnen onderhoudbaarheid en snel opleveren verschillend wegen. Bij een kleine reparatie kunnen zij ook dezelfde keuze ondersteunen.” | Een mogelijke spanning wordt niet als noodzakelijke uitkomst voorgesteld. |
+
+Beoordeel de uitleg door de passages te lezen en de redenering na te vertellen.
+Wijs aan waar de tekst daarvoor onvoldoende informatie geeft. Een woordenfilter,
+een controle op leestekens of een AI-detector kan dit oordeel niet vervangen.
+Registreer een agentlezing als agentlezing; noem haar geen studentproef.
+
 ## Vaktermen: Nederlands of Engels
 
 - Gebruik de Engelse vakterm waar die in het vakgebied gangbaarder is dan een
