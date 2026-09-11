@@ -1,86 +1,82 @@
 # Kwaliteit als gedeelde verantwoordelijkheid
 
-Softwarekwaliteit is geen eigenschap die je aan het eind toevoegt en geen enkele rol die één iemand vervult, maar een verzameling verantwoordelijkheden die over een werkproces verdeeld is. Dit raamwerk maakt die gedachte expliciet en biedt daarmee de grondslag waaraan lessen over concrete kwaliteitsthema's (coverage, CI/CD, security, branchingstrategie, codeconventies) zich ophangen.
+Bij de exportreparatie uit de [inleiding](index.md) zijn verschillende kwaliteitsvragen aan de orde. Het team moet afspreken welke orders in het bestand horen. De bouwer moet aantonen dat de reparatie die afspraak volgt. De beoordelaar onderzoekt of de tests daarvoor voldoende bewijs leveren. Als tijdens een export orders kunnen bijkomen, kan een geslaagde test met een vaste verzameling orders een relevante situatie onbesproken laten.
 
-Het bouwt voort op de rollenloop die in deze repository is uitgewerkt: een werkwijze waarin een taak door achtereenvolgende rollen gaat (triage, planner, bouwer, een aantal beoordelaars met elk een eigen invalshoek, en een menselijke poort tussen plannen en bouwen), waarbij elke overdracht via een vast contract verloopt. De werking daarvan staat in de vier werkingsprincipes ({core}`principles.md`): contextisolatie, expliciete overdrachten, proportionaliteit en de menselijke poort. Dit raamwerk staat op een ander niveau. Het legt uit wat die werking betekent voor softwarekwaliteit, en waarom de loop daarmee meer is dan een handige manier om met AI-agents te werken.
-
-Het bruikbare van de loop is dat hij de verdeling van verantwoordelijkheden zichtbaar maakt. Kwaliteitsdenken dat in de dagelijkse praktijk impliciet en verspreid blijft, wordt hier benoembaar en aanwijsbaar: je kunt per verantwoordelijkheid aanwijzen welke rol haar draagt.
+Dit raamwerk gebruikt die werkverdeling om kwaliteitsthema's als coverage, CI/CD, security, branchingstrategie en codeconventies met elkaar te verbinden. De rollenloop organiseert het werk met afzonderlijke opdrachten en expliciete overdrachten. De inleiding legt uit hoe een agent een rol kan uitvoeren en waarom elke rol een eigen context krijgt. Hier onderzoeken we welke verantwoordelijkheid bij welke rol hoort en wat afspraken, automatische controles en beoordeling elk bijdragen.
 
 ## Kwaliteit is geen rol
 
-In een onvolwassen beeld van software engineering is kwaliteit iets wat één persoon of één stap regelt. De tester. De review aan het eind. De linter die groen moet zijn. Dat beeld is begrijpelijk, want het is overzichtelijk, en veel mensen beginnen ermee.
+De bouwer ({core}`roles/builder.md`) levert verifieerbaar werk. Bij de exportreparatie betekent dat: de wijziging uitvoeren volgens het goedgekeurde plan, de afgesproken controles uitvoeren en vastleggen wat daarmee wel en niet is onderzocht. Een testresultaat dat alleen meldt dat alles slaagt, is voor de volgende rol minder bruikbaar dan bewijs waaruit ook blijkt welke situatie is getest.
 
-De rollenloop laat een ander beeld zien. Kwaliteit is verdeeld over de hele keten, en verschillende rollen dragen er verschillende stukken van. De bouwer ({core}`roles/builder.md`) is verantwoordelijk voor verifieerbaar werk: niet "het werkt op mijn machine", maar aantoonbaar bewijs dat de wijziging doet wat is afgesproken. De vier beoordelaars (de rolbestanden onder `core/roles/`) dragen elk één kwaliteitsperspectief, en die perspectieven spreken elkaar bewust tegen. De hoofdbeoordelaar ({core}`roles/reviewer-boss.md`) weegt die tegenspraak en stelt een prioriteit vast. En de menselijke poort ({core}`roles/human-gate.md`) draagt het oordeel dat aan geen enkele andere rol mag worden overgelaten: is dit nog steeds het juiste doel, en zijn de risico's omkeerbaar?
+De beoordelaars onderzoeken het resultaat vanuit verschillende kwaliteitsperspectieven. Zij kunnen bijvoorbeeld vaststellen dat een acceptatiecriterium ontbreekt in de tests of dat de reparatie moeilijk te onderhouden wordt. De hoofdbeoordelaar ({core}`roles/reviewer-boss.md`) brengt hun bevindingen samen, behandelt eventuele meningsverschillen en geeft één eindoordeel over het werk.
 
-Het punt is niet dat dit een efficiënte werkverdeling is. Het is dat kwaliteit intrinsiek verdeeld is, en dat een proces dat doet alsof één stap haar regelt, een illusie in stand houdt. De loop maakt de verdeling expliciet in plaats van haar te verbergen achter een enkel groen vinkje.
+Aan die uitvoering gaat een menselijke keuze vooraf. Bij de menselijke poort ({core}`roles/human-gate.md`), tussen plannen en bouwen, beoordeelt de verantwoordelijke mens het doel, de afbakening en de risico's van het plan. Voor de export kan nog onduidelijk zijn of het bestand alleen de orders van het startmoment moet bevatten. De mens laat dit met gebruikers afstemmen en vastleggen voordat de bouwer een oplossing op een aanname baseert. Deze werkwijze veronderstelt dat die mens voldoende zicht heeft op het gebruik en de bevoegdheid heeft om de keuze te maken. Zo nodig moet eerst iemand anders worden geraadpleegd.
+
+Deze verdeling past bekende engineeringprincipes toe op het proces. Scheiding van verantwoordelijkheden geeft de bouwer en de beoordelaar ieder een eigen taak. Contracten vormen hun interfaces. Informatie verbergen begrenst wat van het ene werkproces naar het andere gaat. Parnas behandelt informatie verbergen bij het opdelen van software in modules {cite}`parnas1972criteria`; hier passen we dat principe toe op rollen en overdrachten. De overeenkomst helpt om het proces te ontwerpen, maar bewijst op zichzelf geen kwaliteitsverbetering.
 
 ## Kwaliteit spreekt zichzelf tegen
 
-De vier beoordelaars zijn geen vier manieren om hetzelfde te zeggen. Ze vertegenwoordigen kwaliteitsdimensies die in de praktijk regelmatig botsen:
+Een reparatie kan correct werken en tegelijk extra onderhoud vragen. Stel dat de bouwer voor de export een aparte controle op dubbele orders toevoegt, terwijl elders al vergelijkbare logica bestaat. Een beperkte reparatie kan snel beschikbaar zijn; het samenbrengen van de logica kan toekomstige wijzigingen eenvoudiger maken, maar vergroot de huidige wijziging. Welke keuze passend is, hangt onder meer af van de urgentie en het risico van die uitbreiding.
 
-- De strikte beoordelaar wil correctheid en volledige dekking van de acceptatiecriteria.
-- De pragmatische beoordelaar wil opleveren en weegt of het goed genoeg is voor nu.
-- De adversariële beoordelaar zoekt de niet-afgevangen randgevallen, de aannames die breken onder druk, de beveiligingsgaten.
-- De beoordelaar op onderhoudbaarheid kijkt voorbij vandaag: kan een ander dit over een jaar nog begrijpen en wijzigen?
+De vier beoordelaars in de volledige loop onderzoeken zulke vragen vanuit een eigen opdracht:
 
-Correctheid tegenover snelheid. Volledigheid tegenover opleveren. Veiligheid tegenover eenvoud. Onderhoudbaarheid tegenover de kortste weg. Dit zijn reële spanningen, geen schijntegenstellingen, en in een volwassen team worden ze door verschillende mensen met verschillende belangen vertegenwoordigd.
+- De strikte beoordelaar toetst de correctheid en de dekking van de acceptatiecriteria.
+- De pragmatische beoordelaar weegt of het resultaat binnen de afgesproken scope voldoende is om op te leveren.
+- De adversariële beoordelaar zoekt randgevallen, kwetsbaarheden en aannames die kunnen falen.
+- De beoordelaar op onderhoudbaarheid onderzoekt of een ander de oplossing later kan begrijpen en wijzigen.
 
-De hoofdbeoordelaar lost die spanning niet op door één perspectief gelijk te geven, maar door te prioriteren volgens een expliciete regel: correctheid en veiligheid eerst, dan onderhoudbaarheid, dan afwerking. Dat is een kwaliteitsmodel, geen smaakoordeel, en het maakt zichtbaar dat de afweging onvermijdelijk is. Er bestaat geen uitkomst waarin alle vier de beoordelaars tegelijk volledig hun zin krijgen.
+Die perspectieven kunnen botsen. De pragmatische beoordelaar kan de beperkte reparatie aanvaarden, terwijl de beoordelaar op onderhoudbaarheid de dubbele logica wil laten herstellen. Ze kunnen ook tot dezelfde conclusie komen, bijvoorbeeld wanneer een kleine aanpassing beide bezwaren wegneemt. Vier opdrachten garanderen geen verschil van inzicht en evenmin dat alle problemen worden gevonden.
 
-Daarmee verschuift wat er te leren valt. Niet "gereedschap meet kwaliteit", maar: kwaliteitsdimensies spreken elkaar tegen, en iemand moet een verantwoorde keuze maken. Kwaliteit is dan geen objectieve eigenschap die je afleest, maar de uitkomst van een proces waarin belangen en prioriteiten tegen elkaar worden afgewogen. De loop verbergt die afweging niet; hij dwingt haar af en legt haar vast.
+De hoofdbeoordelaar behandelt meningsverschillen aan de hand van de bevindingen en het bewijs. De vaste prioriteit is correctheid en veiligheid, daarna onderhoudbaarheid, daarna afwerking. Bij de export moet dus eerst duidelijk zijn of de reparatie het afgesproken gedrag ondersteunt. Een voorstel om de code verder op te schonen wordt vervolgens binnen de goedgekeurde scope gewogen. De vastgelegde afweging maakt voor de mens zichtbaar waarom een bevinding wel of niet tot herstel leidt.
 
 ## Drie soorten kwaliteitsmechanismen
 
-Wie "softwarekwaliteit" zegt, noemt al snel een bonte verzameling: codeconventies, coverage, SonarQube, CI/CD-pijplijnen, linters, securityscans, branchingstrategieën, definition of done, code review. Die op één hoop gooien verbergt een belangrijk onderscheid: ze werken op verschillende manieren en horen op verschillende plekken thuis. Dit raamwerk verdeelt ze in drie soorten, elk met een eigen plek in de loop en een eigen verantwoordelijke.
+Een codeconventie, een test in de pijplijn en een beoordeling kunnen allemaal over dezelfde wijziging gaan. Toch beantwoorden ze verschillende vragen. De conventie legt een verwachting vast, de test controleert een vooraf bepaalde situatie en de beoordeling onderzoekt onder meer of die verwachting en controle passend zijn. Dit raamwerk onderscheidt daarom drie soorten mechanismen.
 
 ### 1. Geautomatiseerd en deterministisch
 
-Coverage-drempels, SonarQube-gates, linters, type-checkers, securityscans (SAST, dependency-audits), de CI-pijplijn die test en bouwt. Dit zijn mechanismen die een machine objectief en herhaalbaar vaststelt. Er is geen oordeel nodig: de test slaagt of niet, de drempel wordt gehaald of niet.
+Een test kan voor een gegeven verzameling orders controleren of iedere order eenmaal in het exportbestand voorkomt. Bij gelijke invoer en uitvoeromstandigheden vergelijkt hij het resultaat volgens dezelfde regels met de verwachte uitkomst. Ook linters, type-checkers en ingestelde coverage-drempels voeren vooraf bepaalde controles uit. Securityscans en dependency-audits controleren op basis van hun regels en beschikbare gegevens; een gewijzigde kwetsbaarhedendatabase kan hun uitkomst veranderen.
 
-Plek in de loop: deze checks horen vóór de menselijke en de geautomatiseerde beoordeling. Ze zijn een toegangsvoorwaarde tot de review, geen onderdeel ervan. De bouwer levert pas een overdracht aan de beoordelaars ({core}`contracts/review-handoff.md`) nadat de geautomatiseerde poorten groen zijn. Schaarse beoordelingsaandacht besteden aan wat een machine al objectief kan vaststellen, is verspilling.
+Het oordeel over wat gecontroleerd moet worden, gaat aan die uitvoering vooraf. Een geslaagde exporttest met een vaste verzameling orders levert bewijs voor die ingerichte situatie. Hij vertelt niet wat er gebeurt als tijdens de export orders bijkomen. Coverage laat zien welke code tijdens tests is uitgevoerd; uit het cijfer alleen blijkt niet of het relevante gebruiksgeval is onderzocht.
 
-Verantwoordelijke: de bouwer levert het bewijs, de pijplijn handhaaft de drempel.
+In de loop voert de bouwer de toepasselijke automatische controles uit voordat hij het werk overdraagt aan de beoordelaars ({core}`contracts/review-handoff.md`). De bouwer levert het bewijs en de pijplijn handhaaft de ingestelde voorwaarden. Daardoor kunnen beoordelaars zich richten op vragen waarvoor de uitkomst van die controles alleen onvoldoende is, zoals de geschiktheid van de tests.
 
 ### 2. Conventioneel en vastgelegd
 
-Codeconventies, commitconventies, branchingstrategie, de definition of done, naamgevingsafspraken. Dit zijn afspraken die je niet per taak opnieuw maakt. Ze liggen vast als gedeelde context en gelden voor iedereen.
+Het team kan afspreken dat iedere reparatie testbewijs bij de overdracht bevat. Die afspraak maakt duidelijk wat de bouwer moet aanleveren en wat de beoordelaar mag verwachten. Het contract legt de vorm van die overdracht vast. Dat er testbewijs aanwezig is, zegt nog niet of een belangrijk gebruiksgeval is afgedekt.
 
-Plek in de loop: deze afspraken zitten niet in één rol, maar in de gedeelde grondslag waarnaar meerdere rollen verwijzen, en in de vorm van de overdrachten (`core/contracts/`) zelf. Een contract is in feite een vastgelegde conventie over wat een overdracht moet bevatten. De branchingstrategie raakt de orkestratie: de manier waarop wijzigingen als afzonderlijke, beoordeelbare eenheden door de loop gaan.
+Ook codeconventies, een branchingstrategie en een definition of done zijn gedeelde afspraken. Ze voorkomen dat iedere taak opnieuw begint met de vraag hoe werk wordt aangeleverd. De branchingstrategie bepaalt bijvoorbeeld hoe de exportreparatie als afzonderlijke wijziging beschikbaar komt voor beoordeling. Meerdere rollen gebruiken dezelfde grondslag en controleren bij hun overdracht of eraan is voldaan.
 
-Het inzicht hierachter: standaarden bestaan om denkruimte vrij te maken. Wie de conventie kent, hoeft niet elke keer opnieuw te bedenken hoe een commit eruitziet of wanneer iets af is, en houdt aandacht over voor het werkelijke probleem.
-
-Verantwoordelijke: gedeeld, vastgelegd in de grondslag en bewaakt bij elke overdracht.
+Het team is verantwoordelijk voor het vastleggen en bijhouden van deze afspraken. Sommige zijn automatisch te controleren, zoals naamgevingsregels met een linter. Andere vragen om lezing, zoals de afspraak dat bekende beperkingen in een overdracht staan: een gevuld tekstveld toont nog niet aan dat de relevante beperking is genoemd.
 
 ### 3. Oordeelsmatig en contextueel
 
-Is dit de juiste abstractie? Past deze risicobereidheid bij deze wijziging? Is deze afwijking van de conventie hier gerechtvaardigd? Toetst deze test wel het juiste, of alleen dát er iets is uitgevoerd? Op dit soort vragen geeft geen drempel en geen scan antwoord.
+De beoordelaar leest de exporttest en merkt op dat de verzameling orders onveranderd blijft. Omdat gebruikers tijdens een export orders kunnen invoeren, vraagt hij om aanvullend bewijs. Hier bepaalt de beoordeling welke situatie nog onderzocht moet worden. De adversariële beoordelaar ({core}`roles/reviewer-adversarial.md`) heeft expliciet de opdracht zulke randgevallen en aannames te zoeken.
 
-Plek in de loop: dit is het domein van de beoordelaars en de menselijke poort, en het is precies wat zich niet laat automatiseren. De adversariële beoordelaar ({core}`roles/reviewer-adversarial.md`) die naar het niet-afgevangen randgeval zoekt, doet iets wat een coverage-cijfer per definitie niet kan: coverage toont aan dat een regel is uitgevoerd, niet dat het juiste is getest.
+Een agent kan deze beoordeling uitvoeren, maar agentreview werkt anders dan een deterministische controle. Het model interpreteert de aangeboden informatie en formuleert bevindingen. Het kan een relevant geval missen of een ongegrond bezwaar maken. Een bevinding moet daarom verwijzen naar de eis, de wijziging of het bewijs dat haar ondersteunt; de hoofdbeoordelaar weegt haar bij het samenvoegen van de oordelen.
 
-Verantwoordelijke: de beoordelaars, en voor de onomkeerbare keuzes de mens bij de poort.
+Er kan ook een vraag ontstaan waarvoor de eis zelf nog onvoldoende is bepaald: moeten later toegevoegde orders in deze export terechtkomen of in de volgende? Een agent kan opties en gevolgen beschrijven. De verantwoordelijke mens beoordeelt het gewenste gedrag met kennis van het gebruik. Als die keuze het goedgekeurde plan verandert, moet zij eerst worden vastgelegd voordat de bouwer daarop verdergaat. De menselijke verantwoordelijkheid omvat dus ook het doel en de afbakening, naast keuzes met onomkeerbare gevolgen.
 
 ### De drie samen
 
-De drie soorten vormen geen rangorde van belang, maar een opbouw waarin de lagen elkaar voeden. De geautomatiseerde laag is noodzakelijk maar niet voldoende, en ze staat niet op zichzelf: wat een poort afdwingt, is grotendeels in de conventionele laag besloten. Een coverage-drempel, een set linterregels, de strengheid van een type checker zijn conventionele keuzes die de machine daarna deterministisch handhaaft. Zo parametriseert de conventionele laag de geautomatiseerde; zonder die keuzes is een poort willekeurig of afwezig.
-
-Datzelfde verklaart hoe de conventionele laag routinebeslissingen wegneemt: een afspraak doorloopt een levensloop omlaag door de lagen. Wat eerst een oordeel is, bijvoorbeeld de keuze dat alle code getypeerd wordt, wordt een vastgelegde conventie en ten slotte een poort die haar afdwingt. Elke stap haalt last weg: een vastgelegde conventie hoeft niet per taak heronderhandeld te worden, en een geautomatiseerde poort handhaaft haar zonder dat iemand eraan denkt. Zo houdt de oordeelsmatige laag, waar het vakmanschap begint, aandacht over voor het moeilijke; die laag kan de andere twee niet overslaan, maar wordt er ook nooit door vervangen.
+Een oordeel kan aanleiding geven tot een afspraak en vervolgens tot een automatische controle. Het team besluit bijvoorbeeld dat de export alleen orders bevat die bij de start aanwezig waren. Het legt dat gedrag vast als eis. De bouwer maakt vervolgens een test waarin tijdens de export een order wordt toegevoegd, met een verwachte uitkomst die uit die eis volgt. Bij volgende wijzigingen kan de pijplijn dezelfde verwachting opnieuw controleren.
 
 ```mermaid
-:caption: De levensloop van een norm, omlaag door de drie lagen.
+:caption: Van een inhoudelijke keuze naar een vastgelegde en controleerbare verwachting.
 
 flowchart LR
-    O["Oordeel<br>iemand beslist wat hier goed is"] --> C["Conventie<br>vastgelegd, niet per taak heronderhandeld"] --> A["Automatisering<br>de poort dwingt af, zonder dat iemand eraan denkt"]
+    O["Oordeel<br>welke orders horen in de export?"] --> C["Conventie<br>het afgesproken gedrag ligt vast"] --> A["Automatisering<br>een test controleert dat gedrag"]
 ```
 
-Hierin ligt het antwoord op een hardnekkig misverstand: dat hoge coverage of een groene SonarQube-gate samenvalt met kwaliteit. De drie lagen laten zien dat geautomatiseerde poorten tegelijk noodzakelijk en ontoereikend zijn, en dat juist in het verschil tussen die twee het oordeelsvermogen nodig wordt. Een groen vinkje is een voorwaarde om te mogen beoordelen, niet het bewijs dat de beoordeling al heeft plaatsgevonden, en het betekent pas iets nadat in de conventionele laag besloten is wat de poort eist.
+Deze beweging sluit aan bij Farleys nadruk op leren via feedback en kleine, verifieerbare stappen {cite}`farley2021modern`. De toepassing op de rollenloop is die van dit materiaal; Farley beschrijft geen werkwijze voor AI-agents. Niet elke afweging laat zich volledig in een test vastleggen. Bovendien kan veranderd gebruik aanleiding geven om de afspraak opnieuw te beoordelen.
+
+Soms is er nog geen norm. Een coverage-rapport kan bijvoorbeeld een percentage geven terwijl het team geen drempel heeft afgesproken. Het rapport meet dan wel de dekking, maar bepaalt niet of de wijziging daarop mag worden afgewezen. Na een afgesproken drempel kan de pijplijn die voorwaarde handhaven. Ook dan blijft de vraag of de tests zinvolle verwachtingen controleren. Een groen resultaat betekent dat de ingestelde controles slagen; de beoordeling van de wijziging volgt daarna.
 
 ## Hoe lessen zich hieraan ophangen
 
-Dit raamwerk schrijft geen lessen voor. Het geeft elke kwaliteitsles een vaste plek om aan te haken, via steeds dezelfde vraag: welke rol draagt deze verantwoordelijkheid, en waarom juist daar?
+Bij elk kwaliteitsthema kun je onderzoeken welke verantwoordelijkheid het ondersteunt en wie die draagt. In een les over SonarQube gaat het bijvoorbeeld om de keuze van regels, de handhaving door de pijplijn en de vragen die voor beoordeling overblijven. Bij Git branching onderzoek je hoe een wijziging afzonderlijk beoordeelbaar wordt en wie de samenhang met ander werk bewaakt. Zo kun je de werkwijze ook toepassen wanneer een team ander gereedschap gebruikt.
 
-Dat verandert het ontwerp van een les. Niet "een les over SonarQube", maar een les over wie de poortwachter is en waarom, met SonarQube als instrument. Niet "een les over Git branching", maar een les over hoe je werk in beoordeelbare eenheden opknipt en wie de samenhang bewaakt. Het mechanisme is dan nooit het onderwerp op zichzelf; het wordt begrepen vanuit zijn plaats in de verdeling van verantwoordelijkheden. Dat maakt het overdraagbaar in plaats van een losstaand weetje.
-
-Een niet-uitputtende kaart van waar veelvoorkomende thema's aanhaken:
+De volgende kaart verbindt veelvoorkomende thema's met de drie soorten mechanismen:
 
 | Kwaliteitsthema | Soort (1/2/3) | Draagt vooral bij |
 |---|---|---|
@@ -94,17 +90,21 @@ Een niet-uitputtende kaart van waar veelvoorkomende thema's aanhaken:
 | Commit- en branchingstrategie | 2 | orkestratie; wijzigingen als beoordeelbare eenheden |
 | Definition of done | 2 | vastgelegd in de acceptatiecriteria van het bouwplan |
 | Code review als oordeel | 3 | de vier beoordelaars en de hoofdbeoordelaar |
-| Architectuur- en abstractiekeuzes | 3 | menselijke poort (onomkeerbaar) + onderhoudbaarheidsbeoordelaar |
+| Architectuur- en abstractiekeuzes | 3 | menselijke poort (doel, scope en risico) + onderhoudbaarheidsbeoordelaar |
 
-De kolom "soort" verwijst naar de drie soorten hierboven. Dat sommige thema's in twee lagen staan, is geen slordigheid maar de kern van de zaak. Security is deels een scan die de pijplijn draait en deels een oordeel dat geen scan kan vellen. Wie alleen de scan ziet, mist de helft.
+De kolom "soort" verwijst naar de drie soorten hierboven. Een thema kan meerdere soorten omvatten. Bij security controleert een scan bijvoorbeeld op bekende kwetsbaarheden, terwijl een dreigingsmodel vraagt om beoordeling van het gebruik en mogelijke aanvallers. De gekozen scan en de interpretatie van zijn uitkomst horen daardoor bij dezelfde kwaliteitsverantwoordelijkheid.
 
 ## Verbinding met de werkingsprincipes
 
-Dit raamwerk staat niet los van de vier werkingsprincipes ({core}`principles.md`); het rust erop.
+De vier werkingsprincipes ({core}`principles.md`) helpen om deze verantwoordelijkheden in het proces te organiseren: contextisolatie, expliciete overdrachten, proportionaliteit en de menselijke poort.
 
-Contextisolatie maakt de beoordeling betrouwbaar: een beoordelaar die het verkenningsverslag van de planner niet heeft gezien, oordeelt over wat er staat in plaats van over wat bedoeld was. Expliciete overdrachten zijn zelf de vastgelegde conventies van de tweede soort: een contract bepaalt wat een overdracht moet bevatten en maakt "het leek me wel goed" onmogelijk. Proportionaliteit voorkomt dat het kwaliteitsapparaat zwaarder wordt dan de taak rechtvaardigt: niet elke wijziging verdient vier beoordelaars, en de triage bewaakt dat. En de menselijke poort is precies de plek waar de oordeelsmatige laag onmisbaar blijft, omdat sommige verantwoordelijkheden niet aan een machine kunnen worden overgedragen.
+Bij de export krijgt de beoordelaar de eisen, de wijziging en het testbewijs in een eigen context. Het maakgesprek met de aanvankelijke aanname over een vaste verzameling orders gaat niet mee. Contextisolatie beperkt zo de invloed van die voorgeschiedenis. De overdracht moet wel voldoende informatie bevatten om het werk te kunnen beoordelen; ontbrekende eisen worden door isolatie niet hersteld.
 
-De vier principes beschrijven hoe de loop werkt. Dit raamwerk beschrijft waarom die werking neerkomt op een eerlijk en daardoor leerzaam model van softwarekwaliteit: een model dat de verdeling toont in plaats van haar weg te poetsen.
+Een expliciet contract maakt controleerbaar welke informatie in de overdracht wordt verwacht. Een beoordelaar kan daardoor aanwijzen dat het testbewijs of een bekende beperking ontbreekt. Het contract kan niet garanderen dat alles wat is ingevuld ook juist of volledig is. Daarvoor blijft inhoudelijke beoordeling nodig.
+
+Proportionaliteit vraagt om een afweging vóór het werk begint. Een typefout in een melding vraagt doorgaans minder onderzoek dan een wijziging in de selectie van orders voor een financieel overzicht. De triage bepaalt welk pad bij de omvang en het risico past; de volledige bezetting met vier beoordelaars is niet voor elke taak nodig.
+
+De menselijke poort bewaakt vóór het bouwen of doel, scope en risico's aanvaardbaar zijn. De mens leest het plan en laat open keuzes beantwoorden, herzien of expliciet uitstellen. Later blijft de beslissing over het samenvoegen bij de mens. De rollen en controles leveren informatie voor die beslissingen. Hun waarde moet blijken uit het uitgevoerde werk en de bevindingen, niet uit het aantal rollen of de aanwezigheid van een ingevuld contract.
 
 ## Verder lezen
 
