@@ -4,18 +4,20 @@ orphan: true
 
 # Projectconventies voor het onderwijsmateriaal
 
-Dit document bindt de conventies die gelden voor al het materiaal onder
-`teaching/`. Voor bestaande documenten (de schrijfwijzer, de begrippenlijst) wijst
-het ze aan; het modulestramien hieronder legt het zelf vast. Zo hangt de toepassing
-niet af van wie een taak schrijft.
+Dit document wijst de geldende afspraken voor het onderwijsmateriaal aan.
+De doelgroep en schrijfregels staan in eigen documenten; het modulestramien
+staat hieronder. Werkitems verwijzen naar deze grondslag en beschrijven alleen
+hun eigen toepassing of een expliciet te besluiten afwijking.
 
 ## Welke conventies gelden
 
 Voor al het werk onder `teaching/` gelden:
 
-- de schrijfwijzer (`teaching/schrijfwijzer.md`) voor register, terminologie en
+- [doelgroep en voorkennis](doelgroep.md) voor wat de lezer al kent en wat
+  eerst moet worden uitgelegd;
+- de [schrijfwijzer](schrijfwijzer.md) voor uitlegtempo, register, claims en
   opmaak;
-- de begrippenlijst (`teaching/begrippen.md`) voor de vaste termen;
+- de [begrippenlijst](begrippen.md) voor de vaste termen;
 - het modulestramien (hieronder) voor de vaste structuur van elke module.
 
 ## Modulestramien
@@ -56,10 +58,17 @@ In deze volgorde:
 
 ## Scope
 
-Deze conventies gelden uitsluitend voor `teaching/`. Niet-teaching-werk in deze
-repository (`core/`, `adapters/`) valt er bewust buiten en houdt zijn eigen,
-generieke en vendor-neutrale conventies. `core/` blijft taal-agnostisch en
-Engelstalig.
+Deze afspraken gelden voor alle onderwijsteksten onder `teaching/`, inclusief
+docentmateriaal en toetsmateriaal. Het modulestramien geldt voor modules, niet
+voor iedere losse pagina.
+
+Ook uitleg buiten `teaching/` die expliciet voor studenten is bedoeld, volgt het
+doelgroepbeeld en de regels voor uitleg en onderbouwde claims. Het werkitem noemt
+die passages. Voor Nederlandstalige uitleg gelden bovendien de Nederlandse
+taal- en opmaakafspraken. Engelstalige technische documentatie wordt niet naar
+het Nederlands omgezet; generieke rolprompts, contracten en API-voorbeelden in
+`core/` en `adapters/` krijgen geen onderwijsstramien opgelegd. Bepalend is het
+doel van de passage, niet alleen de directory waarin zij staat.
 
 ## Hoe de conventie geborgd is
 
@@ -68,15 +77,39 @@ opneemt:
 
 > Voldoet aan de conventies in `teaching/conventies.md`.
 
-Daarmee kan de gate niet groen zonder dat eraan getoetst is, ongeacht hoe het werk
-wordt uitgevoerd. De teaching-werkitem-template (`teaching/_werkitem-template.md`)
-heeft dit criterium al ingevuld. Een bouwende rol leest dit document daarnaast in
-als onderdeel van de geldende projectconventies, zodat het materiaal er meteen aan
-voldoet in plaats van achteraf. De generieke rol vraagt al om de geldende
-conventies; dit document vult die voor teaching-werk concreet in.
+Het [werkitemsjabloon](https://github.com/misja/agent-role-loop/blob/main/teaching/_werkitem-template.md) bevat deze verwijzing. Omdat het
+sjabloon niet wordt gepubliceerd, staat het als bestand in de repository.
+De verwijzing alleen bewijst geen naleving; ook een geslaagde docs-build kan
+geen begripstoets vervangen.
+
+Gebruik binnen de gekozen route de volgende projectgebonden verantwoordelijkheden.
+Dit zijn aanvullingen op de invoer en uitvoer van bestaande rollen, geen extra
+agents of processtappen:
+
+| Verantwoordelijkheid | Wat wordt vastgelegd of gecontroleerd? |
+|---|---|
+| Orkestratie | Noteer bij de start de normversie (commit), relevante normsecties en eventuele menselijke afwijkingsbesluiten op het issue. Geef diezelfde basis leesbaar mee aan elke betrokken rol. |
+| Ontwerp | Benoem benodigde voorkennis, nieuwe begrippen en de vindplaatsen van eerdere uitleg. Wijs aan waar een ontbrekende stap wordt uitgelegd en welke passages de beoordelaar moet toetsen. |
+| Uitvoering | Lees de aangewezen normen en werk de uitleg uit. Vermeld bij overdracht de gewijzigde passages, relevante uitlegkeuzes en bekende beperkingen. Kopieer geen volledige normteksten in het werkitem. |
+| Onafhankelijke beoordeling | Lees de gewijzigde passages tegen dezelfde normversie. Benoem concrete begripsprongen, ontbrekende redeneerstappen en ongefundeerde claims, of leg met passages vast hoe die eisen zijn afgedekt. Laat zien wat de lezer uit de tekst kan afleiden. |
+
+Een beoordelaar ontvangt de relevante normen en geldende besluiten, maar geen
+maaktranscript. Hij kan de oorspronkelijke bronnen gericht raadplegen. Bij een
+korte route blijven deze verantwoordelijkheden gelden voor zover de wijziging
+ze raakt; maak geen lege ontwerpdocumenten voor een spellingcorrectie.
 
 ## Een nieuwe conventie toevoegen
 
-Komt er een conventie bij die voor `teaching/` moet gelden, voeg haar dan hier toe.
-Dit document is de plek waar de gelding wordt vastgelegd; de inhoud van de conventie
-hoort in haar eigen document.
+Stel een wijziging voor op GitHub, met aanleiding, concrete normtekst, getroffen
+materiaal en beoogde invoering. De mens beslist over de wijziging. Leg dat besluit
+vast op het issue en verwerk de norm op haar aangewezen plek; deze pagina wijst
+nieuwe normdocumenten aan. Noteer bewijs en gevolgen in `onderzoek/` wanneer een
+structurele bevinding aanleiding gaf tot de wijziging.
+
+Nieuwe werkitems gebruiken bij de start de dan geldende normcommit. Een norm die
+nog in een PR staat, is niet door de aanwezigheid van die PR al ingevoerd.
+Een lopend werkitem behoudt zijn geregistreerde normbasis. Moet een nieuwe afspraak
+ook daar gelden, leg dan eerst een menselijk besluit vast met de nieuwe basis,
+geraakte criteria en gevolgen voor al uitgevoerd werk. Een beoordelaar verandert de
+beoordelingsbasis niet onderweg. Een bestaand expliciet besluit hoeft niet nogmaals
+te worden gevraagd; neem het met zijn bron in de overdracht op.

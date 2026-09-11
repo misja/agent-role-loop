@@ -1,8 +1,8 @@
 # Werkitem: <titel in de gebiedende wijs>
 
 > Type: C0-werkitem voor het onderwijsmateriaal. Eigen planfase en gate.
-> Dit is nog geen build packet. Doelgroep: <bijv. derdejaars HBO-ICT Software
-> Engineering>.
+> Dit is nog geen build packet. De gedeelde doelgroep en redactionele regels
+> gelden via [de projectconventies](conventies.md); kopieer ze hier niet opnieuw.
 
 > **Vóór de planfase:** raadpleeg het [projectbord](https://github.com/users/misja/projects/1),
 > gefilterd op het `module:`-label van dit werkitem, op geparkeerde ripples
@@ -26,8 +26,20 @@ elk teaching-werkitem; verwijder het niet.>
 
 1. <...>
 2. <...>
-N. Voldoet aan de conventies in `teaching/conventies.md` (schrijfwijzer en
-   begrippenlijst), en de docs-build is schoon onder `-W --keep-going`.
+N. Voldoet aan [de projectconventies](conventies.md) op de geregistreerde normbasis.
+   De inhoudelijke beoordeling noemt concrete passages; de docs-build is schoon
+   onder `-W --keep-going`. Een build bewijst geen inhoudelijke naleving.
+
+## Normbasis en toepassing
+
+- Normcommit: <bij de start vastleggen; verwijzingen naar relevante secties>.
+- Geraakte onderwijspassages, ook buiten `teaching/`: <vindplaatsen>.
+- Benodigde voorkennis en nieuwe begrippen: <gericht benoemen; waar staat eerdere
+  uitleg, waar komt ontbrekende uitleg? In de planfase aanvullen indien nodig>.
+- Expliciete afwijkingen of normwijziging tijdens dit werk: <menselijk besluit
+  met bron en gevolgen, of geen>.
+- Beoordeling: <wie toetst de passages en de uitleg; zie verantwoordelijkheden
+  in [de projectconventies](conventies.md)>.
 
 ## Constraints
 
