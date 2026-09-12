@@ -1,56 +1,67 @@
 # Manual adapter
 
-Runs the role loop with nothing but separate chat windows and copy-paste. You are the orchestrator. This is the most portable adapter - it works with any chat-based model - and the primary form used in the teaching material, because it makes every handoff physically visible.
+Run the role loop using separate chat windows. You act as the orchestrator and
+carry the contract artifacts between roles. The route and repair limits are
+specified in [core/loop.md](../../core/loop.md); this page explains how to carry
+out that route by hand.
 
-**Last verified:** 2026-06-12. This adapter has no platform dependencies to drift, only the convention that your chat tool can start a fresh conversation.
+## Preparation
 
-## The one rule
+Use a chat tool that can start fresh conversations. Keep the selected version
+of `core/` available, including roles and contracts. Record the work item and
+handoffs in a tracker or use the [handoff log template](handoff-log-template.md).
+Markdown files are one storage option; issue bodies and linked comments can
+carry the same fields. This repository uses GitHub for its work items.
 
-> One fresh chat window per role. The only thing that travels between windows is the contract artifact.
+Write C1 as the orchestrator, using [the triage role](../../core/roles/triage.md).
+A separate triage conversation is optional. Record process and norm versions,
+selected responsibilities and the independent reviewer assigned to every
+acceptance criterion. Follow the selected route; do not fill unused contracts
+with dummy answers.
 
-No "as I said earlier", no pasting transcripts, no keeping one mega-chat open. If a role seems to need something that is not in its input contract, that is a gap in the artifact - fix the artifact, do not smuggle context.
+## Carry out the selected responsibilities
 
-## What you need
+For a new role, open a fresh conversation. Supply its role definition, the
+inputs named there, and readable sources for the pinned norms and applicable
+human decisions. Save its returned contract with the work item. Do not copy
+conversation transcripts between roles.
 
-- A chat tool that can start fresh conversations.
-- The files in `core/` (roles and contracts), locally or open in a browser.
-- The [handoff log template](handoff-log-template.md): one Markdown file per work item where you, the orchestrator, collect C0 through C7.
+| Responsibility | Conversation or action | Result |
+|---|---|---|
+| Planning, when selected | Planner with C0 + C1 and named sources | C2 |
+| Plan review, when selected | Independent clarifier with declared inputs | C3 |
+| Human decision, when required | You inspect the concrete packet and record your decision; no model decides for you | C4 |
+| Building | Builder with LIGHT C0 + C1, or PLANNED C2 + C4, and the remaining inputs its role names | C5 |
+| Independent review, every route | One fresh window per reviewer selected in C1, each with C5 core | C6 per reviewer |
+| Outcome | One C6 stands on its own; combine compatible C6 artifacts mechanically; use the boss only for conflicting judgments | C6 or C7 |
 
-## Procedure
+For LIGHT, start building after C1 unless the core requires a human decision
+first. For PLANNED, obtain C4 on the concrete plan before building. Keep an
+existing applicable human decision with its source; it need not be requested
+again. A human still decides whether to merge after review.
 
-Setup, once per work item: copy `handoff-log-template.md` to something like `handoff-log-<work-item>.md` and fill in C0, your work item.
+A chat without repository tools cannot apply changes or execute checks. Apply
+its proposed patch and run the checks yourself, or use a coding agent for the
+builder. Return actual observed evidence and mark checks you could not perform.
 
-Then walk the pipeline. For every agent role the recipe is identical:
+## Targeted repair
 
-1. Open a **fresh** chat window.
-2. Paste the role prompt (`core/roles/<role>.md`) as the first message or as the system prompt if your tool supports one.
-3. Paste the input artifact(s) the role's **Inputs** section names - nothing else.
-4. Copy the returned artifact into your handoff log. Close the window.
+Keep the author's conversation available for a repair to the same artifact.
+The reviewer uses a separate context in explicit repair mode with the contract's
+repair attachment. Earlier unaffected coverage must be labeled previously
+established, not tested again. Never show other initial verdicts during the
+first independent assessment.
 
-In pipeline order:
+Record one design and one delivery repair counter with the work item. Each
+permits at most one automatic repair and recheck. Further blockers require a
+human decision to continue with a bounded assignment, split or stop. Reopening
+a conversation does not reset either counter. Changes that invalidate evidence
+follow the core's replan and wider-review rules.
 
-| Step | Role file | Paste in | Get back |
-|---|---|---|---|
-| 1 | `core/roles/triage.md` | C0 | C1 |
-| 2 | `core/roles/planner.md` | C0, C1 | C2 |
-| 3 | `core/roles/clarifier.md` | C2, C0 | C3 |
-| 4 | **you, no chat window** - `core/roles/human-gate.md` | C2, C3 | C4 |
-| 5 | `core/roles/builder.md` | C2, C4 | C5 |
-| 6 | `core/roles/reviewer-strict.md`, `reviewer-pragmatic.md`, `reviewer-adversarial.md`, `reviewer-maintainability.md` - **four separate windows** | core part of C5 each | C6 x4 |
-| 7 | `core/roles/reviewer-boss.md` | full C5, all four C6 | C7 |
+## Updating an installation
 
-Branches:
-
-- C1 `REJECT`: stop; follow the advice field.
-- C1 `LIGHT`: skip to step 5 with C0 + C1 as a minimal packet.
-- C3 `FAIL`: back to step 2 in a fresh window, adding C3 to the planner's input. Third failure in a row: the loop is telling you the work item is the problem.
-- C4 `REVISE`: back to step 2 with your required changes. C4 `STOP`: stop.
-- C7 `BLOCK`: back to step 5 in a fresh window, adding the must-fix list.
-
-Note on step 4: the Human Gate is you, on purpose. Read the checklist in `core/roles/human-gate.md` and write C4 by hand. If you catch yourself pasting C2 into a chat window and asking a model what to decide, you have automated away the only role that exists to protect your judgment.
-
-Note on step 5: if the builder role runs in a chat window without repository access, it can only produce instructions and code blocks for you to apply. That is workable for small changes; for real codebases, do step 5 in a coding-capable agent and keep the chat windows for the other roles.
-
-## On cost
-
-A full loop spends six or more model conversations on one work item. With free or limited tiers, or local models, that is a real constraint - and the loop respects it by design: Triage exists to keep small work out of the pipeline, and the contracts keep every conversation short. If cost still bites, run the reviewers as two personas instead of four (strict + adversarial covers the most ground) and say so in the handoff log.
+Keep the process version with each work item. Install core and adapters together;
+`PLANNED` replaces `FULL_LOOP` only for work using the new version. Continue
+existing work against its recorded snapshot unless the human explicitly changes
+that basis. Lower cost is an intended benefit of selecting responsibilities;
+this adapter does not establish a measured saving.

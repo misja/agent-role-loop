@@ -7,7 +7,7 @@
     },
     {
       "role": "user",
-      "content": "## C5 Review Handoff (core part only)\n\n<paste ONLY the core part of the review handoff here: diff summary, changed files or components, acceptance criteria coverage, contracts touched>"
+      "content": "<paste complete C5 core: exact commit, criterion assignments, pinned norms, human decisions with sources, objective verification evidence, diff and changed files; initial review excludes author transcript and other verdicts; for repair add only the explicit C6 repair attachment>"
     }
   ],
   "temperature": 0.2

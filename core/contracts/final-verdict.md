@@ -2,42 +2,16 @@
 
 ## Purpose
 
-The merged outcome of the review stage, produced by the Reviewer Boss from the four independent verdicts (C6) and the full review handoff (C5). It de-duplicates findings, resolves disagreements explicitly, and tells the Builder exactly what happens next. Priority rule, fixed: **correctness and safety first, then maintainability, then polish.**
+The outcome when multiple selected C6 reviews exist. For one reviewer C6 suffices. Under [loop.md](../loop.md), compatible reviews are synthesized by the orchestrator; unresolved substantive disagreement goes to the Reviewer Boss for arbitration with all C6s and full C5.
 
 ## Schema
 
-All fields of C6 (Decision, Must fix, Should fix, Nice to have, Acceptance criteria coverage, Contract drift), with findings de-duplicated and ordered by the priority rule, plus:
+Include C6 decision, criterion coverage, contract drift and prioritized must/should/nice findings, plus:
 
-- **Reviewer disagreements** - each disagreement with its resolution and the reasoning; or `<none>`.
-- **Builder next action** - one concrete instruction: what to do with the verdict (merge, fix the must-fix list and resubmit, or escalate to a human).
+- **Mode and producer** - `synthesis` (orchestrator) or `arbitration` (Reviewer Boss).
+- **Inputs** - exact C5 artifact/version and every selected C6; identify missing verdicts and wait rather than issuing a partial final decision.
+- **Source traceability** - source reviewer and finding/criterion IDs for every combined finding and coverage claim.
+- **Reviewer disagreements** - each disagreement, evidence, resolution and rationale; `<none>` for compatible synthesis. Unresolved goal/risk choices go to the human and remain blocking.
+- **Next action** - human merge decision, repair under the recorded allowance, or human bounded continuation/split/stop. SHIP never means automatic merge.
 
-## Example
-
-```md
-Decision: SHIP WITH NITS
-
-Must fix: <none>
-
-Should fix:
-- Comment the strictly-increasing-ID invariant at the keyset filter
-  (strict + adversarial reviewers, merged).
-
-Nice to have:
-- Parameterize page size in _fetch_page() (maintainability reviewer).
-
-Acceptance criteria coverage:
-- AC1: pass - regression test, confirmed by all four reviewers.
-- AC2: pass - single-page equality test.
-
-Contract drift: <none>
-
-Reviewer disagreements:
-- Adversarial wanted BLOCK over legacy imports possibly violating the
-  ID invariant; extended evidence shows the gate already decided this
-  (decision recorded in C4) and the invariant is checked in the test
-  fixture. Resolved to SHIP WITH NITS.
-
-Builder next action:
-- Apply the should-fix comment, then merge. Nits may move to a
-  follow-up work item.
-```
+Synthesis introduces no new findings and cannot discard or outvote blockers. Arbitration resolves arguments against evidence, with correctness and safety first, then maintainability, then polish. Record any contradiction found in the handoff or evidence explicitly. Retain unresolved blockers regardless of budget or round limits.

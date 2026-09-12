@@ -19,8 +19,8 @@ De rolprompts en contracten in `core/` zijn Engelstalig (ze presteren consistent
 | human gate | menselijke poort | Beslismoment tussen plannen en bouwen dat alleen een mens mag nemen |
 | quality gate, gate | poort (kwaliteitspoort) | In teaching-materiaal de Nederlandse term poort. "gate" alleen intern (board, werkitem-taal) en als productnaam (SonarQube quality gate) |
 | builder | bouwer | Rol die het goedgekeurde plan uitvoert en bewijs verzamelt |
-| reviewer | beoordelaar | Rol die het resultaat vanuit één perspectief beoordeelt; er zijn er vier, parallel en geïsoleerd |
-| reviewer boss | hoofdbeoordelaar | Rol die de vier oordelen samenvoegt tot één eindoordeel |
+| reviewer | beoordelaar | Rol die toegewezen criteria onafhankelijk beoordeelt; de triage bepaalt welke perspectieven nodig zijn |
+| reviewer boss | hoofdbeoordelaar | Rol die inhoudelijke tegenspraak tussen beoordelingen onderzoekt en tot een onderbouwd eindoordeel brengt |
 | verdict (C6, C7) | oordeel | BLOCK, SHIP of SHIP WITH NITS, met bevindingen |
 | acceptance criteria | acceptatiecriteria | Toetsbare uitspraken die bepalen wanneer het werk af is |
 | verification | verificatie | Het bewijs dat een change doet wat beloofd is; per change gekozen model |

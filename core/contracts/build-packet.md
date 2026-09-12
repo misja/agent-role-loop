@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Planner's output and the Builder's sole source of truth: an executable plan grounded in the work item (C0) and, where available, in repository facts. A good packet lets the Builder work without inventing requirements and lets the Clarifier and the Human Gate judge the plan without redoing the research. The packet is also where the verification model is chosen, per change, with motivation.
+The Planner's executable plan, grounded in C0 and repository facts where available. The Builder uses it together with applicable C4 decisions and norms. A good packet lets the Builder work without inventing requirements and lets the Clarifier and the Human Gate judge the plan without redoing the research. The packet is also where the verification model is chosen, per change, with motivation.
 
 ## Schema
 
@@ -13,7 +13,9 @@ Top-level sections, in order:
 - **Non-goals** - what is explicitly out of scope.
 - **Current state** - relevant facts as they are now; label unverified statements as assumptions.
 - **Proposed approach** - the shape of the solution and the main design decisions, with rationale.
-- **Acceptance criteria** - numbered and testable; carried over from C0 or derived (and then marked as derived).
+- **Acceptance criteria** - numbered and testable; carried over from C0 or derived (and then marked as derived). Map each to a verification step and a suitable selected reviewer; update C1 assignments for added criteria before review.
+- **Basis and sources** - exact process/project norm versions, relevant decisions and repository facts; name any separately commissioned factual inventory as a source.
+- **Repair state** - persistent work-item counters and, on repair, prior criterion-linked findings, changed sections and evidence still applicable.
 - **Interfaces / contracts / data changes** - or `<none>`.
 - **Changes** - one block per reviewable change (see below).
 - **Risks** - or `<none>`.
@@ -62,6 +64,13 @@ filter the next page on ID greater than that. No schema change.
 ## Acceptance criteria
 1. Exporting a customer with 3+ pages of orders yields no duplicate order IDs.
 2. Exporting a customer with a single page of orders is unchanged.
+Reviewer assignment: AC1 and AC2 -> strict reviewer C (C1 updated).
+
+## Basis and sources
+<exact process/project norm commits and readable repository sources>
+
+## Repair state
+<work-item record>; design 0, delivery 0
 
 ## Interfaces / contracts / data changes
 <none>

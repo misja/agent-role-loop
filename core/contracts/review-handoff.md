@@ -2,67 +2,24 @@
 
 ## Purpose
 
-The Builder's account of what was built and how it was proven, in two parts with different audiences. The **core handoff** goes to every reviewer: just enough to judge the change on its own merits, with no build history attached. The **extended handoff** goes only to the Reviewer Boss: the evidence trail (red/green or its equivalent), deviations, and loose ends. Keeping the parts separate is what keeps the reviewers' contexts clean.
+The Builder's reviewable account. Core carries the basis for judgment to every reviewer; extended material preserves useful author history without putting that history into initial independent review. Routing and repair limits are defined in [loop.md](../loop.md).
 
-## Schema
+## Core handoff (all reviewers)
 
-### Core handoff (to all reviewers)
-
+- **Artifact** - work-item reference, exact reviewable commit and base/diff reference, plus readable artifact locations.
+- **Process and norm basis** - exact process and applicable project norm commits/versions and readable sources.
+- **Scope and human decisions** - accepted C0/C1 or C2 basis; relevant human decisions, authorized deviations and deferred questions, each with source and artifact to which it applies; `<none>` where absent.
 - **Diff summary** - 2 to 5 bullets.
 - **Changed files or components** - list.
-- **Acceptance criteria coverage** - the numbered ACs from the packet, each with where it was implemented.
-- **Contracts touched** - API, types, events, schema, data, permissions - or `<none>`.
+- **Acceptance criteria coverage and assignment** - each criterion ID, implementation location, verification evidence and responsible reviewer from the updated C1/C2 mapping.
+- **Contracts touched** - APIs, types, events, schema, data, permissions and shared consumers; or `<none>`.
+- **Objective verification evidence** - model, commands or manual steps, expected and observed outcomes, evidence locations and tested revision. Include relevant before/after proof and tests/checks added or updated; explain inapplicable before proof. State failures, unavailable checks and what was not established explicitly.
+- **Deviations and follow-ups** - changes from the accepted basis with rationale and decision source; unresolved limitations and deliberately deferred work, or `<none>`.
+- **Repair state** - persistent design/delivery counters and repair/continuation references. For repair review attach the explicit C6 repair appendix separately.
 
-### Extended handoff (to the Reviewer Boss only)
+## Extended handoff (author history; full C5 for arbitration)
 
-- **Tests** - added or updated, with coverage notes; or the equivalent artifact of the chosen verification model.
-- **Red evidence** - the failing test or check before the change, with the failure summary. For non-test-first models: the observed failing state.
-- **Green evidence** - the passing command or check after the change.
-- **Refactor after green** - or `<none>`.
-- **Deviations** from the packet - or `<none>`; each with rationale.
-- **Follow-ups not done** - discovered but deliberately left, or `<none>`.
+- **Exploration and discarded attempts** - relevant history, or `<none>`.
+- **Additional logs and refactoring history** - readable sources, or `<none>`.
 
-## Example
-
-```md
-## Core handoff
-
-### Diff summary
-- Export query now uses keyset pagination on order ID instead of LIMIT/OFFSET.
-- New regression test inserts an order mid-export and asserts unique IDs.
-- Single-page export path untouched; covered by an equality test.
-
-### Changed files or components
-- exports/orders.py
-- tests/test_export_orders.py
-
-### Acceptance criteria coverage
-1. No duplicates on 3+ pages - implemented in exports/orders.py
-   (keyset filter), proven by test_no_duplicates_when_orders_arrive_mid_export.
-2. Single-page export unchanged - proven by test_single_page_export_unchanged.
-
-### Contracts touched
-<none>
-
-## Extended handoff
-
-### Tests
-2 added, 0 updated. Mid-export insertion and single-page equality.
-
-### Red evidence
-pytest tests/test_export_orders.py -> 1 failed:
-AssertionError: order 4102 appears 2 times
-
-### Green evidence
-pytest tests/test_export_orders.py -> 14 passed
-
-### Refactor after green
-Extracted page-fetch closure into _fetch_page(); touched area only.
-
-### Deviations
-<none>
-
-### Follow-ups not done
-- Offset pagination in the admin order list has the same flaw;
-  separate work item suggested.
-```
+Evidence or decisions needed to judge a criterion must be in core, even if detailed logs also appear in extended. A missing observation is unavailable, not a claimed success.

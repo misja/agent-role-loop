@@ -8,7 +8,7 @@ Dit raamwerk gebruikt die werkverdeling om kwaliteitsthema's als coverage, CI/CD
 
 De bouwer ({core}`roles/builder.md`) levert verifieerbaar werk. Bij de exportreparatie betekent dat: de wijziging uitvoeren volgens het goedgekeurde plan, de afgesproken controles uitvoeren en vastleggen wat daarmee wel en niet is onderzocht. Een testresultaat dat alleen meldt dat alles slaagt, is voor de volgende rol minder bruikbaar dan bewijs waaruit ook blijkt welke situatie is getest.
 
-De beoordelaars onderzoeken het resultaat vanuit verschillende kwaliteitsperspectieven. Zij kunnen bijvoorbeeld vaststellen dat een acceptatiecriterium ontbreekt in de tests of dat de reparatie moeilijk te onderhouden wordt. De hoofdbeoordelaar ({core}`roles/reviewer-boss.md`) brengt hun bevindingen samen, behandelt eventuele meningsverschillen en geeft één eindoordeel over het werk.
+De beoordelaars onderzoeken het resultaat vanuit verschillende kwaliteitsperspectieven. Zij kunnen bijvoorbeeld vaststellen dat een acceptatiecriterium ontbreekt in de tests of dat de reparatie moeilijk te onderhouden wordt. Bij één beoordelaar is diens oordeel het eindoordeel. Bij meerdere verenigbare oordelen legt de orkestrator de uitkomsten met hun bronnen bij elkaar. Alleen bij inhoudelijke tegenspraak onderzoekt de hoofdbeoordelaar ({core}`roles/reviewer-boss.md`) de bevindingen en het bewijs. De mens beslist daarna over merge.
 
 Aan die uitvoering gaat een menselijke keuze vooraf. Bij de menselijke poort ({core}`roles/human-gate.md`), tussen plannen en bouwen, beoordeelt de verantwoordelijke mens het doel, de afbakening en de risico's van het plan. Voor de export kan nog onduidelijk zijn of het bestand alleen de orders van het startmoment moet bevatten. De mens laat dit met gebruikers afstemmen en vastleggen voordat de bouwer een oplossing op een aanname baseert. Deze werkwijze veronderstelt dat die mens voldoende zicht heeft op het gebruik en de bevoegdheid heeft om de keuze te maken. Zo nodig moet eerst iemand anders worden geraadpleegd.
 
@@ -18,7 +18,7 @@ Deze verdeling past bekende engineeringprincipes toe op het proces. Scheiding va
 
 Een reparatie kan correct werken en tegelijk extra onderhoud vragen. Stel dat de bouwer voor de export een aparte controle op dubbele orders toevoegt, terwijl elders al vergelijkbare logica bestaat. Een beperkte reparatie kan snel beschikbaar zijn; het samenbrengen van de logica kan toekomstige wijzigingen eenvoudiger maken, maar vergroot de huidige wijziging. Welke keuze passend is, hangt onder meer af van de urgentie en het risico van die uitbreiding.
 
-De vier beoordelaars in de volledige loop onderzoeken zulke vragen vanuit een eigen opdracht:
+De loop biedt vier beoordelaarsperspectieven waaruit de triage een passende bezetting kiest. In de oefeningen gebruik je ze alle vier om hun verschillen te onderzoeken:
 
 - De strikte beoordelaar toetst de correctheid en de dekking van de acceptatiecriteria.
 - De pragmatische beoordelaar weegt of het resultaat binnen de afgesproken scope voldoende is om op te leveren.
@@ -53,7 +53,7 @@ Het team is verantwoordelijk voor het vastleggen en bijhouden van deze afspraken
 
 De beoordelaar leest de exporttest en merkt op dat de verzameling orders onveranderd blijft. Omdat gebruikers tijdens een export orders kunnen invoeren, vraagt hij om aanvullend bewijs. Hier bepaalt de beoordeling welke situatie nog onderzocht moet worden. De adversariële beoordelaar ({core}`roles/reviewer-adversarial.md`) heeft expliciet de opdracht zulke randgevallen en aannames te zoeken.
 
-Een agent kan deze beoordeling uitvoeren, maar agentreview werkt anders dan een deterministische controle. Het model interpreteert de aangeboden informatie en formuleert bevindingen. Het kan een relevant geval missen of een ongegrond bezwaar maken. Een bevinding moet daarom verwijzen naar de eis, de wijziging of het bewijs dat haar ondersteunt; de hoofdbeoordelaar weegt haar bij het samenvoegen van de oordelen.
+Een agent kan deze beoordeling uitvoeren, maar agentreview werkt anders dan een deterministische controle. Het model interpreteert de aangeboden informatie en formuleert bevindingen. Het kan een relevant geval missen of een ongegrond bezwaar maken. Een bevinding moet daarom verwijzen naar de eis, de wijziging of het bewijs dat haar ondersteunt; bij tegenspraak onderzoekt de hoofdbeoordelaar die onderbouwing. Verenigbare oordelen kunnen zonder afzonderlijke hoofdbeoordelaar worden samengevoegd.
 
 Er kan ook een vraag ontstaan waarvoor de eis zelf nog onvoldoende is bepaald: moeten later toegevoegde orders in deze export terechtkomen of in de volgende? Een agent kan opties en gevolgen beschrijven. De verantwoordelijke mens beoordeelt het gewenste gedrag met kennis van het gebruik. Als die keuze het goedgekeurde plan verandert, moet zij eerst worden vastgelegd voordat de bouwer daarop verdergaat. De menselijke verantwoordelijkheid omvat dus ook het doel en de afbakening, naast keuzes met onomkeerbare gevolgen.
 
@@ -89,7 +89,7 @@ De volgende kaart verbindt veelvoorkomende thema's met de drie soorten mechanism
 | Codeconventies en naamgeving | 2 | gedeelde grondslag, bewaakt bij elke overdracht |
 | Commit- en branchingstrategie | 2 | orkestratie; wijzigingen als beoordeelbare eenheden |
 | Definition of done | 2 | vastgelegd in de acceptatiecriteria van het bouwplan |
-| Code review als oordeel | 3 | de vier beoordelaars en de hoofdbeoordelaar |
+| Code review als oordeel | 3 | de gekozen beoordelaars; bij tegenspraak de hoofdbeoordelaar |
 | Architectuur- en abstractiekeuzes | 3 | menselijke poort (doel, scope en risico) + onderhoudbaarheidsbeoordelaar |
 
 De kolom "soort" verwijst naar de drie soorten hierboven. Een thema kan meerdere soorten omvatten. Bij security controleert een scan bijvoorbeeld op bekende kwetsbaarheden, terwijl een dreigingsmodel vraagt om beoordeling van het gebruik en mogelijke aanvallers. De gekozen scan en de interpretatie van zijn uitkomst horen daardoor bij dezelfde kwaliteitsverantwoordelijkheid.
@@ -102,7 +102,7 @@ Bij de export krijgt de beoordelaar de eisen, de wijziging en het testbewijs in 
 
 Een expliciet contract maakt controleerbaar welke informatie in de overdracht wordt verwacht. Een beoordelaar kan daardoor aanwijzen dat het testbewijs of een bekende beperking ontbreekt. Het contract kan niet garanderen dat alles wat is ingevuld ook juist of volledig is. Daarvoor blijft inhoudelijke beoordeling nodig.
 
-Proportionaliteit vraagt om een afweging vóór het werk begint. Een typefout in een melding vraagt doorgaans minder onderzoek dan een wijziging in de selectie van orders voor een financieel overzicht. De triage bepaalt welk pad bij de omvang en het risico past; de volledige bezetting met vier beoordelaars is niet voor elke taak nodig.
+Proportionaliteit vraagt om een afweging vóór het werk begint. Een typefout in een melding vraagt doorgaans minder onderzoek dan een wijziging in de selectie van orders voor een financieel overzicht. De triage legt vast wie ieder acceptatiecriterium onafhankelijk beoordeelt. Bij een kleine correctie kan één beoordelaar volstaan; bij een wijziging aan een gedeeld datatype kunnen twee verschillende perspectieven nodig zijn. De uitgangsroutes en de regels voor herstel staan in {core}`loop.md`. Pragmatisch afwegen hoort bij iedere rol, ook wanneer geen aparte pragmatische beoordelaar is gekozen.
 
 De menselijke poort bewaakt vóór het bouwen of doel, scope en risico's aanvaardbaar zijn. De mens leest het plan en laat open keuzes beantwoorden, herzien of expliciet uitstellen. Later blijft de beslissing over het samenvoegen bij de mens. De rollen en controles leveren informatie voor die beslissingen. Hun waarde moet blijken uit het uitgevoerde werk en de bevindingen, niet uit het aantal rollen of de aanwezigheid van een ingevuld contract.
 

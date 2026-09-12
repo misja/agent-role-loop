@@ -2,33 +2,35 @@
 
 ## Purpose
 
-The proportionality verdict on a work item (C0): does this work deserve the full loop, a lightweight path, or no loop at all? The decision is deliberately short. Its value is in routing, not analysis; analysis belongs to the Planner.
+The orchestrator's concise routing and responsibility record under [loop.md](../loop.md). A separate triage agent is optional.
 
 ## Schema
 
-Required fields:
-
-- **Decision** - one of:
-  - `FULL_LOOP` - enter the pipeline at the Planner.
-  - `LIGHT` - skip planning and review; hand the work item to the Builder with a minimal packet. For XS work that is reversible and touches no contracts.
-  - `REJECT` - the loop is the wrong tool. Either too small for any process, or too large (XL) and in need of splitting first.
-- **Reason** - at most three sentences.
-- **Size assessment** - `XS` / `S` / `M` / `L` / `XL`, confirming or overruling the requester's guess.
-
-Conditional field:
-
-- **Advice** - required when the decision is `REJECT`: what the requester should do instead (do it by hand, or split along which seams). Otherwise `<none>`.
+- **Decision** - `LIGHT`, `PLANNED` or `REJECT`.
+- **Reason** - short rationale grounded in size, risk and uncertainty.
+- **Size assessment** - `XS` / `S` / `M` / `L` / `XL`.
+- **Process and norm basis** - exact commits/versions and readable locations for the process and applicable project norms.
+- **Risks and dependencies** - affected contracts, safety boundaries and shared consumers, or `<none>`.
+- **Responsibilities and executors** - planner, clarifier, builder and selected reviewer(s) as applicable; orchestrator performs triage unless assigned separately. Explain concrete uncertainty justifying extra roles or a separate factual inventory.
+- **Criterion assignment** - each acceptance criterion ID mapped to a suitable reviewer; mark criteria still to be derived by C2 and complete assignments before review. A sole reviewer covers every criterion.
+- **Repair state** - persistent work-item location, design and delivery automatic rounds consumed (each 0 or 1), and links to any repair or human continuation decisions. Existing counters survive session changes.
+- **LIGHT execution basis** - concrete scope, acceptance criteria and verification steps with expected results and chosen model; otherwise `<none>`. No placeholder C2/C3/C4.
+- **Human decisions required** - C4 before PLANNED building, or for LIGHT with irreversible effects or a new goal, contract or norm choice; identify existing applicable approvals and sources.
+- **Advice** - required for REJECT (clarify or split); otherwise `<none>`.
 
 ## Example
 
 ```md
-Decision: FULL_LOOP
-
-Reason: A behavior bug in a customer-facing export with a plausible
-root cause but no proof yet. Small enough for one packet, risky enough
-to deserve review.
-
-Size assessment: S (confirms requester's guess)
-
+Decision: PLANNED
+Reason: Bounded export behavior fix; one reviewer can cover both criteria.
+Size assessment: S
+Process and norm basis: <exact process commit and project norm commit + readable paths>
+Risks and dependencies: export consumers may depend on row order
+Responsibilities and executors: planner A (includes research), builder B,
+  strict reviewer C; no separate clarification uncertainty identified
+Criterion assignment: AC1 -> C; AC2 -> C
+Repair state: <work-item record>; design 0, delivery 0
+LIGHT execution basis: <none>
+Human decisions required: C4 on concrete C2 before build
 Advice: <none>
 ```
