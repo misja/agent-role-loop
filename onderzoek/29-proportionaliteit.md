@@ -16,7 +16,7 @@ aanleiding en controle, en voegt geen procesregels toe.
 
 Bronnen: [issue #203](https://github.com/hanze-hbo-ict/programmeren/issues/203),
 het [menselijke besluitpakket](https://github.com/hanze-hbo-ict/programmeren/issues/203#issuecomment-5625179565),
-het [proefverslag](https://github.com/hanze-hbo-ict/programmeren/blob/main/onderzoek/203-proef.md)
+het [proefverslag](https://github.com/hanze-hbo-ict/programmeren/blob/a68cd9daa5e09310ac4d1209bcb6e7da8a8317f2/onderzoek/203-proef.md)
 en de lokaal gelezen `.claude/agent-role-loop/core/loop.md` uit dat project.
 De gelezen registratie beschrijft voorgestelde praktijkproeven; zij levert nog
 geen vergelijkbare effectmeting van de nieuwe generieke routes.
@@ -85,7 +85,9 @@ routes, geen garantie dat een model iedere instructie volgt.
 - 45 lokale Markdown-verwijzingen in gewijzigde bestanden gecontroleerd: geen ontbrekende doelen. De Sphinx-build controleert de onderwijspublicatie.
 - Headless Chrome: C1, C5, C6, de lus, het kwaliteitsraamwerk en oefening 1 bekeken. De twee Mermaid-diagrammen leveren SVG op; geen horizontale pagina-overloop bij 1280px. Screenshots van schema, contracten en oefening gelezen.
 - De eerste diagramweergave was te klein. Het schema is tot hoofdroutes beperkt; `docs/conf.py` gebruikt `mermaid_height = "auto"` zodat lange diagrammen niet in 500px worden samengedrukt. Beide diagrammen opnieuw bekeken: labels leesbaar, kort diagram zonder overmatige witruimte.
-- Onafhankelijke beoordeling: wordt vóór oplevering aangevuld.
+- Onafhankelijke [C6-beoordeling](https://github.com/misja/agent-role-loop/issues/29#issuecomment-5645059502) van `683c950b7c20ef6d9b7b73e691a33d02494d5516`: SHIP WITH NITS, AC1 t/m AC6 pass, geen blockers of contract drift. De beoordelaar kreeg de normbasis, geldige besluiten en C5-kern, zonder maaktranscript.
+- N1 wees op de verkeerde branch in de openbare proefverslaglink. Deze verwijst nu naar de vaste broncommit, waarvan het bestand zelfstandig door de beoordelaar is gecontroleerd. Deze afronding wijzigt alleen de bronlink en deze registratie; geen inhoudelijke herstelronde nodig. Herstelstand ontwerp 0, oplevering 0.
+- PR #40 wacht op de menselijke mergebeslissing. GitHub rapporteerde bij voorbereiding geen PR-checks; het lokale buildbewijs en de beoordelingsgrenzen zijn daarom afzonderlijk vastgelegd.
 
 De objectieve voor-toestand is de beschreven tegenstrijdige LIGHT-instructie en
 vaste rolbezetting op de basiscommit. Er is geen falende softwaretest verzonnen
