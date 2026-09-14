@@ -1,0 +1,12 @@
+object,versie,bron_in_voorbeeld,bestemming_in_bundel,oude_platform_url,nieuwe_platform_url,status_peilmoment
+opdracht,W1,issuebeschrijving,overdrachten.md sectie C0-W1,niet aangemaakt,niet aangemaakt,geldig voor P1
+route,C1,issuecomment,overdrachten.md sectie C1,niet aangemaakt,niet aangemaakt,ontwerp 0 oplevering 1 na herstel
+plan,P1,issuecomment met plansnapshot,overdrachten.md sectie C2-P1,niet aangemaakt,niet aangemaakt,goedgekeurd door fictieve C4-P1
+besluit,C4-P1,menselijke reactie in scenario,overdrachten.md sectie C4-P1,niet aangemaakt,niet aangemaakt,fictieve PROCEED voor P1
+code,A,eerste implementatie,boekenplank_a.py,niet aangemaakt,niet aangemaakt,geblokkeerd door C6-A
+code,B,reparatie,boekenplank_b.py,niet aangemaakt,niet aangemaakt,SHIP tegen W1/P1
+review,C6-A,PR-review in scenario,overdrachten.md sectie C6-A,niet aangemaakt,niet aangemaakt,BLOCK S4
+review,C6-B,PR-review in scenario,overdrachten.md sectie C6-B,niet aangemaakt,niet aangemaakt,SHIP tegen B
+bewijs,A en B,lokale reproductie,bewijs.txt,niet aangemaakt,niet aangemaakt,waargenomen controles geen CI-run
+voortgang,M1,afloop hoofdverhaal,overdrachten.md sectie M1,niet aangemaakt,niet aangemaakt,fictief afgerond na menselijke merge
+planwijziging,P2,afzonderlijk voorstelzijpad,overdrachten.md sectie Zijpad,niet aangemaakt,niet aangemaakt,STOP geen bouw of nieuwe review

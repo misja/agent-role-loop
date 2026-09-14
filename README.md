@@ -52,6 +52,11 @@ The Makefile runs `uv run sphinx-build` under the hood, so the environment is cr
 
 The site is published automatically to GitHub Pages on every push to `main` (see `.github/workflows/docs.yml`). One-time repository setup: under *Settings -> Pages*, set the source to **GitHub Actions**.
 
+The Dutch [worked example from work item to pull request](teaching/praktijk/van-werkitem-naar-pull-request.md)
+follows one filter for available books through an issue, plan decision, code review,
+repair and merge. It includes runnable code and an export bundle; it requires
+no automated provider integration.
+
 ## Scope and limits
 
 Use LIGHT for small unambiguous corrections and PLANNED when a concrete plan is needed. Review remains independent on both routes. Split extra-large work first. Install core and adapters as one version; existing work keeps its recorded process basis. See [core/loop.md](core/loop.md).

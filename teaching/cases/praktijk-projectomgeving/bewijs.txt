@@ -1,0 +1,65 @@
+Uitgevoerde reproductie op 14 september 2026.
+Dit zijn controles op de meegeleverde geconstrueerde versies, geen agentrun.
+
+$ python3 controleer.py basis basis
+test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+Exitcode: 0
+
+$ python3 controleer.py a zwak
+test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok
+test_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok
+test_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+Exitcode: 0
+
+$ python3 controleer.py a regressie
+test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand) ... FAIL
+
+======================================================================
+FAIL: test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/agent-role-loop-30/teaching/cases/praktijk-projectomgeving/controleer.py", line 48, in test_s4_filter_verandert_geen_toestand
+    self.assertEqual(na, voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+Exitcode: 1
+
+$ python3 controleer.py b volledig
+test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok
+test_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok
+test_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok
+test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+Exitcode: 0
