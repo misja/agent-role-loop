@@ -41,6 +41,13 @@ modules/06-ontwerpen/index
 
 ```{toctree}
 :maxdepth: 1
+:caption: Praktijk
+
+praktijk/van-werkitem-naar-pull-request
+```
+
+```{toctree}
+:maxdepth: 1
 :caption: Naslag
 
 begrippen

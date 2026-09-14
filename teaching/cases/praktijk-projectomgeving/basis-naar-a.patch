@@ -1,0 +1,11 @@
+--- a/boekenplank.py
++++ b/boekenplank.py
+@@ -21,5 +21,7 @@
+         self._boeken.append(boek)
+         return boek
+ 
+-    def lijst(self):
++    def lijst(self, alleen_beschikbaar=False):
++        if alleen_beschikbaar:
++            self._boeken = [b for b in self._boeken if b.uitgeleend_aan is None]
+         return list(self._boeken)

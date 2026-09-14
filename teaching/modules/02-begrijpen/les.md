@@ -20,32 +20,23 @@ Korte terugblik op module 1: in deel A liep één lange chat vol en verrotte de 
 
 In code deel je een systeem op in onderdelen die elk één ding doen: scheiding van verantwoordelijkheden. De rollenloop doet hetzelfde, maar dan met een werkproces in plaats van met code. Triage weegt proportionaliteit, de planner plant, de bouwer bouwt, elke beoordelaar kijkt vanuit één invalshoek, de poort velt het menselijke oordeel. Geen enkele rol draagt alles; elke rol draagt één zorg. Dat is dezelfde gedachte, op een ander niveau toegepast.
 
-```mermaid
-:caption: De rollenloop. Elke rol draagt één zorg; tussen twee rollen gaat precies één contract heen (C0 tot en met C7). De beoordelaars werken parallel en zien elkaars oordeel niet.
+Het actuele schema staat in {core}`loop.md`. De triage kiest de benodigde
+verantwoordelijkheden en wijst ieder criterium aan een onafhankelijke beoordelaar
+toe. De vier perspectieven uit oefening 1 zijn een oefenkeuze; bij één passende
+beoordelaar kan diens C6 volstaan. Een afzonderlijke hoofdbeoordelaar behandelt
+inhoudelijke tegenspraak tussen meerdere beoordelingen.
 
-flowchart TD
-    W["Werkitem (C0)"] --> T[Triage]
-    T -- C1 --> P[Planner]
-    P -- C2 --> V[Verhelderaar]
-    V -- C3 --> G[Menselijke poort]
-    G -- C4 --> B[Bouwer]
-    B -- C5 --> S
-    subgraph S[Beoordelaars]
-        direction LR
-        R1[Strikt]
-        R2[Pragmatisch]
-        R3[Adversarieel]
-        R4[Onderhoudbaarheid]
-    end
-    S -- "C6 (4x)" --> H[Hoofdbeoordelaar]
-    H -- C7 --> E[Eindoordeel]
-```
 
 ### Contracten als interface, rolprompts als implementatie
 
 Tussen twee rollen gaat precies één ding heen: een contract. Dat contract is de interface. Het legt vast wat een overdracht moet bevatten, niet hoe de rol tot dat resultaat kwam. De rolprompt erachter is de implementatie: je kunt hem herschrijven, vervangen door een ander model of laten uitvoeren door een mens, zonder dat de rest van de loop het merkt, zolang het contract blijft staan.
 
-Datzelfde geldt voor het medium waarin een contract leeft: een bestand op schijf, een issue-body op een projectbord of een kaartje op een muur zijn inwisselbare dragers, zolang de inhoud het contract draagt. De contracten van dit project leven inmiddels als issue-bodies op een projectbord, zonder dat de loop het merkt.
+De inhoud van een contract kan in een bestand of een issue staan. Bij een
+verplaatsing moet ook duidelijk blijven welke versie geldt en welk besluit
+daarbij hoort. In dit project staan werkitems en overdrachten op GitHub.
+[Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
+laat met de boekenplank zien hoe issues, reacties, commits en PR's die informatie
+bij elkaar houden. Een bordstatus geeft de voortgang weer en vervangt geen besluit.
 
 En wat niet in het contract staat, blijft verborgen. De bouwer ziet het verkenningsverslag van de planner niet; een beoordelaar ziet het oordeel van een andere beoordelaar niet. Dat verbergen is geen slordigheid maar precies de tegenmaatregel tegen de context rot die je in module 1 voelde: niemand sleept de hele geschiedenis mee, dus niets weegt mee dat allang niet meer klopt.
 
@@ -55,7 +46,7 @@ Hiermee raakt de loop aan softwarekwaliteit. In het raamwerk [Kwaliteit als gede
 
 ### Een echt werkitem als voorbeeld
 
-Zo ziet een ingevuld werkitem ({core}`contracts/work-item.md`) eruit. Dit is een echt exemplaar uit de bouw van dit lesmateriaal: het werkitem dat de diagram-ondersteuning van deze site inschakelde. Het stroomdiagram hierboven rendert dankzij dit werkitem.
+Zo ziet een ingevuld werkitem ({core}`contracts/work-item.md`) eruit. Dit is een echt exemplaar uit de bouw van dit lesmateriaal: het werkitem dat de diagram-ondersteuning van deze site inschakelde. De stroomdiagrammen op deze site renderen dankzij dit werkitem.
 
 ```md
 # Schakel Mermaid-ondersteuning in

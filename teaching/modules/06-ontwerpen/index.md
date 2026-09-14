@@ -21,3 +21,10 @@ Deze module bestaat uit de les en de bijbehorende oefening (een mini-project).
 les
 oefening
 ```
+
+## Praktijkvoorbeeld
+
+In [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
+volg je een kleine boekenplankwijziging via een issue, besluit, beoordeling en
+herstel. Lees dit gedeelde voorbeeld na module 2; gebruik het daarna als naslag
+bij de overdrachten in deze module.

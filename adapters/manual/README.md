@@ -58,6 +58,14 @@ human decision to continue with a bounded assignment, split or stop. Reopening
 a conversation does not reset either counter. Changes that invalidate evidence
 follow the core's replan and wider-review rules.
 
+## Practice in a project environment
+
+The Dutch [worked example](../../teaching/praktijk/van-werkitem-naar-pull-request.md)
+shows where to keep the work item, human decisions, code versions and review
+artifacts in issues and a pull request. It includes a runnable repair and a
+portable bundle. Use it after the teaching introduction and module 2; separate
+chat sessions are sufficient for the role handoffs.
+
 ## Updating an installation
 
 Keep the process version with each work item. Install core and adapters together;
