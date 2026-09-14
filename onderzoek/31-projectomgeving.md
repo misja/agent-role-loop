@@ -68,9 +68,20 @@ verbanden; het reconstrueert geen native reviews, accounts of bordautomatisering
 
 ## Onafhankelijke beoordeling
 
-Een onafhankelijke lezer krijgt AC1-AC8 en de leesopdracht voor P1/A, de blokkade,
-P1/B, het P2-voorstel en de uitgepakte bundel. De beoordeling wordt vóór oplevering
-hier geregistreerd. Werkelijke herstelstand #31: ontwerp 0, oplevering 0; de
-fictieve herstelronde in het onderwijsvoorbeeld telt daar niet bij op.
-Tokens, totale duur en menselijke leestijd: niet beschikbaar. Merge blijft een
-menselijke beslissing.
+De onafhankelijke [C6](https://github.com/misja/agent-role-loop/issues/31#issuecomment-5669654898)
+beoordeelde commit `8ef6fbfb5f1b5c9579f9f8694c0c48b444f713d8`: SHIP,
+AC1-AC8 pass, geen blockers, nits of contract drift. De reviewer kreeg de normen,
+geldige besluiten en C5-kern, zonder maaktranscript. De volledige leesantwoorden
+staan in C6: bij A volgt beoordeling; na C6-A volgt gericht herstel; na C6-B
+volgt de menselijke mergebeslissing; P2 blijft een niet-vrijgegeven voorstel.
+Deze gegevens bleven ook in de offline bundel aanwijsbaar.
+
+De reviewer heeft bundelinhoud en vaste normen zelfstandig vergeleken met de
+bron en de codecontroles opnieuw uitgevoerd met de verwachte uitkomsten.
+Build- en linkcontrole zijn als aangeleverd bewijs gebruikt. De visuele controle
+is niet herhaald; daarvoor geldt het menselijke akkoord. Tekstdichtheid is ook
+[overgedragen aan #35](https://github.com/misja/agent-role-loop/issues/35#issuecomment-5669631476).
+
+Werkelijke herstelstand #31: ontwerp 0, oplevering 0. Deze afronding wijzigt alleen
+de onderzoeksregistratie; het beoordeelde materiaal blijft gelijk. PR #41 wacht
+op menselijke merge. Tokens, totale duur en menselijke leestijd: niet beschikbaar.
