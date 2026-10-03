@@ -1,44 +1,93 @@
-# Sta aan de poort
+# Beslis over het verwijdervoorstel
 
-In module 4 oordeelde je over de kwaliteit van een change. Nu sta je aan de poort. Een door AI gebouwde `verwijderen`-operatie staat klaar om door te gaan. De code werkt, de tests slagen. Jij beslist: mag dit zo door?
+## Inleiding
 
-Let op het verschil met module 4. Je beoordeelt hier niet de kwaliteit van de code en je herontwerpt de operatie niet. De poort-vraag is smaller en zwaarder: mag deze onomkeerbare operatie door, zo niet wat eerst, en waarom is dat een menselijke beslissing?
+In module 4 heb je bevindingen gewogen. Hier neem je de mensrol op je en besluit
+je over voorstel P1 hieronder. Het voorstel gaat over toepassing van bestaande
+voorbeeldcode. Je oefent C4 vóór die toepassing; je geeft geen mergebesluit over
+een nieuwe codewijziging.
 
 **Duur:** circa 60 minuten.
-**Nodig:** het materiaal in `teaching/cases/module5-verwijderen/` uit de repository, met `pytest`. Het contract {core}`contracts/gate-decision.md` (C4) en de rol {core}`roles/human-gate.md`.
-**Inleveren:** je poort-beslissing (C4) en de beantwoorde verantwoordingsvragen.
 
-## Worked example: de poort op verwijderen
+**Nodig:** de voorkennis uit [module 4](../04-oordelen/index.md), Python met
+`pytest`, en de repository met `teaching/cases/module5-verwijderen/`. Gebruik
+{core}`contracts/gate-decision.md` (C4) en {core}`roles/human-gate.md`.
 
-Draai eerst de tests:
+**Inleveren:** je C4-besluit op P1 en de beantwoorde verantwoordingsvragen.
 
-```
-pytest
-```
+## Voorbereiding: controleer het gedrag
 
-Alles slaagt. De machine bevestigt dat `verwijderen` doet wat er staat: het haalt een boek van de plank, ook een boek met een openstaande wachtlijst. Dat is precies waar de machine ophoudt en de poort begint.
+1. Open de [voorbeeldcode](https://github.com/misja/agent-role-loop/blob/main/teaching/cases/module5-verwijderen/boekenplank.py) en de [tests](https://github.com/misja/agent-role-loop/blob/main/teaching/cases/module5-verwijderen/test_boekenplank.py).
+2. Voer vanuit de root van de repository uit:
 
-De poort-beslissing gaat niet over of de code klopt, maar over of dit zo mag doorgaan. `verwijderen` is onomkeerbaar: geen bevestiging, geen archief, en de reservering van een lener verdwijnt zonder waarschuwing. Een verkeerde go is hier niet terug te draaien. Een verdedigbare uitkomst is **no-go met een voorwaarde**: eerst een bevestiging of een soft-delete voordat dit op gedeelde data losgaat. Een andere is een **conditionele go** voor een omgeving zonder echte lezers. Wat de poort niet mag doen, is de vraag aan de machine overlaten: die kan bevestigen dat het werkt, niet of het verlies aanvaardbaar is.
+   ```bash
+   cd teaching/cases/module5-verwijderen
+   python -m pytest
+   ```
 
-Merk op waarom dit bij de mens ligt: de aanvaardbaarheid van onomkeerbaar dataverlies is geen eigenschap van de code, maar een oordeel over waarde en context.
+3. Lees `test_verwijderen_wist_ook_een_openstaande_wachtlijst`. Wijs aan welk boek is uitgeleend, wie op de wachtlijst staat en wat de assert na verwijderen controleert.
+4. Vergelijk die controle met `verwijderen`, `boek` en `lijst`. Leg vast hoe het boek uit de boekenplank verdwijnt en welke publieke herstelmethode ontbreekt.
 
-## Jouw opdracht: vel de poort-beslissing
+De verwachte uitkomst is drie geslaagde tests. De genoemde test controleert dat
+alleen het andere boek in de lijst staat; hij bewijst niet dat alle verwijzingen
+naar het verwijderde object zijn vernietigd. De beschrijvingen in de README,
+docstrings en testnaam spreken van definitief wissen. Gebruik het daadwerkelijk
+gecontroleerde gedrag als bewijs voor je besluit. De code bewaart de toestand
+in het geheugen en bevat geen gedeelde of permanente opslag.
 
-Schrijf een poort-beslissing (C4, volg {core}`contracts/gate-decision.md`) over de `verwijderen`-operatie:
+## Voorstel P1 voor deze oefening
 
-1. **PROCEED, REVISE of STOP.** Kies, en maak de keuze expliciet.
-2. Bij REVISE of STOP: benoem **wat eerst moet** voordat dit door mag, zonder de code te herontwerpen. Je stelt een voorwaarde, je bouwt niet.
-3. **Verantwoord waarom dit een menselijke beslissing is** en niet aan de machine of de beoordelaars kan worden overgelaten.
-4. **Weeg proportionaliteit:** zou je oordeel anders zijn voor een kleine, omkeerbare wijziging? Waarom?
+P1 is een geconstrueerd voorstel, geen aanvraag om echte bibliotheekgegevens te
+verwijderen. De boekenplank zal in een oefenscenario worden gebruikt door mensen
+met openstaande reserveringen. Voor hen telt het behoud van hun reservering.
+De gedeelde gebruikssituatie is scenario-invoer; de aangeleverde code implementeert
+die omgeving niet.
+
+- **Scope:** de bestaande operatie `verwijderen(nummer)` beschikbaar stellen om boeken uit de boekenplank te halen, ook wanneer ze uitgeleend zijn of een wachtlijst hebben. Besluit vóór die toepassing over de voorwaarden; er is nog niets vrijgegeven.
+- **Voorzien gevolg:** het boek, de lener en de wachtlijst zijn daarna niet meer via de boekenplank opvraagbaar. De publieke API biedt geen hersteloperatie.
+- **Open risicokeuze:** is dat gevolg toegestaan bij openstaande reserveringen? Voor P1 is nog geen herstelvoorziening afgesproken. Wie het verlies mag aanvaarden en welke voorwaarden nodig zijn, moet de menselijke poort beslissen.
+- **Grenzen:** geen bouw van gedeelde opslag of herstelcode in deze opdracht. PROCEED geldt uitsluitend voor het afgesproken oefenscenario en verleent geen toestemming voor toepassing op echte gegevens.
+
+## Worked example: een voorwaarde stellen
+
+Een mens kan op P1 **REVISE** kiezen met als reden dat verlies van de toegang tot
+openstaande reserveringen in het scenario niet aanvaardbaar is zonder beschikbaar
+herstel. Een concrete opdracht aan de planner is dan: “Pas P1 vóór toepassing aan
+zodat vastligt welke gegevens bewaard blijven, hoe herstel kan plaatsvinden en
+wie daarvoor verantwoordelijk is.” De poort stelt een grens; de planner werkt
+een uitvoerbaar voorstel uit.
+
+Alleen een bevestigingsvraag toevoegen beantwoordt die herstelvraag niet. Zij
+kan iemand waarschuwen voor de gevolgen, maar geeft na uitvoering geen boek of
+reservering terug. Of zo’n waarschuwing toch voldoende is, hangt af van de
+risicokeuze die de mens verantwoordt. Onderbouw je eigen besluit vanuit P1 en de
+waargenomen feiten.
+
+## Opdracht: schrijf je C4-besluit
+
+1. Noteer bij **Artifact and source**: “Voorstel P1, de versie op deze oefenpagina”, de gebruikte versie van deze repository en de bron van je menselijke besluit. Jij neemt in deze oefening zelf de mensrol op je. Verwijs naar de geldende {core}`loop.md` als procesbasis.
+2. Kies bij **Decision** PROCEED, REVISE of STOP. Schrijf bij **Reason** één alinea die je keuze verbindt aan het doel, het aangetoonde gedrag en het aanvaardbare risico.
+3. Vul de overige velden van C4 in. Bij REVISE geef je genummerde wijzigingen vóór toepassing, gericht aan de planner of bouwer en begrensd tot P1. Noteer welke risicokeuzen je hebt gemaakt en welke vragen je expliciet veilig kunt uitstellen. Gebruik `<none>` waar een veld niet van toepassing is.
+4. Controleer of een volgende rol uit je besluit kan afleiden op welk voorstel het slaat, wat mag doorgaan en wat eerst moet. Je ontwerpt of bouwt geen hersteloplossing.
+
+Het resultaat is een herkenbaar C4 met voorstelversie, menselijke bron, besluit,
+reden en concrete voorwaarden waar nodig. Een PROCEED op P1 is een besluit vóór
+toepassing in het oefenscenario. Als uit een vervolgvoorstel codewijzigingen
+volgen, vragen die hun eigen opleveringsbewijs en geselecteerde onafhankelijke
+beoordeling. De mens beslist daarna afzonderlijk over merge.
 
 ## Verantwoordingsvragen
 
 Beantwoord schriftelijk:
 
-1. **Beargumenteer** het verschil tussen "de operatie werkt" en "de operatie mag door". Wie stelt het eerste vast, wie het tweede?
-2. **Verantwoord** waarom onomkeerbaarheid de poort-beslissing zwaarder maakt dan een oordeel over code-kwaliteit.
-3. **Weeg af** wanneer een menselijke poort onevenredig is, en wat het kost als je hem overslaat waar hij wel nodig was.
+1. Welke gevolgen heb je daadwerkelijk in code en tests vastgesteld? Welk risico heb je op basis van het scenario verwacht?
+2. Welke informatie of voorwaarde moet volgens jouw besluit beschikbaar zijn vóór toepassing, en waarom?
+3. Welke route past bij een kleine, omkeerbare wijziging met heldere criteria? Wat verandert er bij een nieuwe normkeuze of onomkeerbare gevolgen? Gebruik {core}`loop.md` voor je afweging.
+4. Waarover beslist C4, en welke beoordeling en menselijke beslissing volgen als er later een codewijziging wordt opgeleverd?
 
 ## Variant zonder AI
 
-Speel de poort met een groep: één student presenteert de verwijder-operatie als klaar om door te gaan, de anderen zijn de poort en vellen een gezamenlijke go/no-go met een expliciete verantwoording. De debriefing draait om waar de beslissing bij de mens lag en waarom.
+Eén student presenteert P1 en de gecontroleerde feiten. De anderen nemen de
+menselijke poort op zich en schrijven gezamenlijk het C4-besluit volgens dezelfde
+stappen. Bespreek welke feiten het besluit dragen, welke gevolgen uit het
+scenario volgen en wie verantwoordelijkheid voor de gekozen voorwaarden neemt.

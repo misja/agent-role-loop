@@ -1,51 +1,183 @@
-# Ontwerp, regisseer en verantwoord (mini-project)
+# Ontwerp en verantwoord een interface-uitbreiding
 
-In de eerdere oefeningen kreeg je de opdracht, het artefact of de beslissing aangereikt. Nu is alles van jou: je ontwerpt een interface-uitbreiding op je boekenplank, stelt de randvoorwaarden vast, kiest je werkwijze en tooling, laat de AI bouwen binnen die kaders, en beoordeelt en verantwoordt het geheel. Het resultaat is een dossier waarin elke keuze verantwoord is.
+## Wat je gaat doen
 
-**Duur:** circa 4 uur, verdeeld over twee sessies (ontwerp en kaders; bouw en oordeel).
-**Nodig:** je boekenplank uit de eerdere modules (zie "Vooraf: kies je basis"), een AI-assistent, en de referentie: {core}`loop.md`, {core}`contracts/work-item.md` en het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md).
-**Inleveren:** het dossier (zie onderaan) en de repository met je code.
+Je ontwerpt een interface op je bestaande boekenplanklogica en laat de AI de
+uitbreiding bouwen. Je legt zelf de gewenste functionaliteit, normen en
+werkwijze vast. Daarna laat je het resultaat onafhankelijk beoordelen en
+onderbouw je je menselijke besluit over de merge.
 
-## Vooraf: kies je basis
+**Duur:** circa vier uur, verdeeld over een ontwerpsessie en een bouw- en
+beoordelingssessie. Dit is een tijdindicatie; je gekozen scope en voorbereiding
+bepalen hoeveel werk nodig is.
+**Inleveren:** de repository met je code en het dossier onderaan deze pagina.
 
-De uitbreiding bouwt voort op een **bestaande logica-laag**; dat is de voorwaarde die de kernvraag van deze module mogelijk maakt (hergebruikt de AI die laag, of dupliceert hij haar?). Wie zonder bestaande laag begint, omzeilt ongemerkt die kern. Kies een van drie:
+## Voorbereiding
 
-1. **Je eigen boekenplank** uit oefening 1 (deel B), in Python: bouw er een [Textual](https://textual.textualize.io/)-interface op. Dit is de standaardroute.
-2. **Je eigen stack:** een andere taal of interface-vorm mag, zolang je voortbouwt op je bestaande logica-laag. Het principe is de leerstof; de tooling is inwisselbaar.
-3. **Terugvaloptie:** heb je je eigen boekenplank niet meer, bouw dan voort op de boekenplank uit `teaching/cases/module5-verwijderen/` (logica met reserveringen en verwijderen).
+Rond modules 1 tot en met 5 af. Gebruik de uitleg over
+[overdrachten en contextisolatie](../02-begrijpen/les.md),
+[testbewijs](../03-machine/les.md) en de
+[menselijke poort](../05-poort/les.md). Houd {core}`loop.md`,
+{core}`contracts/work-item.md` en het
+[kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md) bij de
+hand.
+
+Je hebt Git, werkende boekenplanklogica met de bijbehorende tests en een
+AI-omgeving nodig waarin je afzonderlijke sessies kunt starten. Geef een
+beoordelingssessie de vereiste bronnen, zonder het maakgesprek. Zoek voor je
+gekozen interface de installatie- en aanroepinstructies op in de officiële
+documentatie van die stack; deze oefening schrijft geen complete toolstack voor.
+
+### Kies je basis
+
+Je uitbreiding bouwt voort op een bestaande logica-laag. Daardoor kun je later
+beoordelen of de interface de regels hergebruikt of opnieuw implementeert.
+
+1. **Standaard:** gebruik je eigen Pythonboekenplank uit oefening 1, deel B, en
+   bouw er een [Textual](https://textual.textualize.io/)-interface op.
+2. **Eigen stack:** kies een andere taal of interfacevorm, zolang je voortbouwt
+   op je bestaande logica-laag.
+3. **Terugvaloptie:** gebruik de
+   [boekenplankcode](https://github.com/misja/agent-role-loop/blob/main/teaching/cases/module5-verwijderen/boekenplank.py)
+   en [tests](https://github.com/misja/agent-role-loop/blob/main/teaching/cases/module5-verwijderen/test_boekenplank.py)
+   uit `teaching/cases/module5-verwijderen/`. De
+   [oefening van module 5](../05-poort/oefening.md) beschrijft hoe je deze tests
+   uitvoert en welke grenzen het geheugenmodel heeft.
+
+Controleer vóór je uitbreiding dat de bestaande tests uitvoerbaar zijn. Bewaar
+de basiscommit en de uitkomsten voor de vergelijking met je latere versie.
+
+### Richt je projectomgeving in
+
+Werk standaard in een eigen repository met een issue, PR en gekoppeld
+projectbord. Gebruik de
+[beginstappen](../../praktijk/van-werkitem-naar-pull-request.md)
+uit het praktijkvoorbeeld voor de handelingen op GitHub. Neem hier je eigen
+boekenplank als basis en schrijf je eigen opdracht; de voorbeeldbundel en
+filterpatch zijn geen onderdeel van dit mini-project.
+
+In het praktijkvoorbeeld beslist een medestudent over het plan. In deze
+individuele oefening ben je zelf de menselijke besluitnemer bij C4 en bij de
+merge. De geselecteerde opleveringsbeoordeling gebeurt in een afzonderlijke
+agentcontext. Bewaar die C6 als agentbeoordeling en je eigen besluit als een
+apart, herkenbaar menselijk besluit. Een eigen mergebesluit is iets anders dan
+je eigen PR met de GitHub-reviewhandeling *Approve* goedkeuren.
+
+Een andere projectomgeving mag als zij dezelfde functies beschikbaar maakt:
+opdracht en versies bewaren, besluiten en bewijs koppelen, de code vergelijken,
+onafhankelijk beoordelen en voortgang tonen. Controleer vooraf je rechten en
+de vindplaatsen van die bronnen. Leg de overeenkomst vast met de
+[bronmapping](../../praktijk/van-werkitem-naar-pull-request.md).
 
 ## Stappen
 
-1. **Ontwerp de uitbreiding en schrijf het werkitem.** Bepaal wat je interface moet kunnen (bijvoorbeeld: lijst tonen, uitlenen, reserveren, terugbrengen; wees selectief). Schrijf een werkitem volgens {core}`contracts/work-item.md`, met toetsbare acceptatiecriteria. Klaar wanneer: het werkitem beschrijft de gewenste uitkomst, niet de implementatie.
-2. **Stel de randvoorwaarden vast.** Beslis welke stijl, type checker, linter, formatter en welk projectbeheer gelden, leg ze vast in een kort conventiedocument in je repository, en automatiseer wat te automatiseren is. Verantwoord per keuze waarom deze norm, en herken de levensloop: jouw oordeel wordt conventie, jouw conventie wordt poort. Klaar wanneer: een buitenstaander kan uit je document aflezen wat "goed" in jouw project betekent en welke poorten dat afdwingen.
-3. **Kies je werkwijze en tool, en verantwoord de keuze.** Bepaal waar je werkitems en artefacten leven (bestanden in de repository, een projectbord, iets anders). Benoem daarbij de drie niveaus (werkwijze, medium, tool) en weeg expliciet de zeggenschap over je data mee: waar staat het, onder welk regime, hoe kom je er weg? Klaar wanneer: je kunt uitleggen wat er bij een toolwissel verloren gaat en wat niet.
-4. **Kies hoeveel van de loop je inzet, en verantwoord die keuze.** Volledige loop, licht pad, of iets ertussenin: dit is een expliciete beslissing, geen standaardinstelling. Onderbouw met omvang, risico en omkeerbaarheid van je uitbreiding. Klaar wanneer: je inzet volgt aantoonbaar uit je afweging, niet uit gemak.
-5. **Regisseer de bouw.** Laat de AI de interface bouwen binnen je werkitem en je randvoorwaarden. Bewaak de scope, houd de poorten als toegangsvoorwaarde (bouw gaat pas door bij groen), en noteer waar je moest ingrijpen. Klaar wanneer: de acceptatiecriteria zijn aantoonbaar gehaald en de poorten staan op groen.
-6. **Beoordeel en besluit.** Beoordeel het resultaat met architectuur en onderhoudbaarheid als zwaartepunt: wijs concreet aan waar de AI je bestaande logica hergebruikt en waar hij haar dupliceert, en wat dat betekent voor de volgende wijziging. Vel daarna je eigen poort-beslissing over oplevering: mag dit zo door, en zo niet, wat eerst? Klaar wanneer: je oordeel en je beslissing zijn geschreven en onderbouwd.
+1. **Ontwerp de uitbreiding en schrijf C0 in je issue.** Kies een beperkt aantal
+   interfacehandelingen, bijvoorbeeld boeken tonen en één uitleenhandeling.
+   Schrijf zelf de gewenste uitkomsten en toetsbare acceptatiecriteria volgens
+   {core}`contracts/work-item.md`. Geef aan welke bestaande regels behouden
+   moeten blijven. Koppel het issue aan je bord.
+
+   Klaar wanneer de gewenste functionaliteit en scope te beoordelen zijn zonder
+   al één implementatie voor te schrijven.
+
+2. **Leg je projectnormen vast.** Schrijf een conventiedocument in je repository
+   met keuzes voor stijl, type checking, linting, formattering en projectbeheer.
+   Verantwoord ook welke middelen je achterwege laat. Configureer de gekozen
+   controles of leg vast wanneer dat in het bouwplan gebeurt. Bewaar de normversie
+   en geef haar leesbaar mee aan de rollen.
+
+   Klaar wanneer een beoordelaar kan aanwijzen welke regels gelden, welke
+   automatische controles ze toetsen en welke vragen een oordeel nodig hebben.
+
+3. **Leg de bronnen en toolkeuze vast.** Wijs in je issue aan waar opdracht,
+   planversies, besluiten en code staan. Gebruik de PR voor oplevering en review,
+   en het bord voor status. Onderbouw je toolkeuze met toegang, opslag en de
+   gegevens die bij een verhuizing mee moeten.
+
+   Klaar wanneer een andere lezer de geldende bronnen kan vinden en je kunt
+   uitleggen welke gegevens een Git-clone of Markdown-kopie niet bewaart.
+
+4. **Kies de route en geef zo nodig C4.** Leg in C1 omvang, risico, normversie,
+   uitvoerders en de toewijzing van ieder criterium aan een beoordelaar vast.
+   Gebruik `LIGHT`, `PLANNED` of `REJECT` volgens {core}`loop.md`. Bij `REJECT`
+   verduidelijk of splits je de opdracht voordat je verdergaat. Bij `PLANNED`
+   laat je de planner C2 maken en, als C1 dat selecteert, een afzonderlijke
+   verhelderaar C3. Beslis als mens over het concrete plan vóór de bouw. Bewaar
+   de planversie met een vaste commitlink en leg je C4 met reden vast. Bij
+   `LIGHT` is C4 vooraf nodig bij een nieuw doel, contract- of normkeuze of
+   onomkeerbare gevolgen; routinematige C4, C2 en C3 worden overgeslagen.
+
+   Klaar wanneer de route onderbouwd is, ieder criterium een bevoegde
+   onafhankelijke beoordelaar heeft en het vereiste menselijke besluit naar het
+   juiste artefact verwijst. Een nieuwe doel- of risicokeuze vraagt een nieuw
+   menselijk besluit.
+
+5. **Laat bouwen en verzamel bewijs.** Werk op een branch vanaf de basiscommit.
+   Geef de bouwer C0 en C1 bij `LIGHT`, of het goedgekeurde C2 met C1 en C4 bij
+   `PLANNED`, plus code en normen. Laat de afgesproken verificatie uitvoeren.
+   Bij gedragwijzigingen in geteste code is test-first de standaard: de eerste
+   test mag falen voordat de implementatie volgt. Groen is nodig voor de
+   afgesproken opleveringscontroles, niet vóór iedere bouwstap. Bewaak de scope
+   en noteer je ingrepen. Open een PR met C5, de exacte codecommit, basiscommit,
+   bewijs en links naar de besluiten en het issue.
+
+   Klaar wanneer de criteria met passend bewijs zijn onderbouwd en de
+   oplevering vermeldt welke controles zijn uitgevoerd en wat niet is
+   vastgesteld.
+
+6. **Laat onafhankelijk beoordelen en beslis over merge.** Geef iedere
+   geselecteerde beoordelingssessie C5-kern, de toegewezen criteria, relevante
+   besluiten, code en leesbare normen. Geef het maakgesprek en andere oordelen
+   niet mee. Laat architectuur en onderhoudbaarheid expliciet beoordelen:
+   welke aanroepen hergebruiken de logica en welke regels zijn gekopieerd?
+   Bewaar iedere C6 met de exacte reviewcommit. Eén C6 is het eindoordeel; bij
+   meerdere oordelen volgt C7. Voeg verenigbare oordelen samen; laat inhoudelijke
+   tegenspraak door de hoofdbeoordelaar onderzoeken.
+
+   Handel blokkades af volgens de vastgelegde herstelgrenzen: hoogstens één
+   automatische ontwerp- en één opleveringsherstelronde per werkitem. Bewaar de
+   stand vóór herstel; herbeoordeling krijgt de expliciete herstelbijlage. Een
+   resterende blokkade vraagt daarna een menselijk besluit over begrensd vervolg,
+   splitsen of stoppen. `SHIP` of `SHIP WITH NITS` maakt de wijziging gereed voor
+   jouw menselijke mergebesluit. Leg dat besluit afzonderlijk vast voor de
+   beoordeelde commit en wijs vervolgwerk voor eventuele nits aan. Na merge
+   controleer je de issue- en bordstatus.
+
+   Klaar wanneer je de beoordelingen, je eigen architectuuranalyse en je
+   mergebesluit met bronnen hebt vastgelegd. Bij een blokkade eindigt deze stap
+   met het vastgelegde vervolg- of stopbesluit, zonder merge.
 
 ## Verantwoordingsvragen
 
-Beantwoord schriftelijk, als sluitstuk van het dossier:
+Beantwoord schriftelijk:
 
-1. **Verantwoord de keten als geheel:** welke kwaliteitslaag droeg in jouw project welke verantwoordelijkheid, en waar in de levensloop (oordeel, conventie, automatisering) zat elke norm die je stelde?
-2. Je hebt ergens een conventie gesteld die een ander redelijkerwijs anders had gekozen. **Beargumenteer** je keuze, en beschrijf wat er zou veranderen als je de andere had genomen.
-3. **Verantwoord** je loop-inzet uit stap 4 achteraf: bleek je afweging te kloppen, en wat zou je bij een volgende, grotere uitbreiding anders doen?
-4. Wat kon in dit project alleen door jou worden vastgesteld, en wat had je met een strengere poort of een extra beoordelaar alsnog niet afgevangen? **Beargumenteer** waarom dat oordeel bij de mens blijft.
+1. Welke verantwoordelijkheid lag bij afspraken, automatische controles en
+   oordeel? Wijs voor één norm de keuze, vastlegging en eventuele automatisering
+   aan.
+2. Welke projectafspraak had je anders kunnen kiezen? Onderbouw jouw keuze en
+   beschrijf het gevolg van het alternatief.
+3. Bleek je routekeuze passend bij de omvang en risico's? Wat zou je bij een
+   grotere uitbreiding aanpassen?
+4. Welk doel of risico moest jij als menselijke besluitnemer afwegen? Welke
+   informatie leverden de controles en beoordelingen daarvoor, en welke vraag
+   bleef open?
 
 ## Inleveren: het dossier
 
-Het dossier bestaat uit zes onderdelen; de code hoort in je repository:
+Lever de repository en een dossier met de volgende vindplaatsen in:
 
-1. het werkitem (stap 1);
-2. het conventiedocument met verantwoording (stap 2);
-3. de werkwijze- en toolkeuze met verantwoording (stap 3);
-4. de loop-inzet-beslissing met verantwoording (stap 4);
-5. je beoordeling en je poort-beslissing (stap 6);
-6. de beantwoorde verantwoordingsvragen.
+1. C0 en het conventiedocument met je normkeuzes en hun versies.
+2. De bronmapping en je onderbouwde toolkeuze, inclusief de gegevens voor een
+   eventuele verhuizing.
+3. C1 met route, uitvoerders, criteriatoewijzing en herstelstand; waar nodig C2,
+   C3 en het menselijke C4 op de exacte planversie.
+4. De PR en C5 met basis- en codecommit, uitgevoerde controles en bewijsgrenzen.
+5. De onafhankelijke C6, zo nodig C7 en herstelbijlage, je eigen
+   architectuuranalyse en je menselijke merge- of vervolg-/stopbesluit. Neem na
+   merge ook de mergeverwijzing en afgeronde issue- en bordstatus op.
+6. De beantwoorde verantwoordingsvragen.
 
-```{note}
-Terzijde: dit lesmateriaal is zelf volgens deze werkwijze gebouwd. De repository
-waarin het leeft gebruikt dezelfde contracten, dezelfde poort-momenten en een
-projectbord met werkitems; de commit-geschiedenis toont de beslissingen. Wie wil
-zien hoe de werkwijze er in het echt uitziet, kan daar rondkijken.
-```
+Controleer het dossier door één criterium vanaf de opdracht tot het bewijs,
+oordeel en besluit te volgen. Die keten moet leesbaar zijn zonder jouw
+maakgesprek. Het [praktijkvoorbeeld](../../praktijk/van-werkitem-naar-pull-request.md)
+bevat een uitgewerkte keten als vergelijkingsmateriaal.

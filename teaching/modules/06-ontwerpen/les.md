@@ -1,67 +1,163 @@
-# De synthese: het kader in eigen hand
+# Een interface ontwerpen en de uitvoering beoordelen
 
 ## Plaats in de leerlijn
 
-Laatste module. Tot nu toe kreeg je het kader aangereikt: je ervoer het probleem (module 1), begreep de loop (module 2), zette de machinepoorten in (module 3), oordeelde (module 4) en stond aan de poort (module 5). Nu draait het om: jij ontwerpt, en het kader is van jou. Vereiste voorkennis: modules 1 tot en met 5 afgerond.
+In deze laatste module ontwerp je een uitbreiding op de boekenplank. Je gebruikt
+hiervoor de werkwijze uit modules 1 tot en met 5: een opdracht afbakenen, rollen afzonderlijk
+inzetten, controles uitvoeren en de uitkomst beoordelen. De
+[oefening](oefening.md) laat je deze onderdelen toepassen in een eigen
+mini-project. Je kiest zelf welke interfacehandelingen je bouwt.
 
-De les hoort bij [oefening 6](oefening.md), een mini-project waarin je een interface-uitbreiding ontwerpt, de AI regisseert en de hele keten verantwoordt.
+Voor de overdrachten gebruik je de uitleg over
+[rollen en contracten](../02-begrijpen/les.md), de
+[grenzen van testbewijs](../03-machine/les.md) en het
+[menselijke besluit](../05-poort/les.md). Het
+[praktijkvoorbeeld](../../praktijk/van-werkitem-naar-pull-request.md) toont hoe
+je die overdrachten bij een issue en PR bewaart.
 
 ## Leeruitkomsten
 
-De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
+De leeruitkomsten staan onder "Wat ga je leren" op de [module-index](index.md).
 
 ## Opbouw
 
-### Van bouwer naar regisseur
+### De opdracht ontwerpen en de bouw begeleiden
 
-In de vorige modules bouwde de AI en beoordeelde jij. In deze module verschuift je rol verder: je ontwerpt de opdracht, stelt de kaders, delegeert de bouw en verifieert het resultaat. Dat is geen bijrol maar het werk zelf: wie met AI-agents werkt, verschuift van zelf schrijven naar delegeren, superviseren en integreren. De waarde daarvan hangt af van hoe goed je de werkstroom rond delegatie en verificatie inricht, en dat inrichten is precies wat je hier oefent.
+Stel dat je een interface wilt waarmee een medewerker een boek kan uitlenen.
+Je moet dan vaststellen hoe de medewerker het boek en de lener kiest, en wat
+zichtbaar wordt als uitlenen niet is toegestaan. Die keuzes komen in je werkitem
+als gewenste uitkomsten. De planner kan vervolgens beschrijven hoe de interface
+de bestaande uitleenmethode aanroept. Bij de beoordeling controleer je of de
+handeling aan je criteria voldoet en of de bestaande regels behouden blijven.
 
-### De drie lagen in eigen hand
+Je begeleidt de bouw door de juiste invoer aan iedere rol te geven. De bouwer
+krijgt de geldende opdracht, normen en relevante besluiten. De onafhankelijke
+beoordelaar krijgt de oplevering en het bewijs, zonder het maakgesprek. Zo kan
+die zelf nagaan of de uitkomst overeenkomt met de afspraken. De rolselectie en
+route leg je vooraf vast volgens {core}`loop.md`.
 
-Het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md) beschreef drie soorten kwaliteitsmechanismen en hun levensloop: een oordeel wordt een vastgelegde conventie, en een conventie wordt een geautomatiseerde poort. In de eerdere modules doorliep je die lagen als gebruiker; nu doorloop je ze als ontwerper. Jij velt de oordelen (welke normen gelden hier), jij legt ze vast als conventies, jij automatiseert wat te automatiseren is, en jij houdt het oordeel waar het hoort: bij de beoordeling en de poort. De synthese is dat je de verdeling van verantwoordelijkheden niet meer aangereikt krijgt, maar zelf inricht en verantwoordt.
+### Projectafspraken kiezen en controleren
 
-### Randvoorwaarden als ontwerpdaad
+Het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md)
+onderscheidt vastgelegde afspraken, automatische controles en contextueel
+oordeel. Je kunt bijvoorbeeld besluiten dat alle Pythonbestanden dezelfde
+opmaak moeten volgen. Je legt die keuze vast in een formatterconfiguratie en
+laat de controle op de gewijzigde bestanden draaien. Dan is zichtbaar of de
+opmaak aan de afgesproken regels voldoet.
 
-Voordat er gebouwd wordt, beslis je wat "goed" in jouw project betekent: welke stijl, welke type checker, welke linter, welke formatter, welk projectbeheer. Zijn die randvoorwaarden vaag, dan heronderhandelt elke bijdrage ze opnieuw en verzint de AI ze zelf, inconsistent. Zijn ze scherp, dan is de agent begrensd en zijn output beoordeelbaar. Er is geen objectief juiste set: het vaststellen is een oordeel, het vastleggen een conventie, het afdwingen een poort. Een voorbeeld van zo'n binding is de [conventiepagina](../../conventies.md) van dit lesmateriaal zelf: een kort document dat vastlegt welke afspraken gelden en waar ze staan.
+De controle beantwoordt niet of de interface de uitleenlogica op de juiste
+plaats gebruikt. Daarvoor moet een beoordelaar de aanroepen en de verdeling van
+verantwoordelijkheden lezen. Sommige oordelen kun je later in een afspraak en
+controle omzetten; andere blijven afhankelijk van het ontwerp en de
+gebruikscontext.
+
+Kies vóór de bouw welke afspraken nodig zijn. Geef voor stijl, type checking,
+linting en formattering aan wat je inzet en waarom. Ook het weglaten van een
+controle vraagt een reden: welke vraag blijft dan bij de beoordeling liggen?
+Vage afspraken kunnen de bouwer ruimte geven voor verschillende keuzes. Een
+vastgelegde afspraak biedt een beoordelingsbasis, maar bewijst nog geen naleving.
+
+De [conventiepagina](../../conventies.md) van dit materiaal is een voorbeeld:
+zij wijst de geldende normen en hun vindplaatsen aan. In je eigen project leg je
+ook de gebruikte versies vast, zodat een latere beoordeling dezelfde basis
+gebruikt.
 
 ### Werkwijze, medium en tool
 
-Om je project te beheren moet je drie niveaus uit elkaar houden. De **werkwijze** is stabiel en tool-onafhankelijk: rollen, contracten, poorten. Het **medium** is waar een werkitem leeft: een Markdown-bestand, een issue-body, een kaartje. De **tool** beheert dat medium: een bestandssysteem met git, een projectbord, een tracker. Wie deze niveaus niet scheidt, denkt dat "leren werken met tool X" het doel is en raakt verlamd door de keuze; wie ze scheidt, ziet de tool als inwisselbare drager en kan wisselen zonder de werkwijze te verliezen.
+Een C2 bevat een bouwplan, ongeacht of je het in een bestand of een issuereactie
+bewaart. De **werkwijze** bepaalt welke rollen, informatie en besluiten nodig
+zijn. Het **medium** is de opslagvorm, zoals een Markdown-bestand of een
+issuebeschrijving. De **tool** beheert die informatie, bijvoorbeeld Git of een
+projectomgeving met issues en een bord.
 
-De toolkeuze zelf is daarmee niet onverschillig, maar een verantwoorde afweging. Zeggenschap over data hoort daarin expliciet mee: waar staat je werk, onder welk rechtsregime, hoe afhankelijk word je van een leverancier, en wat kost migreren? Voor wie in Europese organisaties gaat werken is dat een levensechte professionele vraag, geen theorie. De waarborg die migratie beheersbaar houdt, ken je al uit module 2: houd de inhoud portabel en het koppelvlak klein, dan is een toolwissel een ingreep en geen breuk.
+In deze oefening staat de opdracht in je issue. Het plan en menselijke besluit
+staan in herkenbare reacties met verwijzingen naar de geldende versies. De
+codecommit legt de wijziging vast; de PR bevat de oplevering en beoordeling. Het
+bord toont de voortgang. Een bordstatus vervangt geen besluit over een plan.
+De volledige [bronmapping](../../praktijk/van-werkitem-naar-pull-request.md)
+uit het praktijkvoorbeeld helpt je deze bronnen aan elkaar te koppelen.
 
-### Architectuur als zwaartepunt van het oordeel
+Weeg bij je toolkeuze mee wie de gegevens kan lezen, waar ze worden bewaard en
+wat een verhuizing vraagt. Kun je behalve code ook besluiten, bijlagen en reviews
+meenemen? Welke koppelingen en accountrechten moet je opnieuw inrichten? De
+[exporttabel](../../praktijk/van-werkitem-naar-pull-request.md)
+maakt dat concreet. Markdown-snapshots bewaren de inhoud van overdrachten; voor
+historie, verbanden en voortgang zijn aanvullende gegevens nodig. Onderzoek die
+kosten voor jouw project voordat je een toolwissel als uitvoerbaar beschrijft.
 
-De uitbreiding van dit mini-project is een interface op je bestaande boekenplank-logica, bijvoorbeeld een [Textual](https://textual.textualize.io/)-TUI. Studenten denken hier vaak "de AI lost dat wel op", en dat is geen bezwaar maar de kern: om te beoordelen of de AI het goed deed, moet je er iets van snappen. Het beoordelingszwaartepunt ligt bij architectuur en onderhoudbaarheid, met als concrete kernvraag: **hergebruikt de AI je bestaande logica-laag, of dupliceert hij haar in de interface?** Dat is scheiding van verantwoordelijkheden, die je in module 2 op een werkproces zag, nu op een systeem: de interface hoort een laag bovenop de logica te zijn, geen tweede exemplaar ervan. Duplicatie werkt vandaag en wreekt zich bij elke volgende wijziging.
+### Architectuur en onderhoudbaarheid beoordelen
 
-De beoordeling rust daarbij op je verantwoording, niet op het artefact. Twee studenten met verschillende stacks en verschillende uitkomsten kunnen allebei uitstekend werk leveren; het verschil zit in wie zijn keuzes kan verantwoorden.
+De uitbreiding is een interface op je bestaande boekenplanklogica, bijvoorbeeld
+een [Textual](https://textual.textualize.io/)-TUI. De interface leest invoer en
+toont de uitkomst. De bestaande logica bepaalt bijvoorbeeld of een boek kan
+worden uitgeleend.
+
+Vergelijk twee mogelijke uitvoeringen. In de eerste roept de interface
+`uitlenen` aan en toont de teruggegeven uitkomst. In de tweede kopieert zij de
+controle op beschikbaarheid en past zij zelf de uitleenstatus aan. Bij die
+tweede uitvoering moet een wijziging in de uitleenregel op twee plaatsen worden
+verwerkt. Als één plaats wordt overgeslagen, kunnen de interfaces verschillend
+gedrag vertonen.
+
+Wijs bij je beoordeling daarom de relevante aanroepen en eventuele gekopieerde
+regels aan. Leg uit welk gevolg de verdeling heeft voor een volgende wijziging.
+Dat is de scheiding van verantwoordelijkheden uit je engineeringkennis,
+toegepast op deze uitbreiding. Architectuur en onderhoudbaarheid krijgen hier
+extra aandacht; aantoonbare fouten tegen de acceptatiecriteria blijven eveneens
+bevindingen die moeten worden afgehandeld.
+
+Je verantwoording steunt op het werkitem, de code en het uitgevoerde bewijs.
+Verschillende stacks kunnen passende oplossingen opleveren. Een overtuigende
+uitleg moet nog steeds overeenkomen met wat in het artefact is aan te wijzen.
 
 ## Werkvormen en toetsing
 
-- Werkvormen: korte instructie, daarna het mini-project van oefening 6 met tussentijdse besprekingen van de dossiers.
-- Toetsing: formatief, via het dossier en de verantwoordingsvragen van oefening 6.
+- Werkvormen: korte instructie, daarna het mini-project met tussentijdse
+  bespreking van de dossiers.
+- Toetsing: formatief, via het dossier en de verantwoordingsvragen van de
+  [oefening](oefening.md).
 
 ## Bronnen
 
-- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), de drie soorten en "De drie samen"; onder "Verder lezen" onderbouwt de Codex-analyse de rolverschuiving naar delegeren en superviseren.
-- De repository zelf: {core}`loop.md` en {core}`principles.md` als de werkwijze die je nu zelf inricht, en {core}`contracts/work-item.md` voor het werkitem dat je gaat schrijven.
-- De [projectconventies](../../conventies.md) van dit materiaal als voorbeeld van een vastgelegde binding.
+- [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md),
+  de drie soorten mechanismen en "De drie samen".
+- {core}`loop.md`, {core}`principles.md` en {core}`contracts/work-item.md` voor
+  routing, verantwoordelijkheden en de vorm van het werkitem.
+- De [projectconventies](../../conventies.md) en het
+  [praktijkvoorbeeld](../../praktijk/van-werkitem-naar-pull-request.md) voor
+  vastgelegde normen en vindbare overdrachten.
 
 ## Afronding
 
 ### Wat heb je geleerd
 
-Je hebt de keten in eigen hand genomen: een uitbreiding ontworpen en als werkitem vastgelegd, de randvoorwaarden van je project vastgesteld en verantwoord, werkwijze, medium en tool gescheiden en een toolkeuze onderbouwd, de AI binnen die kaders geregisseerd, en het resultaat beoordeeld met architectuur als zwaartepunt. De drie kwaliteitslagen zijn niet langer aangereikt kader maar jouw ontwerp.
+Een eigen interface-uitbreiding vraagt keuzes over functionaliteit, de
+verdeling van code en de werkwijze. Je legt de gewenste uitkomst en normen vóór
+de bouw vast. Automatische controles leveren bewijs voor de vragen die zij
+toetsen; de onafhankelijke beoordeling onderzoekt ook architectuur en
+onderhoudbaarheid. Als menselijke besluitnemer onderbouw je het planbesluit waar
+dat nodig is en het uiteindelijke mergebesluit.
 
 ### Zelfcheck
 
-Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+Beantwoord de vragen uit je hoofd. De verwijzingen helpen je het antwoord te
+controleren.
 
-1. Beschrijf de levensloop van één norm in jouw project: welk oordeel werd een conventie, en welke conventie werd een poort? (zie "Randvoorwaarden als ontwerpdaad" en het raamwerk, "De drie samen")
-2. Wat is het verschil tussen werkwijze, medium en tool, en waarom overleeft de werkwijze een toolwissel? (zie "Werkwijze, medium en tool")
-3. Waaraan zie je of de AI je bestaande logica hergebruikt of dupliceert, en waarom is dat het zwaartepunt van het oordeel? (zie "Architectuur als zwaartepunt van het oordeel")
-4. Welke beslissing bleef in jouw project bij jou, en waarom kon geen machine of beoordelaar die overnemen? (zie module 5, "De poort is menselijk")
+1. Kies één norm voor jouw project. Wat leg je vast, wat kun je automatisch
+   controleren en welke beoordeling blijft nodig? Zie "Projectafspraken kiezen
+   en controleren".
+2. Waar vind je in jouw project de opdracht, geldende planversie en beoordeelde
+   code? Welke informatie zou je bij een toolwissel meenemen? Zie "Werkwijze,
+   medium en tool" en de exporttabel.
+3. Hoe stel je vast of de interface de logica hergebruikt? Welk gevolg kan
+   duplicatie hebben? Zie "Architectuur en onderhoudbaarheid beoordelen".
+4. Wanneer neem je een C4-besluit en wanneer een mergebesluit? Zie
+   [module 5](../05-poort/les.md) en de stappen van de [oefening](oefening.md).
 
 ### Afsluitende vooruitblik
 
-Hier eindigt de leerlijn. Je hebt het probleem gevoeld (context rot), het principe begrepen (scheiding van verantwoordelijkheden met contracten als interface), de machine leren vertrouwen én wantrouwen, geoordeeld waar perspectieven botsen, aan de poort gestaan waar de mens onvervangbaar is, en ten slotte zelf ontworpen en verantwoord. Wat overdraagt is niet de tool en niet de casus, maar het vermogen om bij elk volgend project, elke volgende stack en elke tool die nu nog niet bestaat dezelfde vragen te stellen: wat betekent kwaliteit hier, wie draagt welke verantwoordelijkheid, wat leg ik vast, wat automatiseer ik, en welk oordeel houd ik bij mezelf. Dat is wat je meeneemt naar de praktijk en naar de afsluitende opdracht van je opleiding.
+Gebruik bij een volgend project dezelfde vragen om de werkwijze in te richten:
+welke uitkomst is afgesproken, welke normen gelden en wie controleert welke
+criteria? Bewaar bij ieder oordeel de bronnen en versies waarop het berust.
+Daarmee kun je later terugvinden waarom een wijziging is toegelaten en welke
+vragen bij een volgende uitbreiding opnieuw moeten worden beoordeeld.

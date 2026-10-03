@@ -1,18 +1,18 @@
 # 4. Oordelen
 
-**Leerdoel:** Je neemt de rol van beoordelaar in, ervaart dat kwaliteitsperspectieven botsen en velt een onderbouwd oordeel over een door AI gebouwde uitbreiding van de boekenplank.
+**Leerdoel:** Je beoordeelt een door AI gebouwde uitbreiding van de boekenplank vanuit verschillende kwaliteitsperspectieven en verantwoordt je eindoordeel.
 
-**Kwaliteitslaag:** Oordeelsmatig en contextueel - het hart van het raamwerk.
+**Kwaliteitslaag:** Oordeelsmatig en contextueel. Tests controleren bepaalde gevallen; welke reserveringsregels bij een bibliotheek passen, vraagt ook kennis van het gebruik.
 
 **Wat ga je leren**
 
 Na deze module kun je:
 
-1. **Beargumenteren dat kwaliteit hier de uitkomst van een afweging is, niet een afleesbare eigenschap** - uitleggen dat de vier beoordelaars verschillende, botsende kwaliteitsdimensies vertegenwoordigen en dat correctheid, snelheid, veiligheid en onderhoudbaarheid reële spanningen zijn.
-2. **Vanuit elk van de vier perspectieven een onderbouwd oordeel vellen over een door AI gebouwde uitbreiding** - de strikte, pragmatische, adversariële en onderhoudbaarheids-invalshoek toepassen op een change, en per perspectief verantwoorden wat wel en niet acceptabel is zonder de code als fout te behandelen.
-3. **De botsende oordelen prioriteren tot één eindoordeel** - als hoofdbeoordelaar de spanning niet oplossen door één perspectief gelijk te geven, maar prioriteren volgens een expliciete regel (correctheid en veiligheid eerst, dan onderhoudbaarheid, dan afwerking) en die prioritering verantwoorden.
+1. **Verantwoorden welke afweging een kwaliteitsoordeel vraagt** - uitleggen hoe correctheid, snelheid, veiligheid en onderhoudbaarheid elkaar kunnen ondersteunen of onder spanning kunnen staan.
+2. **Vanuit vier perspectieven een onderbouwd oordeel geven** - de strikte, pragmatische, adversariële en onderhoudbaarheidsperspectieven toepassen en onderscheid maken tussen een aangetoonde fout, een ontbrekende eis en een verdedigbare ontwerpkeuze.
+3. **Beoordelingen samenbrengen tot één eindoordeel** - bevindingen herleiden tot hun bronnen, eventuele tegenspraak onderzoeken en prioriteit geven aan correctheid en veiligheid, daarna onderhoudbaarheid en afwerking.
 
-Deze module bestaat uit de les en de bijbehorende oefening.
+De [les](les.md) bouwt voort op de bewijsgrenzen uit [module 3](../03-machine/les.md) en de oordeelslaag van het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md). In de [oefening](oefening.md) pas je de vier perspectieven toe op dezelfde reserveringscode.
 
 ```{toctree}
 :maxdepth: 1
