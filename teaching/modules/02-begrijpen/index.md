@@ -8,9 +8,9 @@
 
 Na deze module kun je:
 
-1. **Beargumenteren dat de rollenloop scheiding van verantwoordelijkheden op een werkproces is** - uitleggen dat elke rol één zorg draagt, net zoals je een softwaresysteem in onderdelen met elk één verantwoordelijkheid opdeelt, en verantwoorden waarom dat de kwaliteit ten goede komt.
-2. **In een concrete overdracht de interface, de implementatie en het verborgene aanwijzen** - in een gegeven handoff benoemen wat het contract (de interface) vastlegt, wat de rolprompt (de implementatie) daarachter doet, en welke context bewust verborgen blijft, en verantwoorden hoe dat verbergen context rot tegengaat.
-3. **Verantwoorden dat een contract een vastgelegde conventie is** - uitleggen waar contracten passen in de conventionele kwaliteitslaag van het kwaliteitsraamwerk, en afwegen wat een afspraak die je niet per taak heronderhandelt oplevert en wat ze kost.
+1. **De rollenloop verklaren vanuit scheiding van verantwoordelijkheden.** Je benoemt de verantwoordelijkheid van elke rol en verantwoordt hoe deze verdeling de kwaliteit kan ondersteunen.
+2. **In een concrete overdracht de interface, de implementatie en het verborgene aanwijzen.** Je onderscheidt de contractdefinitie, de rolprompt en de context die buiten de overdracht blijft. Je verantwoordt hoe die keuze context rot kan beperken en waar de grens daarvan ligt.
+3. **Verantwoorden dat een contract een vastgelegde conventie is.** Je plaatst contracten in de conventionele kwaliteitslaag en weegt de opbrengst en kosten van een vaste overdrachtsvorm af.
 
 Deze module bestaat uit de les en de bijbehorende oefening.
 
@@ -23,7 +23,9 @@ oefening
 
 ## Praktijkvoorbeeld
 
-In [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
-volg je een kleine boekenplankwijziging via een issue, besluit, beoordeling en
-herstel. Lees dit gedeelde voorbeeld na module 2; gebruik het daarna als naslag
-bij de overdrachten in deze module.
+De les werkt één boekenplankoverdracht uit. In
+[Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
+kun je daarna de volledige route teruglezen. Gebruik vooral de bronmapping bij
+“Dezelfde opdracht, een andere opslagplaats” en het plan C2-P1 met besluit C4-P1
+bij “Wie geeft wat aan de volgende rol?”. Daarmee kun je aanwijzen waar de
+opdracht, het goedgekeurde plan en het besluit worden bewaard.

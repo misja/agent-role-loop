@@ -1,38 +1,63 @@
 # Verantwoord de loop als ontwerp
 
-In oefening 1 heb je de rollenloop gedraaid en een overdrachtslogboek bijgehouden. Daar kijk je nu naar terug, niet om te beoordelen *of* het lukte, maar om te verantwoorden *waarom* de structuur werkte. Je eigen logboek is het materiaal.
+Gebruik je overdrachtslogboek uit oefening 1 om te onderzoeken welke informatie
+iedere rol kreeg en hoe de verantwoordelijkheden waren verdeeld. Onderbouw je
+analyse met de vastgelegde overdrachten. Ook als je geen voordeel van de
+structuur hebt waargenomen, kun je onderzoeken hoe zij was ingericht.
 
 **Duur:** circa 60 minuten.
-**Nodig:** je overdrachtslogboek uit oefening 1, deel B.
-**Inleveren:** je ingevulde analyse en de beantwoorde verantwoordingsvragen.
+**Nodig:** je overdrachtslogboek uit oefening 1, deel B, de bijbehorende contractdefinities en rolprompts.
+**Inleveren:** twee overdrachtsanalyses en de beantwoorde verantwoordingsvragen.
 
 ## Worked example: één overdracht ontleed
 
-We doen er eerst één samen voor. Neem de overdracht van de planner naar de poort: het build packet (C2).
+De planner geeft C2-P1 aan de menselijke poort. Dit voorbeeld uit
+[de ingevulde boekenplankoverdrachten](../../praktijk/overdrachten.md) laat zien
+hoe je die overdracht kunt analyseren.
 
-- **Interface (het contract):** C2 legt vast wat een build packet moet bevatten - doel, aanpak, acceptatiecriteria, changes, verificatie. Dat is de afspraak; meer hoeft de poort niet te weten om te kunnen oordelen.
-- **Implementatie (de rolprompt):** hoe de planner tot dat packet kwam - welke verkenning, welke verworpen alternatieven - zit in de planner-rol en blijft daar. De poort leest het resultaat, niet de weg ernaartoe.
-- **Wat verborgen blijft:** het verkenningsverslag van de planner. De poort oordeelt over wat er staat, niet over wat bedoeld was, en kan daardoor niet meegesleept worden door een lang verhaal.
+| Onderdeel | Wat je in dit voorbeeld kunt aanwijzen |
+|---|---|
+| Concrete eis | Een filter op beschikbare boeken behoudt de registratie van alle boeken. |
+| Voorgenomen wijziging | `lijst(alleen_beschikbaar=False)` houdt het bestaande gedrag; met `True` wordt de teruggegeven lijst gefilterd. |
+| Verificatieplan | Vergelijk het volledige overzicht vóór en na een gefilterde aanroep. Controleer ook welke boeken het filter teruggeeft. |
+| Beperking | Het plan beschrijft een controle. Pas de uitvoering daarvan levert testbewijs; de gekozen voorbeelden dekken niet vanzelf alle situaties. |
 
-Merk op hoe interface, implementatie en het verborgene hier samenvallen met de drie dingen die in module 1 misgingen toen alles in één context bleef opstapelen.
+De definitie van {core}`contracts/build-packet.md` is de **interface**: zij legt
+vast welke informatie een plan moet bevatten. C2-P1 is het ingevulde artefact
+voor deze taak. De planner-rolprompt geeft instructies om zo'n plan te maken en
+vervult in de analogie de functie van **implementatie**. De feitelijke
+verkenning en gekozen gereedschappen zijn de uitvoering van die instructies.
 
-## Jouw opdracht: doe de rest zelf
+Het maakgesprek blijft **verborgen** voor de menselijke poort. De eisen,
+relevante risico's en bronverwijzingen blijven beschikbaar. De poort kan zo de
+voorgestelde wijziging onderzoeken zonder iedere verworpen poging te lezen.
+Een onjuiste aanname die in C2-P1 terechtkomt, kan het besluit nog steeds
+beïnvloeden. Het resultaat van het besluit staat apart in C4-P1; dat besluit
+moet de bouwer vervolgens samen met de goedgekeurde planversie ontvangen.
 
-Kies uit je eigen overdrachtslogboek twee andere overdrachten (bijvoorbeeld bouwer naar beoordelaars, of een beoordelaar naar de hoofdbeoordelaar). Ontleed elk op dezelfde drie punten:
+## Jouw opdracht: analyseer twee andere overdrachten
 
-1. Wat is de interface - wat legt het contract vast?
-2. Wat is de implementatie - wat gebeurde er achter de rol dat de volgende rol niet hoefde te zien?
-3. Wat bleef verborgen, en wat was er misgegaan als het tóch was meegekomen?
+1. Kies twee andere overdrachten uit je logboek, bijvoorbeeld van bouwer naar beoordelaar of van beoordelaar naar hoofdbeoordelaar. Noteer de bron en versie.
+2. Wijs per overdracht de contractdefinitie en het ingevulde artefact aan. Welke vereiste informatie staat erin? Welke relevante informatie ontbreekt eventueel?
+3. Benoem de rolprompt en de taak van de uitvoerende rol. Onderscheid de instructies van wat de rol in jouw uitvoering daadwerkelijk deed.
+4. Noteer welke context buiten de overdracht bleef. Welke eisen, normen en besluiten waren wel toegankelijk? Beschrijf een risico van extra voorgeschiedenis en een risico van te weinig informatie.
+
+Je analyse is compleet als een andere lezer deze onderdelen in beide
+bronoverdrachten kan terugvinden. Markeer ontbrekende gegevens als ontbrekend;
+vul ze niet achteraf in alsof ze destijds beschikbaar waren.
 
 ## Verantwoordingsvragen
 
 Beantwoord schriftelijk, met voorbeelden uit je logboek:
 
-1. **Beargumenteer** dat de loop scheiding van verantwoordelijkheden is. Welke rol droeg in jouw run welke zorg, en waar was kwaliteit weggevallen als één rol er twee had gedragen?
-2. Welk contract uit je logboek was het duidelijkst een **vastgelegde conventie**, een afspraak die je niet per taak opnieuw wilde maken? **Verantwoord** waarom die afspraak je denkruimte vrijmaakte.
-3. Eén contract leek je in oefening 1 misschien overdreven. **Weeg af** of je dat bij een groter of risicovoller werkitem nog steeds zou vinden, en onderbouw met de conventionele kwaliteitslaag uit het raamwerk.
-4. Stel dat je één rol uit de loop moest weghalen. **Beargumenteer** welke je het laatst zou opgeven, vanuit wat die rol verbergt voor de rest.
+1. **Beargumenteer** hoe de loop verantwoordelijkheden verdeelde. Welke rol droeg welke zorg? Welk risico ontstaat als één rol zowel bouwt als haar eigen werk beoordeelt?
+2. Welk contract gebruikte je als **vastgelegde conventie**? **Verantwoord** wat de vaste vorm opleverde en welke invul- of leeslast zij gaf. Benoem het ook als je geen aantoonbaar voordeel zag.
+3. Eén contract leek je in oefening 1 misschien te zwaar. **Weeg af** of je dat bij een groter of risicovoller werkitem nog steeds zou vinden. Gebruik de conventionele kwaliteitslaag uit het raamwerk.
+4. Stel dat je één rol moest weghalen. **Beargumenteer** welke verantwoordelijkheid je het laatst zou opgeven en welke informatie je daarvoor nodig hebt.
 
 ## Variant zonder AI
 
-Heb je oefening 1 als rollenspel zonder AI gedaan, dan gebruik je het gezamenlijke overdrachtslogboek van de groep. De analyse wordt rijker, want je zag live wat er gebeurde toen iemand iets buiten de artefacten om wilde toelichten en dat niet mocht: dan voel je meteen wat de interface draagt en wat ze tegenhoudt.
+Gebruik bij de rollenspelvariant het gezamenlijke overdrachtslogboek. Noteer
+welke toelichting deelnemers buiten de artefacten wilden geven en of die
+informatie nodig was voor de volgende rol. Als zulke toelichting niet voorkwam,
+onderzoek dan welke informatie de schriftelijke overdrachten zelf bevatten.

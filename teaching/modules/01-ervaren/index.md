@@ -1,6 +1,6 @@
 # 1. Ervaren
 
-**Leerdoel:** Je ervaart context rot aan den lijve en voelt waarom ongestructureerd met een AI-agent werken de kwaliteit laat verrotten.
+**Leerdoel:** Je onderzoekt hoe eerdere instructies en aannames in een langer gesprek kunnen doorwerken in de kwaliteit van het resultaat.
 
 **Kwaliteitslaag:** Nog geen - dit is het probleem dat de rest van de leerlijn motiveert.
 
@@ -8,7 +8,7 @@
 
 Na deze module kun je:
 
-1. **Uitleggen wat context rot is** - beschrijven hoe kwaliteit van AI-output verloopt naarmate één gesprek opdracht, verkenning, logs, mislukte pogingen en oude aannames opstapelt, en de symptomen herkennen (vergeten instructies, scope-verschuiving, zelfverzekerde brij).
+1. **Uitleggen wat context rot is** - beschrijven hoe opgebouwde gesprekscontext tot kwaliteitsverlies kan leiden. Je kunt vergeten instructies, scope-verschuiving en zelfverzekerde onjuiste antwoorden herkennen en je verklaring onderbouwen met waarnemingen.
 
 Deze module bestaat uit de les en de bijbehorende oefening (deel A vooraf, deel B erna).
 
@@ -23,5 +23,5 @@ oefening
 
 In [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
 volg je een kleine boekenplankwijziging via een issue, besluit, beoordeling en
-herstel. Lees dit gedeelde voorbeeld na module 2; gebruik het daarna als naslag
-bij de overdrachten in deze module.
+herstel. Dit is een vervolg op module 2, waarin je de inhoud van overdrachten onderzoekt.
+Je hoeft het voorbeeld voor deze module nog niet te lezen.

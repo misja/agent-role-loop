@@ -2,87 +2,125 @@
 
 ## Plaats in de leerlijn
 
-Tweede module van de leerlijn. In module 1 heb je context rot aan den lijve ervaren en heb je de rollenloop één keer gedraaid (oefening 1, deel B). Je weet nu hoe het voelt en *dát* structuur helpt. Deze les gaat over het waarom: waarom werkt die structuur, en welk ontwerpprincipe dat je al kent zit eronder? Vereiste voorkennis: module 1 afgerond, inclusief het overdrachtslogboek uit oefening 1.
+In module 1 heb je een lange chat en de rollenloop vergeleken. Je logboek bevat
+wat je daarbij hebt waargenomen. Deze les onderzoekt welke informatie bij een
+overdracht meegaat en hoe de verantwoordelijkheden zijn verdeeld. Vereiste
+voorkennis: module 1, inclusief het overdrachtslogboek. De [inleiding](../../index.md)
+legt uit hoe context aan een model wordt meegegeven en hoe een rol daarvan
+gebruikmaakt.
 
-De les hoort bij [oefening 2](oefening.md), waarin je dit begrip toepast op je eigen overdrachtslogboek.
+De les hoort bij [oefening 2](oefening.md), waarin je je eigen overdrachten analyseert.
 
 ## Leeruitkomsten
 
-De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
+De leeruitkomsten staan als “Wat ga je leren” op de [module-index](index.md).
 
 ## Opbouw
 
-### Van ervaren naar begrijpen
+### Een boekenplankoverdracht bekijken
 
-Korte terugblik op module 1: in deel A liep één lange chat vol en verrotte de kwaliteit; in deel B, met de loop, gebeurde dat niet. De vraag van deze les is wat de loop precies deed, en waarom dat geen toeval is maar een toepassing van iets wat je in software al kent.
+Een medewerker wil alleen beschikbare boeken zien. De geregistreerde boeken
+moeten daarbij behouden blijven: een filter mag een uitgeleend boek niet uit de
+boekenplank verwijderen. De planner beschrijft in plan C2-P1 dat
+`lijst(alleen_beschikbaar=False)` het bestaande overzicht blijft geven. Met
+`True` krijgt de aanroeper een gefilterde lijst terug. Het plan noemt ook de
+controle: vraag na het filteren opnieuw alle boeken op en vergelijk die met de
+registratie van vóór het filteren.
 
-### Scheiding van verantwoordelijkheden, nu op een werkproces
+Dit is een bewerkt onderwijsvoorbeeld uit
+[Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md).
+De [ingevulde overdrachten](../../praktijk/overdrachten.md) bevatten het plan en
+het menselijke besluit C4-P1. Dat besluit bevestigt onder meer dat de
+toevoegvolgorde behouden moet blijven.
 
-In code deel je een systeem op in onderdelen die elk één ding doen: scheiding van verantwoordelijkheden. De rollenloop doet hetzelfde, maar dan met een werkproces in plaats van met code. Triage weegt proportionaliteit, de planner plant, de bouwer bouwt, elke beoordelaar kijkt vanuit één invalshoek, de poort velt het menselijke oordeel. Geen enkele rol draagt alles; elke rol draagt één zorg. Dat is dezelfde gedachte, op een ander niveau toegepast.
+Voor de bouwer zijn verschillende bronnen nodig. De definitie van
+{core}`contracts/build-packet.md` beschrijft welke onderdelen een plan moet
+bevatten. Het ingevulde C2-P1 bevat de gegevens voor deze wijziging. C4-P1 legt
+vast welke planversie de mens heeft goedgekeurd. De bouwer krijgt daarnaast de
+code, geldende normen en de {core}`roles/builder.md`-rolprompt. Die prompt
+beschrijft de verantwoordelijkheid en werkwijze van de bouwer. Een contract is
+dus geen vervanging voor de opdracht of het besluit.
 
-Het actuele schema staat in {core}`loop.md`. De triage kiest de benodigde
-verantwoordelijkheden en wijst ieder criterium aan een onafhankelijke beoordelaar
-toe. De vier perspectieven uit oefening 1 zijn een oefenkeuze; bij één passende
-beoordelaar kan diens C6 volstaan. Een afzonderlijke hoofdbeoordelaar behandelt
-inhoudelijke tegenspraak tussen meerdere beoordelingen.
+### Scheiding van verantwoordelijkheden op een werkproces
 
+Je kent scheiding van verantwoordelijkheden uit software: onderdelen krijgen
+een afgebakende taak, zodat een wijziging gericht kan worden onderzocht. In het
+boekenplankvoorbeeld bepaalt de planner hoe het filter wordt toegevoegd; de
+bouwer voert het goedgekeurde plan uit. Een onafhankelijke beoordelaar
+controleert vervolgens of de registratie behouden blijft en of het bewijs die
+uitspraak ondersteunt.
+
+De rollenloop past het principe daarmee toe op een werkproces. De triage kiest
+de benodigde verantwoordelijkheden en wijst de criteria aan onafhankelijke
+beoordelaars toe. De menselijke poort beslist over uitvoering van het plan.
+De vier beoordelingsperspectieven uit oefening 1 zijn een oefenkeuze. Bij één
+passende beoordelaar kan diens C6 volstaan; een hoofdbeoordelaar onderzoekt
+inhoudelijke tegenspraak tussen meerdere beoordelingen. Het actuele schema
+staat in {core}`loop.md`.
+
+De verdeling maakt zichtbaar wie waarvoor verantwoordelijk is. Zij garandeert
+geen juiste uitkomst: een ontbrekende eis in het werkitem kan ook in het plan en
+de beoordeling ontbreken.
 
 ### Contracten als interface, rolprompts als implementatie
 
-Tussen twee rollen gaat precies één ding heen: een contract. Dat contract is de interface. Het legt vast wat een overdracht moet bevatten, niet hoe de rol tot dat resultaat kwam. De rolprompt erachter is de implementatie: je kunt hem herschrijven, vervangen door een ander model of laten uitvoeren door een mens, zonder dat de rest van de loop het merkt, zolang het contract blijft staan.
+Bij een software-interface spreek je af welke invoer en uitvoer een onderdeel
+heeft. De implementatie bepaalt hoe het onderdeel zijn taak uitvoert. In de
+rollenloop beschrijft het contract de vorm en vereiste inhoud van een
+overdracht. De rolprompt geeft instructies om die overdracht te produceren. De
+uitvoering hangt daarnaast af van de mens of het model, de meegegeven context
+en de gebruikte gereedschappen.
 
-De inhoud van een contract kan in een bestand of een issue staan. Bij een
-verplaatsing moet ook duidelijk blijven welke versie geldt en welk besluit
-daarbij hoort. In dit project staan werkitems en overdrachten op GitHub.
-[Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
-laat met de boekenplank zien hoe issues, reacties, commits en PR's die informatie
-bij elkaar houden. Een bordstatus geeft de voortgang weer en vervangt geen besluit.
+Je kunt een rolprompt wijzigen of een rol door een mens laten uitvoeren en
+dezelfde contractvorm behouden. Controleer wel of de nieuwe uitvoering nog aan
+de afspraken voldoet. De analogie maakt het onderscheid tussen afspraak en
+uitvoering zichtbaar; zij bewijst geen uitwisselbaarheid van iedere uitvoering.
 
-En wat niet in het contract staat, blijft verborgen. De bouwer ziet het verkenningsverslag van de planner niet; een beoordelaar ziet het oordeel van een andere beoordelaar niet. Dat verbergen is geen slordigheid maar precies de tegenmaatregel tegen de context rot die je in module 1 voelde: niemand sleept de hele geschiedenis mee, dus niets weegt mee dat allang niet meer klopt.
+### Welke informatie blijft buiten de overdracht?
+
+De beoordelaar krijgt de eisen, het besluit, de gewijzigde code en de
+verificatieresultaten. Het maakgesprek met eerdere pogingen gaat niet mee. Zo
+krijgt een eerdere aanname minder gelegenheid om het oordeel te sturen.
+Wanneer die aanname ook in het plan staat, kan zij nog steeds doorwerken.
+
+Het weglaten van het maakgesprek betekent niet dat bronnen ontoegankelijk
+worden. De geldende normen, relevante risico's en besluiten blijven leesbaar;
+de beoordelaar kan oorspronkelijke bronnen gericht raadplegen. De
+orkestrator stelt de invoer samen en bewaakt de juiste versies. Een pad naar
+een lokaal bestand volstaat alleen als de ontvangende rol dat bestand kan lezen.
 
 ### Een contract is een vastgelegde conventie
 
-Hiermee raakt de loop aan softwarekwaliteit. In het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md) is de tweede soort kwaliteitsmechanisme de conventionele: afspraken die je vastlegt en niet per taak opnieuw maakt. Een contract is precies zo'n vastgelegde conventie. Het bepaalt één keer wat een overdracht moet bevatten, zodat niemand dat per keer hoeft te heronderhandelen. Standaarden bestaan om denkruimte vrij te maken, en een contract doet dat voor de overdracht tussen rollen.
+Het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md)
+noemt afspraken die mensen vastleggen de conventionele kwaliteitslaag. Een
+contract hoort bij die laag. De vaste onderdelen helpen de bouwer bijvoorbeeld
+het gekozen verificatiemodel en de geldende beslissing terug te vinden zonder
+iedere keer een nieuwe overdrachtsvorm af te spreken.
 
-### Een echt werkitem als voorbeeld
+Dat heeft ook kosten: iemand moet de velden invullen, actualiseren en lezen.
+Een ingevuld contract kan bovendien onduidelijkheden bevatten. De afgesproken
+vorm vervangt het onderzoek naar de inhoud niet.
 
-Zo ziet een ingevuld werkitem ({core}`contracts/work-item.md`) eruit. Dit is een echt exemplaar uit de bouw van dit lesmateriaal: het werkitem dat de diagram-ondersteuning van deze site inschakelde. De stroomdiagrammen op deze site renderen dankzij dit werkitem.
+### Historische naslag: Mermaid-ondersteuning
+
+Een eerder werkitem uit deze repository regelde de diagramondersteuning.
+Hieronder staat een ongewijzigd fragment van dat historische artefact. Het is
+naslag bij de contractvorm; de boekenplank blijft het hoofdvoorbeeld.
+Bron: [werkitem #21](https://github.com/misja/agent-role-loop/issues/21),
+met het oorspronkelijke artefact bij
+[commit 0c4abd0](https://github.com/misja/agent-role-loop/commit/0c4abd0).
 
 ```md
-# Schakel Mermaid-ondersteuning in
-
-## Aanleiding
-
-De schrijfwijzer wijst Mermaid aan als voorkeursvorm voor diagrammen, met een
-expliciete technische voorwaarde: de ondersteuning vereist een extensie
-(sphinxcontrib-mermaid) als dependency in pyproject.toml en een configuratie in
-conf.py, en Mermaid mag pas in materiaal gebruikt worden nadat die ondersteuning
-is ingeschakeld en de build er schoon mee is. Die voorwaarde bestond tot nu toe
-alleen als kanttekening; dit werkitem materialiseert haar, omdat het
-visualisatie-werkitem erop wacht.
-
 ## Gewenste uitkomst
 
 Mermaid-diagrammen renderen in de site: sphinxcontrib-mermaid als dependency in
 de docs-groep van pyproject.toml, extensie geconfigureerd in docs/conf.py, en
 een rendercheck (een proefdiagram bouwt en toont correct, daarna weer verwijderd
 of als eerste echt diagram benut).
-
-## Acceptance criteria
-
-1. sphinxcontrib-mermaid in de docs-dependency-groep; het lock-bestand is
-   bijgewerkt.
-2. Extensie in conf.py; de kale, portabele build blijft de volledige site
-   produceren, ook in CI.
-3. Docs-build schoon met een renderend Mermaid-diagram als bewijs.
-4. Voldoet aan de conventies in teaching/conventies.md.
-
-## Size guess
-
-S
 ```
 
-Merk op wat het contract afdwingt: een aanleiding (waarom bestaat dit werk), een gewenste uitkomst als waarneembaar resultaat, en toetsbare acceptatiecriteria. Wie dit werkitem oppakt, hoeft niets te heronderhandelen.
+Het fragment benoemt een waarneembaar resultaat en een controle. Voor uitvoering
+zijn ook de overige onderdelen van het werkitem en de geldende besluiten nodig.
 
 ## Werkvormen en toetsing
 
@@ -91,25 +129,33 @@ Merk op wat het contract afdwingt: een aanleiding (waarom bestaat dit werk), een
 
 ## Bronnen
 
-- De repository zelf: {core}`principles.md` (vooral het tweede principe, expliciete overdrachten) en {core}`loop.md` zijn de normatieve teksten onder deze les.
-- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "2. Conventioneel en vastgelegd".
-- Parnas, On the Criteria To Be Used in Decomposing Systems into Modules {cite}`parnas1972criteria`. De canonieke bron voor informatie verbergen: een module toont een interface en verbergt haar implementatiebeslissingen. De loop past dat toe op een werkproces, waar de bouwer het contract krijgt en niet het denkproces van de planner.
-- Brooks, The Mythical Man-Month {cite}`brooks1975mythical`. Waarom communicatie-overhead met teamgrootte groeit en scheiding van verantwoordelijkheden dat beheersbaar houdt, het menselijke patroon onder de rolscheiding van de loop.
+- {core}`principles.md` en {core}`loop.md` zijn de normatieve teksten onder deze les.
+- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie “2. Conventioneel en vastgelegd”.
+- Parnas, On the Criteria To Be Used in Decomposing Systems into Modules {cite}`parnas1972criteria`, over interfaces en het verbergen van implementatiebeslissingen. De les gebruikt dit als analogie voor overdrachten.
+- Brooks, The Mythical Man-Month {cite}`brooks1975mythical`, over communicatiekosten bij softwareontwikkeling.
 
 ## Afronding
 
 ### Wat heb je geleerd
 
-De rollenloop is scheiding van verantwoordelijkheden op een werkproces: elke rol draagt één zorg. Het contract tussen twee rollen is de interface (wat een overdracht moet bevatten), de rolprompt de implementatie (hoe de rol tot dat resultaat komt), en wat niet in het contract staat blijft bewust verborgen. Een contract is daarmee een vastgelegde conventie: één keer afgesproken, niet per taak heronderhandeld.
+De rollenloop verdeelt verantwoordelijkheden over een werkproces. Contracten
+beschrijven de afgesproken overdrachten; de rolprompts instrueren de uitvoering.
+Eisen, normen en besluiten gaan mee, terwijl het maakgesprek buiten de
+beoordelingscontext blijft. Die selectie kan beïnvloeding door eerdere aannames
+beperken. De inhoud en volledigheid van de overdracht blijven controle vragen.
 
 ### Zelfcheck
 
-Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+Beantwoord uit je hoofd; de sleutel wijst waar je het kunt nakijken.
 
-1. Leg uit dat de rollenloop scheiding van verantwoordelijkheden is. Welke zorg draagt de bouwer, en welke de poort? (zie "Scheiding van verantwoordelijkheden, nu op een werkproces")
-2. Wijs in een overdracht de interface, de implementatie en het verborgene aan. Waarom gaat dat verbergen context rot tegen? (zie "Contracten als interface, rolprompts als implementatie")
-3. Waarom is een contract een vastgelegde conventie, en wat levert zo'n afspraak op? (zie "Een contract is een vastgelegde conventie")
+1. Welke verantwoordelijkheid draagt de bouwer, en welke de menselijke poort? (zie “Scheiding van verantwoordelijkheden op een werkproces”)
+2. Wijs bij C2-P1 de contractdefinitie, het ingevulde artefact en de rolprompt aan. Wat is in deze analogie de interface? (zie “Een boekenplankoverdracht bekijken” en “Contracten als interface, rolprompts als implementatie”)
+3. Welke context laat je buiten de beoordeling, en welke bronnen moeten beschikbaar blijven? Welke fout kan alsnog doorwerken? (zie “Welke informatie blijft buiten de overdracht?”)
+4. Wat levert een vaste contractvorm op en welke kosten heeft zij? (zie “Een contract is een vastgelegde conventie”)
 
 ### Volgende stap
 
-Je begrijpt nu de conventionele laag: afspraken die mensen vastleggen. Module 3 (De machine vertrouwen en wantrouwen) gaat naar de geautomatiseerde laag: machines die objectief vaststellen of aan een afspraak is voldaan, met coverage, linters en CI. Dat is de levensloop van een norm zoals het kwaliteitsraamwerk die beschrijft: wat mensen vastleggen, dwingen machines af. De overgang maakt de kernvraag scherp: als de machine groen zegt, is het dan ook goed?
+Een afspraak kan deels geautomatiseerd worden gecontroleerd. Een test kan
+bijvoorbeeld vaststellen of het filter de geregistreerde boeken behoudt voor de
+gekozen invoer. Module 3 onderzoekt wat zulke controles aantonen en wat zij
+onbeslist laten. Daarmee ga je van de conventionele naar de geautomatiseerde laag.
