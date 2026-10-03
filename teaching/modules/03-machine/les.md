@@ -2,73 +2,125 @@
 
 ## Plaats in de leerlijn
 
-Derde module van de leerlijn. In module 2 heb je de loop begrepen als scheiding van verantwoordelijkheden, met contracten als interface. Een van die contracten is de overdracht van de bouwer naar de beoordelaars. Deze les gaat over wat er vóór die overdracht moet kloppen: de geautomatiseerde poorten die een machine objectief vaststelt. Vereiste voorkennis: module 2 afgerond, en het kwaliteitsraamwerk, soort 1.
+In module 2 heb je contracten onderzocht als afspraken tussen rollen. Een van
+die afspraken is de overdracht van bouwer naar beoordelaar. Deze les gaat over
+de geautomatiseerde controles die daaraan voorafgaan. Vereiste voorkennis:
+module 2 en de geautomatiseerde kwaliteitslaag uit het
+[kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md).
 
-De les hoort bij [oefening 3](oefening.md), waarin je aan een groene boekenplank ontdekt dat volledige dekking en een fout samen kunnen gaan.
+De les hoort bij [oefening 3](oefening.md), waarin je onderzoekt hoe volledige
+regeldekking en een defect samen kunnen voorkomen.
 
 ## Leeruitkomsten
 
-De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
+De leeruitkomsten staan als “Wat ga je leren” op de [module-index](index.md).
 
 ## Opbouw
 
 ### De machine als poortwachter
 
-In het kwaliteitsraamwerk is de eerste soort kwaliteitsmechanisme de [geautomatiseerde en deterministische](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md): coverage-drempels, linters, type-checkers, securityscans en de CI-pijplijn die test en bouwt. Een machine stelt ze objectief en herhaalbaar vast; er is geen oordeel nodig, de drempel wordt gehaald of niet.
+Stel dat een project eist dat alle tests slagen en ten minste 95% van de
+coderegels wordt uitgevoerd. Een testcommando kan deze afspraken controleren
+zonder dat een beoordelaar de berekening telkens herhaalt. Onder dezelfde
+omstandigheden levert de controle dezelfde uitslag op. De gebruikte omgeving,
+configuratie en invoer horen daarom bij het bewijs.
 
-Hun plek in de loop is scherp: deze poorten staan vóór de beoordeling, niet erin. De bouwer levert pas een overdracht aan de beoordelaars ({core}`contracts/review-handoff.md`) nadat de geautomatiseerde poorten groen zijn. Schaarse beoordelingsaandacht besteden aan wat een machine al kan vaststellen, is verspilling. Zo zijn de poorten een toegangsvoorwaarde tot de review.
+De triage en het plan bepalen welke verificatie voor het werk nodig is. Niet
+ieder werkitem vraagt alle beschikbare gereedschappen. De bouwer voert de
+gekozen controles uit voordat hij de oplevering via
+{core}`contracts/review-handoff.md` aan de beoordelaars overdraagt. Een mislukte
+vereiste controle moet worden hersteld of als blokkade worden vastgelegd.
+
+De beoordelaar hoeft een uitgevoerde berekening niet zonder aanleiding over te
+doen. Hij onderzoekt wel of het bewijs geschikt, voldoende en reproduceerbaar
+is. Een geslaagd testcommando op een andere codeversie ondersteunt bijvoorbeeld
+geen uitspraak over de huidige oplevering.
 
 ### Wat elke poort wel en niet vaststelt
 
-Elke poort meet iets echts, en elke poort heeft een grens.
+| Controle | Wat de uitkomst ondersteunt | Wat zij niet zelfstandig vaststelt |
+|---|---|---|
+| Regeldekking (coverage) | Welk deel van de gemeten regels tijdens de tests is uitgevoerd. | Of de asserties het vereiste gedrag controleren; regeldekking meet ook niet alle mogelijke paden of invoer. |
+| Linter of formatter | Of de code aan de ingestelde regels voor bijvoorbeeld stijl of verdachte constructies voldoet. | Of alle requirements correct zijn uitgevoerd. |
+| Type-checker | Of de onderzochte code volgens het gebruikte typesysteem en de configuratie typeconsistent is. | Of een typecorrecte berekening de bedoelde uitkomst heeft. |
+| Securityscan | Of de ingestelde analyses aanwijzingen voor kwetsbaarheden vinden, bijvoorbeeld in broncode of afhankelijkheden. | Dat de software vrij is van kwetsbaarheden; bereik en analysemethode begrenzen de controle. |
+| CI-pijplijn | Of de geconfigureerde bouw- en controlestappen in de CI-omgeving slagen. | Dat ontbrekende controles toch zijn uitgevoerd, of dat geslaagde stappen de volledige bedoeling afdekken. |
 
-- **Coverage** toont dat een regel is uitgevoerd tijdens de tests. Het toont niet dat het juiste is getoetst: een regel kan draaien onder een assertie die het verkeerde controleert.
-- **Linters en formatters** bewaken vorm en stijl, niet of de code het juiste doet. Ze handhaven bovendien deels conventies (soort 2 uit het raamwerk).
-- **Type-checkers** vangen een hele klasse fouten af, maar zeggen niets over of de bedoeling klopt: typecorrecte code kan het verkeerde berekenen.
-- **Securityscans** (SAST, dependency-audits) vinden bekende patronen en kwetsbare afhankelijkheden, niet de ontwerpfout die geen bekend patroon is.
-
-Het concrete voorbeeld in deze module is Python met pytest en coverage, maar de soorten poorten gelden in elke stack. De tooling is inwisselbaar; de soort poort en zijn grens zijn de leerstof.
+Het concrete voorbeeld gebruikt Python, pytest en coverage. Andere stacks
+kunnen andere gereedschappen gebruiken. Onderzoek steeds welke uitspraak de
+configuratie en uitvoer ondersteunen.
 
 ### Groen maar fout
 
-Hier ligt de kern van de module. Een agent levert moeiteloos groene tests bij code die het verkeerde doet. In de oefening zie je een boekenplank waarvan de testsuite groen is en 100% regeldekking haalt, en die toch een echt defect bevat: een al uitgeleend boek kan nogmaals worden uitgeleend. De test die requirement 6 lijkt te bewaken, controleert alleen dát het boek uitgeleend is, niet dat de tweede uitlening geweigerd werd. De regel draait, dus de dekking is volledig; de assertie is te zwak, dus de fout blijft staan.
+In de aangeleverde boekenplank slagen zes tests en wordt 100% van de gemeten
+regels uitgevoerd. Toch kan een al uitgeleend boek nogmaals worden uitgeleend.
+Requirement 6 verbiedt dit. De test met de naam
+`test_uitlenen_voorkomt_dubbele_uitlening` controleert na twee uitleningen
+alleen of het boek uitgeleend is.
 
-Dit is precies de raamwerk-vraag: toetst deze test wel het juiste, of alleen dát er iets is uitgevoerd? Coverage kan die vraag per definitie niet beantwoorden. Een groen vinkje is een voorwaarde om te mogen beoordelen, niet het bewijs dat de beoordeling heeft plaatsgevonden.
+De tweede uitlening overschrijft de eerste lener. De assertie blijft waar, want
+het boek is nog steeds uitgeleend. De toewijzing wordt uitgevoerd en telt mee
+voor de regeldekking, terwijl de assertie het behoud van de eerste uitlening
+niet controleert. Het testresultaat bewijst dat de ingestelde assertie slaagt
+voor deze invoer. Het bewijst niet dat requirement 6 wordt nageleefd.
 
-Dat is het eerste gezicht van groen-maar-fout: de lat staat verkeerd. Er is een tweede, dat nog scherper is: er is geen lat. Dezelfde suite haalt "100% dekking", maar geen regel dwingt dat af - er is geen drempel ingesteld en geen linter of type-checker geconfigureerd. Die 100% is toevallig, niet vereist: schrap je de helft van de tests, dan zakt de dekking en faalt er tóch niets. De poort rapporteert een getal, maar eist er niets mee.
+Er is ook een afzonderlijke configuratiekwestie. Een coveragecommando zonder
+`--cov-fail-under` rapporteert dekking, maar stelt geen minimale dekking als
+voorwaarde. Als je de terugbrengtest overslaat, blijven de overige tests slagen
+terwijl de dekking daalt naar ongeveer 93%. Een drempel van 95% laat dezelfde
+uitvoering vervolgens mislukken. De overgebleven tests controleren in beide
+uitvoeringen nog steeds hun asserties.
 
-Zo werkt de conventionele laag onder de geautomatiseerde, precies zoals het raamwerk stelt: soort 2 parametriseert soort 1. Een poort dwingt alleen af wat een conventie heeft besloten. Waar niemand een norm koos, is de poort groen en leeg, want het vinkje betekent niets als niemand besloot wat het moet eisen.
+| Waarneming | Wat je kunt concluderen |
+|---|---|
+| Alle zes tests slagen, 100% regeldekking. | Alle ingestelde asserties slagen; alle gemeten regels zijn uitgevoerd. De dubbele uitlening blijft ongecontroleerd. |
+| Vijf tests slagen, ongeveer 93% dekking, geen drempel. | De vijf asserties slagen. Het commando verlangt geen minimum voor de dekking. |
+| Dezelfde vijf tests slagen, drempel 95%, commando mislukt. | De tests slagen, maar de gekozen dekkingseis wordt niet gehaald. |
+
+Een coverage-drempel hoort bij de conventionele laag: iemand kiest wat het
+project verlangt. De geautomatiseerde laag handhaaft die ingestelde afspraak.
+Een hogere drempel maakt de assertie voor dubbele uitlening niet sterker.
 
 ### De brug naar het oordeel
 
-Wat de machine laat liggen, is geen tekortkoming van de tooling maar de grens ervan. Daar wordt de menselijke en de geautomatiseerde beoordeling onmisbaar: de adversariële beoordelaar die naar het niet-afgevangen geval zoekt, doet wat een coverage-cijfer niet kan. Die beoordeling is de stof van module 4. Deze les stopt bij de constatering dat de poort groen is en er tóch geoordeeld moet worden; het oordeel zelf doen we nog niet.
+Om de zwakke assertie te herkennen, moet je de test vergelijken met requirement
+6. Daarvoor is kennis van de bedoeling nodig. Een beoordelaar kan ook nagaan
+welke invoer of situatie in het bewijs ontbreekt. Module 4 behandelt die
+beoordeling. Deze module bereidt haar voor door de betekenis en grenzen van
+geautomatiseerd bewijs te onderzoeken; je voert hier geen volledige review uit.
 
 ## Werkvormen en toetsing
 
-- Werkvormen: korte instructie, gezamenlijke ontleding van de groene boekenplank (worked example), daarna zelf toepassen op de eigen boekenplank in oefening 3.
+- Werkvormen: korte instructie, gezamenlijke ontleding van de groene boekenplank, daarna zelf toepassen op de eigen boekenplank in oefening 3.
 - Toetsing: formatief, via de verantwoordingsvragen van oefening 3.
 
 ## Bronnen
 
-- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "1. Geautomatiseerd en deterministisch" en "De drie samen".
-- De repository zelf: {core}`contracts/review-handoff.md` (de bouwer levert pas aan de beoordelaars nadat de poorten groen zijn) en {core}`roles/builder.md` (de bouwer is verantwoordelijk voor verifieerbaar werk).
-- Humble en Farley, Continuous Delivery {cite}`humble2010continuous`. De canonieke bron voor de deployment pipeline als kwaliteitspoort: geautomatiseerde controles als toegangsvoorwaarde voordat werk verder mag, precies de rol die de geautomatiseerde laag hier speelt.
+- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), secties “1. Geautomatiseerd en deterministisch” en “De drie samen”.
+- {core}`contracts/review-handoff.md` en {core}`roles/builder.md`, over verificatiebewijs en de overdracht naar beoordeling.
+- Humble en Farley, Continuous Delivery {cite}`humble2010continuous`, over geautomatiseerde controles in een deployment pipeline.
 
 ## Afronding
 
 ### Wat heb je geleerd
 
-De geautomatiseerde poorten (coverage, linters, type-checkers, scans, CI) zijn een toegangsvoorwaarde tot de review, niet de review zelf: ze staan ervóór. Elke poort meet iets echts en heeft een grens. En groen is noodzakelijk maar niet voldoende, op twee manieren: een test kan volledig dekken en toch het verkeerde toetsen (de lat staat verkeerd), en een poort kan groen zijn zonder iets te eisen omdat niemand een norm koos (er is geen lat). Wie de norm kiest, is een mens, niet de machine.
+De gekozen geautomatiseerde controles ondersteunen de overdracht naar review.
+Hun uitslag geldt voor de onderzochte versie, omgeving en configuratie. Je hebt
+twee grenzen onderzocht: regeldekking beoordeelt de inhoud van asserties niet,
+en gerapporteerde dekking wordt pas een toegangsvoorwaarde als een drempel is
+ingesteld. De overige testasserties blijven zonder die drempel wel van kracht.
 
 ### Zelfcheck
 
-Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+Beantwoord uit je hoofd; de sleutel wijst waar je het kunt nakijken.
 
-1. Waarom staan de geautomatiseerde poorten vóór de beoordeling en niet erin? (zie "De machine als poortwachter")
-2. Wat toont coverage wel en wat niet? Geef een geval waarin 100% dekking samengaat met een fout. (zie "Groen maar fout")
-3. Een suite is groen met 100% dekking, maar er staat geen drempel ingesteld. Waarom bewijst die groene poort dan nog niets, en wie moet dat beslissen? (zie "Groen maar fout")
-4. Waar wordt het menselijke oordeel onmisbaar, en waarom kan de machine dat niet leveren? (zie "De brug naar het oordeel")
+1. Wie bepaalt welke controles nodig zijn, en wat onderzoekt de beoordelaar nog aan het bewijs? (zie “De machine als poortwachter”)
+2. Wat toont regeldekking aan? Waarom mist de dubbele-uitleningstest requirement 6 ondanks 100% dekking? (zie “Groen maar fout”)
+3. Wat verandert wanneer je een coverage-drempel instelt? Wat blijven de tests zonder die drempel controleren? (zie “Groen maar fout”)
+4. Welke vraag over de bedoeling vereist nog beoordeling? (zie “De brug naar het oordeel”)
 
 ### Volgende stap
 
-De machine heeft de poort vrijgegeven, maar iemand moet nog steeds oordelen over wat de machine niet kan vaststellen. Module 4 (Oordelen) is die stap: je neemt zelf de rol van beoordelaar. Daarmee ga je van de geautomatiseerde laag naar de oordeelsmatige laag, het hart van het kwaliteitsraamwerk.
+Module 4 (Oordelen) onderzoekt de oplevering tegen de eisen. Je neemt daar de rol
+van beoordelaar en zoekt onder meer naar gevallen die de bestaande controles
+missen. Daarmee ga je van de geautomatiseerde naar de oordeelsmatige laag.

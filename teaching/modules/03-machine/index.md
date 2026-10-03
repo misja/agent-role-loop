@@ -8,9 +8,9 @@
 
 Na deze module kun je:
 
-1. **Beargumenteren dat de geautomatiseerde poorten een toegangsvoorwaarde tot de review zijn, niet de review zelf** - de plek van coverage, linters, type-checkers, scans en de CI-pijplijn in de loop benoemen (vóór de overdracht naar de beoordelaars) en verantwoorden waarom beoordelingsaandacht besteden aan wat een machine al objectief vaststelt verspilling is.
-2. **De soorten geautomatiseerde poorten onderscheiden en per soort afwegen wat hij wel en niet vaststelt** - uitleggen wat coverage, een linter, een type-checker en een securityscan elk meten, en verantwoorden waar de grens van elke poort ligt.
-3. **Beargumenteren waarom een groene poort niets bewijst** - beide gevallen herkennen en beargumenteren waarom groen niets zegt: als de test het verkeerde toetst (de lat staat verkeerd), en als de poort niets eist omdat niemand een norm koos (er is geen lat). Verantwoorden waar het menselijke oordeel daardoor onmisbaar wordt.
+1. **Verantwoorden waarom de gekozen geautomatiseerde controles vóór de review staan.** Je benoemt de plaats van coverage, linters, type-checkers, scans en CI in de loop. Je legt uit welke controle zij overnemen en welke beoordeling nodig blijft.
+2. **De soorten geautomatiseerde poorten onderscheiden.** Je legt uit wat iedere soort controle vaststelt en verantwoordt waar haar grens ligt.
+3. **Beargumenteren waarom groen geen algehele correctheid bewijst.** Je herkent een test met een te zwakke assertie en een coveragecontrole zonder ingestelde drempel. Je verantwoordt wat de uitslag in beide gevallen aantoont en waar een mens een norm moet kiezen of de bedoeling moet beoordelen.
 
 Deze module bestaat uit de les en de bijbehorende oefening.
 
@@ -23,7 +23,9 @@ oefening
 
 ## Praktijkvoorbeeld
 
-In [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
-volg je een kleine boekenplankwijziging via een issue, besluit, beoordeling en
-herstel. Lees dit gedeelde voorbeeld na module 2; gebruik het daarna als naslag
-bij de overdrachten in deze module.
+Lees bij “Een groene controle, toch een blokkade” in
+[Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
+hoe een geslaagde controle samengaat met een beschadigde registratie.
+Dat defect verschilt van de dubbele uitlening in deze module. Beide voorbeelden
+laten zien waarom je moet nagaan welke eis een geslaagde controle daadwerkelijk
+toetst.

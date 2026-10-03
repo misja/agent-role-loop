@@ -1,14 +1,14 @@
-# Ervaar context rot
+# Onderzoek context rot
 
-Je gaat twee keer dezelfde middelgrote opdracht doen met een AI-assistent. De eerste keer in één lange chat, zonder structuur. De tweede keer met de rollenloop, waarbij jij de orkestrator bent. Het verschil is de leerstof.
+Je gaat twee keer dezelfde middelgrote opdracht doen met een AI-assistent. De eerste keer in één lange chat, zonder structuur. De tweede keer met de rollenloop, waarbij jij de orkestrator bent. Vergelijk daarna de resultaten en de informatie die je bij iedere stap gebruikte.
 
 **Duur:** deel A circa 90 minuten (vóór les 1), deel B circa 90 minuten (na les 1), reflectie 30 minuten.
-**Nodig:** een chatgebaseerde AI-assistent naar keuze, het logboekformat hieronder, en voor deel B de bestanden uit `core/` en `adapters/manual/` van de repository.
+**Nodig:** een chatgebaseerde AI-assistent naar keuze, een logboek met de velden hieronder, de [inleiding](../../index.md) over model, context en agent, en voor deel B de bestanden uit `core/` en de [manual adapter](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/README.md).
 **Inleveren:** je logboek uit deel A, je overdrachtslogboek uit deel B, en de beantwoorde reflectievragen.
 
 ## De opdracht (voor beide delen dezelfde)
 
-Bouw een command-line-tool `boekenplank` voor een kleine bibliotheek, in een taal naar keuze. De requirements krijg je in drie porties; geef ze in deze volgorde aan je assistent en niet allemaal tegelijk. Dat is bewust: zo komen requirements in de echte wereld ook binnen, en het is precies de situatie waarin context rot toeslaat.
+Bouw een command-line-tool `boekenplank` voor een kleine bibliotheek, in een taal naar keuze. De requirements krijg je in drie porties; geef ze in deze volgorde aan je assistent en niet allemaal tegelijk. Zo onderzoek je wat er gebeurt als nieuwe eisen eerdere afspraken aanvullen of veranderen.
 
 **Portie 1 (begin van het gesprek):**
 
@@ -38,23 +38,47 @@ Bouw een command-line-tool `boekenplank` voor een kleine bibliotheek, in een taa
 
 Werk de drie porties af in **één doorlopend gesprek** met je assistent. Plak code, foutmeldingen en testuitvoer in datzelfde gesprek; vraag om aanpassingen in datzelfde gesprek; alles in één venster. Begin tussendoor geen vers gesprek.
 
-Houd naast je werk het logboek bij. Noteer elke keer dat je iets van dit lijstje ziet, met het requirement-nummer erbij:
+Houd naast je werk het logboek bij. Gebruik per waarneming de velden moment/portie, requirement, gespreksfragment, verwacht gedrag, waargenomen gedrag en uitgevoerde controle. Noteer elke keer dat je iets van dit lijstje ziet:
 
 - **Vergeten instructie** - de assistent breekt iets dat eerder al afgesproken of werkend was (requirement 9 en 12 zijn er gevoelig voor, maar het kan overal opduiken).
 - **Scope-verschuiving** - er verschijnt functionaliteit waar je niet om vroeg, of een requirement wordt "verbeterd" tot iets anders dan er staat.
 - **Zelfverzekerde brij** - de assistent beweert stellig iets dat niet klopt: verwijst naar code die niet (meer) bestaat, vat de stand van zaken verkeerd samen, of rapporteert iets als af dat niet af is.
-- **Zelf de draad kwijt** - ook jou overkomt het: noteer wanneer jíj niet meer weet wat de actuele stand is zonder terug te scrollen.
+- **Zelf de draad kwijt** - noteer wanneer je niet meer weet wat de actuele stand is zonder terug te scrollen.
 
-Rond af met een eindcontrole: loop alle vijftien requirements langs en noteer per stuk werkt / werkt niet / weet ik niet.
+Rond af met een eindcontrole: loop alle vijftien requirements langs en noteer per stuk werkt / werkt niet / weet ik niet, met de uitgevoerde controle erbij. Noteer ook wanneer je geen van de genoemde symptomen hebt waargenomen.
 
 ## Deel B - Dezelfde opdracht, nu met de loop
 
-Gooi je code uit deel A weg (bewaar het logboek!) en begin opnieuw, nu volgens de procedure in `adapters/manual/README.md`. Jij bent de orkestrator. Concreet:
+Bewaar je code en logboek uit deel A apart en begin opnieuw, nu met een nieuwe codebasis volgens de [manual adapter](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/README.md). Jij bent de orkestrator. Concreet:
 
-1. Schrijf één werkitem (C0) per portie; de porties zijn je werkitems, de requirements van de portie zijn de acceptatiecriteria. Gebruik het format uit {core}`contracts/work-item.md`.
-2. Kopieer `adapters/manual/handoff-log-template.md` naar een overdrachtslogboek per werkitem.
-3. Leg in C1 de oefenkeuze vast: `PLANNED`, met planner, verhelderaar en vier beoordelaarsperspectieven om de verschillende verantwoordelijkheden te leren kennen. Wijs ieder acceptatiecriterium toe aan een passende beoordelaar. Doorloop planning, verheldering, **de menselijke poort (dat ben jij)**, bouwen en beoordelen volgens {core}`loop.md`. Begin onafhankelijke rollen in aparte vensters; geef de voorgeschreven artefacten en bronnen mee. Voeg verenigbare oordelen als orkestrator samen; schakel bij tegenspraak de hoofdbeoordelaar in. Bij herstel gelden de rondelimiet en de gerichte overdracht uit de core.
-4. De wijzigings-requirements (9, 12, 15) zijn in deze opzet nieuwe werkitems die op bestaande code landen; merk op hoe anders dat voelt dan in deel A.
+1. Schrijf een werkitem (C0) voor portie 1 met de vijf requirements als
+   acceptatiecriteria. Gebruik {core}`contracts/work-item.md`.
+2. Kopieer het [logboeksjabloon](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/handoff-log-template.md)
+   naar een overdrachtslogboek voor dit werkitem.
+3. Leg in C1 de oefenkeuze vast: `PLANNED`, met planner, verhelderaar en vier
+   beoordelaarsperspectieven. Wijs ieder acceptatiecriterium toe aan een passende
+   beoordelaar. Dit aantal dient de oefening en is geen algemene verplichting.
+4. Laat de planner C2 maken en de verhelderaar het plan beoordelen met C3. Geef
+   de voorgeschreven invoer en normen uit {core}`loop.md` mee. Start deze rollen
+   in afzonderlijke gesprekken. Noteer de artefactversies in het logboek.
+5. Neem als mens een C4-besluit over het concrete plan. Bij `PROCEED` geef je
+   het plan en besluit aan de bouwer. Bij `REVISE` of `STOP` volg je de
+   beschreven vervolgactie voordat de bouw verdergaat.
+6. Geef de geselecteerde beoordelaars C5-kern, de codeversie, eisen, normen en
+   relevant bewijs. Zij zien het maakgesprek en elkaars oordelen niet. Wacht op
+   alle C6-oordelen. Voeg verenigbare oordelen samen in C7; laat de
+   hoofdbeoordelaar inhoudelijke tegenspraak behandelen.
+7. Volg bij een blokkade de begrensde herstelprocedure uit de core. Leg de
+   verbruikte herstelronde vast vóór herstel. Een overgebleven blokkade vraagt
+   een menselijk vervolg; zij wordt niet door de rondelimiet opgeheven. Beslis
+   zelf of je de beoordeelde code als basis voor de volgende portie accepteert.
+8. Herhaal stappen 1 tot en met 7 voor portie 2 en 3, elk met een eigen C0 en logboek.
+   Dit levert in totaal drie werkitems op. Requirements 9, 12 en 15 horen bij
+   hun portie en wijzigen de eerder gebouwde code; maak er geen extra werkitems
+   van. Neem de eerdere eisen die behouden moeten blijven in de controle op.
+
+Je overdrachtslogboek bevat na elke portie de gebruikte artefacten, besluiten,
+beoordeelde codeversie, controles en eventuele herstelstand.
 
 Bij een beperkt abonnement kun je met de docent afspreken de vier perspectieven alleen bij portie 2 te gebruiken. Leg voor de andere porties in C1 vast welke beoordelaar alle criteria afdekt. Nieuwe functionaliteit en een datamigratie vragen nog steeds een plan en een menselijke beslissing; kosten alleen maken deze opdrachten niet geschikt voor `LIGHT`. Pas de omvang van de oefening aan als zij niet binnen het beschikbare budget past.
 
@@ -64,22 +88,51 @@ Rond af met dezelfde eindcontrole als in deel A: alle vijftien requirements, wer
 
 Beantwoord schriftelijk, met voorbeelden uit je beide logboeken:
 
-1. Vergelijk je twee eindcontroles. Waar zaten de verschillen, en waar zat vooral het verschil in hoe *zeker* je van je antwoorden was?
-2. Op welk moment in deel A merkte je het eerste symptoom van context rot, en bij welke portie? Wat stond er op dat moment allemaal al in het gesprek?
-3. Welk contract-artefact uit deel B heeft je het meeste opgeleverd, en welke vond je op het eerste gezicht overdreven? Zou je die laatste bij een groter werkitem nog steeds overdreven vinden?
-4. Bij de poort (C4) moest je zelf beslissen in plaats van doorklikken. Heb je daar iets tegengehouden of aangepast? Zo nee, waar zou de poort wél waarde hebben gehad in deel A?
-5. De beoordelaars zagen elkaars oordeel niet. Vergelijk de vier C6-oordelen: wat vond er maar één, en had je dat ook gevonden als ze één gezamenlijk gesprek hadden gedeeld?
-6. Geef een voorbeeld uit je overdrachtslogboek waar het concreet hielp dat een rol de context van een andere rol niet zag. (In module 2 ontleed je dit tot het ontwerpverband: interface, implementatie en wat er verborgen wordt.)
-7. Voor welke taken zou jij deze loop voortaan inzetten, en voor welke uitdrukkelijk niet? Onderbouw met je eigen tijdsbesteding in deel A en B; de formele proportionaliteitsafweging met de S/M/L-heuristiek komt in module 5.
+1. Vergelijk je twee eindcontroles en hun bewijs. Welke verschillen zie je en
+   welke uitkomsten zijn gelijk? Waar blijft je zekerheid beperkt?
+2. Heb je in deel A een symptoom waargenomen? Zo ja, bij welke portie en welke
+   gespreksinhoud kan eraan hebben bijgedragen? Zo nee, wat kun je uit deze run
+   wel en niet afleiden over context rot?
+3. Welke informatie uit een overdracht was bruikbaar, overbodig of ontbrak?
+   Onderbouw met een concrete handeling van de ontvangende rol.
+4. Welk besluit nam je bij C4? Wat heb je beoordeeld, gewijzigd of bewust
+   aanvaard? Een ongewijzigd plan kan ook een gemotiveerd besluit zijn.
+5. Vergelijk de afzonderlijke C6-oordelen waar je meerdere perspectieven
+   gebruikte. Welke bevindingen verschillen of komen overeen? Kun je uit deze
+   oefening afleiden wat een gezamenlijk gesprek zou hebben opgeleverd?
+6. Kies één overdracht. Welke maakgeschiedenis bleef buiten de volgende context
+   en welke relevante eisen gingen wel mee? Beschrijf het waargenomen gevolg,
+   of leg uit waarom je geen gevolg kunt vaststellen.
+7. Welke taken zou je met deze procedure uitvoeren? Weeg de vastgelegde
+   tijdsbesteding en gevonden problemen mee. De formele proportionaliteitskeuze
+   komt in module 5.
+
+Dit is geen gecontroleerde vergelijking van twee methoden. In deel B ken je de
+opdracht al en begin je met andere gesprekscontext. Ook modeluitvoer kan tussen
+runs verschillen. Benoem daarom waarnemingen uit je eigen werk en de grenzen
+van je verklaring; een betere of gelijke uitkomst bewijst geen algemeen effect.
 
 ## Variant zonder AI - rollenspel
 
-Dezelfde oefening werkt zonder AI, met een groep van zes of zeven studenten. De opdracht blijft identiek, maar de rollen worden door mensen gespeeld: één triage, één planner, één verhelderaar, één poort, één bouwer, en één of twee beoordelaars die na de bouw elk afzonderlijk (zonder overleg!) een C6 schrijven; de docent kan bij tegenspraak als hoofdbeoordelaar optreden. Bij één beoordelaar volstaat C6; verenigbare oordelen vat de orkestrator samen in C7.
+Voer dezelfde opdracht uit met zes of zeven studenten. Verdeel planning,
+verheldering, menselijke poort, bouwen en één of twee onafhankelijke
+beoordelingen over de groep. Eén student krijgt bovendien de
+orkestratieverantwoordelijkheid: C1 en het logboek bijhouden en de overdrachten
+bewaken. Een afzonderlijke triagespeler is niet nodig. De docent kan bij
+inhoudelijke tegenspraak de hoofdbeoordelaar zijn.
 
 Spelregels:
 
-- Spelers mogen **uitsluitend** communiceren via de contract-artefacten, schriftelijk. Geen overleg, geen toelichting bij de overdracht, geen vragen buiten de artefacten om; wie iets mist, schrijft dat in het eigen artefact op (de verheldering heeft daar zelfs een veld voor).
-- De bouwer bouwt echt (portie 1 volstaat binnen een lesuur).
-- De orkestrator-taak rouleert niet: één student beheert het overdrachtslogboek en bewaakt dat niemand buiten de artefacten om praat.
+- Wissel taakinhoud uitsluitend schriftelijk uit via de toepasselijke
+  contractartefacten. Ontbrekende informatie komt als vraag of bevinding in het
+  artefact; geef geen mondelinge toelichting buiten de overdracht.
+- De bouwer bouwt de code. Binnen één lesuur kun je je beperken tot portie 1.
+- De beoordelaars werken zonder overleg en leveren afzonderlijk C6 op. Met één
+  beoordelaar is C6 het eindoordeel; met meerdere maakt de orkestrator C7 nadat
+  alle oordelen beschikbaar zijn.
+- Houd ook in het rollenspel relevante eisen en besluiten toegankelijk en leg
+  eventuele herstelrondes vast.
 
-De debriefing draait om dezelfde reflectievragen 3, 5 en 6. Deze variant maakt voelbaar wat de contracten dragen en wat er verloren gaat als de interface te smal is - zonder dat er een AI of abonnement aan te pas komt.
+Bespreek reflectievragen 3, 5 en 6. Wijs aan welke informatie de contracten
+meegaven en welke informatie ontbrak. Noteer het gevolg voor de uitgevoerde
+handelingen, zonder een bepaald probleem of voordeel vooraf te veronderstellen.

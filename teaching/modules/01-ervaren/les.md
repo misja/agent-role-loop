@@ -2,64 +2,118 @@
 
 ## Plaats in de leerlijn
 
-Eerste les van de eenheid over werken met AI-agents in software engineering. Vereist voorkennis: studenten kunnen zelfstandig een middelgrote programmeeropdracht uitvoeren en hebben enige ervaring met een chatgebaseerde AI-assistent. Geen voorkennis over multi-agent-werkwijzen nodig; die bouwen we hier op.
+Je kunt zelfstandig een programmeeropdracht uitvoeren en hebt ervaring met een
+AI-assistent via een chatinterface. Lees eerst de [inleiding](../../index.md)
+voor het onderscheid tussen een taalmodel, context, een agent en een sessie.
+Voor deze oefening gebruik je losse chats; een agentomgeving met toegang tot je
+bestanden is niet nodig.
 
-De les hoort bij [oefening 1](oefening.md), die **vooraf** (deel A) en **erna** (deel B) gemaakt wordt.
+Bij deze les hoort [de oefening](oefening.md). Maak deel A vooraf en deel B erna.
+De leeruitkomsten staan op de [module-index](index.md).
 
-## Leeruitkomsten
+## Wat staat er in je logboek?
 
-De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
+In deel A geef je de assistent steeds nieuwe requirements voor de boekenplank.
+Het gesprek bevat daardoor niet alleen de actuele opdracht, maar ook eerdere
+voorstellen, foutmeldingen en aanpassingen. De toepassing neemt gespreksinhoud
+mee bij volgende modelaanroepen. Welke berichten zij precies opneemt, hangt af
+van de toepassing en de beschikbare ruimte voor context.
 
-Het conceptuele verband met scheiding van verantwoordelijkheden en interfaces komt bewust pas in module 2: eerst ervaren dat de loop helpt, dan begrijpen waarom.
+Vergelijk je logboek met dat van een medestudent. Kijk naar drie soorten fouten:
 
-## Opbouw (probleem, dan principe, dan tooling)
+- **Vergeten instructies:** een afgesproken eis ontbreekt in een later voorstel.
+- **Scope-verschuiving:** het voorstel verandert de opdracht of voegt ongevraagde
+  functionaliteit toe.
+- **Zelfverzekerde brij:** een stellig antwoord bevat onjuiste informatie,
+  bijvoorbeeld over de huidige code of uitgevoerde controles.
 
-De volgorde is een bewuste ontwerpbeslissing van dit materiaal: wie eerst tooling krijgt, leert een recept; wie eerst het probleem voelt, begrijpt waarom het recept werkt.
+Een mogelijk voorbeeld: bij requirement 12 verandert de assistent het
+opslagformaat. Daarna worden verwijderde boeknummers opnieuw gebruikt, terwijl
+requirement 13 dat verbiedt. De eindcontrole toont dan welke afspraak ontbreekt.
+Dit is een illustratie, geen voorspelling van jouw oefenresultaat.
 
-### Deel A - Het probleem (terugblik op oefening 1, deel A)
+Wanneer opgebouwde context tot kwaliteitsverlies leidt, spreken we hier van
+*context rot*. Een eerdere aanname kan bijvoorbeeld in latere voorstellen
+blijven terugkomen. Een fout op zichzelf bewijst die verklaring niet: een
+onduidelijke opdracht of een verkeerd begrepen eis kan ook een oorzaak zijn.
+Noteer welke informatie in je gesprek de verklaring ondersteunt. Als je geen
+van deze fouten hebt waargenomen, leg dat ook vast.
 
-- Studenten brengen hun logboek mee: waar ging de lange chat mis?
-- Inventarisatie op het bord, clusteren naar de drie symptoomgroepen: vergeten instructies, scope-verschuiving, zelfverzekerde brij.
-- Kernvraag aan de groep: *waarom* gebeurt dit? Werk toe naar: alles staat in één context, en alles weegt mee, ook wat allang niet meer waar of relevant is.
+## Informatie overdragen aan een andere rol
 
-### Deel B - De loop als antwoord
+Voor deel B verdeel je het werk over afzonderlijke opdrachten. Een planner werkt
+de aanpak uit, een bouwer voert haar uit en een beoordelaar onderzoekt de
+wijziging. De beoordelaar begint met een eigen gesprek. Je geeft de eisen, de
+gewijzigde code en de verificatieresultaten mee. Het maakgesprek met verworpen
+voorstellen gaat niet mee.
 
-- Context rot benoemen en definiëren; de term komt uit de bronartikelen hieronder.
-- De rollenloop introduceren als één mogelijke uitwerking. De triage kiest de benodigde verantwoordelijkheden volgens {core}`loop.md`. In de oefening worden planning, verheldering, de menselijke poort en vier beoordelaarsperspectieven zichtbaar gemaakt; een hoofdbeoordelaar behandelt eventuele tegenspraak. De contracten C0 t/m C7 beschrijven de overdrachten, waarvan alleen de toepasselijke worden gebruikt. Hier blijft het bij wát de loop is en hoe je hem draait; waaróm die opzet werkt, is de stof van module 2.
-- Expliciet stilstaan bij de twee asymmetrieën: beoordelaars draaien parallel en geïsoleerd, en de poort is principieel menselijk.
-- Proportionaliteit: de loop loont voor S/M/L-werk en is te zwaar of ontoereikend daarbuiten; triage is daarom zelf een rol.
+Bij de opslagwijziging moet de eis dat nummers niet worden hergebruikt wel in
+de overdracht staan. Een eigen gesprek helpt die eis niet terug te vinden als
+niemand haar heeft meegegeven. De contracten beschrijven daarom welke informatie
+de volgende rol nodig heeft. In module 2 onderzoek je deze overdracht als
+interface tussen verantwoordelijkheden.
 
-### Deel C - De tooling (doorkijk naar oefening 1, deel B)
+De [manual adapter](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/README.md) beschrijft hoe je de
+rollenlus met losse chats uitvoert. De triage legt vooraf vast welke
+verantwoordelijkheden en beoordelingen een wijziging nodig heeft. Dat is een
+taak van jou als orkestrator; er hoeft geen aparte triage-agent te zijn.
+De route staat in {core}`loop.md`.
 
-- Demonstratie van de manual adapter: verse chatvensters, alleen artefacten kopiëren, het overdrachtslogboek.
-- Nadrukkelijk gepositioneerd als één van meerdere adapters: het principe is de leerstof, de tooling is inwisselbaar.
-- Instructie voor deel B van de oefening.
+In deze oefening maak je planning, verheldering, de menselijke poort en vier
+beoordelaarsperspectieven zichtbaar. Dat is een oefenkeuze om de
+verantwoordelijkheden te leren kennen. Vier beoordelaars zijn geen algemene
+uitvoerplicht. Iedere geselecteerde beoordelaar begint onafhankelijk en ziet
+pas na zijn eigen oordeel de andere beoordelingen. Jij beslist bij de
+menselijke poort of het concrete plan uitgevoerd mag worden.
+
+## Beginnen met deel B
+
+Bewaar de uitkomsten van deel A en begin met een nieuwe codebasis. Gebruik een
+werkitem voor iedere portie requirements. Het tweede en derde werkitem wijzigen
+de code die de vorige portie heeft opgeleverd. Noteer in het overdrachtslogboek
+welke eisen, besluiten en codeversies je aan iedere rol meegeeft.
+
+Een andere chattoepassing kan dezelfde procedure ondersteunen. De
+verantwoordelijkheden en overdrachten blijven de leerstof; de vensters zijn het
+middel waarmee je ze hier uitvoert.
 
 ## Werkvormen en toetsing
 
-- Werkvormen: logboekbespreking in tweetallen, plenaire clustering, instructie, demonstratie.
-- Toetsing: formatief, via de reflectievragen van oefening 1.
+Bespreek de logboeken in tweetallen en vergelijk de gevonden symptomen in de
+groep. Gebruik een demonstratie van de manual adapter om de eerste overdracht
+te volgen. De reflectievragen van de oefening vormen de formatieve toetsing.
 
 ## Bronnen
 
-- De oorspronkelijke beschrijving van de loop en de term context rot zoals hier gebruikt {cite}`watkins2026context`.
-- Waarom parallellisatie alleen bij echt onafhankelijke deeltaken loont {cite}`anthropic2025multiagent`.
-- De repository zelf: {core}`principles.md` en {core}`loop.md` zijn de normatieve teksten waar deze les didactisch op leunt.
+- De oorspronkelijke beschrijving van de lus en de term context rot zoals hier
+  gebruikt {cite}`watkins2026context`.
+- Onderzoek naar parallel werk bij onafhankelijke deeltaken
+  {cite}`anthropic2025multiagent`.
+- De normatieve procedure: {core}`principles.md` en {core}`loop.md`.
 
 ## Afronding
 
 ### Wat heb je geleerd
 
-Je hebt context rot aan den lijve ervaren: in één lange chat stapelt alles op en verrot de kwaliteit, terwijl de rollenloop dat tegenhoudt door elke rol een verse, afgebakende context te geven. En je hebt geoefend met proportionaliteit: niet elke taak verdient de volledige loop.
+Je hebt onderzocht welke instructies en aannames in je gesprek behouden bleven
+of uit beeld raakten. Je kunt zulke waarnemingen gebruiken om een mogelijke
+verklaring te geven voor kwaliteitsverlies. In deel B leg je de informatie voor
+elke volgende verantwoordelijkheid in een overdracht vast.
 
 ### Zelfcheck
 
-Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+Beantwoord uit je hoofd; de sleutel wijst waar je het kunt nakijken.
 
-1. Wat is context rot, en aan welke drie symptomen herken je het? (zie deel A en oefening 1, deel A)
-2. Waarom verrot de kwaliteit juist in één lang, ongestructureerd gesprek? (zie deel A, de kernvraag)
-3. Wanneer is de volledige loop proportioneel en wanneer niet? Noem een taak waarvoor je hem niet zou inzetten. (zie deel B, proportionaliteit)
+1. Wat noemen we hier context rot? Welke waarnemingen kunnen die verklaring
+   ondersteunen? (zie Wat staat er in je logboek?)
+2. Waarom is een fout in een lang gesprek op zichzelf onvoldoende om context
+   rot vast te stellen? (zie Wat staat er in je logboek?)
+3. Welke informatie moet de beoordelaar van een opslagwijziging ontvangen?
+   Waarom volstaat een nieuw gesprek niet? (zie Informatie overdragen)
 
 ### Volgende stap
 
-In deze module heb je gevóéld dat structuur helpt, maar nog niet waaróm. Module 2 (Begrijpen) legt dat uit: de loop als scheiding van verantwoordelijkheden, met contracten als interface. Daarmee stap je van het probleem (nog geen kwaliteitslaag) naar de conventionele laag van het kwaliteitsraamwerk, waarin een contract een vastgelegde conventie is.
+[Module 2](../02-begrijpen/index.md) onderzoekt welke informatie de rollen
+uitwisselen en welke zij weglaten. Je verbindt die keuzes met scheiding van
+verantwoordelijkheden en interfaces. Daarmee kom je bij de conventionele
+kwaliteitslaag: afspraken over wat een overdracht moet bevatten.
