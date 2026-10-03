@@ -22,20 +22,49 @@ constraint. Wie materiaal beoordeelt, toetst eraan.
   testje"; wel "een repository", "een script", "een test".
 - Geen populaire of spreektalige wendingen ("even snel", "gewoon", "lekker",
   "hartstikke", uitroepen, knipogen naar de lezer).
+- Presenteer een handeling niet als vanzelfsprekend met "natuurlijk",
+  "eenvoudig", "gewoon" of "even". Benoem wat de student moet doen en welke
+  kennis daarvoor nodig is. Behoud zulke woorden alleen als ze inhoudelijk iets
+  afbakenen; "een eenvoudige implementatie" kan bijvoorbeeld een gemotiveerde
+  ontwerpkeuze beschrijven.
 - Geen overdreven enthousiasme of aanmoediging. Het materiaal legt uit en
   instrueert; het cheerleadt niet.
-- Vermijd de herkenbare stijltrekjes van AI-gegenereerde tekst. Veel van het
-  materiaal wordt met AI-ondersteuning geschreven, en dat mag, maar het resultaat
-  moet niet als zodanig leesbaar zijn. Let op terugkerende tells: de
-  tegenstellingsconstructie "het gaat niet om X, maar om Y", drieslagen ("helder,
-  consistent en professioneel"), holle bezwerende slotzinnen die niets toevoegen,
-  en overmatig gebruik van "juist", "immers" en "simpelweg". Dit is een
-  richtlijn, geen mechanische toets: schrijf zoals een vakdocent schrijft, niet
-  zoals een model. De toets bij de tegenstellingsconstructie en bij woorden als
-  "juist", "immers" en "simpelweg" is steeds dezelfde: draagt ze hier een echte
-  tegenstelling of een scharnier in de redenering, dan blijft ze; vult ze alleen
-  het ritme op, dan gaat ze weg. Eén tell is wel hard en toetsbaar, zie
-  interpunctie: geen em- of en-dash.
+
+## Geen chatbot-tekst
+
+Een onderwijstekst richt zich tot de student en moet zelfstandig leesbaar zijn.
+Schrap aanbiedingen om verder te helpen, gespreksslotjes en vragen zoals
+"Wil je dat ik dit verder uitleg?". Zelfcheck- en reflectievragen blijven waar
+ze een concrete leerfunctie hebben. Ook een geciteerd chatgesprek kan zulke
+formuleringen bevatten als het gesprek zelf wordt onderzocht.
+
+Vermijd de herkenbare stijltrekjes van AI-gegenereerde tekst. Veel van het
+materiaal wordt met AI-ondersteuning geschreven, en dat mag, maar het resultaat
+moet niet als zodanig leesbaar zijn. Let op terugkerende tells: de
+tegenstellingsconstructie "het gaat niet om X, maar om Y", drieslagen ("helder,
+consistent en professioneel"), holle bezwerende slotzinnen die niets toevoegen,
+en overmatig gebruik van "juist", "immers" en "simpelweg". Dit is een
+richtlijn, geen mechanische toets: schrijf zoals een vakdocent schrijft, niet
+zoals een model. De toets bij de tegenstellingsconstructie en bij woorden als
+"juist", "immers" en "simpelweg" is steeds dezelfde: draagt ze hier een echte
+tegenstelling of een scharnier in de redenering, dan blijft ze; vult ze alleen
+het ritme op, dan gaat ze weg. Eén tell is wel hard en toetsbaar, zie
+interpunctie: geen em- of en-dash.
+
+Beoordeel steeds de functie van de hele zin. Alleen een verdacht woord
+vervangen laat een lege conclusie of herhaling intact. Benoem bij herziening
+het concrete bezwaar, zoals een geforceerde tegenstelling, een ontbrekende
+redeneerstap of een slotzin zonder nieuwe informatie. "Klinkt als AI" is op
+zichzelf geen voldoende onderbouwing.
+
+De volgende voorbeelden zijn redactionele voorbeelden, geen citaten uit het
+lesmateriaal:
+
+| Te herzien passage | Gerichte verbetering | Waarom? |
+|---|---|---|
+| "Wil je meer weten over de beoordelaars?" | Verwijs naar de relevante uitleg als de student die nodig heeft; schrap anders de zin. | Een aanbod uit een chatgesprek geeft geen zelfstandige aanwijzing. |
+| "Zo ontstaat een helder, samenhangend en betrouwbaar proces." | "De beoordelaar kan de wijziging vergelijken met de afgesproken eisen." | Het concrete gevolg vervangt een algemene waardering en een ongedekte garantie. |
+| "Controleer eenvoudigweg of het contract volledig is." | "Vergelijk de overdracht met de verplichte velden van het contract." | De student krijgt een handeling; de tekst veronderstelt niet dat die vanzelf spreekt. |
 
 ## Uitleg en de reikwijdte van claims
 
@@ -50,6 +79,18 @@ redeneerstap vraagt uitleg van het verband, niet nog een samenvatting van de
 conclusie. Benoem concrete handelingen en gevolgen. Een korte tekst met veel
 vakwoorden kan meer van de lezer vragen dan een langere tekst met één uitgewerkt
 voorbeeld. Omgekeerd voegt herhaling zonder nieuw inzicht niets toe.
+
+Geef elke zin een hoofdgedachte. Splits een zin als die tegelijk een begrip
+uitlegt, een conclusie trekt en een opdracht geeft. Wissel korte en langere
+zinnen af waar dat de samenhang helpt; een reeks losse korte zinnen kan het
+verband ook verbergen. Zinslengte is geen mechanische toets.
+
+Beknoptheid vraagt selectie. Schrap herhaalde conclusies, algemene
+voorbeschouwingen en zinnen zonder functie. Behoud de uitleg, voorbeelden en
+hints die de student nodig heeft om de redenering te volgen of de opdracht uit
+te voeren. Zet toelichting voor een latere stap bij die stap, binnen de
+afgesproken opbouw. Een overzicht vooraf helpt als het de student oriënteert;
+een aankondiging van alles wat de tekst straks zal uitleggen voegt weinig toe.
 
 Stem claims af op hun bewijs. Maak onderscheid tussen een waarneming, een
 voorbeeld, een ontwerpkeuze en een verwachte werking. Benoem de voorwaarden of
