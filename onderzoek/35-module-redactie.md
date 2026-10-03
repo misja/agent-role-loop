@@ -26,7 +26,7 @@ via context rot. De vijftien requirements zijn bytegelijk behouden; de procedure
 gebruikt consequent drie C0's. Module 2 werkt eerst het boekenplankplan uit en
 onderscheidt contractdefinitie, ingevuld artefact, rolprompt en uitvoering.
 Module 3 maakt de uitspraken van tests, regeldekking en drempels afzonderlijk
-zichtbaar. Het historical Mermaid-fragment blijft gelabelde naslag bij #21.
+zichtbaar. Het historische Mermaid-fragment blijft gelabelde naslag bij #21.
 
 Casuscode, core, adapters en modulevolgorde zijn ongewijzigd. De ondersteuning
 neemt nog steeds af: een uitgewerkte route, vervolgens eigen overdrachtsanalyses
