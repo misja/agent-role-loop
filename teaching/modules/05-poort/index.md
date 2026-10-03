@@ -1,6 +1,6 @@
 # 5. De menselijke poort
 
-**Leerdoel:** Je neemt de rol van menselijke poort in: je velt een go/no-go over een onomkeerbare operatie, verantwoordt waarom zo'n beslissing bij de mens blijft, en weegt proportionaliteit en triage.
+**Leerdoel:** Je neemt de rol van menselijke poort in. Je beslist over een voorstel met mogelijk onherstelbare gevolgen, verantwoordt de aanvaardbare risico’s en weegt welke inzet daarbij past.
 
 **Kwaliteitslaag:** Oordeelsmatig - de menselijke poort.
 
@@ -8,11 +8,9 @@
 
 Na deze module kun je:
 
-1. **Beargumenteren waarom een onomkeerbare beslissing bij de mens hoort en niet bij een machine** - uitleggen wat een geautomatiseerde poort en de beoordelaars wel kunnen vaststellen en wat niet, en verantwoorden waarom de go/no-go over een onomkeerbaar gevolg een menselijk oordeel blijft.
-2. **Als poort een onderbouwde go/no-go vellen over een onomkeerbare operatie** - beslissen of een change zo door mag, en zo niet, benoemen wat eerst moet, zonder de operatie te herontwerpen of de code op kwaliteit te beoordelen.
-3. **Proportionaliteit en triage wegen** - onderbouwen welke inzet (volledige loop, licht pad, of afwijzen) past bij het risico en de omkeerbaarheid van een taak, met de S/M/L-heuristiek en de kosten (tijd, tokens, aandacht) als argumenten.
-
-Deze module bestaat uit de les en de bijbehorende oefening.
+1. **Verantwoorden waarom de mens over aanvaardbare risico’s beslist** - uitleggen welk bewijs automatische controles en beoordelaars leveren, en waarom de verantwoordelijkheid voor het doel en de gevolgen in deze werkwijze bij de mens blijft.
+2. **Een onderbouwde poort-beslissing nemen** - PROCEED, REVISE of STOP kiezen voor een concreet voorstel, met redenen en eventuele voorwaarden vóór de bouw of toepassing. Je kunt dit planbesluit onderscheiden van de latere menselijke mergebeslissing.
+3. **Proportionaliteit en triage wegen** - onderbouwen of LIGHT, PLANNED of REJECT past bij de omvang, open keuzes en gevolgen van een taak. Je gebruikt de XS/S/M/L/XL-indeling en weegt de kosten in tijd, tokens en aandacht.
 
 ```{toctree}
 :maxdepth: 1
@@ -24,6 +22,7 @@ oefening
 ## Praktijkvoorbeeld
 
 In [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
-volg je een kleine boekenplankwijziging via een issue, besluit, beoordeling en
-herstel. Lees dit gedeelde voorbeeld na module 2; gebruik het daarna als naslag
-bij de overdrachten in deze module.
+zie je hoe een menselijk besluit aan een concrete voorstelversie wordt gekoppeld.
+Gebruik dit voorbeeld bij het vastleggen van je C4 in de oefening. De
+[les](les.md) legt uit wanneer dat planbesluit plaatsvindt en hoe het verschilt
+van de mergebeslissing.

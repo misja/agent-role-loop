@@ -1,19 +1,30 @@
 # 6. Ontwerpen en verantwoorden
 
-**Leerdoel:** Je ontwerpt zelf de volgende uitbreiding van de casus, stelt de randvoorwaarden van je project vast, regisseert en bewaakt de AI, en verantwoordt elke keuze tegen het kwaliteitskader.
+**Leerdoel:** Je ontwerpt een interface-uitbreiding op de boekenplank, legt de
+projectafspraken vast en begeleidt de AI bij de uitvoering. Je verantwoordt het
+ontwerp, de werkwijze en de beoordeling tegen het kwaliteitskader.
 
-**Kwaliteitslaag:** Synthese van de drie lagen.
+**Kwaliteitslaag:** Samenhang tussen afspraken, automatische controles en
+contextueel oordeel.
 
 **Wat ga je leren**
 
 Na deze module kun je:
 
-1. **Een uitbreiding ontwerpen en als werkitem vastleggen** - een interface-uitbreiding op je bestaande logica-laag ontwerpen, als werkitem met toetsbare acceptatiecriteria vastleggen, en de ontwerpkeuzes verantwoorden tegen het kwaliteitskader.
-2. **De randvoorwaarden van het eigen project vaststellen en verantwoorden** - stijl, type checking, linting, formattering en projectbeheer bewust kiezen, vastleggen en waar mogelijk automatiseren, en die keuzes verantwoorden als de levensloop oordeel, conventie, automatisering.
-3. **Werkwijze, medium en tool scheiden en een toolkeuze verantwoorden** - de drie niveaus benoemen en een keuze voor een tool onderbouwen, met zeggenschap over data als expliciete afweging.
-4. **De AI regisseren en het resultaat verantwoord beoordelen** - de bouw binnen de gestelde kaders houden, de inzet van de loop proportioneel kiezen en verantwoorden, het resultaat beoordelen met architectuur en onderhoudbaarheid als zwaartepunt, en de eigen poort-beslissing vellen.
-
-Deze module bestaat uit de les en de bijbehorende oefening (een mini-project).
+1. **Een uitbreiding ontwerpen en als werkitem vastleggen** - gewenste
+   interfacehandelingen beschrijven met toetsbare acceptatiecriteria en de
+   ontwerpkeuzes verantwoorden tegen het kwaliteitskader.
+2. **De randvoorwaarden van je project vaststellen en verantwoorden** - keuzes
+   voor stijl, type checking, linting, formattering en projectbeheer vastleggen.
+   Je kunt uitleggen welke afspraken je automatiseert en welke beoordeling
+   vragen.
+3. **Werkwijze, medium en tool onderscheiden en een toolkeuze verantwoorden** -
+   aanwijzen waar je opdracht, besluiten en bewijs bewaart, en de zeggenschap
+   over die gegevens meewegen bij je keuze.
+4. **De AI begeleiden en het resultaat verantwoord beoordelen** - de route en
+   rolbezetting afstemmen op de taak, de bouw binnen de afgesproken scope houden
+   en architectuur en onderhoudbaarheid beoordelen. Je kunt je eigen menselijke
+   besluit over het plan en de uiteindelijke merge onderbouwen.
 
 ```{toctree}
 :maxdepth: 1
@@ -24,7 +35,8 @@ oefening
 
 ## Praktijkvoorbeeld
 
-In [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
-volg je een kleine boekenplankwijziging via een issue, besluit, beoordeling en
-herstel. Lees dit gedeelde voorbeeld na module 2; gebruik het daarna als naslag
-bij de overdrachten in deze module.
+Gebruik [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
+als naslag voor de projectoverdrachten. De bronmapping laat zien waar opdracht,
+planversie, besluit, codecommit en beoordeling staan. De beginstappen helpen bij
+het aanmaken van een eigen issue, PR en projectbord; in deze module bepaal je
+zelf de inhoud van de uitbreiding.

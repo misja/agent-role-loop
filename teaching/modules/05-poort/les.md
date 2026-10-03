@@ -1,24 +1,58 @@
-# Go of no-go op het onomkeerbare
+# Beslissen over risico en herstel
 
 ## Plaats in de leerlijn
 
-Vijfde module. In module 4 heb je geoordeeld: de vier perspectieven gewogen en geprioriteerd. Dit is de stap voordat werk doorgaat: de menselijke poort. Vereiste voorkennis: module 4 afgerond, en het kwaliteitsraamwerk.
+In [module 4](../04-oordelen/index.md) heb je bevindingen gewogen en een
+eindoordeel onderbouwd. Een oordeel over kwaliteit levert informatie voor een
+besluit over de gevolgen. Deze module behandelt dat menselijke besluit: mag een
+voorstel worden uitgevoerd, en onder welke voorwaarden?
 
-De les hoort bij [oefening 5](oefening.md), waarin je als poort een go/no-go velt over een onomkeerbare operatie.
+Je gebruikt de rollen en contracten uit [module 2](../02-begrijpen/index.md) en het
+[kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md).
+In de [oefening](oefening.md) neem je zelf de menselijke poort op je voor een
+voorstel om de bestaande verwijderlogica toe te passen.
 
 ## Leeruitkomsten
 
-De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
+De leeruitkomsten staan onder “Wat ga je leren” op de [module-index](index.md).
 
 ## Opbouw
 
-### De poort is menselijk
+### Een planbesluit en een mergebesluit
 
-In de loop is er één beslismoment dat aan geen enkele andere rol wordt overgelaten: de menselijke poort ({core}`roles/human-gate.md`). De machine stelt vast dat de code werkt; de beoordelaars wegen de kwaliteit; maar of een change ook echt door mag, blijft een mens. De poort vraagt niet "is de code goed", maar "is dit nog steeds het juiste, en zijn de gevolgen aanvaardbaar".
+Een test kan laten zien dat een verwijderd boek niet meer via `boek(nummer)`
+wordt gevonden. Een beoordelaar kan nagaan of dat gedrag overeenkomt met de
+eisen. Om te besluiten of verwijderen met openstaande reserveringen is
+toegestaan, zijn ook het gebruiksdoel en de gevolgen voor de betrokkenen nodig.
+In deze werkwijze draagt de mens de verantwoordelijkheid voor die keuze.
 
-### Een echte poort-respons
+De menselijke poort ({core}`roles/human-gate.md`) beslist bij C4 over een
+concreet plan, vóór de bouwer ermee aan het werk gaat. De mens leest het doel,
+de scope, het verwachte gevolg en de voorgestelde controles. Die kan bijvoorbeeld
+besluiten dat eerst een herstelvoorziening nodig is. Het besluit en de
+voorstelversie worden vastgelegd in {core}`contracts/gate-decision.md`.
 
-Een poort-respons is opgebouwd, geen stempel. Dit is een echte, uit de ontwikkeling van dit lesmateriaal: de menselijke poort beslist hier over het plan voor module 4, de module die je net achter de rug hebt. Let op de opbouw: per beslissing een oordeel, waar nodig een voorwaarde, en een bewaking voor de bouw.
+Na de bouw levert de bouwer bewijs en beoordelen de geselecteerde onafhankelijke
+beoordelaars de oplevering. Daarna neemt de mens het mergebesluit. Een C4 met
+PROCEED geeft toestemming voor het afgesproken werk; het is geen voorafgaande
+goedkeuring van de nog te beoordelen oplevering.
+
+### Een gepubliceerd historisch poortbesluit
+
+Bij de ontwikkeling van module 4 waren vier didactische beslispunten aan de
+mens voorgelegd:
+
+1. Reserveringen en een wachtlijst gebruiken als casus voor verschillende oordelen.
+2. De code aanleveren, zodat studenten hetzelfde artefact beoordelen.
+3. De ondersteuning afbouwen en een geprioriteerd eindoordeel vragen.
+4. Het risicobesluit bewaren voor module 5.
+
+Het volgende fragment staat letterlijk in de
+[historische lespublicatie op commit 80d2ea5](https://github.com/misja/agent-role-loop/blob/80d2ea5/teaching/modules/05-poort/les.md).
+Een [reactie op issue #13](https://github.com/misja/agent-role-loop/issues/13#issuecomment-4853496381)
+bevestigt PROCEED met de aanscherping. Het volledige oorspronkelijke menselijke
+gesprek is niet afzonderlijk teruggevonden; de publicatie is de bron voor dit
+citaat.
 
 ```md
 PROCEED, met een aanscherping op 2 en een aandachtspunt bij 3.
@@ -46,46 +80,97 @@ blijft hangen bij vier losse oordelen. Het prioriteren is de oordeelsvaardigheid
 4 (grens met module 5): akkoord.
 ```
 
-Merk op dat geen van de vier beslissingen een doorgeefluik is: de poort geeft door mét argument, stelt voorwaarden aan wat nog gebouwd moet worden, en houdt vast wat de bouwer zou kunnen laten verwateren. Zo ging de oefening die jij in module 4 maakte, zelf langs deze poort.
+Bij punt 2 wordt een keuze toegestaan onder een voorwaarde: de aangeleverde
+spanningen moeten verdedigbaar zijn. Bij punt 3 staat waarop de bouwer in de
+uitwerking moet letten. Zo blijven het besluit en de voorwaarden samen
+beschikbaar voor de volgende rol.
 
-### Onomkeerbaarheid verandert de vraag
+Dit fragment beschrijft de toenmalige ontwerpkeuzes. De uitspraak over een
+gegarandeerde leerervaring is geen gemeten onderwijseffect. Ook de eis dat
+perspectieven moeten botsen geldt niet als huidige norm: beoordelingen kunnen
+verenigbaar zijn en een aangetoonde fout blijft een fout. Voor de actuele
+routing geldt {core}`loop.md`.
 
-Bij een omkeerbare wijziging is een fout te herstellen; bij een onomkeerbare niet. `verwijderen` wist een boek en zijn wachtlijst definitief, ook als er nog reserveringen openstaan. De machine bevestigt dat de operatie doet wat er staat, en toch is dat niet de vraag die telt. De poort weegt de kosten van een verkeerde go die je niet meer terugdraait: is het aanvaardbaar dat de reservering van een lener zonder waarschuwing verdwijnt, of moet er eerst iets (een bevestiging, een archief, een soft-delete)?
+### Wat verwijderen doet en welk risico je beoordeelt
 
-Dit is precies wat geen geautomatiseerde poort kan leveren. Een drempel of scan stelt objectief vast dat een regel is uitgevoerd of dat een test slaagt. Of het gevolg van een onomkeerbare operatie in deze context aanvaardbaar is, is geen eigenschap van de code maar een oordeel over waarde en risico. Dat oordeel hoort bij de mens.
+De voorbeeldcode bewaart boeken in een lijst in het geheugen. `verwijderen`
+haalt een boek uit die lijst, ook als het uitgeleend is of een wachtlijst heeft.
+Daarna is het boek via de boekenplank niet meer opvraagbaar. De publieke API
+biedt geen methode om de verwijdering ongedaan te maken.
+
+Dat is geen bewijs dat alle gegevens uit het geheugen vernietigd zijn. Een
+andere verwijzing naar hetzelfde Boek-object kan de lener en wachtlijst nog
+bevatten. De casus levert ook geen gedeelde of permanente opslag. In de oefening
+beoordeel je daarom een geconstrueerd gebruiksscenario: dezelfde operatie
+beschikbaar maken waar reserveringen waarde hebben en nog geen herstelvoorziening
+is afgesproken.
+
+Voor dat scenario moet vóór toepassing duidelijk zijn wie verlies van
+reserveringen mag accepteren en welk herstel beschikbaar is. Een bevestiging
+kan een vergissing verminderen doordat iemand de gevolgen eerst te zien krijgt.
+Zij maakt een uitgevoerde verwijdering niet herstelbaar. Een archief of
+soft-delete kan herstel ondersteunen als de benodigde gegevens bewaard blijven
+en terugzetten is geregeld. Dit zijn voorbeelden van voorwaarden; deze module
+vraagt je geen hersteloplossing te bouwen.
 
 ### Proportionaliteit en triage
 
-Niet elke beslissing verdient dezelfde poort. Een kleine, omkeerbare wijziging tegenhouden voor een zware afweging is net zo verkeerd als een onomkeerbare zonder nadenken doorlaten. De poort weegt de inzet tegen wat er op het spel staat: hoe omkeerbaar is dit, en hoe groot is de schade als het misgaat? Triage doet die weging vooraf, met de S/M/L-heuristiek en de kosten (tijd, tokens, aandacht) als maat. Proportionaliteit is zo zelf een poort-vaardigheid: het schaarse menselijke oordeel inzetten waar het telt.
+Triage weegt vooraf welke inzet past bij de taak. Een kleine tekstcorrectie met
+heldere criteria kan LIGHT krijgen. Voor een samenhangende wijziging met open
+ontwerpkeuzes past PLANNED; een onduidelijke of te grote taak gaat met REJECT
+terug voor verheldering of splitsing. De omvang wordt aangeduid met XS, S, M, L
+of XL. XL moet eerst worden opgesplitst.
 
-### Wat dit is en wat niet
+Bij PLANNED besluit de mens bij C4 over het concrete C2, met C3 als een
+verhelderaar is geselecteerd. LIGHT slaat de planstappen en de gebruikelijke C4
+over. Bij nieuwe doel-, contract- of normkeuzes of onomkeerbare gevolgen vraagt
+ook LIGHT eerst C4. Beide routes houden onafhankelijke opleveringsbeoordeling en
+een menselijke mergebeslissing. Zie {core}`loop.md` voor deze grenzen.
 
-Deze module gaat over de poort-beslissing: go of no-go op het onomkeerbare, en waarom die bij de mens ligt. Niet over de kwaliteit van de code (dat was module 4, het oordeel), en niet over de architectuur of het ontwerp (dat is module 6). De vraag is smaller en zwaarder: mag dit zo door?
+De weging omvat omvang, risico, beschikbare herstelmogelijkheden en de kosten
+van uitvoering en beoordeling. Een korte codewijziging kan grote gevolgen
+hebben. Het aantal gewijzigde regels alleen bepaalt daarom de route niet.
+
+### De beslissing in deze module
+
+Je oefent een besluit over doel en risico op een afgebakend voorstel. De
+codelezing levert daarvoor feiten. Je geeft voorwaarden aan de verantwoordelijke
+bouwer of planner als het voorstel nog niet uitgevoerd mag worden. Het eigen
+ontwerp en de architectuurverantwoording volgen in module 6.
 
 ## Werkvormen en toetsing
 
-- Werkvormen: korte instructie, gezamenlijke go/no-go op de verwijder-operatie (worked example), daarna zelf een poort-beslissing vellen in oefening 5.
-- Toetsing: formatief, via de poort-beslissing en de verantwoordingsvragen van oefening 5.
+- Werkvormen: een kort uitgewerkt poortvoorbeeld, gevolgd door een eigen besluit op het verwijdervoorstel.
+- Toetsing: formatief, via het C4-besluit en de verantwoordingsvragen in de oefening.
 
 ## Bronnen
 
-- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "Kwaliteit is geen rol" en de menselijke poort.
-- De repository zelf: {core}`roles/human-gate.md` (de menselijke poort) en {core}`contracts/gate-decision.md` (de go/no-go, C4).
+- [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), over de menselijke poort.
+- {core}`roles/human-gate.md`, {core}`contracts/gate-decision.md` en {core}`loop.md`.
+- De historische lespublicatie en bevestigende issue-reactie bij het geciteerde poortbesluit hierboven.
 
 ## Afronding
 
 ### Wat heb je geleerd
 
-De menselijke poort is de beslissing die aan geen machine en geen beoordelaar wordt overgelaten: mag dit zo door? Bij een onomkeerbare operatie weegt de poort de kosten van een verkeerde go die niet terug te draaien is. Of dat gevolg aanvaardbaar is, is geen code-eigenschap maar een oordeel over waarde en risico, en dat hoort bij de mens. Proportionaliteit bepaalt hoe zwaar de poort mag wegen: stem de inzet af op wat er op het spel staat.
+Een poort-besluit koppelt een concrete voorstelversie aan een menselijke keuze
+over doel, scope en aanvaardbare risico’s. Je hebt het ontbreken van herstel in
+de voorbeeld-API onderscheiden van vernietiging van gegevens. Die feiten helpen
+je voorwaarden te stellen voor een voorgenomen toepassing. De gekozen route
+bepaalt welke planstappen nodig zijn; de mergebeslissing volgt na de oplevering
+en beoordeling.
 
 ### Zelfcheck
 
-Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+Beantwoord uit je hoofd; de sleutel wijst waar je het kunt nakijken.
 
-1. Een machine bevestigt dat `verwijderen` werkt. Waarom is dat niet de vraag die de poort beantwoordt, en wie moet die vraag dan wel beantwoorden? (zie "De poort is menselijk" en "Onomkeerbaarheid verandert de vraag")
-2. Waarom verandert onomkeerbaarheid de poort-beslissing, vergeleken met een wijziging die je kunt terugdraaien? (zie "Onomkeerbaarheid verandert de vraag")
-3. Wanneer zou je een change juist niet door een zware poort halen, en waarmee weeg je dat af? (zie "Proportionaliteit en triage")
+1. Wat kan de verwijdertest aantonen, en welke informatie heeft de mens daarnaast nodig voor C4? (zie “Een planbesluit en een mergebesluit”)
+2. Waarom bewijst het ontbreken van een herstelmethode niet dat alle boekgegevens zijn vernietigd? (zie “Wat verwijderen doet en welk risico je beoordeelt”)
+3. Welke C4-grenzen gelden voor LIGHT, en wanneer vindt de menselijke mergebeslissing plaats? (zie “Proportionaliteit en triage”)
 
 ### Volgende stap
 
-Tot nu beoordeelde en bewaakte je wat de AI bouwde. Module 6 (Ontwerpen en verantwoorden) draait het om: je ontwerpt zelf de volgende uitbreiding, regisseert en bewaakt de AI, en verantwoordt je keuzes tegen het kader. Daar landt de door AI gebouwde Textual-code, waar architectuur en onderhoudbaarheid de les zijn. Je gaat van poort naar ontwerper.
+In [module 6](../06-ontwerpen/index.md) ontwerp je zelf een uitbreiding. Je
+bepaalt de functionaliteit en randvoorwaarden, laat afgesproken werk uitvoeren
+en verantwoordt de architectuur. Het poort-besluit uit deze module helpt je daar
+open doel- en risicokeuzes vast te leggen voordat de bouw begint.

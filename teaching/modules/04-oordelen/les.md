@@ -1,10 +1,10 @@
-# Kwaliteit als afweging tussen botsende perspectieven
+# Kwaliteit beoordelen vanuit verschillende perspectieven
 
 ## Plaats in de leerlijn
 
-Vierde module. In module 3 zag je dat een groene poort niets bewijst en dat er een mens moet oordelen. Deze module gaat over dat oordeel: je neemt zelf de rol van beoordelaar in. Vereiste voorkennis: module 3 afgerond, en het kwaliteitsraamwerk, soort 3.
+In [module 3](../03-machine/les.md) onderzocht je welke gevallen automatische controles toetsen en welke conclusies hun uitkomsten toelaten. Hier beoordeel je ook de keuzes die deze controles openlaten. Je gebruikt de oordeelsmatige kwaliteitsmechanismen uit het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md).
 
-De les hoort bij [oefening 4](oefening.md), waarin je een door AI gebouwde reserveringen-uitbreiding beoordeelt vanuit de vier perspectieven. Deze bezetting is een oefenkeuze. Bij projectwerk bepaalt de triage welke perspectieven nodig zijn; alleen bij tegenspraak volgt een afzonderlijke hoofdbeoordelaar. De route staat in {core}`loop.md`.
+De les hoort bij [oefening 4](oefening.md). Daar gebruik je vier perspectieven om het afwegen te oefenen. Bij projectwerk bepaalt de triage welke beoordelingen nodig zijn; vier beoordelaars zijn geen vaste bezetting. De route staat in {core}`loop.md`.
 
 ## Leeruitkomsten
 
@@ -12,54 +12,64 @@ De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
 
 ## Opbouw
 
-### Kwaliteit spreekt zichzelf tegen
+### Dezelfde keuze, verschillende belangen
 
-In het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md) is de derde soort kwaliteitsmechanisme de oordeelsmatige: vragen waarop geen drempel en geen scan antwoord geeft. Vier beoordelaars vertegenwoordigen kwaliteitsdimensies die in de praktijk botsen: de strikte wil correctheid en volledige dekking, de pragmatische wil opleveren, de adversariële zoekt het niet-afgevangen geval, en de onderhoudbaarheids-beoordelaar kijkt voorbij vandaag. Correctheid tegenover snelheid, volledigheid tegenover opleveren, veiligheid tegenover eenvoud. Dit zijn reële spanningen, geen schijntegenstellingen.
+De reserveringscode bevat de methode `terug`. Die maakt een boek beschikbaar en leent het vervolgens meteen uit aan de eerste naam op de wachtlijst. Een test controleert dat gedrag. Daarmee is nog niet bepaald of een bibliotheek automatisch wil uitlenen of eerst wil wachten totdat iemand het boek ophaalt.
 
-### De vier beoordelaars op een concrete uitbreiding
+Een pragmatische beoordelaar kan automatische afhandeling voldoende vinden voor een eerste versie. Een onderhoudbaarheidsbeoordelaar vraagt welke aanpassing nodig is als ophalen later een afzonderlijke stap wordt. Zij beoordelen dezelfde keuze vanuit verschillende belangen. Hun conclusies kunnen verschillen, maar kunnen ook verenigbaar zijn: nu opleveren en de latere wijziging als aandachtspunt vastleggen.
 
-Het worked example is een door AI gebouwde reserveringen-uitbreiding van de boekenplank (`teaching/cases/module4-reserveringen/`). De code werkt en de tests slagen. Het gaat hier niet om verstopte fouten, maar om verdedigbare ontwerpkeuzes waarover de vier perspectieven het oneens zijn:
+Afspraken, automatische controles en oordeel vullen elkaar hier aan. Een afspraak bepaalt het gewenste reserveringsgedrag; een test kan dat gedrag controleren. Een beoordelaar onderzoekt of de afspraak toereikend is voor het gebruik en of de code eraan voldoet.
 
-- **Strikt:** de opdracht is niet gepind. Moet reserveren van een beschikbaar boek het meteen uitlenen? Wat gebeurt er bij een dubbele reservering? Die ambiguïteit is onaf.
-- **Pragmatisch:** een simpele wachtlijst zonder vervaltermijn is goed genoeg voor nu; niet elke uitbreiding hoeft af te zijn.
-- **Adversarieel:** reserveer een boek en verwijder het; een wachtlijst die nooit vervalt en zo een boek blijft blokkeren; reserveren van een beschikbaar boek dat het stil uitleent in plaats van reserveert.
-- **Onderhoudbaarheid:** `terug` doet nu twee dingen, teruggeven en opnieuw uitlenen; de wachtlijst is verstrengeld met het uitlenen; namen dienen als identiteit.
+### Vier perspectieven op de reserveringen
 
-Geen van deze vier noemt de code fout. Ze wegen dezelfde werkende uitbreiding anders. Dat is de kern van de oordeelslaag: redelijke mensen zijn het oneens over code die werkt en verdedigbare keuzes maakt.
+De casus staat in `teaching/cases/module4-reserveringen/`. Lees de [code](https://github.com/misja/agent-role-loop/blob/main/teaching/cases/module4-reserveringen/boekenplank.py) en [tests](https://github.com/misja/agent-role-loop/blob/main/teaching/cases/module4-reserveringen/test_boekenplank.py) voor de feitelijke werking. De beschrijvingen bij de casus vervangen die controle niet. Er is hier geen CLI of verwijdermethode.
 
-### De hoofdbeoordelaar prioriteert
+De vier perspectieven richten de aandacht op verschillende vragen:
 
-De vier oordelen spreken elkaar tegen, en dat lost de hoofdbeoordelaar ({core}`roles/reviewer-boss.md`) niet op door één perspectief gelijk te geven. Hij prioriteert volgens een expliciete regel: correctheid en veiligheid eerst, dan onderhoudbaarheid, dan afwerking. Er bestaat geen uitkomst waarin alle vier tegelijk hun zin krijgen. Het prioriteren zelf is de oordeelsvaardigheid, niet het verzamelen van vier meningen.
+- **Strikt:** welke eis bepaalt wat reserveren betekent? `reserveren` leent een beschikbaar boek meteen uit. De test legt dit gedrag vast, maar is geen volledige opdrachtbeschrijving. Is direct uitlenen afgesproken, of ontbreekt die keuze nog?
+- **Pragmatisch:** welk gebruik moet de eerste versie ondersteunen? Voor een beperkte demonstratie kan de wachtlijst voldoende zijn. Voor dat oordeel moet duidelijk zijn welke beperkingen worden aanvaard.
+- **Adversarieel:** wat gebeurt er buiten de geteste voorbeelden? De wachtlijst heeft geen vervaltermijn en `terug` registreert direct een nieuwe lener. Als het gebruik eerst ophalen vereist, ontbreekt daarvoor een afzonderlijke stap. Onderzoek het gevolg; de code toont niet dat een reservering het boek blijvend blokkeert.
+- **Onderhoudbaarheid:** waar moet een toekomstige wijziging worden verwerkt? `terug` handelt zowel terugbrengen als opnieuw uitlenen af. Ook bewaart de wachtlijst alleen namen. In een scenario met twee verschillende personen die allebei Bob heten, kan deze gegevensvorm hen niet onderscheiden.
 
-### Wat dit is en wat niet
+Leg bij iedere bevinding vast waarop zij berust. Gedrag dat een afgesproken eis schendt is een fout. Ontbreekt de eis, beschrijf dan de open keuze en de gebruikssituatie die nodig is om haar te besluiten. Een groene testsuite sluit fouten in andere gevallen niet uit.
 
-Deze module gaat over het oordeel: de perspectieven wegen en prioriteren. Nog niet over de beslissing of iets onomkeerbaars door mag, en niet over een rijkere interface; dat is de menselijke poort van module 5. Hier oefen je het wegen, daar het beslissen.
+### Beoordelingen samenbrengen en prioriteren
+
+Een beoordeling volgens {core}`contracts/reviewer-verdict.md` (C6) vermeldt de toegewezen criteria, het onderzochte artefact, bewijs en een besluit. Een bevinding moet laten zien wat er gebeurt en waarom dat voor een criterium relevant is. Een voorkeur zonder gebruiksdoel is onvoldoende grond voor een blokkade.
+
+Bij meerdere verenigbare C6-beoordelingen maakt de orkestrator een herleidbare synthese in C7. Die voegt geen nieuwe bevindingen toe en stemt blokkerende bevindingen niet weg. Inhoudelijke tegenspraak gaat naar de hoofdbeoordelaar ({core}`roles/reviewer-boss.md`), die argumenten en bewijs onderzoekt. Beide vormen staan in {core}`contracts/final-verdict.md`.
+
+Bij arbitrage krijgen correctheid en veiligheid voorrang, daarna onderhoudbaarheid en afwerking. Dat betekent bijvoorbeeld dat een bewezen schending van een uitleeneis eerst moet worden opgelost. Een mogelijke toekomstige opsplitsing van `terug` is niet automatisch een blocker. De hoofdbeoordelaar legt per bevinding uit welke prioriteit volgt uit het criterium, bewijs en gebruik. Blijft een doel- of risicokeuze onbeslist, dan legt die haar aan de mens voor en blijft het oordeel geblokkeerd.
+
+### Grenzen van de beoordeling
+
+In deze module oefen je het onderbouwen en samenbrengen van beoordelingen. Je kunt daarmee aangeven dat een reserveringsregel nog moet worden gekozen. De keuze welke gevolgen aanvaardbaar zijn, vraagt een besluit van de verantwoordelijke mens. Module 5 werkt dat beslismoment uit aan een verwijderoperatie.
 
 ## Werkvormen en toetsing
 
-- Werkvormen: korte instructie, gezamenlijke ontleding van twee perspectieven op de uitbreiding (worked example), daarna zelf de overige perspectieven en de synthese in oefening 4.
-- Toetsing: formatief, via de oordelen en de verantwoordingsvragen van oefening 4.
+- Werkvormen: gezamenlijke ontleding van twee gegeven beoordelingen, daarna eigen beoordelingen vanuit de overige perspectieven en een eindoordeel in oefening 4.
+- Toetsing: formatief, via de beoordelingen en de verantwoordingsvragen van oefening 4.
 
 ## Bronnen
 
-- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), sectie "Kwaliteit spreekt zichzelf tegen" en de derde soort.
-- De repository zelf: de vier beoordelaarsrollen onder `core/roles/` en {core}`roles/reviewer-boss.md`, en de contracten {core}`contracts/reviewer-verdict.md` (C6) en {core}`contracts/final-verdict.md` (C7).
-- Fagan, Design and code inspections {cite}`fagan1976design`. De klassieke onderbouwing van formele, onafhankelijke review: gestructureerde inspectie door meerdere ogen vangt fouten die één blik mist, een achtergrond bij het oefenen met onafhankelijke beoordelingen. Het aantal van vier in deze oefening is een didactische keuze; het artikel bepaalt geen optimale bezetting voor LLM-agents.
+- Het raamwerk [Kwaliteit als gedeelde verantwoordelijkheid](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md), de oordeelsmatige kwaliteitsmechanismen.
+- De beoordelaarsrollen onder `core/roles/`, {core}`roles/reviewer-boss.md` en de contracten {core}`contracts/reviewer-verdict.md` (C6) en {core}`contracts/final-verdict.md` (C7).
+- Fagan, Design and code inspections {cite}`fagan1976design`. Formele inspectie is een achtergrond bij het oefenen met afzonderlijke beoordelingen. Het artikel bepaalt geen optimale bezetting voor LLM-agents.
 
 ## Afronding
 
 ### Wat heb je geleerd
 
-Kwaliteit is in de oordeelslaag geen afleesbare eigenschap maar de uitkomst van een afweging. Vier beoordelaars vertegenwoordigen botsende dimensies, en over werkende code die verdedigbare keuzes maakt zijn redelijke mensen het oneens. De hoofdbeoordelaar lost die spanning niet op maar prioriteert: correctheid en veiligheid eerst, dan onderhoudbaarheid, dan afwerking. Dat prioriteren is de vaardigheid.
+Een beoordeling verbindt een waarneming aan een criterium en het beoogde gebruik. Je onderscheidt een aangetoonde fout van een ontbrekende eis of ontwerpkeuze. Verschillende perspectieven kunnen dezelfde keuze ondersteunen of verschillend wegen. Het eindoordeel maakt de bronnen en prioriteiten zichtbaar; een onbesliste doel- of risicokeuze blijft bij de mens.
 
 ### Zelfcheck
 
-Beantwoord uit je hoofd; de sleutel wijst alleen waar je het kunt nakijken.
+Beantwoord uit je hoofd; de sleutel wijst waar je het kunt nakijken.
 
-1. Waarom is kwaliteit in deze laag geen eigenschap die je afleest? Noem twee dimensies die botsen. (zie "Kwaliteit spreekt zichzelf tegen")
-2. Neem één ontwerpkeuze uit de reserveringen-uitbreiding en laat zien hoe twee perspectieven haar verschillend wegen, zonder dat de code fout is. (zie "De vier beoordelaars op een concrete uitbreiding")
-3. Hoe komt de hoofdbeoordelaar tot één oordeel als de vier elkaar tegenspreken, en waarom is dat prioriteren de kern? (zie "De hoofdbeoordelaar prioriteert")
+1. Welke vraag over `terug` blijft open nadat de bijbehorende test slaagt? (zie "Dezelfde keuze, verschillende belangen")
+2. Noem een bevinding uit de reserveringscode, haar bron en de gebruiksvoorwaarde waaronder zij een fout zou aantonen. (zie "Vier perspectieven op de reserveringen")
+3. Wanneer volstaat synthese en wanneer is arbitrage nodig? Verantwoord de prioriteit van één bevinding. (zie "Beoordelingen samenbrengen en prioriteren")
 
 ### Volgende stap
 
-Je hebt geoordeeld: de perspectieven gewogen en geprioriteerd. Module 5 (De menselijke poort) gaat over de beslissing die daarna komt en die alleen een mens mag nemen: mag dit zo door, vooral als de gevolgen onomkeerbaar zijn? Daar groeit de casus mee naar een door AI gebouwde interface met onomkeerbare en gedeelde operaties. Je gaat van het wegen van kwaliteit naar het bewaken van de poort.
+In [module 5](../05-poort/index.md) onderzoek je de gevolgen van verwijderen en neem je een menselijk besluit over een voorstel. Je gebruikt je beoordeling om te bepalen welke risico’s aanvaardbaar zijn en welke voorwaarden eerst moeten worden vervuld.
