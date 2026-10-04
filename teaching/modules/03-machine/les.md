@@ -1,4 +1,4 @@
-# Groen is noodzakelijk maar niet voldoende
+# Wat een groene controle aantoont
 
 ## Plaats in de leerlijn
 
@@ -11,22 +11,21 @@ module 2 en de geautomatiseerde kwaliteitslaag uit het
 De les hoort bij [oefening 3](oefening.md), waarin je onderzoekt hoe volledige
 regeldekking en een defect samen kunnen voorkomen.
 
-## Leeruitkomsten
-
-De leeruitkomsten staan als “Wat ga je leren” op de [module-index](index.md).
-
 ## Opbouw
 
 ### De machine als poortwachter
 
 Stel dat een project eist dat alle tests slagen en ten minste 95% van de
-coderegels wordt uitgevoerd. Een testcommando kan deze afspraken controleren
+coderegels wordt uitgevoerd. De 95% is hier een voorbeeldkeuze, geen algemene norm.
+Een testcommando kan deze afspraken controleren
 zonder dat een beoordelaar de berekening telkens herhaalt. Onder dezelfde
 omstandigheden levert de controle dezelfde uitslag op. De gebruikte omgeving,
 configuratie en invoer horen daarom bij het bewijs.
 
-De triage en het plan bepalen welke verificatie voor het werk nodig is. Niet
-ieder werkitem vraagt alle beschikbare gereedschappen. De bouwer voert de
+De triage en het plan bepalen welke verificatie voor het werk nodig is.
+Een groene uitslag is noodzakelijk voor de controles die verplicht zijn
+ingesteld. Niet ieder werkitem vraagt alle beschikbare gereedschappen. De bouwer voert
+de
 gekozen controles uit voordat hij de oplevering via
 {core}`contracts/review-handoff.md` aan de beoordelaars overdraagt. Een mislukte
 vereiste controle moet worden hersteld of als blokkade worden vastgelegd.
@@ -50,41 +49,31 @@ Het concrete voorbeeld gebruikt Python, pytest en coverage. Andere stacks
 kunnen andere gereedschappen gebruiken. Onderzoek steeds welke uitspraak de
 configuratie en uitvoer ondersteunen.
 
-### Groen maar fout
+### Een assertie en een dekkingsgetal lezen
 
-In de aangeleverde boekenplank slagen zes tests en wordt 100% van de gemeten
-regels uitgevoerd. Toch kan een al uitgeleend boek nogmaals worden uitgeleend.
-Requirement 6 verbiedt dit. De test met de naam
-`test_uitlenen_voorkomt_dubbele_uitlening` controleert na twee uitleningen
-alleen of het boek uitgeleend is.
+Een assertie zoals `assert boek.is_uitgeleend` controleert of een boek op dat
+moment uitgeleend is. Zij zegt nog niet aan wie het boek is uitgeleend, of een
+verboden tweede uitlening is geweigerd. Vergelijk de assertie daarom met het
+vereiste gedrag. Regeldekking beantwoordt een andere vraag: welke gemeten regels
+zijn tijdens de tests uitgevoerd? Zij beoordeelt de inhoud van de assertie niet.
 
-De tweede uitlening overschrijft de eerste lener. De assertie blijft waar, want
-het boek is nog steeds uitgeleend. De toewijzing wordt uitgevoerd en telt mee
-voor de regeldekking, terwijl de assertie het behoud van de eerste uitlening
-niet controleert. Het testresultaat bewijst dat de ingestelde assertie slaagt
-voor deze invoer. Het bewijst niet dat requirement 6 wordt nageleefd.
+Een coveragecommando kan een percentage rapporteren zonder een minimum te
+eisen. De tests moeten dan nog steeds slagen, maar een laag dekkingspercentage
+laat het commando niet om die reden falen. Met `--cov-fail-under` stel je bij
+pytest-cov wel een minimum in. Dat getal komt uit een menselijke afspraak:
+de conventionele laag kiest de eis, de geautomatiseerde laag handhaaft haar.
+Een hogere drempel voegt geen gedragscontrole aan een zwakke assertie toe.
 
-Er is ook een afzonderlijke configuratiekwestie. Een coveragecommando zonder
-`--cov-fail-under` rapporteert dekking, maar stelt geen minimale dekking als
-voorwaarde. Als je de terugbrengtest overslaat, blijven de overige tests slagen
-terwijl de dekking daalt naar ongeveer 93%. Een drempel van 95% laat dezelfde
-uitvoering vervolgens mislukken. De overgebleven tests controleren in beide
-uitvoeringen nog steeds hun asserties.
-
-| Waarneming | Wat je kunt concluderen |
-|---|---|
-| Alle zes tests slagen, 100% regeldekking. | Alle ingestelde asserties slagen; alle gemeten regels zijn uitgevoerd. De dubbele uitlening blijft ongecontroleerd. |
-| Vijf tests slagen, ongeveer 93% dekking, geen drempel. | De vijf asserties slagen. Het commando verlangt geen minimum voor de dekking. |
-| Dezelfde vijf tests slagen, drempel 95%, commando mislukt. | De tests slagen, maar de gekozen dekkingseis wordt niet gehaald. |
-
-Een coverage-drempel hoort bij de conventionele laag: iemand kiest wat het
-project verlangt. De geautomatiseerde laag handhaaft die ingestelde afspraak.
-Een hogere drempel maakt de assertie voor dubbele uitlening niet sterker.
+In de oefening voer je eerst de bestaande suite uit, leg je dekking en exitcode
+vast en vergelijk je daarna een test met requirement 6. Vervolgens meet je het
+verschil tussen een rapport en een ingestelde drempel. De
+{ref}`verklaring in de oefening <module3-verklaring>` lees je na die metingen.
 
 ### De brug naar het oordeel
 
-Om de zwakke assertie te herkennen, moet je de test vergelijken met requirement
-6. Daarvoor is kennis van de bedoeling nodig. Een beoordelaar kan ook nagaan
+Om te beoordelen of een assertie geschikt is, vergelijk je de test met de
+bijbehorende requirement. Daarvoor is kennis van de bedoeling nodig. Een beoordelaar kan ook
+nagaan
 welke invoer of situatie in het bewijs ontbreekt. Module 4 behandelt die
 beoordeling. Deze module bereidt haar voor door de betekenis en grenzen van
 geautomatiseerd bewijs te onderzoeken; je voert hier geen volledige review uit.
@@ -115,8 +104,8 @@ ingesteld. De overige testasserties blijven zonder die drempel wel van kracht.
 Beantwoord uit je hoofd; de sleutel wijst waar je het kunt nakijken.
 
 1. Wie bepaalt welke controles nodig zijn, en wat onderzoekt de beoordelaar nog aan het bewijs? (zie “De machine als poortwachter”)
-2. Wat toont regeldekking aan? Waarom mist de dubbele-uitleningstest requirement 6 ondanks 100% dekking? (zie “Groen maar fout”)
-3. Wat verandert wanneer je een coverage-drempel instelt? Wat blijven de tests zonder die drempel controleren? (zie “Groen maar fout”)
+2. Wat toont regeldekking aan? Waarom mist de dubbele-uitleningstest requirement 6 ondanks 100% dekking? (zie “Een assertie en een dekkingsgetal lezen” en de verklaring in de oefening)
+3. Wat verandert wanneer je een coverage-drempel instelt? Wat blijven de tests zonder die drempel controleren? (zie “Een assertie en een dekkingsgetal lezen” en de verklaring in de oefening)
 4. Welke vraag over de bedoeling vereist nog beoordeling? (zie “De brug naar het oordeel”)
 
 ### Volgende stap

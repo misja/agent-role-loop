@@ -9,11 +9,9 @@ voorkennis: module 1, inclusief het overdrachtslogboek. De [voorbereiding](../..
 legt uit hoe context aan een model wordt meegegeven en hoe een rol daarvan
 gebruikmaakt.
 
-De les hoort bij [oefening 2](oefening.md), waarin je je eigen overdrachten analyseert.
-
-## Leeruitkomsten
-
-De leeruitkomsten staan als “Wat ga je leren” op de [module-index](index.md).
+De [begeleide uitvoering](../01-ervaren/eerste-uitvoering.md) toont de eerdere
+chatinvoer en overdrachten. Deze les verdiept die uitvoering; in
+[oefening 2](oefening.md) analyseer je daarna je eigen overdrachten.
 
 ## Opbouw
 
@@ -31,7 +29,9 @@ Dit is een bewerkt onderwijsvoorbeeld uit
 [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md).
 De [ingevulde overdrachten](../../praktijk/overdrachten.md) bevatten het plan en
 het menselijke besluit C4-P1. Dat besluit bevestigt onder meer dat de
-toevoegvolgorde behouden moet blijven.
+toevoegvolgorde behouden moet blijven. Personen, plannen en besluiten zijn
+geconstrueerd; de code en controles zijn uitvoerbaar. Dit filtervoorbeeld werkt
+in het geheugen, zonder de CLI en opslag uit jouw module-1-opdracht.
 
 Voor de bouwer zijn verschillende bronnen nodig. De definitie van
 {core}`contracts/build-packet.md` beschrijft welke onderdelen een plan moet
@@ -62,19 +62,77 @@ De verdeling maakt zichtbaar wie waarvoor verantwoordelijk is. Zij garandeert
 geen juiste uitkomst: een ontbrekende eis in het werkitem kan ook in het plan en
 de beoordeling ontbreken.
 
-### Contracten als interface, rolprompts als implementatie
+### Contract, instructie en uitvoering
 
 Bij een software-interface spreek je af welke invoer en uitvoer een onderdeel
-heeft. De implementatie bepaalt hoe het onderdeel zijn taak uitvoert. In de
-rollenloop beschrijft het contract de vorm en vereiste inhoud van een
-overdracht. De rolprompt geeft instructies om die overdracht te produceren. De
-uitvoering hangt daarnaast af van de mens of het model, de meegegeven context
-en de gebruikte gereedschappen.
+heeft. Een contract doet dat voor een overdracht. De rolprompt instrueert de
+uitvoerder; pas de handelingen laten zien hoe die instructie is uitgevoerd.
 
-Je kunt een rolprompt wijzigen of een rol door een mens laten uitvoeren en
-dezelfde contractvorm behouden. Controleer wel of de nieuwe uitvoering nog aan
-de afspraken voldoet. De analogie maakt het onderscheid tussen afspraak en
-uitvoering zichtbaar; zij bewijst geen uitwisselbaarheid van iedere uitvoering.
+De bouwer ontvangt C1, C2-P1, C4-P1, W1, de basiscode en de leesbare normen.
+Naast {core}`roles/builder.md` kan de opdracht in dit voorbeeld luiden:
+
+```text
+Voer C2-P1 uit binnen C4-P1. Behoud de registratie bij het filteren (S4).
+Voer de geplande controles uit en bewaar de codeversie en werkelijke uitvoer
+voor C5. Deze chat kan geen bestanden wijzigen: geef het voorstel en de
+commando's; gebruik alleen mijn teruggestuurde resultaten als testbewijs.
+```
+
+Dit is een voorbeeldinstructie, geen verslag van een uitgevoerd gesprek. Bij
+losse chats neemt de student het voorstel over en voert de controles uit.
+Bij een agent met gereedschappen kan het programma die handelingen uitvoeren.
+Het ontvangen van de prompt is in beide gevallen nog geen bewijs van uitvoering.
+
+(module2-controle)=
+### Opdracht: voer één controle uit
+
+De praktijkbundel bevat voorbereide codeversies A en B. Voer vanuit de hoofdmap
+van deze repository onderstaande controle op B uit. Gebruik Python 3.10 of
+nieuwer; de standaardbibliotheek volstaat. `python3` heet op Windows vaak `python`.
+
+```sh
+python3 teaching/cases/praktijk-projectomgeving/controleer.py b volledig
+```
+
+Verwacht vier geslaagde controles en `OK`. Bewaar het commando, de uitvoer en de
+repositorycommit (`git rev-parse HEAD`) in je logboek. Zoek vervolgens
+`test_s4_filter_verandert_geen_toestand` in `controleer.py`: de controle bewaart
+boeken en uitleenstatus vóór het filteren en vergelijkt ze met de toestand erna.
+Je hebt nu zelf een controle uitgevoerd op voorbereide code. Dat toont geen
+uitgevoerde bouwersessie aan en bewijst alleen de onderzochte gevallen.
+
+### Uitleg: de overeenkomst en de grens
+
+Je kunt andere instructies gebruiken of een mens dezelfde taak laten uitvoeren
+terwijl de contractvorm gelijk blijft. Daarmee lijkt de overdracht op een
+software-interface. Een rolprompt is echter geen software-implementatie: het
+model, de context, de gereedschappen en de feitelijke handelingen bepalen mede
+de uitvoering. De contractvorm garandeert geen juiste inhoud of vaste uitkomst.
+Controleer daarom het geproduceerde artefact en het bewijs.
+
+(module2-analyse)=
+### Eén overdracht ontleed
+
+Bekijk C5-A, de overdracht van bouwer naar beoordelaar in de
+[ingevulde overdrachten](../../praktijk/overdrachten.md). De volgende analyse
+gebruikt de [C5-contractversie uit de bundel](https://github.com/misja/agent-role-loop/blob/ae561f50a45ca42967e4687434cf0d2e8d4f5827/core/contracts/review-handoff.md).
+De actuele definitie staat bij {core}`contracts/review-handoff.md`. De procesversie van
+de bundel staat in haar leeswijzer; gebruik voor een historische analyse de
+bijbehorende contractversie, niet stilzwijgend een nieuwere.
+
+| Analyseveld | Wat je bij C5-A kunt aanwijzen |
+|---|---|
+| Bron en versie | `teaching/cases/praktijk-projectomgeving/overdrachten.md`, scenario versie 1, C5-A; A is het leeslabel voor `boekenplank_a.py`, geen SHA. Noteer daarnaast de commit van jouw repositorykopie. |
+| Ontvanger en handeling | De onafhankelijke beoordelaar onderzoekt S1 tot en met S4 tegen code, eisen en controlebewijs. |
+| Vereiste informatie | C5 vraagt onder meer artefact/versie, normbasis, besluit, criteriadekking en werkelijk verificatiebewijs. |
+| Aangetroffen informatie | C5-A noemt W1/P1, C4-P1, bestand A, diff en drie geslaagde controles voor S1 tot en met S3. |
+| Ontbrekende informatie | Bewijs voor S4 ontbreekt in deze oplevering; een echte codecommit en agentrun zijn niet beschikbaar in het geconstrueerde scenario. |
+| Gevolg | De drie geslaagde controles ondersteunen geen uitspraak over behoud van de registratie. Daarvoor is de afzonderlijke S4-controle nodig. |
+
+De eerder uitgevoerde controle op B levert nieuw bewijs voor B, niet achteraf
+voor A. Dat onderscheid voorkomt dat een ontvanger ontbrekende resultaten
+uit een andere versie invult. Bij je eigen analyse gebruik je je werkelijke
+artefacten; noteer ontbrekende gegevens als ontbrekend.
 
 ### Welke informatie blijft buiten de overdracht?
 
@@ -101,7 +159,11 @@ Dat heeft ook kosten: iemand moet de velden invullen, actualiseren en lezen.
 Een ingevuld contract kan bovendien onduidelijkheden bevatten. De afgesproken
 vorm vervangt het onderzoek naar de inhoud niet.
 
-### Historische naslag: Mermaid-ondersteuning
+```{admonition} Optionele naslag: Mermaid-ondersteuning
+:class: dropdown
+
+Lees dit fragment als je de contractvorm bij een andere soort wijziging wilt
+herkennen: een controle op documentatie in plaats van boekenplankgedrag.
 
 Een eerder werkitem uit deze repository regelde de diagramondersteuning.
 Hieronder staat een ongewijzigd fragment van dat historische artefact. Het is
@@ -110,17 +172,19 @@ Bron: [werkitem #21](https://github.com/misja/agent-role-loop/issues/21),
 met het oorspronkelijke artefact bij
 [commit 0c4abd0](https://github.com/misja/agent-role-loop/commit/0c4abd0).
 
-```md
+~~~md
 ## Gewenste uitkomst
 
 Mermaid-diagrammen renderen in de site: sphinxcontrib-mermaid als dependency in
 de docs-groep van pyproject.toml, extensie geconfigureerd in docs/conf.py, en
 een rendercheck (een proefdiagram bouwt en toont correct, daarna weer verwijderd
 of als eerste echt diagram benut).
-```
+~~~
 
 Het fragment benoemt een waarneembaar resultaat en een controle. Voor uitvoering
 zijn ook de overige onderdelen van het werkitem en de geldende besluiten nodig.
+
+```
 
 ## Werkvormen en toetsing
 
@@ -149,7 +213,7 @@ beperken. De inhoud en volledigheid van de overdracht blijven controle vragen.
 Beantwoord uit je hoofd; de sleutel wijst waar je het kunt nakijken.
 
 1. Welke verantwoordelijkheid draagt de bouwer, en welke de menselijke poort? (zie “Scheiding van verantwoordelijkheden op een werkproces”)
-2. Wijs bij C2-P1 de contractdefinitie, het ingevulde artefact en de rolprompt aan. Wat is in deze analogie de interface? (zie “Een boekenplankoverdracht bekijken” en “Contracten als interface, rolprompts als implementatie”)
+2. Wijs bij C2-P1 de contractdefinitie, het ingevulde artefact en de rolprompt aan. Wat is in deze analogie de interface? (zie “Een boekenplankoverdracht bekijken” en “Contract, instructie en uitvoering” en “Uitleg: de overeenkomst en de grens”)
 3. Welke context laat je buiten de beoordeling, en welke bronnen moeten beschikbaar blijven? Welke fout kan alsnog doorwerken? (zie “Welke informatie blijft buiten de overdracht?”)
 4. Wat levert een vaste contractvorm op en welke kosten heeft zij? (zie “Een contract is een vastgelegde conventie”)
 
