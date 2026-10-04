@@ -12,10 +12,6 @@ Je gebruikt de rollen en contracten uit [module 2](../02-begrijpen/index.md) en 
 In de [oefening](oefening.md) neem je zelf de menselijke poort op je voor een
 voorstel om de bestaande verwijderlogica toe te passen.
 
-## Leeruitkomsten
-
-De leeruitkomsten staan onder “Wat ga je leren” op de [module-index](index.md).
-
 ## Opbouw
 
 ### Een planbesluit en een mergebesluit
@@ -37,7 +33,25 @@ beoordelaars de oplevering. Daarna neemt de mens het mergebesluit. Een C4 met
 PROCEED geeft toestemming voor het afgesproken werk; het is geen voorafgaande
 goedkeuring van de nog te beoordelen oplevering.
 
-### Een gepubliceerd historisch poortbesluit
+### Een voorwaarde aan de volgende rol meegeven
+
+Bij de ontwikkeling van module 4 stond in een gepubliceerd poortbesluit dat
+spanningen in de aangeleverde casus verdedigbare keuzes moesten zijn. Voor de
+bouwer betekende dit: maak zichtbaar welke afspraak of welk gebruik een keuze
+rechtvaardigt; presenteer een aangetoonde fout niet als een voorkeur tussen
+perspectieven. Het besluit reist daarom samen met het plan naar de bouwer.
+
+De volledige historische tekst en bronbeperkingen staan in de optionele naslag
+hieronder. De oude formulering over verplichte botsing is geen huidige norm:
+beoordelingen mogen verenigbaar zijn. Dit voorbeeld toont hoe een voorwaarde
+het werk van de volgende rol begrenst.
+
+```{admonition} Optionele naslag: het historische poortbesluit
+:class: dropdown
+
+Lees dit fragment om de herkomst van de voorwaarde terug te vinden.
+“Fading” betekent hier dat de ondersteuning in latere opdrachten afneemt;
+“verdictvorm” is de vorm waarin het eindoordeel wordt vastgelegd.
 
 Bij de ontwikkeling van module 4 waren vier didactische beslispunten aan de
 mens voorgelegd:
@@ -54,7 +68,7 @@ bevestigt PROCEED met de aanscherping. Het volledige oorspronkelijke menselijke
 gesprek is niet afzonderlijk teruggevonden; de publicatie is de bron voor dit
 citaat.
 
-```md
+~~~md
 PROCEED, met een aanscherping op 2 en een aandachtspunt bij 3.
 
 1 (reserveringen/wachtlijst): akkoord, de vier-weg-tabel draagt het.
@@ -78,7 +92,7 @@ expliciet vraagt (correctheid eerst, dan onderhoudbaarheid, dan afwerking), niet
 blijft hangen bij vier losse oordelen. Het prioriteren is de oordeelsvaardigheid.
 
 4 (grens met module 5): akkoord.
-```
+~~~
 
 Bij punt 2 wordt een keuze toegestaan onder een voorwaarde: de aangeleverde
 spanningen moeten verdedigbaar zijn. Bij punt 3 staat waarop de bouwer in de
@@ -90,6 +104,8 @@ gegarandeerde leerervaring is geen gemeten onderwijseffect. Ook de eis dat
 perspectieven moeten botsen geldt niet als huidige norm: beoordelingen kunnen
 verenigbaar zijn en een aangetoonde fout blijft een fout. Voor de actuele
 routing geldt {core}`loop.md`.
+
+```
 
 ### Wat verwijderen doet en welk risico je beoordeelt
 
