@@ -134,3 +134,32 @@ Grens: alleen de openbare uitgeversinhoudsopgave is gecontroleerd. Het volledige
 - Overdrachten op #22/#23/#28/#32/#33/#34 teruggelezen. Aanvullende samenhangactie
   README bij #28; manual-afhankelijkheid bij #51 en casusbronbegrenzing bij #50.
   Lokale readbacks: /tmp/arl46-issue*-readback.json en /tmp/arl46-board-readback.json.
+
+## Onafhankelijke opleveringsbeoordeling
+
+Beoordeelde productcommit: `379790406630bbc6845f559471b7a2de52b94bd0`.
+[C5-kern](https://github.com/misja/agent-role-loop/issues/46#issuecomment-5981568243).
+Beide initial reviewers kregen de geldige normen, C4, criteria en objectief bewijs,
+zonder maaktranscript of elkaars oordeel.
+
+[Didactiek](https://github.com/misja/agent-role-loop/issues/46#issuecomment-5981621615):
+SHIP voor AC1/2/3/4/5/6/9 en tekstuele overlap. De verse leesgang volgt de proef,
+eerste overdracht, module 4-oefening en Farley. Probleem, invoer, handelingen,
+reden en uitkomst zijn concreet aangewezen. Bestaande toepassingsproblemen blijven
+gericht bij #48/#50/#52; zij zijn niet als opgelost voorgesteld.
+
+[Samenhang](https://github.com/misja/agent-role-loop/issues/46#issuecomment-5981621809):
+SHIP voor AC7/8-techniek/10/11 en verwijzings-/normbronoverlap. Beschermde passages
+en 709 lokale links zelfstandig gecontroleerd; issues en overdrachten live gelezen.
+Build/bordstatus als aangeleverd bewijs met grenzen. Actuele losse eindbeelden
+bevestigen Farley en de finale schrijfwijzerpassage; oudere collages zijn niet
+als finale passagecontrole gebruikt.
+
+Geen blockers, nieuwe nits of contract drift. Alle toegewezen criteria afgedekt.
+Verenigbare oordelen worden door root in C7 samengebracht; geen arbitrage of
+herstelronde nodig. Herstelstand ontwerp 0, oplevering 0. Geen GitHub-CI-checks
+gerapporteerd; de schone docs-build is lokaal uitgevoerd.
+
+PR47 is gereed voor een menselijk mergebesluit. Deze afrondingsregistratie wijzigt
+geen beoordeelde producttekst. #46 sluit pas na merge; de vijf vervolgitems blijven
+afzonderlijke opdrachten en de schrijfverantwoordelijkheid geldt doorlopend.
