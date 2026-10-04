@@ -2,8 +2,8 @@
 
 ## Plaats in de leerlijn
 
-Je kunt zelfstandig een programmeeropdracht uitvoeren en hebt ervaring met een
-AI-assistent via een chatinterface. Lees eerst de [voorbereiding](../../van-chat-naar-agent.md)
+In deel A heb je een programmeeropdracht met een AI-assistent in één chat
+uitgevoerd. Lees eerst de [voorbereiding](../../van-chat-naar-agent.md)
 voor het onderscheid tussen een taalmodel, context, een agent en een sessie.
 Voor deze oefening gebruik je losse chats; een agentomgeving met toegang tot je
 bestanden is niet nodig.
@@ -27,9 +27,10 @@ Vergelijk je logboek met dat van een medestudent. Kijk naar drie soorten fouten:
 - **Zelfverzekerde brij:** een stellig antwoord bevat onjuiste informatie,
   bijvoorbeeld over de huidige code of uitgevoerde controles.
 
-Een mogelijk voorbeeld: bij requirement 12 verandert de assistent het
-opslagformaat. Daarna worden verwijderde boeknummers opnieuw gebruikt, terwijl
-requirement 13 dat verbiedt. De eindcontrole toont dan welke afspraak ontbreekt.
+Een mogelijk voorbeeld: na portie 3 controleer je of verwijderde boeknummers
+opnieuw worden gebruikt. Requirement 13 verbiedt dat. De assistent heeft bij
+requirement 12 het opslagformaat gewijzigd; je onderzoekt of het bijhouden van
+eerder gebruikte nummers daarbij is behouden.
 Dit is een illustratie, geen voorspelling van jouw oefenresultaat.
 
 Wanneer opgebouwde context tot kwaliteitsverlies leidt, spreken we hier van
@@ -67,6 +68,9 @@ pas na zijn eigen oordeel de andere beoordelingen. Jij beslist bij de
 menselijke poort of het concrete plan uitgevoerd mag worden.
 
 ## Beginnen met deel B
+
+Lees eerst de [begeleide uitvoering van portie 1](eerste-uitvoering.md). Je ziet
+daar hoe je een eerste chat voorbereidt en code en controle-uitkomsten overdraagt.
 
 Bewaar de uitkomsten van deel A en begin met een nieuwe codebasis. Gebruik een
 werkitem voor iedere portie requirements. Het tweede en derde werkitem wijzigen

@@ -40,47 +40,68 @@ Werk de drie porties af in **één doorlopend gesprek** met je assistent. Plak c
 
 Houd naast je werk het logboek bij. Gebruik per waarneming de velden moment/portie, requirement, gespreksfragment, verwacht gedrag, waargenomen gedrag en uitgevoerde controle. Noteer elke keer dat je iets van dit lijstje ziet:
 
-- **Vergeten instructie** - de assistent breekt iets dat eerder al afgesproken of werkend was (requirement 9 en 12 zijn er gevoelig voor, maar het kan overal opduiken).
+- **Vergeten instructie** - de assistent breekt iets dat eerder al afgesproken of werkend was.
 - **Scope-verschuiving** - er verschijnt functionaliteit waar je niet om vroeg, of een requirement wordt "verbeterd" tot iets anders dan er staat.
 - **Zelfverzekerde brij** - de assistent beweert stellig iets dat niet klopt: verwijst naar code die niet (meer) bestaat, vat de stand van zaken verkeerd samen, of rapporteert iets als af dat niet af is.
 - **Zelf de draad kwijt** - noteer wanneer je niet meer weet wat de actuele stand is zonder terug te scrollen.
 
 Rond af met een eindcontrole: loop alle vijftien requirements langs en noteer per stuk werkt / werkt niet / weet ik niet, met de uitgevoerde controle erbij. Noteer ook wanneer je geen van de genoemde symptomen hebt waargenomen.
 
+(module1-deel-b)=
+
 ## Deel B - Dezelfde opdracht, nu met de loop
 
-Bewaar je code en logboek uit deel A apart en begin opnieuw, nu met een nieuwe codebasis volgens de [manual adapter](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/README.md). Jij bent de orkestrator. Concreet:
+Lees na de les de [begeleide uitvoering van portie 1](eerste-uitvoering.md).
+Bewaar de code en het logboek uit deel A apart. Begin met een nieuwe codebasis;
+jij organiseert de gesprekken en overdrachten als orkestrator.
 
-1. Schrijf een werkitem (C0) voor portie 1 met de vijf requirements als
-   acceptatiecriteria. Gebruik {core}`contracts/work-item.md`.
-2. Kopieer het [logboeksjabloon](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/handoff-log-template.md)
-   naar een overdrachtslogboek voor dit werkitem.
-3. Leg in C1 de oefenkeuze vast: `PLANNED`, met planner, verhelderaar en vier
-   beoordelaarsperspectieven. Wijs ieder acceptatiecriterium toe aan een passende
-   beoordelaar. Dit aantal dient de oefening en is geen algemene verplichting.
-4. Laat de planner C2 maken en de verhelderaar het plan beoordelen met C3. Geef
-   de voorgeschreven invoer en normen uit {core}`loop.md` mee. Start deze rollen
-   in afzonderlijke gesprekken. Noteer de artefactversies in het logboek.
-5. Neem als mens een C4-besluit over het concrete plan. Bij `PROCEED` geef je
-   het plan en besluit aan de bouwer. Bij `REVISE` of `STOP` volg je de
-   beschreven vervolgactie voordat de bouw verdergaat.
-6. Geef de geselecteerde beoordelaars C5-kern, de codeversie, eisen, normen en
-   relevant bewijs. Zij zien het maakgesprek en elkaars oordelen niet. Wacht op
-   alle C6-oordelen. Voeg verenigbare oordelen samen in C7; laat de
-   hoofdbeoordelaar inhoudelijke tegenspraak behandelen.
-7. Volg bij een blokkade de begrensde herstelprocedure uit de core. Leg de
-   verbruikte herstelronde vast vóór herstel. Een overgebleven blokkade vraagt
-   een menselijk vervolg; zij wordt niet door de rondelimiet opgeheven. Beslis
-   zelf of je de beoordeelde code als basis voor de volgende portie accepteert.
-8. Herhaal stappen 1 tot en met 7 voor portie 2 en 3, elk met een eigen C0 en logboek.
-   Dit levert in totaal drie werkitems op. Requirements 9, 12 en 15 horen bij
-   hun portie en wijzigen de eerder gebouwde code; maak er geen extra werkitems
-   van. Neem de eerdere eisen die behouden moeten blijven in de controle op.
+### Kies de uitvoering
+
+Bij een beperkt abonnement kun je met de docent afspreken de vier perspectieven alleen bij portie 2 te gebruiken. Leg voor de andere porties in C1 vast welke beoordelaar alle criteria afdekt. Nieuwe functionaliteit en een datamigratie vragen nog steeds een plan en een menselijke beslissing; kosten alleen maken deze opdrachten niet geschikt voor `LIGHT`. Pas de omvang van de oefening aan als zij niet binnen het beschikbare budget past.
+
+### Voer iedere portie uit
+
+Gebruik de [manual adapter](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/README.md)
+en het [overdrachtslogboek](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/handoff-log-template.md).
+De begeleide uitvoering toont per stap ingevulde voorbeelden; voor je eigen
+werk gebruik je de contracten en feitelijke uitkomsten.
+
+1. **Leg de opdracht vast.** Schrijf C0 voor portie 1 met de vijf requirements als
+   acceptatiecriteria. Noteer in C1 de normversies, `PLANNED`, planner,
+   verhelderaar en geselecteerde beoordelaars. Wijs ieder criterium toe aan een
+   passende beoordelaar. Vier perspectieven zijn hier een oefenkeuze.
+2. **Laat een plan maken en beoordelen.** Open voor planner en verhelderaar
+   afzonderlijke gesprekken met hun rolprompt en de invoer uit {core}`loop.md`.
+   Bewaar C2 en C3 met hun versies. Volg bij een noodzakelijke planwijziging de
+   begrensde herstelprocedure; leg de teller vast vóór herstel.
+3. **Beslis over het plan.** Lees als mens het concrete plan en de planreview.
+   Leg C4 vast met je reden en de planversie. Geef bij `PROCEED` de bouwer C1,
+   C2, C4 en de leesbare normen. Bij `REVISE` of `STOP` volg je eerst de
+   vastgelegde vervolgactie.
+4. **Pas de code toe en controleer haar.** Open het bouwergesprek met zijn
+   rolprompt. Bij een losse chat neem jij het codevoorstel over in de bestanden
+   en voer jij de controles uit. Stuur de waargenomen uitvoer terug. Bewaar de
+   codeversie en laat de bouwer C5 maken met criteria, bewijs en beperkingen.
+5. **Laat onafhankelijk beoordelen.** Open één nieuw gesprek per geselecteerde
+   beoordelaar. Geef rolprompt, C5-kern, codeversie, normen, besluiten en
+   toegewezen criteria mee. Het maakgesprek en andere initial oordelen gaan
+   niet mee. Bewaar alle C6's voordat je ze vergelijkt.
+6. **Breng de oordelen samen en beslis.** Voeg verenigbare oordelen herleidbaar
+   samen in C7. Geef alleen inhoudelijke tegenspraak aan de hoofdbeoordelaar.
+   Bij `BLOCK` volg je de herstelregels uit {core}`loop.md` en registreer je de
+   teller vóór herstel. Een resterende blokkade vraagt een menselijk vervolg;
+   de rondelimiet heft haar niet op. Beslis na beoordeling zelf of je de code
+   als basis voor de volgende portie accepteert en bewaar dat besluit.
+7. **Ga door met de volgende portie.** Maak voor portie 2 en 3 elk een eigen
+   C0 en logboek. Geef de geaccepteerde codeversie en de behouden eerdere eisen
+   mee. Requirements 9, 12 en 15 wijzigen code binnen hun portie; maak daarvoor
+   geen extra werkitems. Controleer ook of eerdere eisen nog werken.
+
+Zo heb je na afloop precies drie werkitems. De rolprompts en contracten staan
+in de [referentiesectie](../../referentie/index.md); de route blijft die van de core.
 
 Je overdrachtslogboek bevat na elke portie de gebruikte artefacten, besluiten,
 beoordeelde codeversie, controles en eventuele herstelstand.
-
-Bij een beperkt abonnement kun je met de docent afspreken de vier perspectieven alleen bij portie 2 te gebruiken. Leg voor de andere porties in C1 vast welke beoordelaar alle criteria afdekt. Nieuwe functionaliteit en een datamigratie vragen nog steeds een plan en een menselijke beslissing; kosten alleen maken deze opdrachten niet geschikt voor `LIGHT`. Pas de omvang van de oefening aan als zij niet binnen het beschikbare budget past.
 
 Rond af met dezelfde eindcontrole als in deel A: alle vijftien requirements, werkt / werkt niet / weet ik niet.
 
