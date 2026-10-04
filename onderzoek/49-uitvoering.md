@@ -98,3 +98,23 @@ geen screenshots, conform de geldende conventie.
 Volgt als C6 op een exacte productcommit. AC5 vraagt een eigen overdrachtsanalyse
 én werkelijk uitgevoerde controle van de reviewer, met invoer, actie, verwachting,
 waarneming en bewijsgrens. Dit is agentlezing, geen studentvalidatie.
+
+## Finale C6
+
+De verse onafhankelijke reviewer `/root/review49` geeft **SHIP** op
+`cda455e238ca553d3668586e63b80ca44623f078`. AC1–7 zijn nieuw onderzocht,
+zonder blockers of nits. De reviewer analyseerde zelfstandig C5-B tegen de
+historische C5-contracttekst en voerde `controleer.py b volledig` werkelijk uit:
+S1 tot en met S4 pass, OK, exit 0 op Linux/Python 3.14.8.
+
+Invoer, actie, verwachting, waarneming en bewijsgrens zijn in de volledige C6
+op #49 geregistreerd. De reviewer onderscheidt ontbrekende echte agentrun,
+code-SHA en menselijke goedkeuring van de uitvoerbare voorbereide case.
+De eigen linkcontrole bevestigt 463 lokale links/fragmenten zonder fouten;
+diffcontrole schoon. Buildbewijs is door de reviewer gelezen, geen eigen
+buildreproductie. Geen studentvalidatie of bewijs voor alle alternatieve stacks.
+
+Herstelstand blijft ontwerp 0, oplevering 0; geen herstelronde nodig.
+Met één reviewer is C6 finaal, zonder C7. PR #54 is gereed voor het menselijke
+mergebesluit. GitHub meldt geen CI-checks; de docs-build is lokaal uitgevoerd.
+Deze afrondingsregistratie wijzigt geen beoordeelde onderwijstekst.
