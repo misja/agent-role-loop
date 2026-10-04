@@ -17,11 +17,10 @@ Deze module bestaat uit de les en de bijbehorende oefening (deel A vooraf, deel 
 
 les
 oefening
+eerste-uitvoering
 ```
 
-## Praktijkvoorbeeld
+## Voor deel B
 
-In [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
-volg je een kleine boekenplankwijziging via een issue, besluit, beoordeling en
-herstel. Dit is een vervolg op module 2, waarin je de inhoud van overdrachten onderzoekt.
-Je hoeft het voorbeeld voor deze module nog niet te lezen.
+Lees na deel A en de les de [eerste begeleide uitvoering](eerste-uitvoering.md).
+Daar zie je wat iedere rol ontvangt en wat je zelf toepast en controleert.
