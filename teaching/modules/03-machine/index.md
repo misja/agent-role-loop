@@ -1,6 +1,6 @@
 # 3. De machine vertrouwen en wantrouwen
 
-**Leerdoel:** Je zet coverage, CI, linters en scans in als toegangsvoorwaarde tot review en doorziet waarom groen noodzakelijk maar niet voldoende is.
+**Leerdoel:** Je verantwoordt hoe gekozen geautomatiseerde controles als toegangsvoorwaarde tot review werken. Groen is noodzakelijk voor de ingestelde verplichte controles; de uitslag bewijst geen algehele correctheid.
 
 **Kwaliteitslaag:** Geautomatiseerd en deterministisch.
 

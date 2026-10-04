@@ -9,7 +9,7 @@
 Na deze module kun je:
 
 1. **De rollenloop verklaren vanuit scheiding van verantwoordelijkheden.** Je benoemt de verantwoordelijkheid van elke rol en verantwoordt hoe deze verdeling de kwaliteit kan ondersteunen.
-2. **In een concrete overdracht de interface, de implementatie en het verborgene aanwijzen.** Je onderscheidt de contractdefinitie, de rolprompt en de context die buiten de overdracht blijft. Je verantwoordt hoe die keuze context rot kan beperken en waar de grens daarvan ligt.
+2. **In een concrete overdracht de afspraken, uitvoering en weggelaten context aanwijzen.** Je onderscheidt de contractdefinitie, de rolprompt en de werkelijk uitgevoerde handeling. Je benoemt welke context buiten de overdracht blijft en legt de overeenkomst en grens van de modulariteitsanalogie uit. Je verantwoordt hoe die keuze context rot kan beperken en waar de grens daarvan ligt.
 3. **Verantwoorden dat een contract een vastgelegde conventie is.** Je plaatst contracten in de conventionele kwaliteitslaag en weegt de opbrengst en kosten van een vaste overdrachtsvorm af.
 
 Deze module bestaat uit de les en de bijbehorende oefening.
