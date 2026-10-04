@@ -93,3 +93,21 @@ Herstelstand: ontwerp 0, oplevering 1. Stap 6 noemt nu beide gevallen expliciet.
 De vier-reviewer-voorbeeldketen is niet gewijzigd. De verse herstelreview toetst
 de correctie en de afhankelijkheid budgetkeuze/stappen 5–6/mensbesluit; eerdere
 onaangetaste dekking wordt als eerder vastgesteld hergebruikt.
+
+## Finale onafhankelijke beoordeling
+
+De verse repair-C6 geeft SHIP op `c47c6410ff47737667294c4e3f3a4db5e62fc2a8`.
+B1 is opgelost: bij één beoordelaar is C6 finaal, bij meerdere geldt C7.
+Budgetvariant, stappen 5–6, onafhankelijkheid, wachten op geselecteerde oordelen
+en mensbesluit zijn gericht opnieuw getoetst voor AC4/7. AC1/2/3/5/6 en overige
+onaangetaste dekking zijn expliciet als eerder vastgesteld hergebruikt.
+
+Geen resterende blockers of nits. Herstelstand ontwerp 0, oplevering 1 blijft
+behouden; geen extra automatische ronde beschikbaar. Met één reviewer is C6 het
+eindoordeel en is geen C7 nodig. Build en 391 lokale links opnieuw geslaagd.
+Geen screenshots, echte agentrun of studentvalidatie. GitHub rapporteert geen
+CI-checks voor deze branch; de docs-build is lokaal uitgevoerd.
+
+PR53 is gereed voor menselijke merge. Deze afrondingsregistratie wijzigt geen
+beoordeelde producttekst. #48 blijft open tot merge; #49 kan daarna de nieuwe
+begeleide uitvoering als bron gebruiken.
