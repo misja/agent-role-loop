@@ -89,3 +89,22 @@ Initial C6 volgt op exacte productcommit. Reviewer beantwoordt concrete
 leesvragen over synthese/arbitrage, pass versus softwaregoedkeuring en de
 C4-bron/voorwaarde/uitstelgang. Een door de agent voorbereid C4 is agentlezing,
 geen nieuw menselijk besluit of studentvalidatie.
+
+## Finale onafhankelijke C6
+
+Reviewer `/root/review50` geeft **SHIP** op
+`fad0170de2be5641bb802331622a2f4f6b3ad2bc`. AC1–7 zijn nieuw onderzocht;
+geen blockers, nits of contract drift. Volledige C6 staat op #50.
+
+De reviewer schreef een bronherleidbare synthese van G-A/G-M, beslechtte het
+O1-geschil met codebewijs en bereidde een C4 op papier voor met expliciet nog
+ontbrekende menselijke besluitbron. Dit is agentlezing, geen echt mensbesluit.
+Hij reproduceerde de exacte casuskopieën: vijf en drie tests pass en de
+beschreven terug-/verwijdertoestand bevestigd. Historisch citaat bytegelijk,
+beschermde diff leeg, 475 lokale links/fragmenten zonder fouten. Buildlog is
+als auteursbewijs gelezen; geen eigen buildreproductie. De bewijsgrenzen blijven.
+
+Herstelstand ontwerp 0, oplevering 0; geen reparatie nodig. Met één reviewer
+is C6 finaal; geen C7. PR #55 wacht op menselijk mergebesluit. GitHub meldt
+geen CI-checks; lokale docs-build is geslaagd. Deze afrondingsregistratie
+wijzigt geen beoordeelde onderwijstekst.
