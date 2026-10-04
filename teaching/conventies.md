@@ -100,6 +100,21 @@ ze raakt; maak geen lege ontwerpdocumenten voor een spellingcorrectie.
 Registreer een leesgang door een agent als agentlezing. Een agentantwoord is
 geen studentwaarneming.
 
+## Controles bij tekstwerk
+
+Concentreer de beoordeling van tekstwijzigingen op inhoud, doelgroep,
+schrijfwijzer en leesvolgorde. Gebruik daarnaast de docs-build en linkcontrole.
+Maak bij dit werk geen screenshots of beeldcollages als standaardcontrole.
+
+Een visuele controle is alleen nodig bij wijzigingen aan vormgeving of bij een
+concreet weergaveprobleem. Benoem dan vooraf wat de controle moet vaststellen en
+beperk haar tot de betrokken onderdelen. Een mogelijke toekomstige wijziging
+van het sitethema is geen reden om de huidige vormgeving uitgebreid te toetsen.
+
+Deze afspraak is op 4 oktober 2026 op verzoek van de gebruiker vastgelegd, na de
+visuele controles bij #46. Zij geldt voor volgend tekstwerk; eerdere controles
+blijven historische verificatiegegevens.
+
 ## Een nieuwe conventie toevoegen
 
 Stel een wijziging voor op GitHub, met aanleiding, concrete normtekst, getroffen
