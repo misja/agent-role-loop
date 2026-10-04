@@ -86,8 +86,10 @@ werk gebruik je de contracten en feitelijke uitkomsten.
    beoordelaar. Geef rolprompt, C5-kern, codeversie, normen, besluiten en
    toegewezen criteria mee. Het maakgesprek en andere initial oordelen gaan
    niet mee. Bewaar alle C6's voordat je ze vergelijkt.
-6. **Breng de oordelen samen en beslis.** Voeg verenigbare oordelen herleidbaar
-   samen in C7. Geef alleen inhoudelijke tegenspraak aan de hoofdbeoordelaar.
+6. **Lees het eindoordeel en beslis.** Bij één beoordelaar is diens C6 het
+   eindoordeel. Bij meerdere beoordelaars voeg je verenigbare oordelen
+   herleidbaar samen in C7. Geef alleen inhoudelijke tegenspraak aan de
+   hoofdbeoordelaar.
    Bij `BLOCK` volg je de herstelregels uit {core}`loop.md` en registreer je de
    teller vóór herstel. Een resterende blokkade vraagt een menselijk vervolg;
    de rondelimiet heft haar niet op. Beslis na beoordeling zelf of je de code

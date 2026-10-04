@@ -80,3 +80,16 @@ zonder waarschuwingen; /tmp/arl48-build.log. Linkscript /tmp/arl48-links.py over
 vier modulepagina's en de gewijzigde conventiepagina: 391 lokale links/fragmenten,
 geen fouten. Beschermde vergelijking opnieuw geslaagd; diffcontrole schoon en
 geen em/en-dash in module 1. Externe websites niet integraal gecontroleerd.
+
+## Eerste onafhankelijke review en begrensd herstel
+
+Initial C6 op `de5b8e3d43522314e6d3da0254a06ff4fddc6a70`: BLOCK, één bevinding
+B1 voor AC4/7. De eigen deel-B-stap 6 verplichtte C7 ook bij de budgetvariant
+met één reviewer. In core is één C6 dan het eindoordeel; C7 geldt voor meerdere
+oordelen. AC1/2/3/5/6 en overige technische dekking waren pass.
+
+De ene automatische opleveringsherstelronde is vóór wijziging op #48 verbruikt.
+Herstelstand: ontwerp 0, oplevering 1. Stap 6 noemt nu beide gevallen expliciet.
+De vier-reviewer-voorbeeldketen is niet gewijzigd. De verse herstelreview toetst
+de correctie en de afhankelijkheid budgetkeuze/stappen 5–6/mensbesluit; eerdere
+onaangetaste dekking wordt als eerder vastgesteld hergebruikt.
