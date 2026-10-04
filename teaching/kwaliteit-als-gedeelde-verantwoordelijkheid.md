@@ -1,33 +1,88 @@
 # Kwaliteit als gedeelde verantwoordelijkheid
 
-Bij de exportreparatie uit de [inleiding](index.md) zijn verschillende kwaliteitsvragen aan de orde. Het team moet afspreken welke orders in het bestand horen. De bouwer moet aantonen dat de reparatie die afspraak volgt. De beoordelaar onderzoekt of de tests daarvoor voldoende bewijs leveren. Als tijdens een export orders kunnen bijkomen, kan een geslaagde test met een vaste verzameling orders een relevante situatie onbesproken laten.
+Je laat een AI-assistent een uitleenfunctie voor een boekenplank schrijven. De
+functie moet voorkomen dat een uitgeleend boek nogmaals wordt uitgeleend. De
+assistent levert code en tests. De tests gebruiken beschikbare boeken en slagen.
+Een beoordelaar ziet dat een tweede uitleenpoging voor hetzelfde boek ontbreekt.
+Daarmee is een leemte in het bewijs gevonden; of de code deze poging terecht
+afwijst, is nog niet vastgesteld.
 
-Dit raamwerk gebruikt die werkverdeling om kwaliteitsthema's als coverage, CI/CD, security, branchingstrategie en codeconventies met elkaar te verbinden. De rollenloop organiseert het werk met afzonderlijke opdrachten en expliciete overdrachten. De inleiding legt uit hoe een agent een rol kan uitvoeren en waarom elke rol een eigen context krijgt. Hier onderzoeken we welke verantwoordelijkheid bij welke rol hoort en wat afspraken, automatische controles en beoordeling elk bijdragen.
+Dit raamwerk laat aan die situatie zien wie de wijziging controleert en wat een
+afspraak, een automatische controle en een beoordeling bijdragen. De
+[voorbereiding: van chat naar agent](van-chat-naar-agent.md) legt uit hoe een
+agent een rol uitvoert en welke informatie een aparte beoordelaar krijgt. Hier
+passen we die taakverdeling toe op de kwaliteit van een wijziging.
 
-## Kwaliteit is geen rol
+## Wie controleert de wijziging?
 
-De bouwer ({core}`roles/builder.md`) levert verifieerbaar werk. Bij de exportreparatie betekent dat: de wijziging uitvoeren volgens het goedgekeurde plan, de afgesproken controles uitvoeren en vastleggen wat daarmee wel en niet is onderzocht. Een testresultaat dat alleen meldt dat alles slaagt, is voor de volgende rol minder bruikbaar dan bewijs waaruit ook blijkt welke situatie is getest.
+De bouwer ({core}`roles/builder.md`) voert de wijziging uit volgens het
+goedgekeurde plan. Voor de uitleenfunctie maakt en voert hij tests uit. Hij
+legt vast welke situaties zijn gecontroleerd, wat de verwachte uitkomsten zijn
+en welke resultaten de uitvoering oplevert. Bij het beschikbare boek is de
+verwachting dat de uitlening slaagt en het boek daarna als uitgeleend staat.
+Dat resultaat geeft nog geen antwoord op de tweede uitleenpoging.
 
-De beoordelaars onderzoeken het resultaat vanuit verschillende kwaliteitsperspectieven. Zij kunnen bijvoorbeeld vaststellen dat een acceptatiecriterium ontbreekt in de tests of dat de reparatie moeilijk te onderhouden wordt. Bij één beoordelaar is diens oordeel het eindoordeel. Bij meerdere verenigbare oordelen legt de orkestrator de uitkomsten met hun bronnen bij elkaar. Alleen bij inhoudelijke tegenspraak onderzoekt de hoofdbeoordelaar ({core}`roles/reviewer-boss.md`) de bevindingen en het bewijs. De mens beslist daarna over merge.
+De beoordelaar vergelijkt de eis, de code en het testbewijs. In dit voorbeeld
+vraagt hij om een test die hetzelfde boek eerst uitleent en daarna nogmaals
+probeert uit te lenen. De tweede poging moet worden afgewezen en de eerste
+uitlening moet behouden blijven. De bouwer voegt die test toe, voert haar uit
+en draagt de verwachte en waargenomen uitkomst over. Alleen de aanwezigheid
+van de test toont nog niet aan dat de code aan de eis voldoet. Accepteert de
+functie bij uitvoering toch een tweede uitlening, dan is een defect aangetoond.
 
-Aan die uitvoering gaat een menselijke keuze vooraf. Bij de menselijke poort ({core}`roles/human-gate.md`), tussen plannen en bouwen, beoordeelt de verantwoordelijke mens het doel, de afbakening en de risico's van het plan. Voor de export kan nog onduidelijk zijn of het bestand alleen de orders van het startmoment moet bevatten. De mens laat dit met gebruikers afstemmen en vastleggen voordat de bouwer een oplossing op een aanname baseert. Deze werkwijze veronderstelt dat die mens voldoende zicht heeft op het gebruik en de bevoegdheid heeft om de keuze te maken. Zo nodig moet eerst iemand anders worden geraadpleegd.
+De rol beschrijft een taak. De bouwer levert code en bewijs; de beoordelaar
+onderzoekt of dat bewijs de eis afdekt. Een rol kan door een mens of een agent
+worden uitgevoerd. Aparte beoordelingsopdrachten vragen niet verplicht om
+verschillende modellen. Een overdrachtscontract legt vast welke informatie de
+volgende rol krijgt, maar garandeert niet dat die informatie juist of volledig
+is. Zo pas je scheiding van verantwoordelijkheden toe op het samenwerken met AI:
+code maken en de onderbouwing ervan beoordelen krijgen ieder een eigen taak.
 
-Deze verdeling past bekende engineeringprincipes toe op het proces. Scheiding van verantwoordelijkheden geeft de bouwer en de beoordelaar ieder een eigen taak. Contracten vormen hun interfaces. Informatie verbergen begrenst wat van het ene werkproces naar het andere gaat. Parnas behandelt informatie verbergen bij het opdelen van software in modules {cite}`parnas1972criteria`; hier passen we dat principe toe op rollen en overdrachten. De overeenkomst helpt om het proces te ontwerpen, maar bewijst op zichzelf geen kwaliteitsverbetering.
+Vóór het bouwen beoordeelt de verantwoordelijke mens het plan bij de
+menselijke poort ({core}`roles/human-gate.md`). Hij beslist of doel, afbakening
+en risico's aanvaardbaar zijn. Een onduidelijke uitleenafspraak moet daar worden
+opgehelderd voordat de bouwer erop verdergaat. Dat planbesluit geeft toestemming
+om te bouwen. Na uitvoering en beoordeling beslist de mens afzonderlijk over
+merge: het overnemen van de wijziging. Testresultaten en beoordelingen leveren
+de informatie voor dat latere besluit.
 
-## Kwaliteit spreekt zichzelf tegen
+## Waarom verschillen beoordelingen?
 
-Een reparatie kan correct werken en tegelijk extra onderhoud vragen. Stel dat de bouwer voor de export een aparte controle op dubbele orders toevoegt, terwijl elders al vergelijkbare logica bestaat. Een beperkte reparatie kan snel beschikbaar zijn; het samenbrengen van de logica kan toekomstige wijzigingen eenvoudiger maken, maar vergroot de huidige wijziging. Welke keuze passend is, hangt onder meer af van de urgentie en het risico van die uitbreiding.
+Een beoordeling kan vaststellen dat gedrag afwijkt van een eis. Als de tweede
+uitleenpoging slaagt terwijl zij moet worden afgewezen, moet dat defect worden
+hersteld. De bevinding verwijst dan naar de uitleeneis, de test en de afwijkende
+uitkomst. Een geslaagde test met alleen een beschikbaar boek is onvoldoende om
+dit bezwaar te weerleggen.
 
-De loop biedt vier beoordelaarsperspectieven waaruit de triage een passende bezetting kiest. In de oefeningen gebruik je ze alle vier om hun verschillen te onderzoeken:
+Een beoordeling kan ook een ontwerpafweging onderzoeken. Stel dat de bouwer
+in de uitleenfunctie een controle toevoegt die elders al voorkomt. Een
+pragmatische beoordelaar kan die beperkte wijziging passend vinden binnen de
+scope. Een beoordelaar op onderhoudbaarheid kan voorstellen om de controles
+samen te brengen, zodat een latere wijziging op één plek kan worden uitgevoerd.
+Dat vergroot de huidige wijziging. Beide keuzes kunnen verdedigbaar zijn;
+urgentie, risico en de afgesproken scope bepalen welke afweging nodig is.
 
-- De strikte beoordelaar toetst de correctheid en de dekking van de acceptatiecriteria.
+De loop kent vier beoordelaarsperspectieven. De triage kiest welke taken voor
+de wijziging nodig zijn; in de oefeningen onderzoek je ze alle vier:
+
+- De strikte beoordelaar toetst correctheid en dekking van de acceptatiecriteria.
 - De pragmatische beoordelaar weegt of het resultaat binnen de afgesproken scope voldoende is om op te leveren.
 - De adversariële beoordelaar zoekt randgevallen, kwetsbaarheden en aannames die kunnen falen.
 - De beoordelaar op onderhoudbaarheid onderzoekt of een ander de oplossing later kan begrijpen en wijzigen.
 
-Die perspectieven kunnen botsen. De pragmatische beoordelaar kan de beperkte reparatie aanvaarden, terwijl de beoordelaar op onderhoudbaarheid de dubbele logica wil laten herstellen. Ze kunnen ook tot dezelfde conclusie komen, bijvoorbeeld wanneer een kleine aanpassing beide bezwaren wegneemt. Vier opdrachten garanderen geen verschil van inzicht en evenmin dat alle problemen worden gevonden.
+Die opdrachten mogen tot hetzelfde oordeel leiden. Zowel de pragmatische
+beoordelaar als de beoordelaar op onderhoudbaarheid kan bijvoorbeeld instemmen
+met een kleine wijziging die de gedeelde controle gebruikt. Meerdere
+perspectieven garanderen geen verschil van inzicht en evenmin dat elk probleem
+wordt gevonden.
 
-De hoofdbeoordelaar behandelt meningsverschillen aan de hand van de bevindingen en het bewijs. De vaste prioriteit is correctheid en veiligheid, daarna onderhoudbaarheid, daarna afwerking. Bij de export moet dus eerst duidelijk zijn of de reparatie het afgesproken gedrag ondersteunt. Een voorstel om de code verder op te schonen wordt vervolgens binnen de goedgekeurde scope gewogen. De vastgelegde afweging maakt voor de mens zichtbaar waarom een bevinding wel of niet tot herstel leidt.
+Bij verenigbare oordelen brengt de orkestrator de bevindingen met hun bronnen
+samen. Alleen bij inhoudelijke tegenspraak onderzoekt de hoofdbeoordelaar
+({core}`roles/reviewer-boss.md`) de onderbouwing. Daarbij gaan correctheid en
+veiligheid vóór onderhoudbaarheid, en onderhoudbaarheid vóór afwerking. De
+ontwerpafweging over gedeelde controles mag dus geen aangetoond uitleendefect
+laten voortbestaan. De vastgelegde afweging laat de mens zien welke bezwaren
+zijn opgelost en welke keuzes voor het mergebesluit overblijven.
 
 ## Drie soorten kwaliteitsmechanismen
 
@@ -109,6 +164,6 @@ De menselijke poort bewaakt vóór het bouwen of doel, scope en risico's aanvaar
 ## Verder lezen
 
 - The shift to agentic AI: evidence from Codex {cite}`johnston2026codex`. Grootschalige analyse van gebruiksdata die laat zien dat agentisch werken niet "een betere chatbot" is maar een andere manier om werk te organiseren: intensieve gebruikers verschuiven hun eigen rol naar delegeren, superviseren en integreren, en de waarde ervan hangt af van het herontwerpen van workflows rond delegatie en verificatie. Het onderbouwt de these van dit raamwerk dat kwaliteit naar oordeel, supervisie en review verschuift, en laat tegelijk zien dat die volwassen werkwijze nog schaars is: de meeste gebruikers buiten de onderzochte frontier organiseren hun werk nog niet zo, wat steun geeft aan de gedachte dat dit een aan te leren praktijk is en geen vanzelfsprekendheid. Let bij gebruik op de herkomst: het is een publicatie van OpenAI over het eigen product, die de auteurs zelf als niet-representatief voor de typische organisatie kenschetsen. Die herkomst maakt de bron niet minder bruikbaar als beschrijving van hoe volwassen agentisch werk eruitziet, maar wel als iets om bewust mee te wegen, en daarmee meteen een voorbeeld van bronkritiek.
-- Farley, Modern Software Engineering {cite}`farley2021modern`. Het hoofdanker onder de werkwijze. De twee pijlers van dit boek, optimaliseren voor het beheersen van complexiteit (modulariteit, scheiding van verantwoordelijkheden, informatie verbergen) en optimaliseren voor leren (feedback, kleine stappen, empirie), vallen vrijwel samen met de fundamenten van de loop: contextisolatie en contracten als interface enerzijds, changes als kleine, beoordeelbare eenheden met verificatiebewijs anderzijds. De these is niet dat dit een nieuwe methodologie is, maar dat het gevestigde principes toepast op een nieuwe situatie, een AI als bouwer. Farley schreef niet over AI-agents; juist daarom is de overeenkomst veelzeggend.
+- **David Farley, Modern Software Engineering.** {cite}`farley2021modern` Lees hoofdstuk 5, *Feedback*, als je wilt weten waarom je tijdens het ontwikkelen tussentijds controleert wat je hebt gemaakt. Je hebt daarvoor ervaring met programmeren en tests nodig. De toepassing op onze AI-werkwijze werken we in deze leerlijn uit.
 - Alenezi, Rethinking Software Engineering for Agentic AI Systems {cite}`alenezi2026rethinkingsoftwareengineeringagentic`. Multivocal literatuurstudie die vier kerncompetenties voor het werken met agentic AI destilleert: intent articulation, systematic verification, multi-agent orchestration, en human judgment and accountability. Die vier vallen vrijwel samen met de opbouw van deze leerlijn: het verwoorden van intentie (planner en build packet), verificatie als infrastructuur (module 3), orkestratie (de loop zelf) en het menselijke oordeel met expliciete poorten op kritieke momenten (module 5). Voor het onderwijs bepleit het paper een verschuiving van artefact-beoordeling naar procestransparantie, mondelinge verdediging en bewijs van redeneren over AI-gegenereerde output, en het beschrijft hoe AI ervaren ontwikkelaars versnelt maar beginners zonder stuur- en verificatie-ervaring juist remt; beide punten onderbouwen de didactische keuzes van dit materiaal. Let bij gebruik op de herkomst: het is een niet peer-reviewed preprint van één auteur, en de referentielijst bevat slordigheden (placeholder-nummers, vrijwel identieke titels onder verschillende auteurs), een bekend waarschuwingssignaal. Gebruik het daarom als synthese en begrippenkader, en citeer voor harde empirische claims de onderliggende studies zelf, zoals het gecontroleerde experiment van Borg e.a. waarnaar het verwijst (onderhoudbaarheid hangt af van de omringende procesinfrastructuur, niet van het generatieve model alleen). Ook dat is een oefening in bronkritiek.
 - Sweller, Cognitive load during problem solving {cite}`sweller1988cognitive`. De cognitieve-belasting-theorie onderbouwt de didactische vorm die dit materiaal gebruikt: worked examples met fading, waarin vroege modules een volledig voorbeeld tonen en latere de student steeds meer zelf laten invullen. Dat verlaagt de belasting waar die niet leerzaam is en houdt haar over voor waar het oordeel geoefend moet worden.

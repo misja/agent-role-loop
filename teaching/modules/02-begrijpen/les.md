@@ -5,7 +5,7 @@
 In module 1 heb je een lange chat en de rollenloop vergeleken. Je logboek bevat
 wat je daarbij hebt waargenomen. Deze les onderzoekt welke informatie bij een
 overdracht meegaat en hoe de verantwoordelijkheden zijn verdeeld. Vereiste
-voorkennis: module 1, inclusief het overdrachtslogboek. De [inleiding](../../index.md)
+voorkennis: module 1, inclusief het overdrachtslogboek. De [voorbereiding](../../van-chat-naar-agent.md)
 legt uit hoe context aan een model wordt meegegeven en hoe een rol daarvan
 gebruikmaakt.
 

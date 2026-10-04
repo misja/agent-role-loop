@@ -3,7 +3,7 @@
 Je gaat twee keer dezelfde middelgrote opdracht doen met een AI-assistent. De eerste keer in één lange chat, zonder structuur. De tweede keer met de rollenloop, waarbij jij de orkestrator bent. Vergelijk daarna de resultaten en de informatie die je bij iedere stap gebruikte.
 
 **Duur:** deel A circa 90 minuten (vóór les 1), deel B circa 90 minuten (na les 1), reflectie 30 minuten.
-**Nodig:** een chatgebaseerde AI-assistent naar keuze, een logboek met de velden hieronder, de [inleiding](../../index.md) over model, context en agent, en voor deel B de bestanden uit `core/` en de [manual adapter](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/README.md).
+**Nodig:** een chatgebaseerde AI-assistent naar keuze, een logboek met de velden hieronder, de [voorbereiding](../../van-chat-naar-agent.md) over model, context en agent, en voor deel B de bestanden uit `core/` en de [manual adapter](https://github.com/misja/agent-role-loop/blob/main/adapters/manual/README.md).
 **Inleveren:** je logboek uit deel A, je overdrachtslogboek uit deel B, en de beantwoorde reflectievragen.
 
 ## De opdracht (voor beide delen dezelfde)

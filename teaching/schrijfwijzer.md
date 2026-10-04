@@ -74,6 +74,13 @@ voordat je het nieuwe principe benoemt. Bekende engineeringkennis kan de uitleg
 dragen; nieuwe LLM-kennis moet eerst worden opgebouwd. Verwijs naar eerdere
 uitleg wanneer die er al is.
 
+Bepaal de functie van de passage vóór het schrijven: oriënteren, uitleggen,
+laten uitvoeren of verdiepen. Bouw een nieuwe toepassing op vanuit wat er
+gebeurt: welke invoer is er, welke handeling volgt en wat ziet de lezer daarna?
+Benoem vervolgens het principe dat die handelingen verbindt. Bij instructies
+moeten voorbereiding, handeling, reden en herkenbare uitkomst vindbaar zijn.
+Houd de nodige uitleg bij de stap.
+
 Schrijf alinea’s waarin de ene zin de volgende voorbereidt. Een ontbrekende
 redeneerstap vraagt uitleg van het verband, niet nog een samenvatting van de
 conclusie. Benoem concrete handelingen en gevolgen. Een korte tekst met veel
@@ -105,10 +112,22 @@ Een functionele tegenstelling mag blijven als zij een werkelijk verschil uitlegt
 | “Contextisolatie maakt de beoordeling betrouwbaar.” | “De beoordelaar krijgt de eisen en de wijziging, zonder het maakgesprek met eerdere aannames. Dat beperkt de voorgeschiedenis die de beoordeling kan sturen. Een ontbrekende eis kan nog steeds worden gemist.” | Het mechanisme en de beperking worden zichtbaar; het voorbeeld belooft geen gegarandeerde betrouwbaarheid. |
 | “De vier perspectieven spreken elkaar tegen.” | “De beoordelaars kunnen onderhoudbaarheid en snel opleveren verschillend wegen. Bij een kleine reparatie kunnen zij ook dezelfde keuze ondersteunen.” | Een mogelijke spanning wordt niet als noodzakelijke uitkomst voorgesteld. |
 
-Beoordeel de uitleg door de passages te lezen en de redenering na te vertellen.
-Wijs aan waar de tekst daarvoor onvoldoende informatie geeft. Een woordenfilter,
+Beoordeel de uitleg door de passages te lezen. Wijs aan welk probleem de lezer
+onderzoekt, welke handelingen volgen en waarom, en welke uitkomst hij kan
+herkennen, voor zover de tekstfunctie die vraagt. Benoem waar daarvoor kennis
+of een stap ontbreekt. Correct navertellen van vakinhoud alleen volstaat niet.
+Een woordenfilter,
 een controle op leestekens of een AI-detector kan dit oordeel niet vervangen.
 Registreer een agentlezing als agentlezing; noem haar geen studentproef.
+
+## Literatuur en naslag
+
+Help de lezer kiezen waarvoor en wanneer een bron bruikbaar is. Noem de
+benodigde voorkennis wanneer die verder gaat dan de omliggende tekst.
+Selecteer samenvatting en bronkritiek op die leesvraag; maak van een verwijzing
+geen extra theoriehoofdstuk of verdediging van de hele werkwijze. Controleer
+inhoudelijke bronclaims aan de bron. Optionele tekst mag dezelfde doelgroep
+niet ongemerkt meer voorkennis toeschrijven.
 
 ## Vaktermen: Nederlands of Engels
 

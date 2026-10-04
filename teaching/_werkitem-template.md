@@ -34,12 +34,21 @@ N. Voldoet aan [de projectconventies](conventies.md) op de geregistreerde normba
 
 - Normcommit: <bij de start vastleggen; verwijzingen naar relevante secties>.
 - Geraakte onderwijspassages, ook buiten `teaching/`: <vindplaatsen>.
-- Benodigde voorkennis en nieuwe begrippen: <gericht benoemen; waar staat eerdere
-  uitleg, waar komt ontbrekende uitleg? In de planfase aanvullen indien nodig>.
+- Lezer en tekstfunctie: <wie leest de geraakte passages en waarvoor: oriënteren,
+  uitleggen, uitvoeren of verdiepen? Ook invullen voor technische instructies
+  buiten `teaching/` die voor studenten zijn bedoeld>.
+- Voorkennis en nieuwe toepassing: <wat kan de lezer al gebruiken, waar staat
+  eerdere uitleg en welke stap wordt hier nog geleerd? Benoem nieuwe begrippen
+  en waar ontbrekende uitleg komt. In de planfase aanvullen indien nodig>.
 - Expliciete afwijkingen of normwijziging tijdens dit werk: <menselijk besluit
   met bron en gevolgen, of geen>.
 - Beoordeling: <wie toetst de passages en de uitleg; zie verantwoordelijkheden
   in [de projectconventies](conventies.md)>.
+- Gerichte leesgang: <welke passages worden gelezen en welke informatie moet de
+  lezer daar kunnen aanwijzen? Toets afhankelijk van de tekstfunctie probleem,
+  invoer, voorbereiding, handeling, reden, herkenbare uitkomst en ontbrekende
+  voorkennis. Leg bevindingen en bewijsgrenzen vast; een agentlezing is geen
+  studentwaarneming>.
 
 ## Constraints
 
