@@ -4,11 +4,13 @@
 
 In [module 3](../03-machine/les.md) onderzocht je welke gevallen automatische controles toetsen en welke conclusies hun uitkomsten toelaten. Hier beoordeel je ook de keuzes die deze controles openlaten. Je gebruikt de oordeelsmatige kwaliteitsmechanismen uit het [kwaliteitsraamwerk](../../kwaliteit-als-gedeelde-verantwoordelijkheid.md).
 
+De {ref}`overdrachtsanalyse uit module 2 <module2-analyse>` helpt bron, versie
+en ontbrekend bewijs te onderscheiden. De
+[begeleide uitvoering uit module 1](../01-ervaren/eerste-uitvoering.md) toont
+hoe C6-oordelen naar een C7 en een menselijk besluit gaan. Hier leer je de
+inhoud van die oordelen te wegen.
+
 De les hoort bij [oefening 4](oefening.md). Daar gebruik je vier perspectieven om het afwegen te oefenen. Bij projectwerk bepaalt de triage welke beoordelingen nodig zijn; vier beoordelaars zijn geen vaste bezetting. De route staat in {core}`loop.md`.
-
-## Leeruitkomsten
-
-De leeruitkomsten staan als "Wat ga je leren" op de [module-index](index.md).
 
 ## Opbouw
 
@@ -40,6 +42,63 @@ Een beoordeling volgens {core}`contracts/reviewer-verdict.md` (C6) vermeldt de t
 Bij meerdere verenigbare C6-beoordelingen maakt de orkestrator een herleidbare synthese in C7. Die voegt geen nieuwe bevindingen toe en stemt blokkerende bevindingen niet weg. Inhoudelijke tegenspraak gaat naar de hoofdbeoordelaar ({core}`roles/reviewer-boss.md`), die argumenten en bewijs onderzoekt. Beide vormen staan in {core}`contracts/final-verdict.md`.
 
 Bij arbitrage krijgen correctheid en veiligheid voorrang, daarna onderhoudbaarheid en afwerking. Dat betekent bijvoorbeeld dat een bewezen schending van een uitleeneis eerst moet worden opgelost. Een mogelijke toekomstige opsplitsing van `terug` is niet automatisch een blocker. De hoofdbeoordelaar legt per bevinding uit welke prioriteit volgt uit het criterium, bewijs en gebruik. Blijft een doel- of risicokeuze onbeslist, dan legt die haar aan de mens voor en blijft het oordeel geblokkeerd.
+
+(module4-samenbrengen)=
+### Uitleg: twee verenigbare oordelen samenbrengen
+
+De gegeven G-A en G-M in de [oefening](oefening.md) onderzoeken dezelfde
+reserveringscode voor een demonstratie. G-A onderzoekt bij A1 de gevolgen van
+een afzonderlijke ophaalstap; G-M wijst bij M1 de daarvoor relevante code en
+gegevensvorm aan. Beide geven SHIP WITH NITS voor de demonstratie. Hun
+bevindingen zijn verenigbaar: zij stellen geen tegengestelde eisen en erkennen
+dat het toekomstige gebruik nog moet worden gekozen.
+
+Een orkestrator kan dit paar als volgt samenbrengen. Dit is een fragment van
+een geconstrueerde onderwijs-C7, geen echte agentreview of volledig project-C7.
+
+| C7-veld | Ingevuld fragment |
+|---|---|
+| Mode and producer | synthesis, orkestrator. |
+| Inputs | Dezelfde vastgelegde casuscommit, eigen testuitvoer, G-A en G-M. Voor dit paar zijn beide oordelen aanwezig; bij de eigen vier perspectieven wacht je op alle vier. Een project-C5 ontbreekt in deze lescasus. |
+| Source traceability | A1 pass volgens G-A: automatisch uitlenen en ontbrekende ophaalstap onderzocht. M1 pass volgens G-M: wijzigingsplaatsen en naamidentificatie aangewezen. Dit is onderzoeksdekking, geen nalevingsbewijs voor een ophaaleis. |
+| Findings and decision | A1-F1 en M1-F1: laat het gebruiksdoel kiezen vóór toepassing die ophalen vereist; M1-F2: aanvullende identiteit onderzoeken als personen met dezelfde naam moeten worden onderscheiden. SHIP WITH NITS uitsluitend voor de demonstratie. |
+| Reviewer disagreements | Geen; geen arbitrage nodig. |
+| Next action | De mens beslist over eventuele toepassing. De toekomstige ophaaleis is niet door deze synthese goedgekeurd. |
+
+De synthese bewaart de bronnen en hun voorwaarden. Zij maakt geen nieuwe
+bevindingen en kan een blocker niet laten verdwijnen doordat meer beoordelaars
+SHIP zeggen. Als je eigen beoordelingen verschillende gebruiksbases hanteren,
+maak dat zichtbaar: een groene demonstratie-uitkomst en een blokkade voor een
+andere toepassing zijn niet zonder meer tegenspraak over dezelfde vraag.
+
+### Uitleg: een inhoudelijk geschil met bewijs beslechten
+
+Voor dit tweede voorbeeld geldt een **aanvullende scenario-eis O1**: na
+terugbrengen wacht een gereserveerd boek op ophalen; er mag nog geen nieuwe
+lener geregistreerd staan. O1 is voor deze uitleg toegevoegd en is geen
+historische eis van de aangeleverde casus. Beide onderstaande beoordelaars
+beoordelen naleving van O1 op dezelfde codeversie.
+
+| C6-fragment | Uitspraak over hetzelfde criterium O1 |
+|---|---|
+| G-X, O1 pass, SHIP | “Na terugbrengen blijft Bob alleen als wachtende genoteerd; er is nog geen nieuwe lener.” |
+| G-Y, O1 fail, BLOCK, bevinding Y1 | “`terug` zet `uitgeleend_aan` op de eerste naam met `wachtlijst.pop(0)`. Bob wordt dus direct lener. O1 wordt niet gehaald.” |
+
+Dit is een geconstrueerde beoordelingsfout, geen verslag van twee echte agents.
+De uitspraken kunnen onder dezelfde eis niet allebei juist zijn. De
+hoofdbeoordelaar onderzoekt de argumenten met de code en
+`test_terug_leent_uit_aan_eerste_op_wachtlijst`. Die test leent uit aan Misja,
+laat Bob en Carla reserveren en brengt het boek terug. De asserties verlangen
+dan `uitgeleend_aan == "Bob"` en `wachtlijst == ["Carla"]`.
+
+Een arbitration-C7 wijst daarom G-X af op O1 en neemt Y1 over: de bestaande
+code schendt de aanvullende ophaaleis. Het oordeel blijft BLOCK voor het
+O1-scenario; eerst moet het gedrag worden aangepast en gecontroleerd als de
+mens die toepassing wil laten bouwen. Dat de bestaande tests slagen verandert
+O1 niet: hun verwachting betreft juist automatisch uitlenen. De
+hoofdbeoordelaar kan deze feitenstrijd beslechten. Hij mag niet namens de mens
+besluiten dat ophalen toch onnodig is. Blijft het gebruiksdoel open, dan blijft
+die doelkeuze bij de mens.
 
 ### Grenzen van de beoordeling
 

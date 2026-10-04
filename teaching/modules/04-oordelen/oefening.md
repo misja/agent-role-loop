@@ -44,14 +44,67 @@ De onderstaande beoordelingen zijn onderwijsvoorbeelden op de aangeleverde code.
 
 **Decision:** SHIP WITH NITS voor de demonstratie. **Contract drift:** geen vastgestelde contractwijziging; volledige eisenbasis niet beschikbaar. **Must fix:** geen aangetoonde blocker. **Nice to have:** geen. **Repair outcome:** niet van toepassing, initial. **Next action:** de bevindingen met hun voorwaarden meenemen in C7 en pas bij een gekozen gebruiksdoel als wijzigingsvereiste behandelen.
 
-## Opdracht: twee eigen beoordelingen en een eindoordeel
+## Uitleg: wat betekent pass bij G-A?
 
-Deze oefening gebruikt de arbitragevorm van C7 om de afweging expliciet te oefenen. Ook als je beoordelingen verenigbaar blijken, hoef je geen tegenspraak te verzinnen. Noteer dan dat er geen inhoudelijk geschil is; bij projectwerk volstaat in dat geval synthese volgens {core}`loop.md`.
+A1 vraagt om onderzoek van het ophaalscenario. G-A wijst de automatische
+uitlening in `reserveren` en `terug` aan en verbindt die aan twee bestaande
+tests. Daarom kan de **onderzoeksvraag** afgedekt zijn: de relevante werking
+en ontbrekende ophaalstap zijn aangewezen. Pass betekent hier niet dat de
+software aan een ophaaleis voldoet. Of die eis voor de toepassing moet gelden,
+is nog een menselijke gebruikskeuze. SHIP WITH NITS blijft beperkt tot de
+beoordeling van de demonstratie, zonder vrijgave voor het ophaalscenario.
 
-1. Schrijf een C6 vanuit het **strikte perspectief**. Benoem je criterium: welke reserveringsafspraken zijn nodig om naleving te kunnen beoordelen? Maak onderscheid tussen een vastgelegde testverwachting en een ontbrekende gebruikseis. Formuleer een concrete vraag voor iedere ontbrekende afspraak; behandel ontbrekende informatie niet als een bewezen codefout.
-2. Schrijf een C6 vanuit het **pragmatische perspectief**. Benoem welk beperkt gebruik je als beoordelingsbasis kiest en welke beperkingen daarbij aanvaardbaar zijn. Onderbouw welke bevindingen uit G-A en G-M kunnen wachten en welke voor dat gebruik eerst moeten worden opgelost.
-3. Volg voor beide beoordelingen het C6-contract. Vermeld perspectief en criterium-ID’s, commit en normbasis, onderzochte waarneming met bron, gevolg en ernst, criteriumdekking en besluit. Benoem ontbrekend bewijs. Noteer contractwijzigingen, must/should/nice-bevindingen, initial-modus en de volgende stap. Een niet-geverifieerd toegewezen criterium mag niet slagen.
-4. Schrijf een C7 als **hoofdbeoordelaar**. Gebruik G-A, G-M en beide eigen C6’s als invoer. Verwijs bij iedere gecombineerde bevinding en dekkingsclaim naar de bronbeoordeling en het criterium- of bevinding-ID. Leg eventuele tegenspraak en je oplossing vast. Prioriteer correctheid en veiligheid, daarna onderhoudbaarheid en afwerking. Los een onbesliste doel- of risicokeuze niet zelf op: leg haar aan de mens voor en houd haar als blocker zichtbaar.
+## Opdracht: schrijf twee eigen C6-beoordelingen
+
+Gebruik voor beide beoordelingen {core}`contracts/reviewer-verdict.md`.
+Maak eerst de inhoud van de twee perspectieven, vul daarna de overdracht in.
+
+1. **Strikt:** benoem je criterium: welke reserveringsafspraken zijn nodig om
+   naleving te beoordelen? Onderscheid testverwachting en ontbrekende gebruikseis.
+   Formuleer een concrete vraag per ontbrekende afspraak; een ontbrekende eis
+   is niet op zichzelf een bewezen codefout.
+2. **Pragmatisch:** benoem het beperkte gebruik dat je beoordeelt en welke
+   beperkingen daarbij aanvaardbaar zijn. Onderbouw welke bevindingen van G-A
+   en G-M voor dat gebruik kunnen wachten en welke eerst opgelost moeten worden.
+3. **Leg de basis vast:** vul Reviewer and assignment en Mode and artifact in
+   met perspectief, criterium-ID's, casuscommit, normversie en initial-modus.
+   Controleer of de verschillende beoordelingen hetzelfde gebruik onderzoeken.
+4. **Leg bewijs en bevindingen vast:** noteer per criterium de onderzochte
+   handeling, waarneming, bron, gevolg en bewijsgrens. Vul Acceptance criteria
+   coverage in met pass/fail, nieuw onderzochte dekking en criteria die elders
+   zijn toegewezen. Een niet-geverifieerd toegewezen criterium mag niet slagen.
+   Verbind elke bevinding aan een ID, criterium en ernst bij Must fix,
+   Should fix of Nice to have. Benoem ontbrekend bewijs en Contract drift.
+5. **Kies het oordeel en vervolg:** vul Decision en Next action in vanuit die
+   dekking en bevindingen. Repair outcome is hier niet van toepassing (initial).
+   Bewaar beide volledige C6's met hun versies; zij vormen samen met G-A/G-M
+   de invoer voor het volgende beslismoment.
+
+## Opdracht: breng alle beoordelingen samen
+
+Gebruik {core}`contracts/final-verdict.md` (C7) en het
+{ref}`voorbeeld in de les <module4-samenbrengen>`. Een inhoudelijk geschil is
+geen verplichte uitkomst; de les toont hoe je arbitrage toepast als het ontstaat.
+
+1. **Verzamel de invoer:** wacht op G-A, G-M en beide eigen C6's. Noteer alle
+   versies, casuscommit en testuitvoer bij Inputs. Noteer ook het ontbrekende
+   project-C5 zoals hieronder beschreven.
+2. **Kies de uitvoerder:** zijn de oordelen verenigbaar, schrijf als orkestrator
+   een synthesis-C7. Is er inhoudelijke tegenspraak over dezelfde criteria en
+   basis, schrijf als hoofdbeoordelaar een arbitration-C7. Vermeld deze keuze
+   bij Mode and producer. Verschillende gebruiksbases vragen eerst een expliciete
+   afbakening; verzin geen conflict om arbitrage te kunnen uitvoeren.
+3. **Herleid en prioriteer:** verwijs voor iedere gecombineerde bevinding en
+   dekkingsclaim naar bron-C6 en criterium-/bevinding-ID. Neem alle blockers mee;
+   synthese voegt geen nieuwe bevindingen toe. Bij arbitrage onderzoek je het
+   geschil met argumenten en bewijs en registreer je de oplossing bij Reviewer
+   disagreements. Geef correctheid en veiligheid voorrang, daarna onderhoudbaarheid
+   en afwerking. Een open doel- of risicokeuze gaat naar de mens en blijft een
+   blokkade voor toepassing die van die keuze afhangt.
+4. **Bewaar het eindoordeel:** neem dekking, contractafwijkingen, geprioriteerde
+   must/should/nice-bevindingen en Decision op. Noteer bij Next action wat eerst
+   moet en wie beslist. Bewaar C7 met de bronbeoordelingen, zodat een volgende
+   lezer iedere uitspraak kan terugvinden.
 
 Voor deze lescasus bestaat geen afzonderlijke C5-overdracht. Vermeld bij de C7-invoer daarom de casuscommit, testuitkomst en gegeven onderwijsbeoordelingen als beschikbare basis, en noteer dat een volledig project-C5 ontbreekt. Schrijf geen overdracht of agentuitvoering die niet heeft plaatsgevonden. Je eindresultaat is een onderwijsuitwerking van C6/C7, geen volledige opleveringsreview van een nieuw project.
 
@@ -67,4 +120,6 @@ Beantwoord schriftelijk:
 
 ## Variant: beoordelingen door studenten
 
-In deze variant schrijven vier studenten elk afzonderlijk een C6 vanuit een ander perspectief op dezelfde casuscommit en afgesproken gebruiksbasis. Zij lezen elkaars beoordelingen pas nadat alle vier klaar zijn. Een vijfde student schrijft de C7 als hoofdbeoordelaar. Deze vier eigen beoordelingen vervangen de twee gegeven en twee eigen beoordelingen uit de individuele opdracht. Bespreek daarna overeenkomsten, eventuele tegenspraak en de gebruikte bronnen; ook hier is een conflict geen verplichte uitkomst.
+In deze variant schrijven vier studenten elk afzonderlijk een C6 vanuit een ander perspectief op dezelfde casuscommit en afgesproken gebruiksbasis. Zij lezen elkaars beoordelingen pas nadat alle vier klaar zijn. Een vijfde student brengt alle vier samen: als orkestrator bij verenigbare
+oordelen, als hoofdbeoordelaar bij inhoudelijk geschil. Die legt de gekozen
+C7-modus vast en volgt dezelfde samenbrengstappen hierboven. Deze vier eigen beoordelingen vervangen de twee gegeven en twee eigen beoordelingen uit de individuele opdracht. Bespreek daarna overeenkomsten, eventuele tegenspraak en de gebruikte bronnen; ook hier is een conflict geen verplichte uitkomst.

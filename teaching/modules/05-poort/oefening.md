@@ -48,27 +48,83 @@ die omgeving niet.
 - **Open risicokeuze:** is dat gevolg toegestaan bij openstaande reserveringen? Voor P1 is nog geen herstelvoorziening afgesproken. Wie het verlies mag aanvaarden en welke voorwaarden nodig zijn, moet de menselijke poort beslissen.
 - **Grenzen:** geen bouw van gedeelde opslag of herstelcode in deze opdracht. PROCEED geldt uitsluitend voor het afgesproken oefenscenario en verleent geen toestemming voor toepassing op echte gegevens.
 
-## Worked example: een voorwaarde stellen
+## Worked example: bron, voorwaarde en uitstel
 
-Een mens kan op P1 **REVISE** kiezen met als reden dat verlies van de toegang tot
-openstaande reserveringen in het scenario niet aanvaardbaar is zonder beschikbaar
-herstel. Een concrete opdracht aan de planner is dan: “Pas P1 vóór toepassing aan
-zodat vastligt welke gegevens bewaard blijven, hoe herstel kan plaatsvinden en
-wie daarvoor verantwoordelijk is.” De poort stelt een grens; de planner werkt
-een uitvoerbaar voorstel uit.
+De [begeleide uitvoering uit module 1](../01-ervaren/eerste-uitvoering.md)
+toont het vastleggen van C4 bij een plan. Hier leer je de risicokeuze voor P1
+registreren. Onderstaand fragment is een geconstrueerd registratievoorbeeld,
+geen werkelijk genomen mensbesluit of toestemming voor jouw uitvoering.
 
-Alleen een bevestigingsvraag toevoegen beantwoordt die herstelvraag niet. Zij
-kan iemand waarschuwen voor de gevolgen, maar geeft na uitvoering geen boek of
-reservering terug. Of zo’n waarschuwing toch voldoende is, hangt af van de
-risicokeuze die de mens verantwoordt. Onderbouw je eigen besluit vanuit P1 en de
-waargenomen feiten.
+```text
+Artifact and source:
+Voorstel P1, versie op repositorycommit
+b6ddcd55fbb9de37db316a626d0ddee4afe703e9, in
+teaching/modules/05-poort/oefening.md.
+Procesbasis: core/loop.md op dezelfde commit.
+Menselijke bron: student Sam, logboek sam-module5.md, besluit 1,
+na het lezen van P1 en mijn controle-uitvoer.
+
+Decision: REVISE.
+Reason: Ik aanvaard in dit oefenscenario geen verlies van toegang tot
+openstaande reserveringen zonder beschikbaar herstel. De publieke API
+biedt dat herstel nu niet. Daarom geef ik toepassing van P1 niet vrij.
+
+Required changes before build:
+1. Planner: werk alleen P1 bij. Leg vóór toepassing vast welke gegevens
+   bewaard blijven, hoe terugzetten mogelijk is en wie verantwoordelijk is.
+   Leg het aangepaste voorstel opnieuw aan mij voor; voer P1 nog niet uit.
+   Herstelstand: geen eerdere automatische ronde in dit voorbeeld;
+   ontwerp 0, oplevering 0. Dit is menselijke revisie van dit voorstel.
+
+Human decisions made:
+Verlies van toegang tot openstaande reserveringen is hier zonder herstel
+niet aanvaardbaar. Geen toepassing op echte gegevens toegestaan.
+
+Open questions still deferred:
+De exacte formulering van een bevestigingsmelding mag nu wachten:
+REVISE geeft geen uitvoering vrij en eerst moet het herstelvoorstel
+worden beoordeeld. Controleer deze vraag opnieuw vóór eventuele toepassing.
+```
+
+Sam en `sam-module5.md` zijn fictieve voorbeeldwaarden, geen beschikbare
+besluitbron. De genoemde commit bevat de hier beoordeelde P1-tekst. Bij je eigen C4 neem jij de
+mensrol op je en geef je jouw naam of identificatie, logboekvindplaats,
+besluitnummer en werkelijk gelezen repositorycommit mee. Een andere rol moet
+het besluit en het voorstel kunnen terugvinden; een niet-ingevulde verwijzing
+naar “mijn logboek” volstaat dan niet.
+
+In dit voorbeeld is herstel een noodzakelijke voorwaarde: zonder uitgewerkt
+herstelvoorstel wordt P1 niet toegepast. De bevestigingstekst kan voor deze
+huidige stap wachten omdat er nog niets wordt uitgevoerd. Een bevestiging
+kan iemand waarschuwen, maar brengt na verwijdering geen boek of reservering
+terug. De planner mag de herstelvoorwaarde dus niet door alleen een melding
+vervangen. Onderbouw je eigen besluit vanuit P1 en je waargenomen feiten;
+je hoeft dit voorbeeldbesluit niet over te nemen.
 
 ## Opdracht: schrijf je C4-besluit
 
-1. Noteer bij **Artifact and source**: “Voorstel P1, de versie op deze oefenpagina”, de gebruikte versie van deze repository en de bron van je menselijke besluit. Jij neemt in deze oefening zelf de mensrol op je. Verwijs naar de geldende {core}`loop.md` als procesbasis.
-2. Kies bij **Decision** PROCEED, REVISE of STOP. Schrijf bij **Reason** één alinea die je keuze verbindt aan het doel, het aangetoonde gedrag en het aanvaardbare risico.
-3. Vul de overige velden van C4 in. Bij REVISE geef je genummerde wijzigingen vóór toepassing, gericht aan de planner of bouwer en begrensd tot P1. Noteer welke risicokeuzen je hebt gemaakt en welke vragen je expliciet veilig kunt uitstellen. Gebruik `<none>` waar een veld niet van toepassing is.
-4. Controleer of een volgende rol uit je besluit kan afleiden op welk voorstel het slaat, wat mag doorgaan en wat eerst moet. Je ontwerpt of bouwt geen hersteloplossing.
+Gebruik {core}`contracts/gate-decision.md` voor onderstaande invulstappen.
+Bewaar het besluit als één artefact in je logboek, met versie en leesbare bron.
+
+1. **Leg voorstel en bron vast:** vul Artifact and source in met P1 op deze
+   oefenpagina, de werkelijk gebruikte repositorycommit en procesversie.
+   Noteer jouw menselijke besluitbron met identiteit en logboekvindplaats.
+   Jij neemt in deze oefening zelf de mensrol op je.
+2. **Kies en motiveer:** vul Decision in met PROCEED, REVISE of STOP. Verbind
+   bij Reason je keuze aan het doel, gecontroleerde gedrag en aanvaardbare risico.
+3. **Leg je risicokeuzen vast:** vul Human decisions made in met de voorwaarden
+   waaronder je het gevolg aanvaardt. Onderscheid feiten uit de code van gevolgen
+   die bij het scenario horen; vul ontbrekend herstelbewijs niet zelf in.
+4. **Geef noodzakelijke wijzigingen door:** bij REVISE nummer je de wijzigingen
+   onder Required changes before build en adresseer je planner of bouwer.
+   Begrens het vervolg tot P1, noteer de herstelstand en wat nog niet mag worden
+   uitgevoerd. Gebruik `<none>` wanneer dit veld niet van toepassing is.
+5. **Motiveer eventueel uitstel:** vul Open questions still deferred in met
+   de vraag, waarom uitstel veilig is voor de huidige stap en wanneer zij weer
+   beoordeeld moet worden. Gebruik `<none>` als er geen veilig uitgestelde vraag is.
+6. **Controleer de overdracht:** kan de volgende rol het voorstel en besluit
+   openen en aanwijzen wat mag doorgaan en wat eerst moet? Bewaar die verwijzingen
+   bij je C4. Je ontwerpt of bouwt in deze opdracht geen hersteloplossing.
 
 Het resultaat is een herkenbaar C4 met voorstelversie, menselijke bron, besluit,
 reden en concrete voorwaarden waar nodig. Een PROCEED op P1 is een besluit vóór
