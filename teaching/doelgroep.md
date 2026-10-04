@@ -4,12 +4,14 @@ orphan: true
 
 # Doelgroep en voorkennis
 
-Dit materiaal richt zich op derdejaars Software Engineering-studenten met
-algemene programmeer- en engineeringkennis. Zij kunnen een programmeeropdracht
-uitvoeren en kennen onder meer tests, versiebeheer en scheiding van
-verantwoordelijkheden. Gebruik die kennis om het nieuwe toepassingsgebied te
-verklaren. Een bekend principe kan een korte herinnering vragen; een volledige
-herintroductie vraagt een concrete didactische reden.
+Dit materiaal richt zich op derdejaars Software Engineering-studenten. In de
+eerste twee studiejaren hebben zij kennisgemaakt met programmeren en
+ontwikkelprincipes, waaronder tests, versiebeheer en scheiding van
+verantwoordelijkheden. Een principe herkennen betekent nog niet dat zij het
+zelfstandig kunnen toepassen op het werken met AI. Gebruik een herkenbare
+programmeerhandeling als vertrekpunt en leg uit hoe het principe in deze
+situatie wordt gebruikt. Geef een korte herinnering waar die nodig is;
+introduceer bekende onderwerpen niet zonder aanleiding opnieuw.
 
 Ervaring met LLM’s veronderstellen we bij aanvang uitsluitend via een
 chatinterface. Dat iemand ChatGPT heeft gebruikt, betekent niet dat diegene weet
@@ -24,9 +26,16 @@ sessie en een rol waar dat voor het begrip nodig is.
 Latere onderdelen mogen eerder behandelde kennis gebruiken. Benoem bij de
 voorbereiding van een tekst welke begrippen dat zijn en waar ze al zijn
 uitgelegd. Verwijs in het materiaal naar die uitleg wanneer de lezer haar nodig
-kan hebben. De [inleiding](index.md) bouwt de eerste stap van webchat naar agents
-op; de [begrippenlijst](begrippen.md) helpt termen terug te vinden. Een vermelding
-in de begrippenlijst vervangt niet de uitleg die een eerste kennismaking vraagt.
+kan hebben. De [voorbereiding](van-chat-naar-agent.md) legt de eerste stap van
+webchat naar agents uit; de [begrippenlijst](begrippen.md) helpt termen terug te
+vinden. Een vermelding in de begrippenlijst vervangt niet de uitleg die een
+eerste kennismaking vraagt.
+
+Benoem bij iedere nieuwe toepassing wat de student al kan gebruiken, welke
+uitleg eerder is aangeboden en welke stap hier nog wordt geleerd. Een eerdere
+vermelding van een term is geen bewijs dat de student ermee kan redeneren.
+Controleer bij het verplaatsen van uitleg ook de verwijzingen vanuit latere
+onderdelen.
 
 Herhaal niet bij elke module de volledige introductie. Ontbreekt een benodigde
 uitleg in de eerdere leerstof, leg dan vast waar zij wordt toegevoegd of welke

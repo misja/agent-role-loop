@@ -89,14 +89,16 @@ agents of processtappen:
 | Verantwoordelijkheid | Wat wordt vastgelegd of gecontroleerd? |
 |---|---|
 | Orkestratie | Noteer bij de start de normversie (commit), relevante normsecties en eventuele menselijke afwijkingsbesluiten op het issue. Geef diezelfde basis leesbaar mee aan elke betrokken rol. |
-| Ontwerp | Benoem benodigde voorkennis, nieuwe begrippen en de vindplaatsen van eerdere uitleg. Wijs aan waar een ontbrekende stap wordt uitgelegd en welke passages de beoordelaar moet toetsen. |
-| Uitvoering | Lees de aangewezen normen en werk de uitleg uit. Vermeld bij overdracht de gewijzigde passages, relevante uitlegkeuzes en bekende beperkingen. Kopieer geen volledige normteksten in het werkitem. |
-| Onafhankelijke beoordeling | Lees de gewijzigde passages tegen dezelfde normversie. Benoem concrete begripsprongen, ontbrekende redeneerstappen en ongefundeerde claims, of leg met passages vast hoe die eisen zijn afgedekt. Laat zien wat de lezer uit de tekst kan afleiden. |
+| Ontwerp | Leg de tekstfunctie, benodigde voorkennis, nieuwe begrippen en vindplaatsen van eerdere uitleg vast. Benoem de overgang van bekende kennis naar de nieuwe toepassing. Wijs aan waar een ontbrekende stap wordt uitgelegd en welke passages de beoordelaar moet toetsen. |
+| Uitvoering | Lees de aangewezen normen en werk de uitleg uit. Maak de overgang van bekende kennis naar de nieuwe toepassing zichtbaar in de tekst. Vermeld bij overdracht de gewijzigde passages, relevante uitlegkeuzes en bekende beperkingen. Kopieer geen volledige normteksten in het werkitem. |
+| Onafhankelijke beoordeling | Lees de gewijzigde passages tegen dezelfde normversie. Wijs bij de nieuwe toepassing het probleem, de invoer, handeling, reden en herkenbare uitkomst aan, voor zover de tekstfunctie die vraagt. Benoem onbenoemde voorkennis, concrete begripsprongen, ontbrekende redeneerstappen en ongefundeerde claims, of leg met passages vast hoe die eisen zijn afgedekt. Laat zien wat de lezer uit de tekst kan afleiden. |
 
 Een beoordelaar ontvangt de relevante normen en geldende besluiten, maar geen
 maaktranscript. Hij kan de oorspronkelijke bronnen gericht raadplegen. Bij een
 korte route blijven deze verantwoordelijkheden gelden voor zover de wijziging
 ze raakt; maak geen lege ontwerpdocumenten voor een spellingcorrectie.
+Registreer een leesgang door een agent als agentlezing. Een agentantwoord is
+geen studentwaarneming.
 
 ## Een nieuwe conventie toevoegen
 

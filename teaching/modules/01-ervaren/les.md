@@ -3,7 +3,7 @@
 ## Plaats in de leerlijn
 
 Je kunt zelfstandig een programmeeropdracht uitvoeren en hebt ervaring met een
-AI-assistent via een chatinterface. Lees eerst de [inleiding](../../index.md)
+AI-assistent via een chatinterface. Lees eerst de [voorbereiding](../../van-chat-naar-agent.md)
 voor het onderscheid tussen een taalmodel, context, een agent en een sessie.
 Voor deze oefening gebruik je losse chats; een agentomgeving met toegang tot je
 bestanden is niet nodig.
