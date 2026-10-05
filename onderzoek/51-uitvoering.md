@@ -102,6 +102,20 @@ voor elke Textual-uitbreiding of aanwezige dependencyset.
 
 Studentwaarnemingen, gemeten leereffect en haalbaarheid van vier uur zijn niet
 beschikbaar. Uitvoerbare bundelcontrole is geen echte agentrun of mensbesluit.
-Initial C6 volgt op exacte commit met zelfstandige S4-ketentoets en minstens
-één door de reviewer uitgevoerde controle. Een dossiergang door een agent is
-agentlezing, geen studentvalidatie.
+Een dossiergang door een agent is agentlezing, geen studentvalidatie.
+
+## Onafhankelijke C6 en overdracht naar de mens
+
+[/root/review51: C6 SHIP](https://github.com/misja/agent-role-loop/issues/51#issuecomment-5992265942)
+beoordeelt productcommit `2b22c4d1cf96ed22d4f5ab0fa43ad0b0196a9aac`.
+Alle AC1–7 pass; geen blockers, nits of contract drift. De reviewer volgde S4
+zelfstandig van criterium tot het fictieve mensbesluit en voerde de falende
+A-regressie en vier geslaagde B-controles uit. Ook de 569 lokale links,
+beschermde bytevergelijkingen en PLANNED-leesgang met LIGHT/REJECT-afwijkingen
+zijn zelfstandig gecontroleerd. De build is ingezien auteursbewijs, geen door
+de reviewer herhaalde build. De hiervoor genoemde bewijsgrenzen blijven gelden.
+
+Herstelstand na C6: ontwerp 0, oplevering 0. Deze registratie wijzigt het
+beoordeelde onderwijsmateriaal niet. [PR #56](https://github.com/misja/agent-role-loop/pull/56)
+is gereed voor het afzonderlijke menselijke mergebesluit. GitHub rapporteert
+geen CI-checks voor deze PR; lokale build- en controlebewijzen staan hierboven.
