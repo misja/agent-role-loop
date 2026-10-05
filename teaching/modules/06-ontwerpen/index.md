@@ -36,7 +36,7 @@ oefening
 ## Praktijkvoorbeeld
 
 Gebruik [Van werkitem naar pull request](../../praktijk/van-werkitem-naar-pull-request.md)
-als naslag voor de projectoverdrachten. De bronmapping laat zien waar opdracht,
-planversie, besluit, codecommit en beoordeling staan. De beginstappen helpen bij
+als naslag voor de projectoverdrachten. De {ref}`bronmapping <praktijk-bronmapping>` laat zien waar opdracht,
+planversie, besluit, codecommit en beoordeling staan. De {ref}`beginstappen <praktijk-beginnen>` helpen bij
 het aanmaken van een eigen issue, PR en projectbord; in deze module bepaal je
 zelf de inhoud van de uitbreiding.
