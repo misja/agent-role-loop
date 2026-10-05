@@ -86,84 +86,179 @@ zijn opgelost en welke keuzes voor het mergebesluit overblijven.
 
 ## Drie soorten kwaliteitsmechanismen
 
-Een codeconventie, een test in de pijplijn en een beoordeling kunnen allemaal over dezelfde wijziging gaan. Toch beantwoorden ze verschillende vragen. De conventie legt een verwachting vast, de test controleert een vooraf bepaalde situatie en de beoordeling onderzoekt onder meer of die verwachting en controle passend zijn. Dit raamwerk onderscheidt daarom drie soorten mechanismen.
+Bij de uitleenfunctie geldt een afspraak: een uitgeleend boek mag niet nogmaals
+worden uitgeleend. Een test kan een tweede poging uitvoeren en de uitkomst
+vergelijken met die afspraak. Een beoordelaar onderzoekt of de aangeleverde
+tests deze situatie werkelijk afdekken. Afspraak, automatische controle en
+beoordeling dragen zo ieder op een andere manier bij aan dezelfde wijziging.
 
 ### 1. Geautomatiseerd en deterministisch
 
-Een test kan voor een gegeven verzameling orders controleren of iedere order eenmaal in het exportbestand voorkomt. Bij gelijke invoer en uitvoeromstandigheden vergelijkt hij het resultaat volgens dezelfde regels met de verwachte uitkomst. Ook linters, type-checkers en ingestelde coverage-drempels voeren vooraf bepaalde controles uit. Securityscans en dependency-audits controleren op basis van hun regels en beschikbare gegevens; een gewijzigde kwetsbaarhedendatabase kan hun uitkomst veranderen.
+De bouwer richt een test in met één beschikbaar boek. De test leent dat boek
+uit, probeert het opnieuw uit te lenen en controleert twee verwachtingen: de
+tweede poging wordt afgewezen en de eerste uitlening blijft behouden. Bij
+uitvoering vergelijkt de test de werkelijke uitkomst met die verwachtingen.
+Een afwijking laat de test falen. Bij gelijke invoer en uitvoeromstandigheden
+past de test dezelfde vergelijkingsregels toe. Dat bedoelen we hier met een
+deterministische controle.
 
-Het oordeel over wat gecontroleerd moet worden, gaat aan die uitvoering vooraf. Een geslaagde exporttest met een vaste verzameling orders levert bewijs voor die ingerichte situatie. Hij vertelt niet wat er gebeurt als tijdens de export orders bijkomen. Coverage laat zien welke code tijdens tests is uitgevoerd; uit het cijfer alleen blijkt niet of het relevante gebruiksgeval is onderzocht.
+Een geslaagde test levert bewijs voor de ingerichte situatie. Een test die
+alleen de eerste uitlening uitvoert, kan ook slagen, maar onderzoekt de tweede
+poging niet. Het coverage-rapport laat zien welke code tijdens de tests is
+uitgevoerd. Uit het percentage alleen blijkt niet of beide pogingen en de
+bijbehorende verwachtingen zijn gecontroleerd.
 
-In de loop voert de bouwer de toepasselijke automatische controles uit voordat hij het werk overdraagt aan de beoordelaars ({core}`contracts/review-handoff.md`). De bouwer levert het bewijs en de pijplijn handhaaft de ingestelde voorwaarden. Daardoor kunnen beoordelaars zich richten op vragen waarvoor de uitkomst van die controles alleen onvoldoende is, zoals de geschiktheid van de tests.
+De bouwer voert de toepasselijke controles uit en bewaart de resultaten bij de
+overdracht ({core}`contracts/review-handoff.md`). De pijplijn voert de ingestelde
+controles opnieuw uit op de aangeboden codeversie en handhaaft de afgesproken
+voorwaarden. Dat geeft de beoordelaar een vindbaar resultaat om naast de eis
+en de code te leggen. De keuze van de controles blijft een vraag voor het team.
 
 ### 2. Conventioneel en vastgelegd
 
-Het team kan afspreken dat iedere reparatie testbewijs bij de overdracht bevat. Die afspraak maakt duidelijk wat de bouwer moet aanleveren en wat de beoordelaar mag verwachten. Het contract legt de vorm van die overdracht vast. Dat er testbewijs aanwezig is, zegt nog niet of een belangrijk gebruiksgeval is afgedekt.
+Het team legt de uitleenafspraak vast als eis. Daarmee kan de bouwer bepalen
+welke uitkomst de test moet verwachten. Het team kan ook afspreken dat een
+reparatie wordt overgedragen met de codeversie, de uitgevoerde tests, hun
+resultaten en bekende beperkingen. Het contract beschrijft welke informatie
+de volgende rol ontvangt.
 
-Ook codeconventies, een branchingstrategie en een definition of done zijn gedeelde afspraken. Ze voorkomen dat iedere taak opnieuw begint met de vraag hoe werk wordt aangeleverd. De branchingstrategie bepaalt bijvoorbeeld hoe de exportreparatie als afzonderlijke wijziging beschikbaar komt voor beoordeling. Meerdere rollen gebruiken dezelfde grondslag en controleren bij hun overdracht of eraan is voldaan.
+Deze gedeelde afspraken geven richting aan het werk. Een gevulde overdracht
+bewijst nog niet dat het testresultaat bij de genoemde codeversie hoort of dat
+een belangrijk geval is onderzocht. De beoordelaar vergelijkt die informatie
+met de bronnen.
 
-Het team is verantwoordelijk voor het vastleggen en bijhouden van deze afspraken. Sommige zijn automatisch te controleren, zoals naamgevingsregels met een linter. Andere vragen om lezing, zoals de afspraak dat bekende beperkingen in een overdracht staan: een gevuld tekstveld toont nog niet aan dat de relevante beperking is genoemd.
+Het team houdt de afspraken bij. Sommige afspraken kunnen automatisch worden
+gecontroleerd: een linter kan bijvoorbeeld afwijkingen van afgesproken
+naamgevingsregels melden. Andere vragen om inhoudelijke lezing. Een ingevuld
+veld voor beperkingen laat bijvoorbeeld niet zien of de ontbrekende test van
+de tweede uitleenpoging is genoemd.
 
 ### 3. Oordeelsmatig en contextueel
 
-De beoordelaar leest de exporttest en merkt op dat de verzameling orders onveranderd blijft. Omdat gebruikers tijdens een export orders kunnen invoeren, vraagt hij om aanvullend bewijs. Hier bepaalt de beoordeling welke situatie nog onderzocht moet worden. De adversariële beoordelaar ({core}`roles/reviewer-adversarial.md`) heeft expliciet de opdracht zulke randgevallen en aannames te zoeken.
+De beoordelaar leest de eis en de test met alleen de eerste uitlening. Hij kan
+nu aanwijzen wat ontbreekt: deze test zegt niets over een tweede poging. Hij
+vraagt de bouwer om de aanvullende controle en de uitgevoerde uitkomst. De
+bevinding verwijst naar de uitleeneis en het ontbrekende geval. De
+adversariële beoordelaar ({core}`roles/reviewer-adversarial.md`) zoekt expliciet
+naar zulke randgevallen en aannames die kunnen falen.
 
-Een agent kan deze beoordeling uitvoeren, maar agentreview werkt anders dan een deterministische controle. Het model interpreteert de aangeboden informatie en formuleert bevindingen. Het kan een relevant geval missen of een ongegrond bezwaar maken. Een bevinding moet daarom verwijzen naar de eis, de wijziging of het bewijs dat haar ondersteunt; bij tegenspraak onderzoekt de hoofdbeoordelaar die onderbouwing. Verenigbare oordelen kunnen zonder afzonderlijke hoofdbeoordelaar worden samengevoegd.
+Een agent die deze taak uitvoert, interpreteert de aangeboden informatie.
+Hij kan een geval missen of een ongegrond bezwaar maken. Daarom moeten zijn
+bevindingen herleidbaar zijn tot de eis, code of bewijs. Bij inhoudelijke
+tegenspraak onderzoekt de hoofdbeoordelaar de onderbouwing; verenigbare
+beoordelingen kunnen worden samengevoegd. De volledige route staat in
+{core}`loop.md`.
 
-Er kan ook een vraag ontstaan waarvoor de eis zelf nog onvoldoende is bepaald: moeten later toegevoegde orders in deze export terechtkomen of in de volgende? Een agent kan opties en gevolgen beschrijven. De verantwoordelijke mens beoordeelt het gewenste gedrag met kennis van het gebruik. Als die keuze het goedgekeurde plan verandert, moet zij eerst worden vastgelegd voordat de bouwer daarop verdergaat. De menselijke verantwoordelijkheid omvat dus ook het doel en de afbakening, naast keuzes met onomkeerbare gevolgen.
+Niet iedere open vraag is een defect. Als het team nog niet heeft bepaald wat
+een gebruiker bij een geweigerde uitlening moet zien, kan de beoordelaar die
+ontbrekende keuze aanwijzen. De verantwoordelijke mens besluit over het gewenste
+gedrag. Verandert die keuze het goedgekeurde plan, dan wordt zij vastgelegd
+voordat de bouwer erop verdergaat. De beoordeling levert informatie voor dat
+besluit; zij vervangt het niet.
 
 ### De drie samen
 
-Een oordeel kan aanleiding geven tot een afspraak en vervolgens tot een automatische controle. Het team besluit bijvoorbeeld dat de export alleen orders bevat die bij de start aanwezig waren. Het legt dat gedrag vast als eis. De bouwer maakt vervolgens een test waarin tijdens de export een order wordt toegevoegd, met een verwachte uitkomst die uit die eis volgt. Bij volgende wijzigingen kan de pijplijn dezelfde verwachting opnieuw controleren.
+De drie bijdragen zijn bij dezelfde uitleenhandeling terug te vinden:
 
-```mermaid
-:caption: Van een inhoudelijke keuze naar een vastgelegde en controleerbare verwachting.
-
-flowchart LR
-    O["Oordeel<br>welke orders horen in de export?"] --> C["Conventie<br>het afgesproken gedrag ligt vast"] --> A["Automatisering<br>een test controleert dat gedrag"]
-```
-
-Deze beweging sluit aan bij Farleys nadruk op leren via feedback en kleine, verifieerbare stappen {cite}`farley2021modern`. De toepassing op de rollenloop is die van dit materiaal; Farley beschrijft geen werkwijze voor AI-agents. Niet elke afweging laat zich volledig in een test vastleggen. Bovendien kan veranderd gebruik aanleiding geven om de afspraak opnieuw te beoordelen.
-
-Soms is er nog geen norm. Een coverage-rapport kan bijvoorbeeld een percentage geven terwijl het team geen drempel heeft afgesproken. Het rapport meet dan wel de dekking, maar bepaalt niet of de wijziging daarop mag worden afgewezen. Na een afgesproken drempel kan de pijplijn die voorwaarde handhaven. Ook dan blijft de vraag of de tests zinvolle verwachtingen controleren. Een groen resultaat betekent dat de ingestelde controles slagen; de beoordeling van de wijziging volgt daarna.
-
-## Hoe lessen zich hieraan ophangen
-
-Bij elk kwaliteitsthema kun je onderzoeken welke verantwoordelijkheid het ondersteunt en wie die draagt. In een les over SonarQube gaat het bijvoorbeeld om de keuze van regels, de handhaving door de pijplijn en de vragen die voor beoordeling overblijven. Bij Git branching onderzoek je hoe een wijziging afzonderlijk beoordeelbaar wordt en wie de samenhang met ander werk bewaakt. Zo kun je de werkwijze ook toepassen wanneer een team ander gereedschap gebruikt.
-
-De volgende kaart verbindt veelvoorkomende thema's met de drie soorten mechanismen:
-
-| Kwaliteitsthema | Soort (1/2/3) | Draagt vooral bij |
+| Bijdrage | Concrete handeling | Wat de uitkomst toelaat |
 |---|---|---|
-| Coverage en testdrempels | 1 | bouwer + pijplijn (poort), met de oordeelsvraag bij de adversariële beoordelaar: dekt dit het juiste? |
-| CI/CD-pijplijn | 1 | pijplijn als toegangsvoorwaarde tot de review |
-| Linters, type-checkers, formatters | 1 + 2 | pijplijn handhaaft, conventie bepaalt de regels |
-| SonarQube en kwaliteitspoorten | 1 | pijplijn (poort); de oordeelslaag blijft bij de beoordelaars |
-| Security (SAST, dependency-audit) | 1 | pijplijn voor het geautomatiseerde deel |
-| Security (dreigingsmodel, ontwerpkeuzes) | 3 | adversariële beoordelaar + menselijke poort |
-| Codeconventies en naamgeving | 2 | gedeelde grondslag, bewaakt bij elke overdracht |
-| Commit- en branchingstrategie | 2 | orkestratie; wijzigingen als beoordeelbare eenheden |
-| Definition of done | 2 | vastgelegd in de acceptatiecriteria van het bouwplan |
-| Code review als oordeel | 3 | de gekozen beoordelaars; bij tegenspraak de hoofdbeoordelaar |
-| Architectuur- en abstractiekeuzes | 3 | menselijke poort (doel, scope en risico) + onderhoudbaarheidsbeoordelaar |
+| Afspraak | Het team legt vast dat een tweede uitlening wordt afgewezen en de eerste behouden blijft. | De bouwer kan verwachte testuitkomsten bepalen. |
+| Automatische controle | De bouwer voert een test met twee pogingen uit en bewaart het resultaat. | De beoordelaar kan zien of deze ingerichte situatie aan de verwachtingen voldoet. |
+| Beoordeling | De beoordelaar vergelijkt eis, codeversie, tests en resultaten. | Hij kan ontbrekende dekking of een afwijking onderbouwen en de resterende vraag aan de mens voorleggen. |
 
-De kolom "soort" verwijst naar de drie soorten hierboven. Een thema kan meerdere soorten omvatten. Bij security controleert een scan bijvoorbeeld op bekende kwetsbaarheden, terwijl een dreigingsmodel vraagt om beoordeling van het gebruik en mogelijke aanvallers. De gekozen scan en de interpretatie van zijn uitkomst horen daardoor bij dezelfde kwaliteitsverantwoordelijkheid.
+Een beoordeling kan zo een ontbrekend geval aanwijzen dat de bouwer vervolgens
+als test vastlegt. Bij volgende wijzigingen kan de pijplijn die verwachting
+opnieuw controleren. Deze samenhang verklaart waarom zowel afspraken als
+uitgevoerde controles en beoordeling nodig zijn.
+
+Soms ontbreekt een afspraak over een gemeten waarde. Een coverage-rapport kan
+bijvoorbeeld een percentage geven terwijl het team geen drempel heeft gekozen.
+Het rapport meet dan dekking, maar geeft geen afgesproken afwijzingsgrens.
+Heeft het team een drempel vastgelegd, dan kan de pijplijn die handhaven. Een
+gehaald percentage beantwoordt nog steeds niet of de tests de tweede
+uitleenpoging onderzoeken. Groen betekent dat de ingestelde controles slagen;
+de beoordeling onderzoekt ook hun geschiktheid voor de wijziging.
 
 ## Verbinding met de werkingsprincipes
 
-De vier werkingsprincipes ({core}`principles.md`) helpen om deze verantwoordelijkheden in het proces te organiseren: contextisolatie, expliciete overdrachten, proportionaliteit en de menselijke poort.
+De werkingsprincipes ({core}`principles.md`) organiseren wie deze informatie
+krijgt en wie beslist. Bij de uitleenfunctie kun je hun toepassing aanwijzen:
 
-Bij de export krijgt de beoordelaar de eisen, de wijziging en het testbewijs in een eigen context. Het maakgesprek met de aanvankelijke aanname over een vaste verzameling orders gaat niet mee. Contextisolatie beperkt zo de invloed van die voorgeschiedenis. De overdracht moet wel voldoende informatie bevatten om het werk te kunnen beoordelen; ontbrekende eisen worden door isolatie niet hersteld.
+- **Contextisolatie:** de beoordelaar ontvangt de eis, codeversie en testbewijs
+  in een eigen sessie. Het maakgesprek gaat niet mee. Zo beoordeelt hij de
+  aangeleverde bronnen zonder de eerdere redenering van de bouwer over te nemen.
+  Ontbrekende eisen worden hierdoor niet aangevuld.
+- **Expliciete overdracht:** de bouwer noemt de gecontroleerde pogingen en
+  bewaart hun verwachte en waargenomen uitkomst. De beoordelaar kan daardoor
+  een ontbrekend geval aanwijzen. Een volledig ingevuld contract garandeert
+  niet dat de inhoud juist is.
+- **Proportionaliteit:** een typefout in een melding vraagt minder onderzoek
+  dan een wijziging die de uitleenstatus verandert. De triage kiest passende
+  taken en wijst ieder criterium aan een onafhankelijke beoordelaar toe.
+- **Menselijke poort:** de mens beslist vooraf of het concrete plan aanvaardbaar
+  is. Na uitvoering en beoordeling beslist hij afzonderlijk over merge.
 
-Een expliciet contract maakt controleerbaar welke informatie in de overdracht wordt verwacht. Een beoordelaar kan daardoor aanwijzen dat het testbewijs of een bekende beperking ontbreekt. Het contract kan niet garanderen dat alles wat is ingevuld ook juist of volledig is. Daarvoor blijft inhoudelijke beoordeling nodig.
+Gebruik dit overzicht om de taakverdeling te herkennen. De routes, gekozen
+rollen en begrensde herstelregels volgen uit {core}`loop.md`.
 
-Proportionaliteit vraagt om een afweging vóór het werk begint. Een typefout in een melding vraagt doorgaans minder onderzoek dan een wijziging in de selectie van orders voor een financieel overzicht. De triage legt vast wie ieder acceptatiecriterium onafhankelijk beoordeelt. Bij een kleine correctie kan één beoordelaar volstaan; bij een wijziging aan een gedeeld datatype kunnen twee verschillende perspectieven nodig zijn. De uitgangsroutes en de regels voor herstel staan in {core}`loop.md`. Pragmatisch afwegen hoort bij iedere rol, ook wanneer geen aparte pragmatische beoordelaar is gekozen.
+## Naslag: kwaliteitsthema's
 
-De menselijke poort bewaakt vóór het bouwen of doel, scope en risico's aanvaardbaar zijn. De mens leest het plan en laat open keuzes beantwoorden, herzien of expliciet uitstellen. Later blijft de beslissing over het samenvoegen bij de mens. De rollen en controles leveren informatie voor die beslissingen. Hun waarde moet blijken uit het uitgevoerde werk en de bevindingen, niet uit het aantal rollen of de aanwezigheid van een ingevuld contract.
+Gebruik deze kaart wanneer je een projectcontrole kiest, bijvoorbeeld in
+[module 6](modules/06-ontwerpen/les.md). Zoek een thema dat je al gebruikt en
+bepaal welke afspraak het nodig heeft, wat het automatisch controleert en
+welke vraag voor beoordeling overblijft. De kaart introduceert geen verplichte
+gereedschapsset. Voor de eerste uitleg volstaat de uitleenhandeling hierboven.
+
+| Thema | Afspraak of automatische controle | Vraag voor beoordeling en eigenaar |
+|---|---|---|
+| Coverage en testdrempels | Het team kiest een drempel; de pijplijn meet dekking en handhaaft die grens. | De beoordelaar onderzoekt welke relevante gevallen en verwachtingen ontbreken. |
+| CI/CD-pijplijn | Het team bepaalt verplichte controles; de pijplijn voert ze op de codeversie uit. | De beoordelaar vergelijkt de resultaten met de criteria en bekende beperkingen. |
+| Linters, type-checkers en formatters | Het team kiest regels voor stijl en typen; gereedschap meldt of herstelt ingestelde afwijkingen. | De beoordelaar onderzoekt wat de regels over het bedoelde gedrag openlaten. |
+| SonarQube en kwaliteitspoorten | Het team kiest regels en grenzen; de pijplijn handhaaft de ingestelde poort. | De beoordelaar onderzoekt de geschiktheid en ontbrekende dekking van die controles. |
+| Securityscans en dependency-audits | Een scan controleert code of gebruikte pakketten volgens regels en beschikbare kwetsbaarheidsgegevens. | De adversariële beoordelaar onderzoekt risico's van gebruik en ontwerp die de scan niet afdekt. Nieuwe gegevens kunnen de scanuitkomst veranderen. |
+| Codeconventies en naamgeving | Het team legt afspraken vast; een linter kan een deel automatisch controleren. | Bouwer en beoordelaar vergelijken het werk met de overige afspraken. |
+| Commit- en branchingstrategie | Het team bepaalt hoe een wijziging afzonderlijk beschikbaar komt. | De orkestrator bewaakt welke versie wordt beoordeeld en haar samenhang met ander werk. |
+| Definition of done | Het team legt vast waaraan opgeleverd werk moet voldoen. | De beoordelaar onderzoekt bewijs voor de toepasselijke voorwaarden. |
+| Code review | De geselecteerde beoordelaars onderzoeken toegewezen criteria. | Bij inhoudelijke tegenspraak onderzoekt de hoofdbeoordelaar de onderbouwing. |
+| Architectuur en abstracties | Het plan beschrijft de gekozen verdeling van verantwoordelijkheden. | De onderhoudbaarheidsbeoordelaar onderzoekt wijzigbaarheid; de mens beslist over doel, scope en risico. |
+
+Een thema kan meerdere bijdragen hebben. Een naamgevingsafspraak is vastgelegd
+én gedeeltelijk automatisch te controleren. Bij security kan het team daarnaast
+een dreigingsmodel maken: een beschrijving van mogelijke aanvallers, hun doelen
+en wat zij kunnen bereiken. De adversariële beoordelaar gebruikt dat model om
+risico's te onderzoeken. Een scanresultaat alleen beantwoordt die ontwerpvraag
+niet.
 
 ## Verder lezen
 
-- The shift to agentic AI: evidence from Codex {cite}`johnston2026codex`. Grootschalige analyse van gebruiksdata die laat zien dat agentisch werken niet "een betere chatbot" is maar een andere manier om werk te organiseren: intensieve gebruikers verschuiven hun eigen rol naar delegeren, superviseren en integreren, en de waarde ervan hangt af van het herontwerpen van workflows rond delegatie en verificatie. Het onderbouwt de these van dit raamwerk dat kwaliteit naar oordeel, supervisie en review verschuift, en laat tegelijk zien dat die volwassen werkwijze nog schaars is: de meeste gebruikers buiten de onderzochte frontier organiseren hun werk nog niet zo, wat steun geeft aan de gedachte dat dit een aan te leren praktijk is en geen vanzelfsprekendheid. Let bij gebruik op de herkomst: het is een publicatie van OpenAI over het eigen product, die de auteurs zelf als niet-representatief voor de typische organisatie kenschetsen. Die herkomst maakt de bron niet minder bruikbaar als beschrijving van hoe volwassen agentisch werk eruitziet, maar wel als iets om bewust mee te wegen, en daarmee meteen een voorbeeld van bronkritiek.
+Kies een bron op de vraag die je wilt onderzoeken. De toelichtingen noemen
+welke eerdere uitleg helpt en wat je uit de bron kunt afleiden.
+
+- **The shift to agentic AI: evidence from Codex.** {cite}`johnston2026codex`
+  Lees de introductie en conclusie als je na de voorbereiding wilt onderzoeken
+  hoe gebruikers taken aan agents delegeren en resultaten beoordelen. De studie
+  beschrijft gebruik van Codex bij individuele gebruikers, organisaties en
+  OpenAI-medewerkers. Het is onderzoek van OpenAI over het eigen product;
+  de interne werkomgeving is volgens de auteurs niet representatief voor een
+  doorsnee organisatie. Gebruik het als beschrijving van waargenomen werkpraktijken,
+  niet als bewijs dat onze rollenlus betere software oplevert.
 - **David Farley, Modern Software Engineering.** {cite}`farley2021modern` Lees hoofdstuk 5, *Feedback*, als je wilt weten waarom je tijdens het ontwikkelen tussentijds controleert wat je hebt gemaakt. Je hebt daarvoor ervaring met programmeren en tests nodig. De toepassing op onze AI-werkwijze werken we in deze leerlijn uit.
-- Alenezi, Rethinking Software Engineering for Agentic AI Systems {cite}`alenezi2026rethinkingsoftwareengineeringagentic`. Multivocal literatuurstudie die vier kerncompetenties voor het werken met agentic AI destilleert: intent articulation, systematic verification, multi-agent orchestration, en human judgment and accountability. Die vier vallen vrijwel samen met de opbouw van deze leerlijn: het verwoorden van intentie (planner en build packet), verificatie als infrastructuur (module 3), orkestratie (de loop zelf) en het menselijke oordeel met expliciete poorten op kritieke momenten (module 5). Voor het onderwijs bepleit het paper een verschuiving van artefact-beoordeling naar procestransparantie, mondelinge verdediging en bewijs van redeneren over AI-gegenereerde output, en het beschrijft hoe AI ervaren ontwikkelaars versnelt maar beginners zonder stuur- en verificatie-ervaring juist remt; beide punten onderbouwen de didactische keuzes van dit materiaal. Let bij gebruik op de herkomst: het is een niet peer-reviewed preprint van één auteur, en de referentielijst bevat slordigheden (placeholder-nummers, vrijwel identieke titels onder verschillende auteurs), een bekend waarschuwingssignaal. Gebruik het daarom als synthese en begrippenkader, en citeer voor harde empirische claims de onderliggende studies zelf, zoals het gecontroleerde experiment van Borg e.a. waarnaar het verwijst (onderhoudbaarheid hangt af van de omringende procesinfrastructuur, niet van het generatieve model alleen). Ook dat is een oefening in bronkritiek.
-- Sweller, Cognitive load during problem solving {cite}`sweller1988cognitive`. De cognitieve-belasting-theorie onderbouwt de didactische vorm die dit materiaal gebruikt: worked examples met fading, waarin vroege modules een volledig voorbeeld tonen en latere de student steeds meer zelf laten invullen. Dat verlaagt de belasting waar die niet leerzaam is en houdt haar over voor waar het oordeel geoefend moet worden.
+- **Alenezi, Rethinking Software Engineering for Agentic AI Systems.**
+  {cite}`alenezi2026rethinkingsoftwareengineeringagentic` Lees secties 4 en 5.1
+  nadat je een overdracht en beoordeling hebt uitgevoerd. Welke taken moet een
+  ontwikkelaar volgens de auteur zelf blijven beheersen? Het artikel verbindt
+  literatuur en praktijkperspectieven aan voorstellen voor vaardigheden en
+  onderwijs. Het is een preprint, een onderzoeksversie zonder hier vastgestelde
+  peer review. De auteur noemt het voorgestelde raamwerk conceptueel en nog te
+  toetsen. Bovendien bevatten bronverwijzingen onvolledige nummers, zoals
+  `2503.XXXXX`. Gebruik het voor discussie over de voorstellen; controleer
+  claims over gemeten effecten in de oorspronkelijke studies voordat je ze
+  overneemt.
+- **Sweller, Cognitive load during problem solving: Effects on learning.**
+  {cite}`sweller1988cognitive` Lees het abstract als je na de oefeningen wilt
+  onderzoeken waarom zelfstandig een oplossing zoeken niet vanzelf tot leren
+  leidt. Je kunt daarbij je ervaring met een uitgewerkt voorbeeld gebruiken.
+  Sweller bespreekt hoe de aandacht die probleemoplossen vraagt het opbouwen
+  van bruikbare kennis kan hinderen. De afnemende begeleiding in onze modules,
+  waarbij je steeds meer zelf invult, is een ontwerpkeuze van dit materiaal.
+  Het abstract toont geen leereffect van deze AI-oefeningen aan.
