@@ -11,8 +11,11 @@ Daarvoor gebruiken we hier een issue en een pull request.
 Lees dit hoofdstuk na [module 2](../modules/02-begrijpen/index.md). Je kent dan de
 rollen en de contracten die hun overdrachten beschrijven. Algemene kennis van
 Git en tests gebruiken we hieronder. Ervaring met een agent die GitHub zelf kan
-bedienen is niet nodig. De [inleiding](../index.md) legt het verschil uit tussen
-een taalmodel, een agent en een rol.
+bedienen is niet nodig. De [voorbereiding](../van-chat-naar-agent.md)
+legt model, agent en rol uit bij “Wie past de code toe en voert de tests uit?”
+en “Een rol is een taak”. “Een overdracht aan de beoordelaar” toont welke
+sessie-invoer en controle-uitvoer meegaan; gebruik die uitleg als voorbereiding
+op de sessies hieronder.
 
 Na dit voorbeeld kun je de geldige opdracht, het menselijke besluit en de
 beoordeelde codeversie aanwijzen. Je kunt ook uitleggen welke informatie bij een
@@ -24,7 +27,8 @@ zelf controleren. De bestaande modulecases blijven aparte oefeningen.
 
 ## Dezelfde opdracht, een andere opslagplaats
 
-Eerst schrijven we de opdracht op. Een medewerker wil een selectie kunnen
+Eerst schrijven we de opdracht op. W1 is de naam van dit werkitem; C0 benoemt
+het contract voor de opdracht, niet een extra taak. Een medewerker wil een selectie kunnen
 opvragen, terwijl het bestaande overzicht van alle boeken beschikbaar blijft.
 Die laatste voorwaarde doet ertoe: het filter mag uitgeleende boeken niet uit de
 registratie verwijderen.
@@ -44,6 +48,17 @@ Een contract beschrijft welke informatie nodig is; Markdown is hier de opmaak.
 Een bestand of issue is de plaats waar je die informatie bewaart. Het
 projectbord laat vervolgens zien in welke fase het werk staat. Een kaart met
 status *In progress* vertelt nog niet welk plan is goedgekeurd.
+
+(praktijk-bronmapping)=
+### Bronmapping: welk document staat waar?
+
+C1 is de route- en verantwoordelijkheidskeuze; C2 het plan, met P1 als
+planversie; C4 het menselijke planbesluit; C5 de oplevering met bewijs; C6
+het onafhankelijke oordeel. De contractdefinities staan bij
+{core}`contracts/triage-decision.md`, {core}`contracts/build-packet.md`,
+{core}`contracts/gate-decision.md`, {core}`contracts/review-handoff.md` en
+{core}`contracts/reviewer-verdict.md`. De codes benoemen de vorm van de
+informatie; de tabel wijst de ingevulde bronnen aan.
 
 | Informatie | Geldige bron in dit voorbeeld | Wat elders staat |
 |---|---|---|
@@ -77,6 +92,9 @@ De menselijke opdrachtgever beoordeelt P1 vóór de bouw. In het voorbeeld staat
 in C4-P1 dat de toevoegvolgorde behouden blijft. Een losse reactie “akkoord” is
 alleen bruikbaar als duidelijk is op welke planversie zij betrekking heeft.
 
+(praktijk-sessie-invoer)=
+### Invoer en uitvoer van de sessies
+
 | Opdracht aan een sessie | Informatie die meegaat | Resultaat |
 |---|---|---|
 | Plan deze wijziging | C0, C1, basiscode, geldende normen | C2-P1 |
@@ -96,7 +114,9 @@ routekeuze staat in {core}`loop.md`.
 
 ## Een groene controle, toch een blokkade
 
-De bouwer levert versie A aan in een PR. Het filter geeft de juiste beschikbare
+A en B zijn leeslabels voor de meegeleverde codebestanden, geen Git-commits.
+A is de eerste oplevering; B het herstel. Bij eigen werk gebruik je echte
+volledige commit-ID's. De bouwer levert versie A aan in een PR. Het filter geeft de juiste beschikbare
 boeken terug en de drie uitgevoerde tests slagen. In C5-A staat echter dat S4
 niet is vastgesteld. De beoordelaar ziet bovendien dat de methode de interne
 lijst overschrijft. Een boek dat was uitgeleend verdwijnt daardoor uit een
@@ -166,6 +186,7 @@ voorstel vastgelegd. De mens houdt de uitvoering tegen omdat regels voor
 hoofdletters en gelijke titels ontbreken. De bestaande groene beoordeling
 blijft een oordeel over B tegen W1/P1, niet over de nieuwe sorteereis.
 
+(praktijk-beginnen)=
 ## Zelf beginnen op GitHub
 
 Werk in een eigen oefenrepository en met een medestudent als menselijke
@@ -189,12 +210,15 @@ veronderstellen geen geïnstalleerde agentkoppeling.
    Zie [een project maken](https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project)
    en [bestaande items toevoegen](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-items-in-your-project/adding-items-to-your-project).
 4. **Plan en laat besluiten.** Leg C1 vast met namen van de uitvoerders en S1-S4
-   als toewijzing aan de beoordelaar. Laat de planner P1 maken. Gebruik de
+   als toewijzing aan de beoordelaar. Geef de planner de
+   {ref}`sessie-invoer <praktijk-sessie-invoer>` en zijn rolprompt; bewaar P1
+   als teruggegeven C2. Gebruik de
    voorbeeldcontracten als vorm, niet de fictieve goedkeuring als toestemming.
    Bewaar de concrete P1-snapshot met commitlink. Laat je medestudent het plan
    lezen en C4 vastleggen met die verwijzing. Ga pas daarna bouwen.
 5. **Maak de wijziging afzonderlijk beoordeelbaar.** Start een branch vanaf je
-   basis en voeg het filter toe, of reproduceer de voorbereide A-variant met de
+   basis en geef de bouwer de {ref}`bouwinvoer <praktijk-sessie-invoer>`.
+   Voeg het filter toe, of reproduceer de voorbereide A-variant met de
    patch. Controleer de uitkomsten. Leg de wijziging vast en noteer de codecommit.
 
    ```sh
@@ -215,7 +239,8 @@ veronderstellen geen geïnstalleerde agentkoppeling.
    werkt bij een PR naar de standaardbranch; na merge sluit het gekoppelde
    issue. Zie [de voorwaarden voor deze koppeling](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue).
 7. **Laat onafhankelijk beoordelen.** Geef een nieuwe beoordelingssessie C5-kern,
-   de normen, code en controles. Bewaar C6 als herkenbare agentbeoordeling bij de
+   de normen, code en controles uit de
+   {ref}`reviewinvoer <praktijk-sessie-invoer>`. Bewaar C6 als herkenbare agentbeoordeling bij de
    PR, met de exacte commit. Een GitHub-review kent onder meer *Comment*, *Approve*
    en *Request changes*; wie die mag indienen hangt van de rechten af. De auteur
    kan [zijn eigen PR niet goedkeuren](https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request). Een overgenomen agentoordeel in een comment
@@ -234,7 +259,13 @@ veronderstellen geen geïnstalleerde agentkoppeling.
 Je eindresultaat is een navolgbare keten van opdracht naar merge. Een tweede
 student moet de juiste versie kunnen vinden zonder jouw chat terug te lezen.
 
-## Dezelfde inhoud in een andere omgeving
+## Optionele naslag: verhuizing naar een andere omgeving
+
+Lees dit deel als je besluiten, code en bewijs naar een andere omgeving wilt
+meenemen. Het is geen extra stap na de merge. De exporttabel helpt de
+benodigde gegevens en ontbrekende platformfuncties te onderscheiden.
+
+### Dezelfde inhoud in een andere omgeving
 
 Codeberg biedt ook issues, pull requests en projectborden. Die functies kun je
 voor dezelfde verantwoordelijkheden gebruiken. Dat betekent niet dat de
@@ -265,6 +296,9 @@ Dit is de informatie die inhoudelijk mee moet naar een nieuwe projectomgeving.
 
 Een volledige verhuizing van je eigen project vraagt daarnaast een registratie:
 
+(praktijk-exporttabel)=
+### Exporttabel: wat neem je mee?
+
 | Mee te nemen | Hoe vastleggen | Wat niet vanzelf terugkomt |
 |---|---|---|
 | Opdracht, plannen, besluiten en C5/C6 | Markdown-snapshots met bron, versie en datum | Native reacties en reviewstatus |
@@ -279,7 +313,11 @@ nieuwe URL's in en controleer je elke verwijzing. Een tekstuele kopie van een
 besluit bewaart de inhoud en bronregistratie; zij maakt geen nieuwe menselijke
 ondertekening of native review aan.
 
-### Een echte projectketen teruglezen
+## Optionele naslag: een echte projectketen teruglezen
+
+Lees dit deel als je de geconstrueerde filterroute wilt vergelijken met
+werkelijke projectartefacten. De bronnen hieronder zijn geen extra
+uitvoeringsopdracht voor je eigen boekenplank.
 
 In deze repository kun je [werkitem #29](https://github.com/misja/agent-role-loop/issues/29)
 volgen naar het [uitvoeringsbesluit](https://github.com/misja/agent-role-loop/issues/29#issuecomment-5641493461),

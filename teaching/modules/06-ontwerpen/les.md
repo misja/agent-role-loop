@@ -15,10 +15,6 @@ Voor de overdrachten gebruik je de uitleg over
 [praktijkvoorbeeld](../../praktijk/van-werkitem-naar-pull-request.md) toont hoe
 je die overdrachten bij een issue en PR bewaart.
 
-## Leeruitkomsten
-
-De leeruitkomsten staan onder "Wat ga je leren" op de [module-index](index.md).
-
 ## Opbouw
 
 ### De opdracht ontwerpen en de bouw begeleiden
@@ -57,6 +53,17 @@ controle vraagt een reden: welke vraag blijft dan bij de beoordeling liggen?
 Vage afspraken kunnen de bouwer ruimte geven voor verschillende keuzes. Een
 vastgelegde afspraak biedt een beoordelingsbasis, maar bewijst nog geen naleving.
 
+Stel dat je voor een demonstratie een kleine interface op in-memory-logica
+maakt, zonder nieuwe externe afhankelijkheden of echte gebruikersgegevens.
+Er is geen bestaande projectnorm die een dependencyscan verplicht stelt.
+Je kunt dan een scan voor nieuw toegevoegde dependencies weglaten: er zijn
+voor deze wijziging geen nieuwe pakketten om daarmee te onderzoeken. Leg die
+scope en reden vast. Een beoordelaar moet nog steeds nagaan of de interface
+invoer goed afhandelt, de juiste logica aanroept en passende foutmeldingen toont.
+De weglating bewijst geen kwetsbaarheidsvrijheid en laat een al verplichte
+projectcontrole niet vervallen. Gebruik deze afweging alleen als de beschreven
+voorwaarden voor jouw uitbreiding gelden.
+
 De [conventiepagina](../../conventies.md) van dit materiaal is een voorbeeld:
 zij wijst de geldende normen en hun vindplaatsen aan. In je eigen project leg je
 ook de gebruikte versies vast, zodat een latere beoordeling dezelfde basis
@@ -74,13 +81,13 @@ In deze oefening staat de opdracht in je issue. Het plan en menselijke besluit
 staan in herkenbare reacties met verwijzingen naar de geldende versies. De
 codecommit legt de wijziging vast; de PR bevat de oplevering en beoordeling. Het
 bord toont de voortgang. Een bordstatus vervangt geen besluit over een plan.
-De volledige [bronmapping](../../praktijk/van-werkitem-naar-pull-request.md)
+De volledige {ref}`bronmapping <praktijk-bronmapping>`
 uit het praktijkvoorbeeld helpt je deze bronnen aan elkaar te koppelen.
 
 Weeg bij je toolkeuze mee wie de gegevens kan lezen, waar ze worden bewaard en
 wat een verhuizing vraagt. Kun je behalve code ook besluiten, bijlagen en reviews
 meenemen? Welke koppelingen en accountrechten moet je opnieuw inrichten? De
-[exporttabel](../../praktijk/van-werkitem-naar-pull-request.md)
+{ref}`exporttabel <praktijk-exporttabel>`
 maakt dat concreet. Markdown-snapshots bewaren de inhoud van overdrachten; voor
 historie, verbanden en voortgang zijn aanvullende gegevens nodig. Onderzoek die
 kosten voor jouw project voordat je een toolwissel als uitvoerbaar beschrijft.
