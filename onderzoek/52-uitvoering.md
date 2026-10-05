@@ -105,5 +105,19 @@ Studentwaarnemingen, gemeten begrip/leereffect en haalbaarheid van de moduleduur
 zijn niet beschikbaar. Bronlezing en agentlezing zijn geen studentvalidatie.
 Geen nieuwe casustests, platformrechten- of providerproef en geen integrale
 externe-linkaudit. De primaire broncontrole betreft de genoemde passages.
-Initial C6 volgt op de exacte productcommit en toetst alle criteria, inclusief
-een zelfstandige leesgang langs de vier bronnen en de benodigde voorkennis.
+
+## Onafhankelijke C6 en menselijke mergepoort
+
+[C6 review52: SHIP](https://github.com/misja/agent-role-loop/issues/52#issuecomment-6001574673)
+beoordeelt exact `5950a524c7d5c76e534cee3b668686eb0102af8f`.
+AC1–7 pass; geen blockers, nits of contract drift. De reviewer onderzocht
+zelfstandig de drie mechanismen en de leesgang langs alle vier bronnen,
+controleerde de primaire claimplaatsen, beschermde bytegrenzen en diff,
+en voerde de 273 lokale linkcontroles opnieuw uit: nul fouten.
+Build is ingezien C5-bewijs, geen opnieuw door de reviewer uitgevoerde build.
+De genoemde bewijsgrenzen blijven gelden; geen studentvalidatie.
+
+Herstelstand na C6: ontwerp 0, oplevering 0. Deze registratie wijzigt het
+beoordeelde product niet. [PR #57](https://github.com/misja/agent-role-loop/pull/57)
+is gereed voor het afzonderlijke menselijke mergebesluit. GitHub meldt geen
+CI-checks voor deze PR; lokale bewijzen staan hierboven.
