@@ -26,7 +26,7 @@ Tests eerst uitgevoerd op tijdelijke foutvarianten, vervolgens op dezelfde B.
 ongewijzigde stdout/stderr onder 58-proef. De tijdelijke varianten veranderen
 alleen een kopie van B onder /tmp; bekende A komt uit de vaste casusbron.
 
-- false.patch: filtert ook bij False; E1 en E3 falen, E2-subtests falen;
+- false.patch: filtert ook bij False; E1 en E3 falen, E2-subtests geven IndexError;
   suite exit1. Dit toont detectie van verkeerd False-gedrag, geen afzonderlijke
   garantie over ieder mogelijk implementatiefouttype.
 - container.patch: retourneert de interne lijst bij standaard/False; E2 faalt
@@ -57,3 +57,8 @@ Mutantdetectie en technische checks bewijzen geen algemene correctheid of begrip
 Alle AC1-5 gaan naar één verse onafhankelijke strikte beoordelaar met exacte
 productcommit, C5-kern, leesbare normen en noodzakelijk objectief bewijs, zonder
 maaktranscript. Eindbeoordeling en menselijk mergebesluit volgen nog.
+
+Git diff --check meldt uitsluitend letterlijke trailing spaces in bewaarde
+unittest/Sphinx-uitvoer en een lege contextregel in false.patch. Deze ruwe
+bewijsbytes blijven behouden; gewijzigde productcode/uitleg hebben geen
+whitespacebevindingen. Dit is geen claim van volledig schone onderzoeksdiff.
