@@ -1,0 +1,2 @@
+# Concrete approved design
+Signature def lijst(self, alleen_beschikbaar=False). True returns a new comprehension [b for b in self._boeken if b.uitgeleend_aan is None]; otherwise retain return list(self._boeken). No other code/test/dependency change. Human executes python3 -B controleer.py werk volledig: before 1 pass 3 TypeError exit1; after4 pass exit0. S1-S4 assigned to one fresh strict reviewer; #58 owns extra regressions.

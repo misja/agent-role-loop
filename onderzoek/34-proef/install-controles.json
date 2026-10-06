@@ -1,0 +1,14 @@
+{
+  "fixture_directory": "/tmp/arl34-install-check-1qo0r5ei",
+  "checks": [
+    "install/check/rollback retain existing AGENTS and config",
+    "existing install conflict stops",
+    "unsafe symlink stops before copying",
+    "changed owned bytes stop rollback before removal",
+    "missing owned file stops before removal",
+    "invalid ownership stops before removal",
+    "invalid directory ownership stops",
+    "unrelated content retained"
+  ],
+  "passed": 8
+}

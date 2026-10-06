@@ -1,0 +1,12 @@
+Human orchestrator; commit e94946707ead4ad7180bfc3d6d59f13bf0caac78
+python3 -B controleer.py werk zwak
+test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok
+test_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok
+test_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+
+exit 0

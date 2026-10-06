@@ -1,0 +1,2 @@
+# Project norms W1
+Python 3.10+ standard library. Only boekenplank.py is product. Test command python3 -B controleer.py werk volledig is executed by human orchestrator; model has no bash or Git tool. No changes to supplied controleer.py, storage, CLI, dependencies, sorting or keyword-only interface. Preserve insertion order and books/loan status. Scope work-items/W1/approved-design.md. Changed interface/scope/norm/risk requires human decision before building.

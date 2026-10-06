@@ -1,0 +1,233 @@
+{
+  "source": "actual Vibe 2.19.0 CLI stdout and per-session metadata; selected fields, no reasoning or account identity",
+  "session_id": "fb83141a-2e5f-001e-4526-076db52b8dbe",
+  "start_time": "2026-10-06T20:40:26.285463+00:00",
+  "end_time": "2026-10-06T20:40:54.174912+00:00",
+  "selected_model": [
+    {
+      "name": "mistral-vibe-cli-latest",
+      "alias": "mistral-medium-3.5",
+      "provider": "mistral"
+    }
+  ],
+  "immutable_model_weights": "not available, API name ends in latest",
+  "available_tools": [
+    "edit",
+    "grep",
+    "write_file",
+    "read_file"
+  ],
+  "agent_profile": {
+    "name": "accept-edits",
+    "overrides": {
+      "base_disabled": [
+        "exit_plan_mode"
+      ],
+      "tools": {
+        "write_file": {
+          "permission": "always"
+        },
+        "edit": {
+          "permission": "always"
+        }
+      }
+    }
+  },
+  "config_flags": {
+    "bypass_tool_permissions": false,
+    "include_project_context": false,
+    "enable_connectors": false,
+    "enable_telemetry": false
+  },
+  "stats": {
+    "steps": 18,
+    "session_prompt_tokens": 170226,
+    "session_completion_tokens": 2416,
+    "tool_calls_agreed": 16,
+    "tool_calls_rejected": 0,
+    "tool_calls_hook_denied": 0,
+    "tool_calls_failed": 1,
+    "tool_calls_succeeded": 15,
+    "context_tokens": 15721,
+    "last_turn_prompt_tokens": 14714,
+    "last_turn_completion_tokens": 1007,
+    "last_turn_duration": 6.725621300996863,
+    "tokens_per_second": 149.72594425599664,
+    "input_price_per_million": 1.5,
+    "output_price_per_million": 7.5,
+    "session_total_llm_tokens": 172642,
+    "last_turn_total_tokens": 15721,
+    "session_cost": 0.273459
+  },
+  "actual_tool_calls": [
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/entry.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/core/loop.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/core/roles/builder.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/core/contracts/review-handoff.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/NEG/repair-input.md"
+      },
+      "error": "<tool_error>read_file failed: File not found at: /tmp/arl34-smoke-0c2dckc3/work-items/NEG/repair-input.md</tool_error>",
+      "returned_result": true
+    },
+    {
+      "tool": "grep",
+      "arguments": {
+        "pattern": "repair-input",
+        "path": "/tmp/arl34-smoke-0c2dckc3"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "grep",
+      "arguments": {
+        "pattern": "NEG",
+        "path": "/tmp/arl34-smoke-0c2dckc3"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/NEG/C5-core.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/boekenplank.py"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "grep",
+      "arguments": {
+        "pattern": "C6",
+        "path": "/tmp/arl34-smoke-0c2dckc3"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/NEG/negative-snapshot.py"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/NEG/test-zwak.txt"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/NEG/test-volledig.txt"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/controleer.py"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/PROJECT.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "edit",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/boekenplank.py",
+        "old_string": "    def lijst(self, alleen_beschikbaar=False):\n        if alleen_beschikbaar:\n            self._boeken = [b for b in self._boeken if b.uitgeleend_aan is None]\n        return list(self._boeken)",
+        "new_string": "    def lijst(self, alleen_beschikbaar=False):\n        if alleen_beschikbaar:\n            return [b for b in self._boeken if b.uitgeleend_aan is None]\n        return list(self._boeken)"
+      },
+      "error": null,
+      "returned_result": true,
+      "result": "file: /tmp/arl34-smoke-0c2dckc3/boekenplank.py\nmessage: The file has been updated successfully.\nold_string:     def lijst(self, alleen_beschikbaar=False):\n        if alleen_beschikbaar:\n            self._boeken = [b for b in self._boeken if b.uitgeleend_aan is None]\n        return list(self._boeken)\nnew_string:     def lijst(self, alleen_beschikbaar=False):\n        if alleen_beschikbaar:\n            return [b for b in self._boeken if b.uitgeleend_aan is None]\n        return list(self._boeken)"
+    }
+  ],
+  "process": {
+    "argv": [
+      "vibe",
+      "--workdir",
+      "/tmp/arl34-smoke-0c2dckc3",
+      "--trust",
+      "--agent",
+      "accept-edits",
+      "--enabled-tools",
+      "read_file",
+      "--enabled-tools",
+      "grep",
+      "--enabled-tools",
+      "write_file",
+      "--enabled-tools",
+      "edit",
+      "--max-turns",
+      "40",
+      "--max-price",
+      "2",
+      "--output",
+      "json",
+      "-p",
+      "<explicit role task; private transcript omitted>"
+    ],
+    "environment_overrides": {
+      "VIBE_INCLUDE_PROJECT_CONTEXT": "false",
+      "VIBE_ENABLE_CONNECTORS": "false",
+      "VIBE_ENABLE_UPDATE_CHECKS": "false",
+      "VIBE_ENABLE_TELEMETRY": "false",
+      "VIBE_SESSION_LOGGING": "{\"save_dir\": \"/tmp/arl34-vibe-sessions\"}"
+    },
+    "exit": 0,
+    "elapsed_seconds": 30.418917179107666
+  }
+}

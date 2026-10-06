@@ -1,0 +1,12 @@
+{
+  "path": "/tmp/arl34-smoke-0c2dckc3",
+  "base_commit": "a201bb630740c5597a8c5e0c408f75b6b99265d6",
+  "core_commit": "04c087cee43ef074f1e132686688cbf01014f2ce",
+  "red_exit": 1,
+  "baseline_hashes": {
+    "boekenplank.py": "4a516d5145d5fe3d0d59420a53b83c760b7319543802d7cd031255deb0f0972f",
+    "controleer.py": "9c0e40321699cc0217ddc80ecbf9136b152dea23b5c63733c4d0998aee6adc6b",
+    "AGENTS.md": "2c5bc51f15ce0a066f2cbcf66e3e7fabef3ad3c88542289b2753c6e2f1ce5564",
+    "PROJECT.md": "05a13715b4a91a90058c0f3c4e38a88daca49d6f17340f3a035730f1de96e9b3"
+  }
+}

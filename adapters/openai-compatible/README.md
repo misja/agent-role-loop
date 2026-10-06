@@ -2,7 +2,12 @@
 
 Runs the role loop against any endpoint that speaks the OpenAI-compatible chat completions API: local models served by vLLM, llama.cpp, Ollama, LM Studio, or any hosted service with the same surface. There is deliberately no orchestration script in this phase - you (or your own tooling) make one API call per role and carry the artifacts between calls, exactly as in the [manual adapter](../manual/README.md).
 
-**Last verified:** 2026-06-12, against the chat completions request shape (`model`, `messages` with `system`/`user` roles).
+**Verification scope:** request shape (`model`, `messages` with `system`/`user`
+roles), originally checked 2026-06-12; Mistral official migration/chat documentation
+rechecked 2026-10-06. Endpoint compatibility is not a tested integration for every
+listed service. For a concrete repository-tool route, use the
+[Mistral/Vibe adapter](mistral/README.md); its execution evidence is separate from
+these bare HTTP templates.
 
 ## How it maps
 
@@ -34,10 +39,10 @@ curl http://localhost:8000/v1/chat/completions \
 
 ## Practical notes
 
-- **Model choice per role.** Nothing requires one model for all roles. Triage is fine on a small fast model; the planner and the adversarial reviewer benefit from the strongest model you have.
+- **Model choice per role.** Nothing requires one model for all roles. Select a model available to your account and record the actual identifier; these templates establish no comparative model-quality claim.
 - **Temperature.** The examples use a low temperature; these roles reward precision over creativity.
 - **Context length.** The contracts are designed to be compact, which is what makes the loop workable on local models with modest context windows. If an artifact does not fit, that is usually a sign the work item is too big - re-triage rather than truncate.
-- **No repository access.** A bare chat completion cannot read your repo. The planner must then label file-level statements as assumptions (its role prompt already requires this), and the builder produces patches for you to apply. If your serving stack supports tool calling, you can do better, but that is beyond this phase.
+- **No repository access.** A bare chat completion cannot read your repo. The planner must then label file-level statements as assumptions (its role prompt already requires this), and the builder produces patches for you to apply. If your serving stack supports tool calling, you can do better, but tool execution and permissions require an explicit agent environment, such as the separately documented Mistral/Vibe route.
 - **Reviewers in parallel.** The selected initial reviewer calls are independent and may run concurrently. Include decisions and objective evidence in C5 core, but no other initial verdicts. Repair calls use updated C5 core and the explicit C6 repair attachment.
 
 ## Version and repair state

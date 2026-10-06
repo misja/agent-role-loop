@@ -1,0 +1,5 @@
+{
+  "before": "e94946707ead4ad7180bfc3d6d59f13bf0caac78",
+  "after": "74e351d9bef6f0d5f936b2108185426226eee865",
+  "diff": "diff --git a/boekenplank.py b/boekenplank.py\nindex 2cbeb42..f1fe8cd 100644\n--- a/boekenplank.py\n+++ b/boekenplank.py\n@@ -23,5 +23,5 @@ class Boekenplank:\n \n     def lijst(self, alleen_beschikbaar=False):\n         if alleen_beschikbaar:\n-            self._boeken = [b for b in self._boeken if b.uitgeleend_aan is None]\n+            return [b for b in self._boeken if b.uitgeleend_aan is None]\n         return list(self._boeken)\n"
+}

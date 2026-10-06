@@ -1,0 +1,39 @@
+Human orchestrator execution on unchanged basis a201bb630740c5597a8c5e0c408f75b6b99265d6
+python3 -B controleer.py werk volledig
+test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok
+test_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ERROR
+test_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ERROR
+test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand) ... ERROR
+
+======================================================================
+ERROR: test_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl34-smoke-0c2dckc3/controleer.py", line 34, in test_s2_beschikbaar_in_volgorde
+    boeken = self.maak().lijst(alleen_beschikbaar=True)
+TypeError: Boekenplank.lijst() got an unexpected keyword argument 'alleen_beschikbaar'
+
+======================================================================
+ERROR: test_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl34-smoke-0c2dckc3/controleer.py", line 39, in test_s3_leeg_of_alles_uitgeleend
+    self.assertEqual(plank.lijst(alleen_beschikbaar=True), [])
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Boekenplank.lijst() got an unexpected keyword argument 'alleen_beschikbaar'
+
+======================================================================
+ERROR: test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl34-smoke-0c2dckc3/controleer.py", line 46, in test_s4_filter_verandert_geen_toestand
+    plank.lijst(alleen_beschikbaar=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Boekenplank.lijst() got an unexpected keyword argument 'alleen_beschikbaar'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=3)
+
+exit 1
