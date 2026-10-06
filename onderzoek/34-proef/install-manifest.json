@@ -1,0 +1,35 @@
+{
+  "source_commit": "04c087cee43ef074f1e132686688cbf01014f2ce",
+  "files": {
+    ".vibe/role-loop/entry.md": "d9b2f6f0a7f006a3c95004d8953ceeaa1c2ef0c3b57e2f54f9c0f649a3eadf67",
+    ".vibe/role-loop/AGENTS.example.md": "2c5bc51f15ce0a066f2cbcf66e3e7fabef3ad3c88542289b2753c6e2f1ce5564",
+    ".vibe/role-loop/role-task.md": "7ac35eab8eee5ad8f2ded615484d49f1bd96af3df8e15065fbd201d85b19fca3",
+    ".vibe/role-loop/core/principles.md": "677c6b09a6101769a0ba27cfa418c335ce6e7e07af005ab9aee7be1970aa45b9",
+    ".vibe/role-loop/core/loop.md": "ce039b1285784f37d06a3e5693cef6e12f66a927bef0dc381710b43cc44c424f",
+    ".vibe/role-loop/core/roles/reviewer-boss.md": "0e53364c335a24762ad32464dca2fefc4c44abc74af5229e8a927bf6140fa088",
+    ".vibe/role-loop/core/roles/reviewer-strict.md": "b416dae00583a0aadec0d053cec7687c0ac2e302accf97833e6f4934188666b3",
+    ".vibe/role-loop/core/roles/triage.md": "6581b2166a7e8a50577c860d4862f3f188fea445be6caac7d81939e4dac7f47f",
+    ".vibe/role-loop/core/roles/reviewer-maintainability.md": "77944d8f1eeccd5e6e3b328321f502e93380739d6efbd4ec0167ca3c7c8dd59a",
+    ".vibe/role-loop/core/roles/clarifier.md": "61117c86f5beff3ca1f00da50abef6d0e7152113332ad92dcd31a4039b6daea5",
+    ".vibe/role-loop/core/roles/human-gate.md": "cd5cae0cb765d1fd8c8ef099b41311731bc9045bd8cc07255aba316ff3afb128",
+    ".vibe/role-loop/core/roles/reviewer-pragmatic.md": "7dea511f125ff2a67b4c9009c91b05c50c8580dcd61e55280cbe98046e353537",
+    ".vibe/role-loop/core/roles/planner.md": "885c2f7d30f107a5f18af5ab3cbeee215a005069089da96326c74a1f1db28be5",
+    ".vibe/role-loop/core/roles/builder.md": "68bebc91cbb656c9032213dfc8555cec1335ef6c5782e938ecba21c0ff348936",
+    ".vibe/role-loop/core/roles/reviewer-adversarial.md": "0fd241043d2fb7fd25434753a455e6ba4db328290644a591770f5235454e6482",
+    ".vibe/role-loop/core/contracts/clarifier-result.md": "f523e67c412baa00b5b6aa6041d2222f30617178de15f2ce708133166da0930d",
+    ".vibe/role-loop/core/contracts/build-packet.md": "604e8d10e60748725209dc1818b1d3a4c4e290e7cb899353b85b0f6dd2223a05",
+    ".vibe/role-loop/core/contracts/review-handoff.md": "fac8014a341a43815bb9a73c63788e10a4bfc8e620c44ee38efcb904dbdcc039",
+    ".vibe/role-loop/core/contracts/work-item.md": "2132443870c0a7b857328b4b91cd78fa789ade7600b96e73088d29cbc545d939",
+    ".vibe/role-loop/core/contracts/gate-decision.md": "710c9c83ee303f64ebd1c0379107176e543f2fbb213320b1b8e345975f2267ac",
+    ".vibe/role-loop/core/contracts/reviewer-verdict.md": "9123db92f177b678b4b3846c0600b6f3fceb426dc7f895218049e75ef887d2e1",
+    ".vibe/role-loop/core/contracts/final-verdict.md": "f9c3ce6df085fcc260e2fdadb6f09f576b21f609c0872160caa9a7bdf398e690",
+    ".vibe/role-loop/core/contracts/triage-decision.md": "4fda8c0dc7ba5a2d919f76da107cc6944d2897748d2ca67df8cac7eb969369a6"
+  },
+  "created_directories": [
+    ".vibe",
+    ".vibe/role-loop",
+    ".vibe/role-loop/core",
+    ".vibe/role-loop/core/contracts",
+    ".vibe/role-loop/core/roles"
+  ]
+}

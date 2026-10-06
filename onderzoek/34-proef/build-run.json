@@ -1,0 +1,215 @@
+{
+  "source": "actual Vibe 2.19.0 CLI stdout and per-session metadata; selected fields, no reasoning or account identity",
+  "session_id": "1e39cb5e-85bb-a8aa-f04f-239b0abde77e",
+  "start_time": "2026-10-06T20:36:21.012898+00:00",
+  "end_time": "2026-10-06T20:36:53.332651+00:00",
+  "selected_model": [
+    {
+      "name": "mistral-vibe-cli-latest",
+      "alias": "mistral-medium-3.5",
+      "provider": "mistral"
+    }
+  ],
+  "immutable_model_weights": "not available, API name ends in latest",
+  "available_tools": [
+    "edit",
+    "grep",
+    "write_file",
+    "read_file"
+  ],
+  "agent_profile": {
+    "name": "accept-edits",
+    "overrides": {
+      "base_disabled": [
+        "exit_plan_mode"
+      ],
+      "tools": {
+        "write_file": {
+          "permission": "always"
+        },
+        "edit": {
+          "permission": "always"
+        }
+      }
+    }
+  },
+  "config_flags": {
+    "bypass_tool_permissions": false,
+    "include_project_context": false,
+    "enable_connectors": false,
+    "enable_telemetry": false
+  },
+  "stats": {
+    "steps": 7,
+    "session_prompt_tokens": 76457,
+    "session_completion_tokens": 5088,
+    "tool_calls_agreed": 14,
+    "tool_calls_rejected": 0,
+    "tool_calls_hook_denied": 0,
+    "tool_calls_failed": 0,
+    "tool_calls_succeeded": 14,
+    "context_tokens": 20484,
+    "last_turn_prompt_tokens": 18991,
+    "last_turn_completion_tokens": 1493,
+    "last_turn_duration": 8.385995869997714,
+    "tokens_per_second": 178.03490761800327,
+    "input_price_per_million": 1.5,
+    "output_price_per_million": 7.5,
+    "session_total_llm_tokens": 81545,
+    "last_turn_total_tokens": 20484,
+    "session_cost": 0.1528455
+  },
+  "actual_tool_calls": [
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/entry.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/core/loop.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/core/roles/builder.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/.vibe/role-loop/core/contracts/review-handoff.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/PROJECT.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/W1/C0.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/W1/C1.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/W1/C2.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/W1/C4.md"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/W1/test-red.txt"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/boekenplank.py"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/controleer.py"
+      },
+      "error": null,
+      "returned_result": true
+    },
+    {
+      "tool": "edit",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/boekenplank.py",
+        "old_string": "    def lijst(self):\n        return list(self._boeken)",
+        "new_string": "    def lijst(self, alleen_beschikbaar=False):\n        if alleen_beschikbaar:\n            return [b for b in self._boeken if b.uitgeleend_aan is None]\n        return list(self._boeken)"
+      },
+      "error": null,
+      "returned_result": true,
+      "result": "file: /tmp/arl34-smoke-0c2dckc3/boekenplank.py\nmessage: The file has been updated successfully.\nold_string:     def lijst(self):\n        return list(self._boeken)\nnew_string:     def lijst(self, alleen_beschikbaar=False):\n        if alleen_beschikbaar:\n            return [b for b in self._boeken if b.uitgeleend_aan is None]\n        return list(self._boeken)"
+    },
+    {
+      "tool": "write_file",
+      "arguments": {
+        "file_path": "/tmp/arl34-smoke-0c2dckc3/work-items/W1/C5.md"
+      },
+      "error": null,
+      "returned_result": true,
+      "result": "file_path: /tmp/arl34-smoke-0c2dckc3/work-items/W1/C5.md\nbytes_written: 3926\ncontent: # C5 W1 - Review Handoff\n\n## Core handoff (all reviewers)\n\n- **Artifact** - W1 work item. Basis commit a201bb630740c5597a8c5e0c408f75b6b99265d6. Modified file: boekenplank.py at /tmp/arl34-smoke-0c2dckc3/boekenplank.py. Diff: lines 24-27 of lijst() method.\n\n- **Process and norm basis** - Process/core norm 04c087cee43ef074f1e132686688cbf01014f2ce. Project norm a201bb630740c5597a8c5e0c408f75b6b99265d6 (PROJECT.md). Sources: C0.md, C1.md, C2.md, C4.md, test-red.txt, PROJECT.md, boekenplank.py, controleer.py.\n\n- **Scope and human decisions** - Accepted basis: C0 (Add optional alleen_beschikbaar=False to lijst()), C1 (PLANNED S, human-supervised Vibe planner/builder/one fresh strict reviewer), C2v1 (approved design with implementation checklist), C4 PROCEED from actual human source https://github.com/misja/agent-role-loop/issues/34#issuecomment-6024762858 on exact C2v1 https://github.com/misja/agent-role-loop/issues/34#issuecomment-6024662487. Authorized deviations: <none>. Deferred questions: <none>.\n\n- **Diff summary**\n  - Added optional `alleen_beschikbaar=False` parameter to `Boekenplank.lijst()` method signature\n  - Implemented conditional availability filtering using list comprehension when parameter is True\n  - Preserved insertion order and existing book/loan state per S1, S4\n  - Backward compatible: existing calls without argument continue to work\n\n- **Changed files or components** - boekenplank.py:24-27 (lijst method only)\n\n- **Acceptance criteria coverage and assignment**\n  - S1: Default `lijst()` returns all books in insertion order. Implementation: `lijst(self, alleen_beschikbaar=False)` returns `list(self._boeken)` when False. Verification: test_s1_standaard_volgorde in controleer.py. Reviewer: strict reviewer.\n  - S2: `lijst(alleen_beschikbaar=True)` returns only books with `uitgeleend_aan is None` in insertion order. Implementation: `[b for b in self._boeken if b.uitgeleend_aan is None]` when True. Verification: test_s2_beschikbaar_in_volgorde in controleer.py. Reviewer: strict reviewer.\n  - S3: `lijst(alleen_beschikbaar=True)` returns `[]` for empty plank or all-loaned plank. Implementation: same list comprehension yields empty list when no books meet condition. Verification: test_s3_leeg_of_alles_uitgeleend in controleer.py. Reviewer: strict reviewer.\n  - S4: Filtering does not modify internal state. Implementation: list comprehension creates new list, original `_boeken` untouched. Verification: test_s4_filter_verandert_geen_toestand in controleer.py. Reviewer: strict reviewer.\n\n- **Contracts touched** - Interface change: `Boekenplank.lijst()` signature extended from `lijst(self)` to `lijst(self, alleen_beschikbaar=False)`. Contract change: method now accepts optional boolean parameter controlling availability filtering. Data changes: <none>.\n\n- **Objective verification evidence** - Model: manual-with-expected-results (motivated by no bash tool access per PROJECT.md). Command: `python3 -B controleer.py werk volledig`. Expected outcome: 4 passes (S1-S4), 0 failures, exit code 0. Before state (test-red.txt): 1 pass (S1), 3 TypeError failures (S2-S4), exit code 1. After state: green evidence pending human execution. Evidence location: test-red.txt (actual red); human orchestrator to execute green and commit product. Tested revision: boekenplank.py modified per approved C2v1 design. Inapplicable before proof: N/A (actual red test output provided). Unavailable checks: none identified.\n\n- **Deviations and follow-ups** - Changes from accepted basis: <none>. Rationale: <none>. Decision source: <none>. Unresolved limitations: <none>. Deliberately deferred work: <none>.\n\n- **Repair state** - Design counter: 0. Delivery counter: 0. No prior repair appendix. Repair mode: not applicable.\n\n## Extended handoff (author history; full C5 for arbitration)\n\n- **Exploration and discarded attempts** - <none>\n\n- **Additional logs and refactoring history** - <none>\n"
+    }
+  ],
+  "process": {
+    "argv": [
+      "vibe",
+      "--workdir",
+      "/tmp/arl34-smoke-0c2dckc3",
+      "--trust",
+      "--agent",
+      "accept-edits",
+      "--enabled-tools",
+      "read_file",
+      "--enabled-tools",
+      "grep",
+      "--enabled-tools",
+      "write_file",
+      "--enabled-tools",
+      "edit",
+      "--max-turns",
+      "40",
+      "--max-price",
+      "2",
+      "--output",
+      "json",
+      "-p",
+      "<explicit role task; private transcript omitted>"
+    ],
+    "environment_overrides": {
+      "VIBE_INCLUDE_PROJECT_CONTEXT": "false",
+      "VIBE_ENABLE_CONNECTORS": "false",
+      "VIBE_ENABLE_UPDATE_CHECKS": "false",
+      "VIBE_ENABLE_TELEMETRY": "false",
+      "VIBE_SESSION_LOGGING": "{\"save_dir\": \"/tmp/arl34-vibe-sessions\"}"
+    },
+    "exit": 0,
+    "elapsed_seconds": 34.85651659965515
+  }
+}

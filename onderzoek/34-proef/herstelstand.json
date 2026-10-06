@@ -1,0 +1,20 @@
+{
+  "34": {
+    "design": 0,
+    "delivery": 0
+  },
+  "W1": {
+    "design": 0,
+    "delivery": 0
+  },
+  "NEG": {
+    "design": 0,
+    "delivery": 1,
+    "registration": "late, after actual author edit; orchestration preparation failed",
+    "before_commit": "e94946707ead4ad7180bfc3d6d59f13bf0caac78",
+    "blockers_source": "C6-before.md",
+    "author_run": "repair",
+    "human_authorization": "https://github.com/misja/agent-role-loop/issues/34#issuecomment-6024762858",
+    "extra_author_round_allowed": false
+  }
+}

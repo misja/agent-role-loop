@@ -1,0 +1,137 @@
+{
+  "source": "actual Vibe 2.19.0 CLI stdout and per-session metadata; selected fields, no reasoning or account identity",
+  "session_id": "7aca7af6-a656-df45-4086-836a49e3ba4e",
+  "start_time": "2026-10-06T20:25:47.978920+00:00",
+  "end_time": "2026-10-06T20:26:11.631619+00:00",
+  "selected_model": [
+    {
+      "name": "mistral-vibe-cli-latest",
+      "alias": "mistral-medium-3.5",
+      "provider": "mistral"
+    }
+  ],
+  "immutable_model_weights": "not available, API name ends in latest",
+  "available_tools": [
+    "grep",
+    "read_file"
+  ],
+  "agent_profile": {
+    "name": "plan",
+    "overrides": {
+      "tools": {
+        "write_file": {
+          "permission": "never",
+          "allowlist": [
+            "/home/misja/.vibe/plans/*"
+          ]
+        },
+        "edit": {
+          "permission": "never",
+          "allowlist": [
+            "/home/misja/.vibe/plans/*"
+          ]
+        }
+      }
+    }
+  },
+  "config_flags": {
+    "bypass_tool_permissions": false,
+    "include_project_context": false,
+    "enable_connectors": false,
+    "enable_telemetry": false
+  },
+  "stats": {
+    "steps": 5,
+    "session_prompt_tokens": 18776,
+    "session_completion_tokens": 3094,
+    "tool_calls_agreed": 0,
+    "tool_calls_rejected": 4,
+    "tool_calls_hook_denied": 0,
+    "tool_calls_failed": 1,
+    "tool_calls_succeeded": 0,
+    "context_tokens": 7035,
+    "last_turn_prompt_tokens": 6146,
+    "last_turn_completion_tokens": 889,
+    "last_turn_duration": 8.366369723000389,
+    "tokens_per_second": 106.25875133823065,
+    "input_price_per_million": 1.5,
+    "output_price_per_million": 7.5,
+    "session_total_llm_tokens": 21870,
+    "last_turn_total_tokens": 7035,
+    "session_cost": 0.051369
+  },
+  "actual_tool_calls": [
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/home/misja/.vibe/role-loop/entry.md"
+      },
+      "error": "Tool execution not permitted.",
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/home/misja/.vibe/role-loop/core/loop.md"
+      },
+      "error": "Tool execution not permitted.",
+      "returned_result": true
+    },
+    {
+      "tool": "read_file",
+      "arguments": {
+        "file_path": "/home/misja/.vibe/core/roles/planner.md"
+      },
+      "error": "Tool execution not permitted.",
+      "returned_result": true
+    },
+    {
+      "tool": "grep",
+      "arguments": {
+        "pattern": "role-loop|planner|work-items",
+        "path": "/home/misja"
+      },
+      "error": "Tool execution not permitted.",
+      "returned_result": true
+    },
+    {
+      "tool": "write_file",
+      "arguments": {
+        "file_path": "/home/misja/.vibe/plans/1791318347-swift-keen-vale.md"
+      },
+      "error": "<tool_error>write_file: Unknown tool 'write_file'</tool_error>",
+      "returned_result": true
+    }
+  ],
+  "process": {
+    "argv": [
+      "vibe",
+      "--workdir",
+      "/tmp/arl34-smoke-0c2dckc3",
+      "--trust",
+      "--agent",
+      "plan",
+      "--enabled-tools",
+      "read_file",
+      "--enabled-tools",
+      "grep",
+      "--max-turns",
+      "40",
+      "--max-price",
+      "2",
+      "--output",
+      "json",
+      "-p",
+      "<explicit role task; private transcript omitted>"
+    ],
+    "environment_overrides": {
+      "VIBE_INCLUDE_PROJECT_CONTEXT": "false",
+      "VIBE_ENABLE_CONNECTORS": "false",
+      "VIBE_ENABLE_UPDATE_CHECKS": "false",
+      "VIBE_ENABLE_TELEMETRY": "false",
+      "VIBE_SESSION_LOGGING": "{\"save_dir\": \"/tmp/arl34-vibe-sessions\"}"
+    },
+    "exit": 0,
+    "elapsed_seconds": 26.70453953742981
+  }
+}
