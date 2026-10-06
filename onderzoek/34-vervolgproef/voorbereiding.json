@@ -1,0 +1,34 @@
+{
+  "negative_commit": "6f296222cfeda806abe8e891dba7c7e5c9a2c125",
+  "previous_repair_commit": "74e351d9bef6f0d5f936b2108185426226eee865",
+  "negative_equals_prior_snapshot": true,
+  "suite_unchanged": true,
+  "results": {
+    "zwak": {
+      "command": [
+        "python3",
+        "-B",
+        "controleer.py",
+        "werk",
+        "zwak"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok\ntest_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok\ntest_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    "volledig": {
+      "command": [
+        "python3",
+        "-B",
+        "controleer.py",
+        "werk",
+        "volledig"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok\ntest_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok\ntest_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok\ntest_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand) ... FAIL\n\n======================================================================\nFAIL: test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/arl34-smoke-0c2dckc3/controleer.py\", line 48, in test_s4_filter_verandert_geen_toestand\n    self.assertEqual(na, voor)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^\nAssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]\n\nFirst differing element 1:\n(3, 'Bos', None)\n(2, 'Atlas', 'Noor')\n\nSecond list contains 1 additional elements.\nFirst extra element 2:\n(3, 'Bos', None)\n\n- [(1, 'Zee', None), (3, 'Bos', None)]\n+ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]\n?                    ++++++++++++++++++++++\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n"
+    }
+  },
+  "state_registered_before_author": true,
+  "author_not_started_at_registration": true
+}
