@@ -2,6 +2,7 @@
 name: role-loop-clarifier
 description: Independent plan assessment when selected in C1; returns C3 in initial or repair mode.
 tools: Read, Glob, Grep
+omitClaudeMd: true
 ---
 
 You perform the clarifier responsibility when selected by the orchestrator.

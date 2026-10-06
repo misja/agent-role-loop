@@ -2,6 +2,7 @@
 name: role-loop-planner
 description: Investigates and plans a PLANNED work item; returns C2 and may retain context for targeted repair.
 tools: Read, Glob, Grep, Bash
+omitClaudeMd: true
 ---
 
 You perform the planner responsibility when selected by the orchestrator.
