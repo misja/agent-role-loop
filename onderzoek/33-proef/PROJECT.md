@@ -1,0 +1,2 @@
+# Project norms W1
+Python3 standard library. Only boekenplank.py is product. Test command: python3 -B controleer.py werk volledig. No storage, CLI, dependency, sorting, keyword-only interface or changes to supplied controleer.py. Preserve insertion order, books and loan status. Human owns Git/tracker actions. No model merge. Exact approved scope is W1/approved-design.md; if new contract/scope/risk choices appear, stop for human decision.

@@ -1,0 +1,6 @@
+{
+  "commit": "328555e0e4ebec7e5bae82d23634b8e6a57be240",
+  "command": "python3 -B controleer.py werk volledig",
+  "exit_code": 0,
+  "output": "test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok\ntest_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok\ntest_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok\ntest_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+}

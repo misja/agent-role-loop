@@ -1,0 +1,9 @@
+{
+  "work_item": "NEG",
+  "design_consumed": 0,
+  "delivery_consumed": 1,
+  "before_commit": "49f810f3fe1ecdd9bc89e5f763c7a7cefbf6c4b7",
+  "blocker": "B1 S4 line26 overwrites storage, missing loaned book; return new selection and full suite green",
+  "source": "C6-initial.md",
+  "persisted_before_repair": true
+}
