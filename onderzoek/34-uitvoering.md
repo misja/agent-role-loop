@@ -167,3 +167,36 @@ De letterlijke studentinspectie liep exit0 op de oefenmap. Nieuwe docs-build
 menselijke continuation is nog niet ontvangen en geen extra providerbouwer gestart.
 Een nieuwe onafhankelijke repair-context krijgt actuele C5, dit diff, eerdere
 blockers/coverage en de opgeslagen verbruikte stand. Geen automatisch tweede herstel.
+
+## Finale herbeoordeling en open vervolgkeuze
+
+Verse review34_herstel beoordeelde exact
+`cfd9ea46771404405b561f70d33b460e05b0c9bd`; volledige C6 in
+[34-herbeoordeling.md](34-herbeoordeling.md) en
+[op het issue](https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025313849).
+BLOCK uitsluitend B34-01/AC4. B34-02 opgelost; AC7/9/10 pass na nieuwe leesgang,
+literal preflight, actieve 2.19.0-configdiscovery-broncontrole, eigen docs-build en
+340links/0errors. Andere technische dekking expliciet eerder vastgesteld en
+onaangetast; geen nieuwe provider- of studentproef. Aanwezige ongebruikte
+configuratielaag met ouderdiscovery niet met actieve CLI verward.
+
+Draft-PR [#61](https://github.com/misja/agent-role-loop/pull/61) blijft draft,
+#34 gaat naar Wacht op gate. Geen merge of volledige afsluiting. #34 en NEG
+oplevering1 blijven verbruikt. Er is geen extra author/provider gestart.
+
+Concrete voorgestelde menselijke vervolgopdracht voor B34-01: erken de historische
+late registratie als fout en geef precies één extra bewijsronde vrij. Injecteer
+opnieuw dezelfde gedeelde A-fixture in dezelfde afgeschermde proef; bewaar exacte
+commit en werkelijke zwak-groen/volledig-S4-rood-uitvoer. Bewaar vóór de bouwer
+input, eerdere blocker, beide bestaande tellers1 en daadwerkelijke menselijke
+continuation-bron. De herstelde launchpreflight stopt bij ontbrekende input/stand;
+metadata en CLI-uitvoer gebruiken afzonderlijke paden. Laat één nieuwe Vibe-bouwer
+met dezelfde bestands-tools uitsluitend de bekende opslagmutatie herstellen.
+Root voert volledige suite en Gitlookup/commit uit; verwacht vier pass/exit0 en
+bytes gelijk aan het bestaande hoofdproduct. Eén verse Mistral repair-review krijgt
+diff/blockers/dekking/continuation/stand. Bewaar alle oude runs en hun BLOCK.
+Werk uitsluitend nieuw bewijs/registratie in #34 bij en laat een verse onafhankelijke
+outer review B34-01 herbeoordelen met actuele C5 en herbruikbare onaangetaste dekking.
+Geen nieuwe feature, norm, modelupgrade, rechtenverruiming, tellerreset of automatische
+extra ronde. Bij opnieuw BLOCK is een nieuwe menselijke vervolgkeuze nodig.
+Deze voorsteltekst en de nog onbeantwoorde vraag vormen zelf geen vrijgave.
