@@ -6,7 +6,7 @@ Norm-/procesbasis `a9864c8a0b8cc0acab38d31d47a4582e0886966f`;
 [C2 v1](https://github.com/misja/agent-role-loop/issues/33#issuecomment-6017597771)
 in [33-plan.md](33-plan.md),
 [C4 PROCEED](https://github.com/misja/agent-role-loop/issues/33#issuecomment-6017668277).
-Root orkestreert/plant/bouwt, verse review33 toetst straks AC1–11.
+Root orkestreert/plant/bouwt; verse review33 heeft AC1–11 beoordeeld: SHIP.
 #33-tellers ontwerp0/oplevering0; geen mergebesluit.
 
 ## Installatie en lokale route
@@ -96,10 +96,27 @@ hoofdproef/#33 0/0; geen tweede ronde of automatische merge.
 
 Docs-build make -C docs html met -W --keep-going slaagt; lokale controle
 /tmp/arl33-links.py: 306 links/fragmenten inclusief inkomende navigatie, nul fouten.
-Beschermde diff voor core/bestaande adapters/casus leeg; diff --check schoon.
+Beschermde diff voor core/bestaande adapters/casus leeg. De eerdere
+`git diff --check` controleerde de werkboom. Exacte basis..product-controle
+geeft exit2 uitsluitend op C5-herstel.md:24: een letterlijke unified-diff-
+contextspatie in de bewijsfence. Die markering blijft behouden; geen inhoudelijke
+whitespacefout of productreparatie. De algemene claim 'schoon' geldt niet voor
+de volledige commitdiff. Root en reviewer hebben dit afzonderlijk bevestigd.
 
-Hoofdreview, gelabelde negatieve herstelproef en docs-/linkcontrole afgerond;
-verse onafhankelijke #33-review nog uitvoeren. Geen volledige #33-SHIP/afsluiting of merge.
+Hoofdreview, gelabelde negatieve herstelproef en docs-/linkcontrole afgerond.
+[Onafhankelijke C6](33-beoordeling.md): SHIP op productcommit
+`e51f2dee0ba60a3bab1704bea024be55e298f0d6`, alle AC1–11 nieuw onderzocht,
+geen blockers of productnits. Review33 herhaalde acht installatiefixtures,
+exacte Git-/snapshotcorrespondentie met groen/rood/groen, negen normbestanden
+en twintig corehashes, docs-build met -W --keep-going en 306 lokale links:
+nul linkfouten. Hij las voorbereiding en alle zeven studentstappen afzonderlijk.
+Dit is agentlezing, geen studentwaarneming of nieuwe provideruitvoering.
+
+De registercorrectie en opgeslagen C6 volgen ná de beoordeelde productcommit;
+geen adapter-, studentroute- of proefproductwijziging. #33/hoofdproef blijven
+0/0, NEG0/1. [PR #60](https://github.com/misja/agent-role-loop/pull/60) biedt het
+pakket aan; GitHub meldt geen automatische PR-checks. Oefenmerge en adaptermerge
+blijven afzonderlijke mensbesluiten. Geen afsluiting of merge vóór dat besluit.
 Geen native GitHub-review, interactieve UI, productieproef, studentwaarnemingen,
 gemeten begrip, modelvergelijking of besparing vastgesteld.
 
