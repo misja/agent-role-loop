@@ -62,3 +62,12 @@ Git diff --check meldt uitsluitend letterlijke trailing spaces in bewaarde
 unittest/Sphinx-uitvoer en een lege contextregel in false.patch. Deze ruwe
 bewijsbytes blijven behouden; gewijzigde productcode/uitleg hebben geen
 whitespacebevindingen. Dit is geen claim van volledig schone onderzoeksdiff.
+
+## Definitieve onafhankelijke beoordeling
+
+[Volledig C6](58-beoordeling.md) geeft SHIP op
+`ab008365b78071730217bdec1418c5a01b32cb04`, alle AC1-5 pass zonder
+bevindingen of contractdrift. Tests/mutanten/oude CLI/byte- en bundelbehoud
+onafhankelijk herhaald; build/linklogs als geleverd bewijs onderzocht.
+Eén C6 is final; geen C7. Deze slotregistratie verandert uitsluitend oordeel
+en onderzoeksregistratie. Ontwerp0, oplevering0; menselijk merge nog vereist.
