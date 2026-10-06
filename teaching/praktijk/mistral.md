@@ -49,13 +49,67 @@ maar registreer die keuze; dat is geen uitgevoerde Mistral-proef.
 
 ### 1. Projectafspraken inventariseren en adapter toevoegen
 
-Bekijk AGENTS.md, toepasselijke instructies in bovenliggende mappen en bestaande
-Vibe-configuratie. AGENTS is een bestand met projectinstructies dat Vibe kan
-laden. `.vibe/config.toml` en gebruikersconfiguratie kunnen daarnaast tools,
-agentprofielen, prompts, hooks en externe verbindingen instellen. Een profiel
-kiest gedrag en gereedschapsrechten; het is iets anders dan de rol uit de core.
-Inventariseer zulke bronnen, projectnormen en testcommando's zonder credentials
-te kopiëren. Controleer ook of eigen profielen `plan` of `accept-edits` vervangen.
+De oefencode komt uit je repository, maar Vibe kan ook instellingen van jouw
+gebruiker laden. Een agentprofiel kiest gedrag en gereedschapsrechten; een eigen
+profiel met de naam `plan` of `accept-edits` kan het ingebouwde profiel vervangen.
+De naam in een commando bewijst daardoor nog niet welke instellingen gelden.
+Een hook is een programma dat Vibe automatisch vóór of na een gereedschapsactie
+of beurt start. Zo'n programma kan handelingen uitvoeren buiten de genoemde
+modeltools. Daarom inspecteer je deze bronnen voordat je het project vertrouwt.
+
+Laat vanuit de oefenmap eerst de vindplaatsen tonen. Dit Python-commando zoekt
+alleen naar bestanden en mappen; het start Vibe niet en leest geen credentials:
+
+```sh
+python3 - <<'PYTHON'
+import os
+from pathlib import Path
+user = Path(os.environ.get("VIBE_HOME", str(Path.home() / ".vibe"))).expanduser()
+project = Path.cwd()
+print("Vibe-gebruikersmap:", user)
+for root in (user, project / ".vibe"):
+    for name in ("config.toml", "agents", "hooks.toml", "prompts", "skills", "tools"):
+        path = root / name
+        print("aanwezig" if path.exists() else "afwezig", path)
+for path in (user / "AGENTS.md", Path.home() / ".agents" / "skills",
+             project / ".agents" / "skills"):
+    print("aanwezig" if path.exists() else "afwezig", path)
+for root in (project, *project.parents):
+    path = root / "AGENTS.md"
+    if path.is_file():
+        print("projectinstructies:", path)
+for name in sorted(os.environ):
+    if name.startswith("VIBE_") and name != "VIBE_HOME":
+        print("procesinstelling om te controleren:", name)
+PYTHON
+```
+
+`VIBE_HOME` kan de gebruikersmap verplaatsen; zonder die instelling is zij
+`~/.vibe`. In 2.19.0 kan vertrouwde projectconfiguratie bepalen welk configbestand
+wordt geladen. De gekozen profielinstellingen worden daarna op de basis toegepast.
+CLI-toolselectie alleen is dus onvoldoende bewijs bij een aangepast profiel.
+De technische naslag beschrijft dezelfde [inspectiepunten](https://github.com/misja/agent-role-loop/blob/main/adapters/openai-compatible/mistral/README.md#inspect-before-installation).
+
+Open aangetroffen tekstbestanden in je editor. Controleer lokaal, zonder hun
+volledige inhoud in je dossier te kopiëren:
+
+| Vindplaats | Wat controleer je? | Verwachte uitgangssituatie voor deze eerste proef |
+|---|---|---|
+| AGENTS.md uit de uitvoer | Welke projectnormen, testcommando's en andere instructies gelden? | Geen maakgesprek of andere oordelen; de eigen ingang wijst naar PROJECT.md. |
+| config.toml in beide getoonde mappen | Zoek `bypass_tool_permissions`, `agent_paths`, `tool_paths`, `skill_paths`, `mcp_servers`, `system_prompt_id`, `enabled_tools`, `disabled_tools` en `[tools...]`. | Geen bypass; geen niet-onderzochte extra paden, tools of afwijkend prompt. Noteer welke geselecteerde tools eventueel worden geweigerd. |
+| agents/ in beide mappen, plus eventuele `agent_paths` uit config | Kijk of plan.toml of accept-edits.toml bestaat en lees die als hij bestaat. | Deze proef gebruikt de ingebouwde profielen; geen eigen bestand met dezelfde naam. |
+| hooks.toml in beide mappen | Lees bij welke actie een programma wordt gestart en welk commando dat uitvoert. | Geen actieve, onbekende hook; aanwezigheid kan acties buiten de modeltools toevoegen. |
+| Aangetroffen prompts/skills/tools en procesinstellingen | Bekijk verwijzingen en aanwezige bestanden; vergelijk met de configuratie. | Geen onverklaarde projectinvoer of rechten die de beoogde rol veranderen. |
+
+Een ontbrekend bestand vraagt geen nieuw bestand. Een bestaande instelling die
+je niet kunt verklaren vraagt eerst onderzoek: stop vóór de planner, vraag de
+beheerder/docent wat zij doet en bepaal samen of deze oefenroute ermee kan werken.
+Dat geldt ook bij een eigen profiel of actieve hook. Verwijder of overschrijf
+zulke instellingen niet om de controle groen te maken. De latere expliciete
+profielen, procesinstellingen en allow-lists gelden alleen na deze inspectie;
+controleer in de daadwerkelijke uitvoer of precies de bedoelde tools beschikbaar
+zijn. Bewaar in je dossier vindplaatsen, norm/testcommando en de uitkomst van je
+controle, zonder sleutelwaarden of volledige accountconfiguratie.
 
 Volg de kopieerprocedure in de
 [technische adapterhandleiding](https://github.com/misja/agent-role-loop/blob/main/adapters/openai-compatible/mistral/README.md#inspect-before-installation).

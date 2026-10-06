@@ -31,6 +31,24 @@ Inventory AGENTS.md files and applicable ancestor/user instructions, project
 norms/test commands, `.vibe/config.toml`, agent profiles, prompts, skills, hooks,
 MCP servers, connectors, tool permissions and trusted folders. User profiles can
 replace built-in names; inspect the effective `plan`/`accept-edits` definitions.
+For the measured 2.19.0 route, user files are under `~/.vibe/` unless `VIBE_HOME`
+points elsewhere. Inspect user and trusted-project `.vibe/config.toml`,
+`agents/{plan,accept-edits}.toml`, `hooks.toml`, prompts/, skills/ and tools/;
+also inspect extra paths named in config and user/project `.agents/skills`.
+The [student preflight](../../../teaching/praktijk/mistral.md#1-projectafspraken-inventariseren-en-adapter-toevoegen)
+provides a no-provider-launch path inspection command and a field checklist.
+Look for `bypass_tool_permissions`, `agent_paths`, `tool_paths`, `skill_paths`,
+`mcp_servers`, `system_prompt_id`, tool selection and `[tools...]` permissions.
+Record applicable VIBE_* process overrides without printing credential values.
+
+Trusted project content can change configuration discovery. Agent overrides apply
+on top of base settings; a custom profile can replace a built-in name and change
+even a CLI-selected tool allow-list. A hook is executable code run around events,
+not a model tool, so inspect its event/command before assuming the allow-list
+bounds all program actions. The measured route had no custom profiles or hooks.
+If those or unexplained overrides exist, stop before the role invocation and
+resolve their effect with the configuration owner; do not overwrite global
+settings. Recheck effective tool metadata and permission bypass for actual runs.
 Do not copy secrets from config or credential stores. A new conversation does
 not erase this configuration. Keep author transcripts and unrelated judgments
 outside project instructions and the reviewable working tree.

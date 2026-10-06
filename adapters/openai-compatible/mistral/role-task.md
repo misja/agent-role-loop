@@ -1,3 +1,5 @@
+Working directory: ABSOLUTE_PROJECT_DIRECTORY. Resolve every project path here.
+If a required input is missing, stop without edits or inferred approval.
 Read .vibe/role-loop/entry.md and .vibe/role-loop/core/loop.md.
 Act as the role in .vibe/role-loop/core/roles/ROLE.md.
 Read its named contracts and the INPUTS listed below.

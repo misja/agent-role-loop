@@ -1,0 +1,28 @@
+{
+  "34": {
+    "design": 0,
+    "delivery": 1,
+    "before_commit": "8217140113f2bec15d7bd3db48483ae9cda43db1",
+    "blockers": [
+      "B34-01 AC4",
+      "B34-02 AC7/9/10"
+    ],
+    "prior_verdict": "https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025200665",
+    "scope": "one outer repair: concrete configuration inventory explanation; NEG continuation still requires actual human decision",
+    "extra_automatic_round_allowed": false
+  },
+  "W1": {
+    "design": 0,
+    "delivery": 0
+  },
+  "NEG": {
+    "design": 0,
+    "delivery": 1,
+    "registration": "late, after actual author edit; orchestration preparation failed",
+    "before_commit": "e94946707ead4ad7180bfc3d6d59f13bf0caac78",
+    "blockers_source": "C6-before.md",
+    "author_run": "repair",
+    "human_authorization": "https://github.com/misja/agent-role-loop/issues/34#issuecomment-6024762858",
+    "extra_author_round_allowed": false
+  }
+}

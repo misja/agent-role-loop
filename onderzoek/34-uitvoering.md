@@ -142,3 +142,28 @@ Studentwaarnemingen niet beschikbaar. Bare Mistral-HTTP-pad niet uitgevoerd en
 niet door Vibe-evidence bewezen. Native GitHub-reviewintegratie niet geclaimd;
 root verzorgt issue/PR-feedback. Het werkitem wordt niet volledig getest afgesloten
 zolang het vereiste procesbewijs en onafhankelijke AC1-11-beoordeling ontbreken.
+
+## Onafhankelijke eerste beoordeling en begrensde documentreparatie
+
+Exact product `8217140113f2bec15d7bd3db48483ae9cda43db1` kreeg C6 BLOCK van
+review34, [geregistreerd](https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025200665)
+en bewaard in [34-beoordeling.md](34-beoordeling.md). AC4 faalt op B34-01
+(late NEG-registratie/ontbrekende continuation); AC7/9/10 op B34-02 (onuitvoerbare
+configinventarisatie). Overige criteria pass, eigen installer/snapshot/buildchecks
+slagen; reviewer controleerde 340 links/0errors volgens zijn eigen telling.
+Exacte diff --check exit2 op de behouden contextspatie, geen blocker.
+
+Vóór tekstbewerking werd #34 oplevering1 opgeslagen in
+[34-herstelstand.json](34-herstelstand.json) en
+[het issue](https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025206476).
+NEG delivery1 niet gereset. B34-02 is gericht hersteld: stap1 noemt concrete
+gebruikers-/projectvindplaatsen, geeft een uitvoerbaar padinspectiecommando dat
+geen Vibe/credentials opent, legt profieloverrides/hooks uit, noemt te onderzoeken
+velden en verwacht resultaat en stopt bij onbekende configuratie vóór de planner.
+Technische naslag heeft overeenkomstige punten; rolopdracht noemt nu absoluut
+projectpad en stoppen bij ontbrekende invoer. Geen nieuwe tools of bevoegdheden.
+De letterlijke studentinspectie liep exit0 op de oefenmap. Nieuwe docs-build
+-W --keep-going exit0, lokale controle 310links/0errors. B34-01 blijft open;
+menselijke continuation is nog niet ontvangen en geen extra providerbouwer gestart.
+Een nieuwe onafhankelijke repair-context krijgt actuele C5, dit diff, eerdere
+blockers/coverage en de opgeslagen verbruikte stand. Geen automatisch tweede herstel.
