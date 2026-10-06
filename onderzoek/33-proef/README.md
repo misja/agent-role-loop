@@ -19,7 +19,9 @@ een nieuwe initial reviewer; deze stop is geen geslaagde beoordeling.
 
 Installatiecontrole: `python3 onderzoek/33-proef/controleer_installatie.py` maakt
 eigen tijdelijke fixtures; installatie-resultaten.json bevat echte observaties.
-AGENTS.md/PROJECT.md zijn proefnormen, geen nieuwe repositorynormen.
+AGENTS-proef.md bewaart de bytes van de tijdelijke AGENTS.md onder een
+snapshotnaam; zij wordt hier niet als nieuwe projectingang geladen.
+PROJECT.md bewaart de proefnormen, geen nieuwe repositorynormen.
 Geen studentvalidatie, productie-installatie of native GitHub-review geclaimd.
 
 [Hoofd-C5](C5-main.md)/[C6](C6-main.md): SHIP op exact genoemd productcommit.
