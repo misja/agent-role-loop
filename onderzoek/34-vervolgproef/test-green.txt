@@ -1,0 +1,13 @@
+Human root, exact repaired commit 9f881c0ded87fa45e18e596c3d72b7c9f83ff9c5
+python3 -B controleer.py werk volledig
+test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok
+test_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok
+test_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok
+test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+
+exit 0

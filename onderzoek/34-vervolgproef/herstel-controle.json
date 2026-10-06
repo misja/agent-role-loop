@@ -1,0 +1,12 @@
+{
+  "before_commit": "6f296222cfeda806abe8e891dba7c7e5c9a2c125",
+  "product_commit": "9f881c0ded87fa45e18e596c3d72b7c9f83ff9c5",
+  "registration_commit": "6bde4de0a678befd753deb2ebbf959f6e516653b",
+  "human_source": "https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025358463",
+  "green_exit": 0,
+  "matches_original_main_product": true,
+  "only_product_file_changed": true,
+  "suite_project_AGENTS_core_adapter_inputs_preserved": true,
+  "registration_before_new_author": true,
+  "existing_counters_not_reset": true
+}

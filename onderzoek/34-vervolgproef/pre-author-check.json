@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-10-06T21:02:38.431336+00:00",
+  "registration_commit": "6bde4de0a678befd753deb2ebbf959f6e516653b",
+  "registered_at_utc": "2026-10-06T21:01:38.717203+00:00",
+  "human_source": "https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025358463",
+  "both_existing_delivery_counters": 1,
+  "input_hashes_verified": {
+    "C4-continuation.md": "815a9e563db799e6165770b1de13d3d1f0ba078bdda337ab5f7d46bfb8322810",
+    "C6-negative-prior.md": "cb77cd36cc44b2dba2d1a0cbc687090ae7b3a9d49006f87bb6c9bec05a543260",
+    "C6-process-prior.md": "5263e746b35f3ff26f8dea21b567c0bffe02e010bc8860203a2eef14b5f1afed",
+    "repair-input.md": "eb65c251cdce2d12c0b02e56254cf0cc2cbd4b5ada88f02e03a9e1db44602f5c",
+    "test-volledig.txt": "f6947127d8cb6b402638f9162cd26f5a17b5bdf85ec3458706c8458b5b121280",
+    "test-zwak.txt": "77b77ee505deb7e14af2e7ce085c347dc0f1f2893b92a3f9d3e77243519cb0d7",
+    "negative-snapshot.py": "3013ff9bda939a97d3ac31496f4d30947aea176b96284a4c5d92fbbf81fe27ce"
+  },
+  "registration_snapshot_matches_inputs": true
+}

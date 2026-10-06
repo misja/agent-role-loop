@@ -200,3 +200,53 @@ outer review B34-01 herbeoordelen met actuele C5 en herbruikbare onaangetaste de
 Geen nieuwe feature, norm, modelupgrade, rechtenverruiming, tellerreset of automatische
 extra ronde. Bij opnieuw BLOCK is een nieuwe menselijke vervolgkeuze nodig.
 Deze voorsteltekst en de nog onbeantwoorde vraag vormen zelf geen vrijgave.
+
+## Uitgevoerde menselijke continuation voor B34-01
+
+De gebruiker gaf expliciet opdracht: doe de herstelproef. Werkelijke
+[continuation-bron](https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025358463)
+geeft precies de bovenstaande extra begrensde proef en onafhankelijke
+herbeoordeling vrij, geen merge. Historische fout en BLOCK blijven geldig.
+#34/NEG delivery1 niet gereset; één expliciete menselijke invocation gereserveerd.
+
+Nieuwe bewijsmap [34-vervolgproef](34-vervolgproef/README.md). Exact opnieuw
+geïnjecteerde A-fixture `6f296222cfeda806abe8e891dba7c7e5c9a2c125`, bytegelijk
+aan oude negatieve snapshot: nieuwe zwakke suite3pass/exit0, volledige suite
+S1-S3pass/S4fail/exit1. Alle vereiste input/blockers/stand/C4/rode bewijs opgeslagen
+in registratiecommit `6bde4de` vóór de Vibe-start. Launchpreflight vergelijkt elke
+invoerhash én volledige staat bytegelijk met die commit; exclusief markerbestand
+reserveert eenmaal de start. Metadata en outputpaden gescheiden; ontbrekende input
+stopt zonder providerstart. Tijdstempels van daadwerkelijke nieuwe sessie volgen
+op opgeslagen registratie/preflight. Beide counters bleven1.
+
+Eén daadwerkelijke Vibe-bouwer, sessie97abbc78-42fd-aeb8-4dcf-33eb168a21ce,
+read_file/grep/write_file/edit, permissionbypassfalse. Alleen boekenplank.py
+veranderd naar dezelfde pure return; huidige tests, AGENTS/PROJECT, alle23
+geïnstalleerde core/adapterbestanden en verplichte inputs behouden hun hashes.
+Root voerde volledige suite uit: vierpass/exit0, en bewaarde exact codecommit
+`9f881c0ded87fa45e18e596c3d72b7c9f83ff9c5`. Bytes gelijk aan het hoofdproduct.
+C5-concept bewaart werkelijk pending groen/commit; een verkeerd gespelde URL en
+ongefundeerde generalisatie uit dat concept zijn geen bewijs. C5-kern gebruikt
+werkelijke C4-bron, daadwerkelijke suite-uitvoer en correcte commitsnapshots.
+
+Nieuwe Mistral repair-review, sessie13b7ed33-194c-e066-ccfe-87755b2d6213,
+read_file/grep, geen schrijf- of shellgereedschap; onbekende toolrequests geweigerd.
+[C6-herstel](34-vervolgproef/C6-herstel.md) geeft SHIP WITH NITS, alle S1-S4 nieuw
+pass, geen must-/should-/nice-bevinding. Geen concrete nit genoemd om als
+vervolgwerk te registreren. Historische PROCESS-BLOCKER blijft als fout erkend;
+nieuwe werkelijke continuation/preregistratie beoordeeld, geen retrospectief akkoord.
+Beoordelaar verwisselt in één snapshotzin de naam negative-snapshot met de herstelde
+snapshot; die zin wordt niet als bewijs overgenomen. Root verifieerde de echte
+repair-snapshot uit herstelcommit en de negative-snapshot uit fixturecommit;
+de afzonderlijke C5/controle/diff bevatten die correcte koppeling. Geen modelclaim
+van eigen shell/Git/testuitvoering als werkelijkheid overgenomen.
+
+Werkelijk gebruikte CLI2.19.0, configuratiealias mistral-medium-3.5/API-modelnaam
+mistral-vibe-cli-latest/providerMistral ongewijzigd; latest-gewichten niet beschikbaar.
+Ruwe gesprekken, redeneerinhoud, secrets en identiteit blijven buiten bewijs.
+De oude 34-proef-bestanden worden niet herschreven. Er is geen tweede bouwer
+binnen deze continuation gestart of toegestaan. Verse outer repair-review krijgt
+exact nieuwe bewijscommit, werkelijk mensbesluit, nieuwe preregistratieketen,
+eerdere B34-01/B34-02-uitkomsten en expliciet onaangetaste technische/didactische
+dekking. Alleen bewijs/registratie toegevoegd; adapter/teaching/core ongewijzigd
+sinds eerder beoordeelde documentherstelcommit. Geen verdere automatische ronde.
