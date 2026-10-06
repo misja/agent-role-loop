@@ -1,0 +1,10 @@
+--- boekenplank_b.py
++++ false.py
+@@ -22,6 +22,6 @@
+         return boek
+ 
+     def lijst(self, alleen_beschikbaar=False):
+-        if alleen_beschikbaar:
++        if alleen_beschikbaar is not None:
+             return [b for b in self._boeken if b.uitgeleend_aan is None]
+         return list(self._boeken)

@@ -1,0 +1,164 @@
+test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) ... 
+  test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) (leners=(None, 'Noor', None)) ... FAIL
+  test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) (leners=('Noor', 'Sam', 'Ali')) ... FAIL
+test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) ... 
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='clear') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='append') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='pop') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='clear') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='append') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='pop') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='clear') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='append') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='pop') ... ERROR
+test_e3_toevoegen_na_filteren (__main__.controles.<locals>.Criteria.test_e3_toevoegen_na_filteren) ... FAIL
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 54, in test_e2_containers_veranderen_geen_opslag
+    [voor[0], voor[2]])
+              ~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) (leners=(None, 'Noor', None))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 33, in test_e1_false_is_standaard
+    self.assertEqual(toestand(standaard), verwacht)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) (leners=('Noor', 'Sam', 'Ali'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 33, in test_e1_false_is_standaard
+    self.assertEqual(toestand(standaard), verwacht)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [(1, 'Zee', 'Noor'), (2, 'Atlas', 'Sam'), (3, 'Bos', 'Ali')]
+
+Second list contains 3 additional elements.
+First extra element 0:
+(1, 'Zee', 'Noor')
+
+- []
++ [(1, 'Zee', 'Noor'), (2, 'Atlas', 'Sam'), (3, 'Bos', 'Ali')]
+
+======================================================================
+FAIL: test_e3_toevoegen_na_filteren (__main__.controles.<locals>.Criteria.test_e3_toevoegen_na_filteren)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-false-ela9bf3w/controleer_extra.py", line 63, in test_e3_toevoegen_na_filteren
+    self.assertEqual(toestand(na),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+                     [(1, "Zee", None), (2, "Atlas", "Noor"),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      (3, "Bos", None), (4, "Duin", None)])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None), (4, 'Duin', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None), (4, 'Duin', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 3:
+(4, 'Duin', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None), (4, 'Duin', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None), (4, 'Duin', None)]
+?                    ++++++++++++++++++++++
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+FAILED (failures=3, errors=9)

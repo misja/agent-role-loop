@@ -1,0 +1,243 @@
+test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) ... ok
+test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) ... 
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='clear') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='append') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='pop') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='clear') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='append') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='pop') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='clear') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='append') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='pop') ... FAIL
+test_e3_toevoegen_na_filteren (__main__.controles.<locals>.Criteria.test_e3_toevoegen_na_filteren) ... FAIL
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 55, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 55, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 55, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 55, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 55, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 55, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 47, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 47, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': True}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 47, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None)]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                    ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e3_toevoegen_na_filteren (__main__.controles.<locals>.Criteria.test_e3_toevoegen_na_filteren)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-a-rw948p8i/controleer_extra.py", line 63, in test_e3_toevoegen_na_filteren
+    self.assertEqual(toestand(na),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+                     [(1, "Zee", None), (2, "Atlas", "Noor"),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      (3, "Bos", None), (4, "Duin", None)])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None), (3, 'Duin', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None), (4, 'Duin', None)]
+
+First differing element 1:
+(3, 'Bos', None)
+(2, 'Atlas', 'Noor')
+
+Second list contains 1 additional elements.
+First extra element 3:
+(4, 'Duin', None)
+
+- [(1, 'Zee', None), (3, 'Bos', None), (3, 'Duin', None)]
+?                                       ^
+
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None), (4, 'Duin', None)]
+?                    ++++++++++++++++++++++                   ^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.009s
+
+FAILED (failures=10)

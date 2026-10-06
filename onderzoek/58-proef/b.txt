@@ -1,0 +1,8 @@
+test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) ... ok
+test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) ... ok
+test_e3_toevoegen_na_filteren (__main__.controles.<locals>.Criteria.test_e3_toevoegen_na_filteren) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

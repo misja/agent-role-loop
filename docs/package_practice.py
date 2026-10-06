@@ -7,7 +7,7 @@ CASE = ROOT / "teaching/cases/praktijk-projectomgeving"
 DEST = ROOT / "teaching/praktijk/boekenplank-projectomgeving.zip"
 FILES = [
     "README.md", "overdrachten.md", "overdrachtregister.csv", "bewijs.txt",
-    "boekenplank_basis.py", "boekenplank_a.py", "boekenplank_b.py", "controleer.py",
+    "boekenplank_basis.py", "boekenplank_a.py", "boekenplank_b.py", "controleer.py", "controleer_extra.py",
     "basis-naar-a.patch", "a-naar-b.patch",
 ]
 

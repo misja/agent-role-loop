@@ -1,0 +1,86 @@
+[
+  {
+    "variant": "false",
+    "command": [
+      "python3",
+      "-B",
+      "controleer_extra.py",
+      "werk"
+    ],
+    "exit": 1,
+    "sha256": "6e86e0af925500444c9fb49bdd7a10bd1675475bed55dbbfe78e6a756ef3cbc9"
+  },
+  {
+    "variant": "container",
+    "command": [
+      "python3",
+      "-B",
+      "controleer_extra.py",
+      "werk"
+    ],
+    "exit": 1,
+    "sha256": "714cbea6573a7e4a776c4a26a31c7f001e0e948b2faaa0df16891f7e864824d4"
+  },
+  {
+    "variant": "a",
+    "command": [
+      "python3",
+      "-B",
+      "controleer_extra.py",
+      "werk"
+    ],
+    "exit": 1,
+    "sha256": "3013ff9bda939a97d3ac31496f4d30947aea176b96284a4c5d92fbbf81fe27ce"
+  },
+  {
+    "variant": "b",
+    "command": [
+      "python3",
+      "-B",
+      "controleer_extra.py",
+      "werk"
+    ],
+    "exit": 0,
+    "sha256": "20e40b64537dcb76e88c6672321036c1b2dac427dcebf3e83347f01c86da8282"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "controleer.py",
+      "basis",
+      "basis"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "controleer.py",
+      "a",
+      "zwak"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "controleer.py",
+      "a",
+      "regressie"
+    ],
+    "exit": 1
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "controleer.py",
+      "b",
+      "volledig"
+    ],
+    "exit": 0
+  }
+]

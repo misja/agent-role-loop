@@ -1,0 +1,11 @@
+{
+  "work_item": 58,
+  "design": 0,
+  "delivery": 0,
+  "extra_automatic_rounds": {
+    "design": 1,
+    "delivery": 1
+  },
+  "plan_commit": "276a804a5ef723aba0e04800761e2cb4f3037128",
+  "human_source": "https://github.com/misja/agent-role-loop/issues/58#issuecomment-6025714624"
+}
