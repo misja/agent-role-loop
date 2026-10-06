@@ -7,15 +7,16 @@ registreert “akkoord” op [C2 v1](https://github.com/misja/agent-role-loop/is
 vastgelegd in `32-plan.md`. Norm-/procesbasis:
 `b7aad138c18809c747a1e020590e0ad905903514`.
 Root orkestreert/plant/bouwt; verse review32 krijgt later AC1–11.
-Herstelstand #32: ontwerp 0, oplevering 0. Onafhankelijke #32-C6 nog niet beschikbaar; geen mergebesluit.
+Herstelstand #32: ontwerp 0, oplevering 0. Onafhankelijke #32-C6 SHIP;
+geen mergebesluit.
 
 ## Uitgevoerd tot de oefenpoort
 
 Op 5–6 oktober 2026: negen wrappers krijgen `omitClaudeMd: true`; normen en
 besluiten moeten expliciet mee. Het orc-commando benoemt dat, verse initial/
 repair-contexten en het bewaren van artefacten vóór menselijke poorten.
-Core is ongewijzigd. README/studentpad zijn concepten totdat de volledige
-proef en onafhankelijke beoordeling zijn afgerond.
+Core is ongewijzigd. De volledige proef en onafhankelijke beoordeling zijn
+afgerond; het pakket wacht op het menselijk mergebesluit.
 
 Installatiesnippets uit README werkelijk uitgevoerd op acht tijdelijke fixtures:
 clean en existing installeren 30 bestanden met juiste hashes en rollen terug
@@ -129,9 +130,22 @@ toevoegen alleen statisch onderzocht, geen gerichte regressiecontrole.
 Beide reviewvervolgpunten staan in [#58](https://github.com/misja/agent-role-loop/issues/58)
 op het projectbord, zonder nieuwe bouwvrijgave of blocker voor #32.
 
-Hoofdproef en negatieve herstelproef gereed voor menselijk vervolg; onafhankelijke
-#32-review nog afronden. Geen volledige afsluiting van #32. Oefenmerge en
-adaptermerge blijven mensbesluiten.
+Hoofdproef, negatieve herstelproef en onafhankelijke #32-review afgerond.
+[Volledige C6](32-beoordeling.md): SHIP op productcommit
+`52d84cd2a9949931fec82704abe260a1e15b17c8`, AC1–11 pass, geen blockers.
+Review32 herhaalde zelfstandig acht installatiefixtures, hoofd-/NEG-/herstelsnapshots,
+docs-build met -W --keep-going en alle 4018 lokale HTML-links/fragmenten:
+nul fouten. Alle studentstappen afzonderlijk tegen pinned normen gelezen.
+Dit is agentlezing; geen nieuwe provideruitvoering of studentvalidatie.
+Optioneel: bordstatuszin in stap7 voorwaardelijk maken; geen should-fix of
+reparatie nodig. #32-tellers blijven 0/0, NEG 0/1.
+
+Deze registeraanvulling en het opgeslagen oordeel volgen ná de beoordeelde
+productcommit; zij wijzigen geen adapter, studentroute of proefproduct.
+[PR #59](https://github.com/misja/agent-role-loop/pull/59) biedt het pakket aan.
+GitHub meldt geen automatische PR-checks; lokale verificatie hierboven.
+Oefenmerge en adaptermerge blijven mensbesluiten. Geen volledige afsluiting
+van #32 vóór die beslissing.
 
 Geen studentwaarnemingen, gemeten begrip/duur of tokenbesparing beschikbaar.
 Geen productie-installatie, providerbenchmark, native GitHub-oefenreview of
