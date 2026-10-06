@@ -250,3 +250,18 @@ exact nieuwe bewijscommit, werkelijk mensbesluit, nieuwe preregistratieketen,
 eerdere B34-01/B34-02-uitkomsten en expliciet onaangetaste technische/didactische
 dekking. Alleen bewijs/registratie toegevoegd; adapter/teaching/core ongewijzigd
 sinds eerder beoordeelde documentherstelcommit. Geen verdere automatische ronde.
+
+## Definitieve onafhankelijke vervolgbeoordeling
+
+[Volledige C6](34-vervolgbeoordeling.md), ook vastgelegd bij
+[werkitem #34](https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025504881),
+geeft **SHIP** op exact productcommit
+`608a7196dbddea704faef5befa827d1b6ae4b508`: alle AC1-11 pass,
+B34-01 opgelost en B34-02 blijft opgelost; geen overige bevindingen.
+De beoordelaar verifieerde zelfstandig de menselijke bron, preregistratie,
+tijdketen, inputhashes, snapshots en nieuwe zwak-rood/groen-testuitvoer.
+Onaangetaste eerdere installer-, documentatie- en didactische dekking is
+expliciet hergebruikt, niet opnieuw uitgevoerd genoemd. Historische fout en
+BLOCK blijven staan; beide deliverytellers1 en de ene continuation-start
+blijven verbruikt. Deze slotregistratie wijzigt uitsluitend onderzoeksregistratie.
+PR #61 kan uit draft; merge vereist nog het menselijke besluit volgens CLAUDE.md.

@@ -42,12 +42,15 @@
       "test-zwak.txt": "77b77ee505deb7e14af2e7ce085c347dc0f1f2893b92a3f9d3e77243519cb0d7",
       "negative-snapshot.py": "3013ff9bda939a97d3ac31496f4d30947aea176b96284a4c5d92fbbf81fe27ce"
     },
-    "status": "author and Mistral repair-review completed; pending independent outer review",
+    "status": "completed; independent final C6 SHIP; human merge decision pending",
     "author_invocations_consumed": 1,
     "additional_author_invocation_allowed": false,
     "registration_commit": "6bde4de",
     "product_commit": "9f881c0ded87fa45e18e596c3d72b7c9f83ff9c5",
     "builder_session_id": "97abbc78-42fd-aeb8-4dcf-33eb168a21ce",
-    "reviewer_session_id": "13b7ed33-194c-e066-ccfe-87755b2d6213"
+    "reviewer_session_id": "13b7ed33-194c-e066-ccfe-87755b2d6213",
+    "outer_review_product_commit": "608a7196dbddea704faef5befa827d1b6ae4b508",
+    "outer_review_source": "https://github.com/misja/agent-role-loop/issues/34#issuecomment-6025504881",
+    "outer_review_verdict": "SHIP"
   }
 }
