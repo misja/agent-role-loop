@@ -1,0 +1,89 @@
+make: Entering directory '/home/misja/code/agent-role-loop/docs'
+uv run --group docs sphinx-build -b html -W --keep-going -c . "../teaching" "_build"
+Running Sphinx v9.1.0
+loading translations [nl]... done
+loading pickled environment... The configuration has changed (1 option: 'pygments_dark_style')
+done
+myst v5.1.0: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'colon_fence', 'deflist'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('http', 'https', 'mailto', 'ftp'), ref_domains=None, fence_as_directive={'mermaid'}, number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_sort=True, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, strikethrough_single_tilde=False, colon_fence_exact_match=False, suppress_warnings=[], highlight_code_blocks=True)
+checking bibtex cache... up to date
+building [mo]: targets for 0 po files that are out of date
+writing output... 
+building [html]: targets for 25 source files that are out of date
+updating environment: 0 added, 26 changed, 0 removed
+reading sources... [  4%] index
+reading sources... [  8%] praktijk/mistral
+reading sources... [ 12%] praktijk/van-werkitem-naar-pull-request
+reading sources... [ 15%] referentie/contracts/build-packet
+reading sources... [ 19%] referentie/contracts/clarifier-result
+reading sources... [ 23%] referentie/contracts/final-verdict
+reading sources... [ 27%] referentie/contracts/gate-decision
+reading sources... [ 31%] referentie/contracts/index
+reading sources... [ 35%] referentie/contracts/review-handoff
+reading sources... [ 38%] referentie/contracts/reviewer-verdict
+reading sources... [ 42%] referentie/contracts/triage-decision
+reading sources... [ 46%] referentie/contracts/work-item
+reading sources... [ 50%] referentie/index
+reading sources... [ 54%] referentie/loop
+reading sources... [ 58%] referentie/principles
+reading sources... [ 62%] referentie/roles/builder
+reading sources... [ 65%] referentie/roles/clarifier
+reading sources... [ 69%] referentie/roles/human-gate
+reading sources... [ 73%] referentie/roles/index
+reading sources... [ 77%] referentie/roles/planner
+reading sources... [ 81%] referentie/roles/reviewer-adversarial
+reading sources... [ 85%] referentie/roles/reviewer-boss
+reading sources... [ 88%] referentie/roles/reviewer-maintainability
+reading sources... [ 92%] referentie/roles/reviewer-pragmatic
+reading sources... [ 96%] referentie/roles/reviewer-strict
+reading sources... [100%] referentie/roles/triage
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets... 
+copying downloadable files... [100%] praktijk/boekenplank-projectomgeving.zip
+
+copying static files... 
+Writing evaluated template result to /home/misja/code/agent-role-loop/docs/_build/_static/documentation_options.js
+Writing evaluated template result to /home/misja/code/agent-role-loop/docs/_build/_static/basic.css
+Writing evaluated template result to /home/misja/code/agent-role-loop/docs/_build/_static/language_data.js
+copying static files: done
+copying extra files... 
+copying extra files: done
+copying assets: done
+writing output... [  4%] index
+writing output... [  8%] praktijk/mistral
+writing output... [ 12%] praktijk/van-werkitem-naar-pull-request
+writing output... [ 15%] referentie/contracts/build-packet
+writing output... [ 19%] referentie/contracts/clarifier-result
+writing output... [ 23%] referentie/contracts/final-verdict
+writing output... [ 27%] referentie/contracts/gate-decision
+writing output... [ 31%] referentie/contracts/index
+writing output... [ 35%] referentie/contracts/review-handoff
+writing output... [ 38%] referentie/contracts/reviewer-verdict
+writing output... [ 42%] referentie/contracts/triage-decision
+writing output... [ 46%] referentie/contracts/work-item
+writing output... [ 50%] referentie/index
+writing output... [ 54%] referentie/loop
+writing output... [ 58%] referentie/principles
+writing output... [ 62%] referentie/roles/builder
+writing output... [ 65%] referentie/roles/clarifier
+writing output... [ 69%] referentie/roles/human-gate
+writing output... [ 73%] referentie/roles/index
+writing output... [ 77%] referentie/roles/planner
+writing output... [ 81%] referentie/roles/reviewer-adversarial
+writing output... [ 85%] referentie/roles/reviewer-boss
+writing output... [ 88%] referentie/roles/reviewer-maintainability
+writing output... [ 92%] referentie/roles/reviewer-pragmatic
+writing output... [ 96%] referentie/roles/reviewer-strict
+writing output... [100%] referentie/roles/triage
+
+generating indices... genindex done
+writing additional pages... search done
+dumping search index in Dutch (code: nl)... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in _build.
+make: Leaving directory '/home/misja/code/agent-role-loop/docs'

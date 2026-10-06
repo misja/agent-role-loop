@@ -1,0 +1,106 @@
+test_e1_false_is_standaard (__main__.controles.<locals>.Criteria.test_e1_false_is_standaard) ... ok
+test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) ... 
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='clear') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='append') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='pop') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='clear') ... FAIL
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='append') ... ERROR
+  test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='pop') ... FAIL
+test_e3_toevoegen_na_filteren (__main__.controles.<locals>.Criteria.test_e3_toevoegen_na_filteren) ... ok
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 52, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+                     ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 14, in toestand
+    return [(b.nummer, b.titel, b.uitgeleend_aan) for b in boeken]
+             ^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'nummer'
+
+======================================================================
+ERROR: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='append')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 52, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+                     ~~~~~~~~^^^^^^^^^^^^^^^
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 14, in toestand
+    return [(b.nummer, b.titel, b.uitgeleend_aan) for b in boeken]
+             ^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'nummer'
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 52, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+Second list contains 3 additional elements.
+First extra element 0:
+(1, 'Zee', None)
+
+- []
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 52, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (2, 'Atlas', 'Noor')] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (2, 'Atlas', 'Noor')]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                                        ++++++++++++++++++
+
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='clear')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 52, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+Second list contains 3 additional elements.
+First extra element 0:
+(1, 'Zee', None)
+
+- []
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+======================================================================
+FAIL: test_e2_containers_veranderen_geen_opslag (__main__.controles.<locals>.Criteria.test_e2_containers_veranderen_geen_opslag) (argumenten={'alleen_beschikbaar': False}, actie='pop')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/arl58-container-m4qi24z8/controleer_extra.py", line 52, in test_e2_containers_veranderen_geen_opslag
+    self.assertEqual(toestand(plank.lijst()), voor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [(1, 'Zee', None), (2, 'Atlas', 'Noor')] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+
+Second list contains 1 additional elements.
+First extra element 2:
+(3, 'Bos', None)
+
+- [(1, 'Zee', None), (2, 'Atlas', 'Noor')]
++ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]
+?                                        ++++++++++++++++++
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (failures=4, errors=2)

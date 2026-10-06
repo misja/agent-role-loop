@@ -1,0 +1,8 @@
+--- boekenplank_b.py
++++ container.py
+@@ -24,4 +24,4 @@
+     def lijst(self, alleen_beschikbaar=False):
+         if alleen_beschikbaar:
+             return [b for b in self._boeken if b.uitgeleend_aan is None]
+-        return list(self._boeken)
++        return self._boeken
