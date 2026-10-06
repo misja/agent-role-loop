@@ -1,0 +1,12 @@
+{
+  "work_item": "NEG",
+  "design_consumed": 0,
+  "delivery_consumed": 1,
+  "before_commit": "2b24d15d00b34e43b1b2020675d6bffd9c0e82fa",
+  "blockers": [
+    "S4 stored collection mutated; dependent S1/id behavior",
+    "S1-S4 full-suite green proof required"
+  ],
+  "source": "C6-initial.md",
+  "persisted_before_repair": true
+}

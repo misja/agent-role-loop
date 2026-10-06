@@ -1,0 +1,39 @@
+{
+  "directory": "/tmp/arl32-install-check-mb9_sel8",
+  "checks": [
+    {
+      "fixture": "clean",
+      "result": "install/hash check/rollback pass; existing bytes preserved",
+      "owned_files": 30
+    },
+    {
+      "fixture": "existing",
+      "result": "install/hash check/rollback pass; existing bytes preserved",
+      "owned_files": 30
+    },
+    {
+      "fixture": "collision",
+      "result": "stopped before writes; bytes preserved"
+    },
+    {
+      "fixture": "skill",
+      "result": "stopped before writes; bytes preserved"
+    },
+    {
+      "fixture": "skill-symlink",
+      "result": "stopped before writes; bytes preserved"
+    },
+    {
+      "fixture": "changed",
+      "result": "rollback refused without deleting anything"
+    },
+    {
+      "fixture": "symlink",
+      "result": "stopped before writes; bytes preserved"
+    },
+    {
+      "fixture": "directory-path",
+      "result": "invalid directory rejected before any deletion"
+    }
+  ]
+}

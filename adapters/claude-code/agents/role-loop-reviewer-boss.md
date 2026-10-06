@@ -2,6 +2,7 @@
 name: role-loop-reviewer-boss
 description: Arbitrates conflicting selected C6 verdicts using full C5; returns C7.
 tools: Read
+omitClaudeMd: true
 ---
 
 You perform the reviewer-boss responsibility when selected by the orchestrator.

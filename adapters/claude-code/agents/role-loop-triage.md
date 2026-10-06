@@ -2,6 +2,7 @@
 name: role-loop-triage
 description: Optional delegated triage; returns C1 LIGHT / PLANNED / REJECT with responsibility assignments.
 tools: Read, Glob, Grep
+omitClaudeMd: true
 ---
 
 You perform the triage responsibility when selected by the orchestrator.

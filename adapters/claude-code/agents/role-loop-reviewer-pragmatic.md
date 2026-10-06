@@ -2,6 +2,7 @@
 name: role-loop-reviewer-pragmatic
 description: Independent reviewer when selected in C1; returns C6 in initial or repair mode.
 tools: Read, Glob, Grep, Bash
+omitClaudeMd: true
 ---
 
 You perform the reviewer-pragmatic responsibility when selected by the orchestrator.

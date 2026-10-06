@@ -7,6 +7,11 @@ disable-model-invocation: true
 You are the orchestrator. Read `.claude/agent-role-loop/core/loop.md` as the
 canonical routing rule and the contracts it names. Keep current artifacts,
 versions, decisions and repair counters; never import a role's transcript.
+Use ordinary fresh subagent calls, never fork or resume an initial reviewer.
+The wrappers omit auto-loaded CLAUDE.md instructions; supply the applicable
+project norms explicitly with exact versions. This does not remove managed policy.
+Inspect loaded project instructions before starting: keep author exploration
+and previous verdicts out of instructions shared with independent roles.
 The work item is at: $ARGUMENTS
 
 ## Execution
@@ -52,6 +57,17 @@ The work item is at: $ARGUMENTS
    Reassess impacted dependencies; invalid evidence may require replanning and
    wider review. Further blockers go to the human. SHIP and SHIP WITH NITS mean
    ready for the human's merge decision; record follow-up work for nits.
+
+## Artifact persistence and human boundaries
+
+Before returning at a human gate, persist C1, C2 and the counters at the
+work-item location. In a file-based exercise use `work-items/<id>/`; with a
+tracker use its designated comments. If writing is unavailable, return the full
+contract and its proposed filename for the human to save. Do not build until
+the concrete plan has an actual applicable C4. A tool permission is not C4.
+The human records exact code commits after build and before review; do not
+claim a commit exists merely because a builder completed its response.
+For the first exercise, the human handles Git commits and tracker writes.
 
 ## State and tooling
 

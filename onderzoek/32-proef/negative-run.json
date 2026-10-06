@@ -1,0 +1,27 @@
+{
+  "cli": "2.1.289",
+  "model": "claude-opus-5-5",
+  "permission_mode": "dontAsk",
+  "result": "success",
+  "is_error": false,
+  "delegations": [
+    {
+      "subagent_type": "role-loop-reviewer-strict",
+      "description": "Strict initial review NEG fixture",
+      "run_in_background": false,
+      "prompt": "Modus: INITIAL review (onafhankelijk). Werkdirectory: /tmp/arl32-smoke-p93pwtwx.\n\nInput: uitsluitend work-items/NEG/C5-core.md (een expliciet gelabelde negatieve fixture). Gebruik daarnaast alleen de norm- en codebronnen die in die C5-core zelf worden aangewezen (plus PROJECT.md en .claude/agent-role-loop/core/loop.md voor de projectnorm en het C6-formaat). Lees GEEN andere C-artefacten (C0–C4, fixture-scope.md), geen andere oordelen, reviews of transcripten, en niets onder work-items/W1/.\n\nTaak: controleer S1–S4 zoals gedefinieerd in de norm/loop-core, en beoordeel de C5 inhoudelijk tegen de aangewezen code.\n\nBeperkingen: alleen lezen. Geen bestanden schrijven of wijzigen, geen herstel, geen Git-schrijfacties, geen tracker-acties, geen merge. Read-only Git-inspectie (diff/show/log) mag als de C5 daarnaar verwijst.\n\nOutput: geef de VOLLEDIGE C6 terug in het voorgeschreven formaat, inclusief verdict en per-check (S1–S4) bevindingen met concrete verwijzingen (bestand:regel)."
+    }
+  ],
+  "read_paths": [
+    "/tmp/arl32-smoke-p93pwtwx/.claude/agent-role-loop/core/loop.md",
+    "/tmp/arl32-smoke-p93pwtwx/.claude/agent-role-loop/core/roles/reviewer-strict.md",
+    "/tmp/arl32-smoke-p93pwtwx/work-items/NEG/C5-core.md",
+    "/tmp/arl32-smoke-p93pwtwx/PROJECT.md",
+    "/tmp/arl32-smoke-p93pwtwx/.claude/agent-role-loop/core/contracts/reviewer-verdict.md",
+    "/tmp/arl32-smoke-p93pwtwx/.claude/agent-role-loop/core/contracts/review-handoff.md",
+    "/tmp/arl32-smoke-p93pwtwx/boekenplank.py",
+    "/tmp/arl32-smoke-p93pwtwx/controleer.py"
+  ],
+  "tests": [],
+  "limits": "Fresh CLI process, no fork/resume; readable files are not OS-isolated. Raw provider transcript excluded."
+}

@@ -1,6 +1,7 @@
 ---
 name: role-loop-builder
 description: Builds from the inputs of the selected route and returns C5; may retain context for targeted repair.
+omitClaudeMd: true
 ---
 
 You perform the builder responsibility when selected by the orchestrator.
