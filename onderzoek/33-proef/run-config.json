@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-06",
+  "cli": "0.160.0",
+  "model_header_check": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai",
+    "approval": "never",
+    "sandbox": "read-only"
+  },
+  "main_run_model_limit": "Plan/build JSON does not report resolved model; separate same-config header identifies default. Subsequent review/negative/repair/recheck explicitly pin that observed model.",
+  "invocation": [
+    "--no-daemon",
+    "-a never",
+    "exec",
+    "-C temporary exercise",
+    "--ephemeral",
+    "--json",
+    "-o host output path"
+  ],
+  "permissions": "planner/reviewer read-only; builder workspace-write",
+  "context": "fresh process/thread, no resume/fork; shared global/project instructions and accessible files remain possible",
+  "raw_transcripts": "kept outside publication and exercise",
+  "host_failure": "initial app-server start failed read-only filesystem before model; approved elevated host retry retained inner read-only sandbox"
+}

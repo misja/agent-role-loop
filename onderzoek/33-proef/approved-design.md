@@ -1,0 +1,2 @@
+# Concrete approved exercise design
+Signature def lijst(self, alleen_beschikbaar=False). True returns new list comprehension [b for b in self._boeken if b.uitgeleend_aan is None]; otherwise retain return list(self._boeken). No other product/test/dependency change. Exact separate command python3 -B controleer.py werk volledig: before1pass+3TypeError exit1; after4pass exit0. S1-S4 owned by one strict reviewer. No AC5/6 addition; #58 owns that followup. Read-only planner confirms or explicitly identifies changed goal/interface/scope/norm/risk choices before build.

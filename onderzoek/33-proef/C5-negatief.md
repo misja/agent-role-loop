@@ -1,0 +1,12 @@
+# C5 core NEG: INITIAL negative-fixture review
+Artifact commit 49f810f3fe1ecdd9bc89e5f763c7a7cefbf6c4b7; before 3be0eaf3a734c1cb7094c3c137da9692700d976a. Exact code boekenplank.py and unmodified controleer.py in this commit, worktree product matches. Explicit injection of known boekenplank_a.py by Codex, not spontaneous provider failure.
+Normbasis a9864c8a0b8cc0acab38d31d47a4582e0886966f; installed .codex/role-loop/core/loop.md, roles/reviewer-strict.md, contracts/review-handoff.md/reviewer-verdict.md byte-identical to source. Project PROJECT.md at 99158040251d49e0cc186ce5625d518b469fcf56. One strict reviewer owns S1–S4; no other reviewers/criteria, C3 or C7. Separate counters design0 delivery0.
+Human decisions: #33 C4 https://github.com/misja/agent-role-loop/issues/33#issuecomment-6017668277 on concrete plan https://github.com/misja/agent-role-loop/issues/33#issuecomment-6017597771 explicitly permits this injected negative fixture and one bounded repair. Same approved optional parameter/invariants/-B/tests retained. No merge approval. Read decision basis in W1/C4.md if needed, not C2/author history or main verdict.
+Scope/criteria: S1 default all books insertion order line27; S2 True only loan None ordered line26; S3 empty/all-loaned returns[] line26; S4 filter preserves storage/loan fields line26. No new CLI/storage/dependencies/testchanges.
+Diff summary:
+- Filtered selection assigned back to self._boeken in labeled defect.
+- Signature/default return preserved; stored-collection invariant is deliberately at risk.
+Changed files: boekenplank.py only. Contracts touched: S4 state invariant and subsequent default listing; optional signature unchanged.
+Objective Codex runs after this commit: python3 -B controleer.py werk zwak =>3pass exit0; python3 -B controleer.py werk volledig =>S1–3 pass, S4 FAIL exit1. Before tuple collection contains books1,2,3; after filter book2 loaned to Noor is missing. No weak-suite proof of S4. Reviewer independently examines actual code and full suite; expected BLOCK is not a preassigned verdict.
+CLI0.160.0/model gpt-6.1-sol explicitly pinned; read-only sandbox, approval never, ephemeral new invocation no resume/fork. Limits: no student/production validation, no identity/deep-copy proof. Deviations none beyond labeled injection authorized by outer plan. Follow-up #58 outside this probe. No maker transcript or other judgments.
+Requested complete initial C6 including all four assigned criteria, actual test evidence/limits and blockers if any; no writes/Git/tracker/repair/merge.

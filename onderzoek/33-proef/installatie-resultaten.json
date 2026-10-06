@@ -1,0 +1,39 @@
+{
+  "directory": "/tmp/arl33-install-check-negyqn0t",
+  "checks": [
+    {
+      "fixture": "clean",
+      "result": "install/hash/rollback pass, existing bytes preserved",
+      "owned_files": 23
+    },
+    {
+      "fixture": "existing",
+      "result": "install/hash/rollback pass, existing bytes preserved",
+      "owned_files": 23
+    },
+    {
+      "fixture": "collision",
+      "result": "stop before writes, existing bytes preserved"
+    },
+    {
+      "fixture": "symlink",
+      "result": "stop before writes, existing bytes preserved"
+    },
+    {
+      "fixture": "changed",
+      "result": "rollback refuses before deletion"
+    },
+    {
+      "fixture": "missing",
+      "result": "rollback refuses before deletion"
+    },
+    {
+      "fixture": "directory-path",
+      "result": "rollback refuses before deletion"
+    },
+    {
+      "fixture": "owned-path",
+      "result": "rollback refuses before deletion"
+    }
+  ]
+}

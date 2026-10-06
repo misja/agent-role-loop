@@ -1,0 +1,12 @@
+[
+  {
+    "command": "python3 -B controleer.py werk zwak",
+    "exit_code": 0,
+    "output": "test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok\ntest_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok\ntest_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "command": "python3 -B controleer.py werk volledig",
+    "exit_code": 1,
+    "output": "test_s1_standaard_volgorde (__main__.controles.<locals>.Criteria.test_s1_standaard_volgorde) ... ok\ntest_s2_beschikbaar_in_volgorde (__main__.controles.<locals>.Criteria.test_s2_beschikbaar_in_volgorde) ... ok\ntest_s3_leeg_of_alles_uitgeleend (__main__.controles.<locals>.Criteria.test_s3_leeg_of_alles_uitgeleend) ... ok\ntest_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand) ... FAIL\n\n======================================================================\nFAIL: test_s4_filter_verandert_geen_toestand (__main__.controles.<locals>.Criteria.test_s4_filter_verandert_geen_toestand)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/arl33-smoke-3j2v4v41/controleer.py\", line 48, in test_s4_filter_verandert_geen_toestand\n    self.assertEqual(na, voor)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^\nAssertionError: Lists differ: [(1, 'Zee', None), (3, 'Bos', None)] != [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]\n\nFirst differing element 1:\n(3, 'Bos', None)\n(2, 'Atlas', 'Noor')\n\nSecond list contains 1 additional elements.\nFirst extra element 2:\n(3, 'Bos', None)\n\n- [(1, 'Zee', None), (3, 'Bos', None)]\n+ [(1, 'Zee', None), (2, 'Atlas', 'Noor'), (3, 'Bos', None)]\n?                    ++++++++++++++++++++++\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=1)\n"
+  }
+]

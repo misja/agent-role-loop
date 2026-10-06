@@ -44,6 +44,7 @@ modules/06-ontwerpen/index
 
 praktijk/van-werkitem-naar-pull-request
 praktijk/claude-code
+praktijk/codex
 ```
 
 ```{toctree}
